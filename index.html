@@ -117,8 +117,11 @@
             background: transparent; border: 1px solid var(--bright-green); 
             color: var(--bright-green); font-family: 'JetBrains Mono', monospace; 
             padding: 10px; cursor: pointer; font-size: 1.2rem;
+            transition: background 0.05s, color 0.05s;
         }
-        .pin-btn:hover, .pin-btn.selected { background: var(--bright-green); color: #000; }
+        /* Hover effect still allowed, but default selection removed */
+        .pin-btn:hover { background: var(--dark-green); }
+        .pin-btn.active-flash { background: var(--bright-green) !important; color: #000 !important; }
 
         #idle-pet {
             position: absolute; bottom: 10px; right: 10px; font-size: 6pt;
@@ -310,8 +313,15 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 
     const terminal = document.getElementById('terminal-content');
     let inputBuffer = "";
-    const CORRECT_PIN = "2038";
-    const SECRET_PIN = "1984";
+    const CORRECT_PIN_HASH = "b20a51d1d0cd4d4e2f5c6f6b9939e8a4d4db0fb202efc513a8e1cddf9021bf4e";
+    const SECRET_PIN_HASH = "4dea5c7cb70f50322ec9d734aa4aa078be9227c05251e18991c596f387552370";
+    let isSecretAccess = false;
+
+    async function sha256(text) {
+        const data = new TextEncoder().encode(text);
+        const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+        return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2,"0")).join("");
+    }
     let selectedIndex = 0;
     let viewState = "splash";
     let currentFolderName = "";
@@ -373,7 +383,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         return `
             <div class="system-stats">
                 <div>CPU [|||||| 42%] <br> MEM [||| 1.2GB/8GB]</div>
-                <div style="text-align: right">USER: ${inputBuffer === SECRET_PIN ? "ROOT" : "GUEST"}<br>TIME: ${new Date().toLocaleTimeString()}</div>
+                <div style="text-align: right">USER: ${isSecretAccess ? "ROOT" : "GUEST"}<br>TIME: ${new Date().toLocaleTimeString()}</div>
             </div>
         `;
     }
@@ -402,21 +412,21 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         if (e.key === "ArrowDown") {
             selectedIndex = (selectedIndex + 1) % items.length;
             playSound(1200, 'sine', 0.01, 0.05);
+            updateSelection();
         } else if (e.key === "ArrowUp") {
             selectedIndex = (selectedIndex - 1 + items.length) % items.length;
             playSound(1200, 'sine', 0.01, 0.05);
+            updateSelection();
         } else if (e.key === "Enter" && items[selectedIndex]) {
             items[selectedIndex].click();
         } else if (e.key === "Escape") {
             playSound(600, 'sine', 0.1, 0.05);
-            if (viewState === "root") renderSplash(); // Changed from bootSystem() to renderSplash()
+            if (viewState === "root") renderSplash();
             else if (viewState === "dir") renderRoot();
             else if (viewState === "file") openDir(currentFolderName, true);
         } else if (viewState === "file" && e.key === "ArrowRight") navigateGallery(1);
         else if (viewState === "file" && e.key === "ArrowLeft") navigateGallery(-1);
         else if (!isNaN(e.key) && viewState === "pin") pressKey(e.key);
-        
-        updateSelection();
     }
 
     function updateSelection() {
@@ -451,22 +461,39 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     function bootSystem() {
         viewState = "pin"; inputBuffer = "";
         terminal.innerHTML = getHeader() + `
+            <div class="path">A:\AUTHORIZATION</div>
             <div class="card-view">
                 <p class="glitch">AUTHORIZATION REQUIRED</p>
                 <h2 id="pin-display" style="letter-spacing: 12px; border: 1px solid var(--dark-green); padding: 10px;">____</h2>
                 <div class="keypad-grid">
-                    ${[1,2,3,4,5,6,7,8,9].map(n => `<button class="pin-btn" onclick="pressKey('${n}')">${n}</button>`).join('')}
-                    <button class="pin-btn" onclick="inputBuffer=''; document.getElementById('pin-display').innerText='____';">CLR</button>
-                    <button class="pin-btn" onclick="pressKey('0')">0</button>
-                    <button class="pin-btn" onclick="verifyPin()">ENT</button>
+                    <button id="btn-1" class="pin-btn" onclick="pressKey('1')">1</button>
+                    <button id="btn-2" class="pin-btn" onclick="pressKey('2')">2</button>
+                    <button id="btn-3" class="pin-btn" onclick="pressKey('3')">3</button>
+                    <button id="btn-4" class="pin-btn" onclick="pressKey('4')">4</button>
+                    <button id="btn-5" class="pin-btn" onclick="pressKey('5')">5</button>
+                    <button id="btn-6" class="pin-btn" onclick="pressKey('6')">6</button>
+                    <button id="btn-7" class="pin-btn" onclick="pressKey('7')">7</button>
+                    <button id="btn-8" class="pin-btn" onclick="pressKey('8')">8</button>
+                    <button id="btn-9" class="pin-btn" onclick="pressKey('9')">9</button>
+                    <button id="btn-clr" class="pin-btn" onclick="inputBuffer=''; document.getElementById('pin-display').innerText='____'; flashKey('clr');">CLR</button>
+                    <button id="btn-0" class="pin-btn" onclick="pressKey('0')">0</button>
+                    <button id="btn-ent" class="pin-btn" onclick="verifyPin(); flashKey('ent');">ENT</button>
                 </div>
             </div>
         `;
-        selectedIndex = 0; 
-        updateSelection();
+        // selection state cleared to ensure '1' button is not lit[cite: 1]
+    }
+
+    function flashKey(idSuffix) {
+        const btn = document.getElementById(`btn-${idSuffix}`);
+        if (btn) {
+            btn.classList.add('active-flash');
+            setTimeout(() => btn.classList.remove('active-flash'), 100);
+        }
     }
 
     function pressKey(num) {
+        flashKey(num); // momentary lighting effect[cite: 1]
         if (inputBuffer.length < 4) {
             inputBuffer += num;
             document.getElementById('pin-display').innerText = inputBuffer.padEnd(4, "_");
@@ -475,14 +502,18 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         if (inputBuffer.length === 4) setTimeout(verifyPin, 250);
     }
 
-    function verifyPin() {
-        if (inputBuffer === CORRECT_PIN || inputBuffer === SECRET_PIN) {
+    async function verifyPin() {
+        const enteredHash = await sha256(inputBuffer);
+        if (enteredHash === CORRECT_PIN_HASH || enteredHash === SECRET_PIN_HASH) {
+            isSecretAccess = enteredHash === SECRET_PIN_HASH;
             playSound(1800, 'sine', 0.1, 0.1);
             renderRoot();
         } else {
+            isSecretAccess = false;
             playSound(150, 'sawtooth', 0.5, 0.2);
             inputBuffer = "";
-            document.getElementById('pin-display').innerText = "____";
+            const display = document.getElementById('pin-display');
+            if (display) display.innerText = "____";
         }
     }
 
@@ -491,7 +522,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         let html = getHeader() + `<div class="path">A:\ROOT</div><ul>`;
         html += `<li onclick="renderSplash(); playSound(600, 'sine', 0.1, 0.05);">[!] LOGOFF SYSTEM</li>`;
         for (let folder in database) {
-            if (folder === "SECRET_VAULT" && inputBuffer !== SECRET_PIN) continue;
+            if (folder === "SECRET_VAULT" && !isSecretAccess) continue;
             html += `<li onclick="openDir('${folder}')">drwxr-xr-x   [DIR]  ${folder.toUpperCase()}</li>`;
         }
         terminal.innerHTML = html + `</ul>`;
