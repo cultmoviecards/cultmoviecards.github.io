@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMC VAULT 1.09</title>
+    <title>CMC VAULT 1.21</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
@@ -12,6 +12,13 @@
             --dark-green: #003B00;
             --bg-black: #050505;
             --crt-glow: 0 0 10px rgba(0, 255, 65, 0.2);
+            --amber: #ffb000;
+        }
+
+        body.override {
+            --bright-green: var(--amber);
+            --dark-green: #5e4100;
+            --crt-glow: 0 0 10px rgba(255, 176, 0, 0.2);
         }
 
         body {
@@ -27,21 +34,20 @@
             text-transform: uppercase;
         }
 
-        /* CRT Scanline and Flicker Effects */
-        body::after {
+        body::after, #image-modal::after {
             content: " ";
             display: block;
             position: absolute;
             top: 0; left: 0; bottom: 0; right: 0;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
                         linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
-            z-index: 20;
+            z-index: 120;
             background-size: 100% 3px, 3px 100%;
             pointer-events: none;
         }
 
         .scanline {
-            width: 100%; height: 100px; z-index: 21;
+            width: 100%; height: 100px; z-index: 121;
             background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 255, 65, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
             opacity: 0.1; position: absolute; bottom: 100%;
             animation: scanline 8s linear infinite;
@@ -50,123 +56,102 @@
         @keyframes scanline { 0% { top: 0%; } 100% { top: 100%; } }
 
         .monitor-frame {
-            padding: 25px;
-            background: #121212;
-            border: 12px solid #222;
-            border-radius: 40px;
-            box-shadow: inset 0 0 50px #000, 0 20px 50px rgba(0,0,0,0.8);
-            position: relative;
-            z-index: 5;
+            padding: 25px; background: #121212; border: 12px solid #222;
+            border-radius: 40px; box-shadow: inset 0 0 50px #000, 0 20px 50px rgba(0,0,0,0.8);
+            position: relative; z-index: 5;
         }
 
         .crt-screen {
-            width: 850px;
-            height: 550px;
-            background: var(--bg-black);
-            position: relative;
-            overflow: hidden;
-            border: 15px solid #111;
-            border-radius: 10px;
+            width: 850px; height: 550px; background: var(--bg-black);
+            position: relative; overflow: hidden; border: 15px solid #111; border-radius: 10px;
         }
 
-        #terminal-content {
-            padding: 15px;
-            height: 100%;
-            box-sizing: border-box;
-            font-size: 10.5pt; 
-            line-height: 1.3;
-            display: flex;
-            flex-direction: column;
-        }
+        #terminal-content { padding: 15px; height: 100%; display: flex; flex-direction: column; }
 
         .system-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            border-bottom: 1px solid var(--dark-green);
-            padding-bottom: 8px;
-            margin-bottom: 10px;
-            font-size: 8.5pt;
-            opacity: 0.8;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+            border-bottom: 1px solid var(--dark-green); padding-bottom: 8px; font-size: 8.5pt; opacity: 0.8;
         }
 
-        .path { 
-            background: var(--bright-green); 
-            color: var(--bg-black); 
-            padding: 2px 8px; 
-            margin-bottom: 10px; 
-            font-weight: bold;
-        }
+        .path { background: var(--bright-green); color: var(--bg-black); padding: 2px 8px; margin: 10px 0; font-weight: bold; }
         
-        ul { list-style: none; padding: 0; margin: 0; overflow-y: auto; flex-grow: 1; }
-        li { padding: 2px 10px; white-space: pre; cursor: pointer; }
-        li.selected { background: var(--bright-green); color: var(--bg-black); box-shadow: var(--crt-glow); }
+        ul { list-style: none; padding: 0; flex-grow: 1; overflow-y: auto; scroll-behavior: smooth; }
+        li { padding: 4px 10px; cursor: pointer; white-space: pre; border-left: 3px solid transparent; }
+        li.selected { background: var(--bright-green); color: var(--bg-black); border-left: 3px solid var(--amber); }
 
-        .keypad-grid {
-            display: grid; 
-            grid-template-columns: repeat(3, 50px); 
-            gap: 8px; 
-            margin-top: 15px;
-        }
+        .card-view { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; animation: flicker 0.15s infinite; }
+        @keyframes flicker { 0% { opacity: 0.98; } 50% { opacity: 1; } 100% { opacity: 0.99; } }
 
-        .pin-btn {
-            background: transparent;
-            border: 1px solid var(--bright-green);
-            color: var(--bright-green);
-            font-family: 'JetBrains Mono', monospace;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .pin-btn.selected { background: var(--bright-green); color: #000; }
-
-        .card-view {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            animation: flicker 0.15s infinite;
-        }
-
-        @keyframes flicker {
-            0% { opacity: 0.98; } 50% { opacity: 1; } 100% { opacity: 0.99; }
-        }
-
-        .terminal-img {
-            max-height: 280px;
-            max-width: 90%;
+        .terminal-img, #modal-img {
             border: 1px solid var(--bright-green);
             filter: none(1) hue-rotate(90deg) contrast(1.4) brightness(0.9);
-            margin-bottom: 10px;
             box-shadow: var(--crt-glow);
         }
 
-        .metadata-table { width: 100%; border-collapse: collapse; font-size: 9pt; }
+        .terminal-img { max-height: 250px; max-width: 90%; margin-bottom: 10px; cursor: zoom-in; }
+
+        #image-modal {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.98); z-index: 110;
+            justify-content: center; align-items: center; cursor: zoom-out;
+            animation: flicker 0.15s infinite;
+        }
+
+        #modal-img { max-width: 90%; max-height: 90%; }
+
+        .metadata-table { width: 100%; border-collapse: collapse; font-size: 8pt; margin-top: 5px; }
         .metadata-table td { border: 1px solid var(--dark-green); padding: 4px 10px; }
 
         .glitch { animation: glitch-text 0.5s infinite; }
         @keyframes glitch-text {
-            0% { text-shadow: 2px 0 red, -2px 0 blue; }
-            50% { text-shadow: -2px 0 red, 2px 0 blue; }
-            100% { text-shadow: 2px 0 red, -2px 0 blue; }
+            0% { text-shadow: 2px 0 red, -2px 0 blue; transform: translate(1px, 1px); }
+            50% { text-shadow: -2px 0 red, 2px 0 blue; transform: translate(-1px, -1px); }
+            100% { text-shadow: 2px 0 red, -2px 0 blue; transform: translate(1px, -1px); }
         }
 
-        .clickable { cursor: pointer; padding: 2px 5px; }
+        .clickable { cursor: pointer; padding: 2px 8px; border: 1px solid transparent; }
         .clickable:hover, .clickable.selected { background: var(--bright-green); color: var(--bg-black); }
 
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-thumb { background: var(--dark-green); }
+        .keypad-grid { display: grid; grid-template-columns: repeat(3, 60px); gap: 10px; margin-top: 20px; }
+        .pin-btn { 
+            background: transparent; border: 1px solid var(--bright-green); 
+            color: var(--bright-green); font-family: 'JetBrains Mono', monospace; 
+            padding: 10px; cursor: pointer; font-size: 1.2rem;
+        }
+        .pin-btn:hover, .pin-btn.selected { background: var(--bright-green); color: #000; }
+
+        #idle-pet {
+            position: absolute; bottom: 10px; right: 10px; font-size: 6pt;
+            opacity: 0; transition: opacity 2s; pointer-events: none; color: var(--bright-green);
+        }
+        .purring { animation: purr-vibration 0.1s infinite; }
+        @keyframes purr-vibration {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(0.5px, 0.5px); }
+            100% { transform: translate(0, 0); }
+        }
     </style>
 </head>
 <body onkeydown="handleKeyDown(event)">
 
+<div id="image-modal" onclick="closeModal()">
+    <img id="modal-img" src="" alt="Enlarged View">
+</div>
+
+<div id="idle-pet">
+    <pre>
+      |\      _,,,---,,_
+ZZZzz /,`.-'`'    -.  ;-;;,_
+     |,4-  ) )-,_. ,\ (  `'-'
+    '---''(_/--'  `-'\_)
+    </pre>
+</div>
+
 <div class="scanline"></div>
 
 <div class="monitor-frame">
-    <div class="crt-screen">
+    <div class="crt-screen" id="crt-screen">
         <div id="terminal-content">
-            <!-- Boot Screen -->
             <div class="card-view" onclick="bootSystem()">
                 <pre class="glitch" style="font-size: 8pt; line-height: 1;">
  ██████╗███╗   ███╗ ██████╗ 
@@ -176,7 +161,7 @@
 ╚██████╗██║ ╚═╝ ██║╚██████╗ 
  ╚═════╝╚═╝     ╚═╝ ╚═════╝ 
                 </pre>
-                <p>[ INSECURE VAULT ACCESS ]</p>
+                <p>[ ANXIOUS SEQUENCING SYSTEM ]</p>
                 <p style="border: 1px solid var(--bright-green); padding: 8px 20px; cursor: pointer;">PRESS ANY KEY TO START</p>
             </div>
         </div>
@@ -186,6 +171,10 @@
 <script>
     const AudioCtx = window.AudioContext || window.webkitAudioContext;
     let audioCtx;
+    let purrOsc, purrGain;
+    const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+    let konamiIndex = 0;
+    let idleTimer;
 
     function initAudio() { if (!audioCtx) audioCtx = new AudioCtx(); }
 
@@ -197,10 +186,29 @@
         osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
         gain.gain.setValueAtTime(vol, audioCtx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur);
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + dur);
+        osc.connect(gain); gain.connect(audioCtx.destination);
+        osc.start(); osc.stop(audioCtx.currentTime + dur);
+    }
+
+    function startPurr() {
+        initAudio();
+        purrOsc = audioCtx.createOscillator();
+        const lfo = audioCtx.createOscillator();
+        purrGain = audioCtx.createGain();
+        const lfoGain = audioCtx.createGain();
+        purrOsc.type = 'sawtooth'; purrOsc.frequency.setValueAtTime(25, audioCtx.currentTime);
+        lfo.frequency.setValueAtTime(2, audioCtx.currentTime);
+        lfoGain.gain.setValueAtTime(0.005, audioCtx.currentTime);
+        lfo.connect(lfoGain); lfoGain.connect(purrGain.gain);
+        purrGain.gain.setValueAtTime(0.01, audioCtx.currentTime);
+        purrOsc.connect(purrGain); purrGain.connect(audioCtx.destination);
+        purrOsc.start(); lfo.start();
+        document.getElementById('idle-pet').classList.add('purring');
+    }
+
+    function stopPurr() {
+        if (purrOsc) { purrOsc.stop(); purrOsc.disconnect(); }
+        document.getElementById('idle-pet').classList.remove('purring');
     }
 
     const database = {
@@ -237,9 +245,8 @@
             { id: "01ad", title: "#S6", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigfl4cjvedwysfiamdfetevak65ufdobowbdrfderqrrnu3r7zmvi", size: "149kb", date: "30/01/25", caption: "Alex Cox, Director 'Repo Man'" },
             { id: "01ae", title: "#T1", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibtniucrpfcjg66dj6s6k2nu3p5u3wynjupwbjprctua6cqeyd52i", size: "149kb", date: "31/12/24", caption: "Title Card, Repo Man" }
         ],
-		
         "The_Ninth_Configuration": [
-			{ id: "02", title: "#1", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigv6m6zqra5cvjl7zr2uulypmpo5jq75eyvepxpycjsex7tsnu4nq", size: "149kb", date: "01/02/25", caption: "There's nothing up there!" },
+            { id: "02", title: "#1", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigv6m6zqra5cvjl7zr2uulypmpo5jq75eyvepxpycjsex7tsnu4nq", size: "149kb", date: "01/02/25", caption: "There's nothing up there!" },
             { id: "02b", title: "#2", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifeul5qlgykhgmhzbjy3mz7zuw3qhjtovraet25qklddqtknko5ke", size: "149kb", date: "02/02/25", caption: "Hail Caesar!" },
             { id: "02c", title: "#3", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifh5yo3n7hqdjtpnpvj3vxvxs2viimgminwqpxpwg5bim7fto2im4", size: "149kb", date: "03/02/25", caption: "The greatest fucking psychiatrist since Jung!" },
             { id: "02d", title: "#4", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihvhnw6xeim4gfuifv7rves7cq4np6jhxdvb3q3rk3lpl5wlgztpy", size: "149kb", date: "04/02/25", caption: "The biker gang take another victim for a ride." },
@@ -270,92 +277,115 @@
             { id: "02ac", title: "#S5", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifv4gdoy7ltj57w4iilnlua4yw7y2quw6y54jyqthj536ebfxeszy", size: "149kb", date: "27/02/25", caption: "Original Theatrical Poster, 1980" },
             { id: "02ad", title: "#S6", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiczn6bnx2ecyjdkc3ms6h5eqiopplda6zmvlqqrvasun7lwlhxhd4", size: "149kb", date: "28/02/25", caption: "William Peter Blatty, Director 'The Ninth Configuration'" },
             { id: "02ae", title: "#T1", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifi2niemgca5k2xdve4wqiekkxarapxjsdsuksyozihgjgkybcmsa", size: "149kb", date: "01/02/25", caption: "Title Card, 'The Ninth Configuration'" }
+        ],
+        "SECRET_VAULT": [
+            { id: "??", title: "#1", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreidblitjuf2rer7y3vz6g7cqylvnjongbwcipoelk6j736an5ymomi", size: "149kb", caption: "Zzoom // Imagine Software // 1983", date: "20/01/25" },
+			{ id: "??", title: "#2", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreiabfqqaoo6pej7y5vxezpkqtb2syllpx3jxxnfyjiu477ounx7dly", size: "149kb", caption: "Maziacs // DK'Tronics Ltd // 1983", date: "20/01/25" }
         ]
     };
 
     const terminal = document.getElementById('terminal-content');
     let inputBuffer = "";
     const CORRECT_PIN = "2038";
+    const SECRET_PIN = "1984";
     let selectedIndex = 0;
     let viewState = "boot";
     let currentFolderName = "";
     let currentFileIndex = 0;
+    let lastFileSelectionIndex = 1;
+
+    function resetIdle() {
+        const pet = document.getElementById('idle-pet');
+        pet.style.opacity = "0"; stopPurr();
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(() => { pet.style.opacity = "0.6"; startPurr(); }, 20000);
+    }
 
     function getHeader() {
-        const now = new Date();
-        const timeStr = now.getHours().toString().padStart(2, '0') + ":" + now.getMinutes().toString().padStart(2, '0') + ":" + now.getSeconds().toString().padStart(2, '0');
         return `
             <div class="system-stats">
-                <div>
-                    CPU [<span style="color:white">||||||</span> 42%] <br>
-                    MEM [<span style="color:white">|||</span> 1.2GB/8GB]
-                </div>
-                <div style="text-align: right">
-                    USER: AUTH_GUEST<br>
-                    TIME: ${timeStr}
-                </div>
+                <div>CPU [|||||| 42%] <br> MEM [||| 1.2GB/8GB]</div>
+                <div style="text-align: right">USER: ${inputBuffer === SECRET_PIN ? "ROOT" : "GUEST"}<br>TIME: ${new Date().toLocaleTimeString()}</div>
             </div>
         `;
+    }
+
+    function handleKeyDown(e) {
+        resetIdle();
+
+        if (e.key === konamiCode[konamiIndex]) {
+            konamiIndex++;
+            if (konamiIndex === konamiCode.length) {
+                document.body.classList.toggle('override');
+                playSound(2000, 'sine', 0.2, 0.1);
+                konamiIndex = 0;
+            }
+        } else {
+            konamiIndex = 0;
+        }
+
+        if (document.getElementById('image-modal').style.display === 'flex') {
+            if (e.key === "Escape" || e.key === "Enter") closeModal();
+            return;
+        }
+
+        if (viewState === "boot") { playSound(800, 'sine', 0.05, 0.1); bootSystem(); return; }
+
+        const items = terminal.querySelectorAll('li, .pin-btn, .clickable');
+        
+        if (viewState === "file") {
+            if (e.key === "ArrowRight") navigateGallery(1);
+            else if (e.key === "ArrowLeft") navigateGallery(-1);
+            else if (e.key === "Escape") {
+                playSound(600, 'sine', 0.1, 0.05);
+                openDir(currentFolderName, true);
+            }
+            return;
+        }
+
+        if (e.key === "ArrowDown") {
+            selectedIndex = (selectedIndex + 1) % items.length;
+            playSound(1200, 'sine', 0.01, 0.05);
+        } else if (e.key === "ArrowUp") {
+            selectedIndex = (selectedIndex - 1 + items.length) % items.length;
+            playSound(1200, 'sine', 0.01, 0.05);
+        } else if (e.key === "Enter" && items[selectedIndex]) {
+            items[selectedIndex].click();
+        } else if (e.key === "Escape") {
+            playSound(600, 'sine', 0.1, 0.05);
+            viewState === "dir" ? renderRoot() : openDir(currentFolderName);
+        } else if (!isNaN(e.key) && viewState === "pin") pressKey(e.key);
+        
+        updateSelection();
     }
 
     function updateSelection() {
         const items = terminal.querySelectorAll('li, .pin-btn, .clickable');
         items.forEach((item, idx) => {
-            item.classList.toggle('selected', idx === selectedIndex);
-            if (idx === selectedIndex) item.scrollIntoView({ block: "nearest" });
+            const isSelected = idx === selectedIndex;
+            item.classList.toggle('selected', isSelected);
+            if (isSelected && viewState === "dir") {
+                item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+            }
         });
-        playSound(800, 'square', 0.02, 0.05);
-    }
-
-    function handleKeyDown(e) {
-        if (viewState === "boot") { bootSystem(); return; }
-
-        const items = terminal.querySelectorAll('li, .pin-btn, .clickable');
-        
-        if (e.key === "ArrowDown") {
-            selectedIndex = (selectedIndex + 1) % items.length;
-            updateSelection();
-        } else if (e.key === "ArrowUp") {
-            selectedIndex = (selectedIndex - 1 + items.length) % items.length;
-            updateSelection();
-        } else if (e.key === "ArrowRight" && viewState === "file") {
-            const nextIdx = (currentFileIndex + 1) % database[currentFolderName].length;
-            viewCard(currentFolderName, nextIdx);
-        } else if (e.key === "ArrowLeft" && viewState === "file") {
-            const prevIdx = (currentFileIndex - 1 + database[currentFolderName].length) % database[currentFolderName].length;
-            viewCard(currentFolderName, prevIdx);
-        } else if (e.key === "Enter") {
-            if (items[selectedIndex]) items[selectedIndex].click();
-        } else if (e.key === "Escape") {
-            if (viewState === "dir") renderRoot();
-            else if (viewState === "file") openDir(currentFolderName);
-        } else if (!isNaN(e.key) && viewState === "pin") {
-            pressKey(e.key);
-        }
     }
 
     function bootSystem() {
-        showLoginPrompt();
-    }
-
-    function showLoginPrompt() {
-        viewState = "pin";
-        inputBuffer = "";
-        playSound(440, 'sine', 0.1, 0.1);
+        viewState = "pin"; inputBuffer = "";
         terminal.innerHTML = getHeader() + `
             <div class="card-view">
                 <p class="glitch">AUTHORIZATION REQUIRED</p>
-                <h2 id="pin-display" style="letter-spacing: 12px; color: #fff; border: 1px solid var(--dark-green); padding: 10px;">____</h2>
-                <p id="auth-status" style="height: 1.2em; color: red;"></p>
+                <h2 id="pin-display" style="letter-spacing: 12px; border: 1px solid var(--dark-green); padding: 10px;">____</h2>
                 <div class="keypad-grid">
                     ${[1,2,3,4,5,6,7,8,9].map(n => `<button class="pin-btn" onclick="pressKey('${n}')">${n}</button>`).join('')}
-                    <button class="pin-btn" onclick="resetPin()">CLR</button>
+                    <button class="pin-btn" onclick="inputBuffer=''; document.getElementById('pin-display').innerText='____';">CLR</button>
                     <button class="pin-btn" onclick="pressKey('0')">0</button>
                     <button class="pin-btn" onclick="verifyPin()">ENT</button>
                 </div>
             </div>
         `;
-        selectedIndex = -1;
+        selectedIndex = 0; 
+        updateSelection();
     }
 
     function pressKey(num) {
@@ -367,87 +397,105 @@
         if (inputBuffer.length === 4) setTimeout(verifyPin, 250);
     }
 
-    function resetPin() {
-        inputBuffer = "";
-        document.getElementById('pin-display').innerText = "____";
-        playSound(200, 'sawtooth', 0.1, 0.1);
-    }
-
     function verifyPin() {
-        const status = document.getElementById('auth-status');
-        if (inputBuffer === CORRECT_PIN) {
-            playSound(1000, 'sine', 0.4, 0.1);
-            status.style.color = "var(--bright-green)";
-            status.innerText = "ACCESS GRANTED - DECRYPTING...";
-            setTimeout(renderRoot, 800);
+        if (inputBuffer === CORRECT_PIN || inputBuffer === SECRET_PIN) {
+            playSound(1800, 'sine', 0.1, 0.1);
+            renderRoot();
         } else {
             playSound(150, 'sawtooth', 0.5, 0.2);
-            status.innerText = "INVALID ACCESS CODE";
             inputBuffer = "";
             document.getElementById('pin-display').innerText = "____";
         }
     }
 
     function renderRoot() {
-        viewState = "root";
-        selectedIndex = 0;
+        viewState = "root"; selectedIndex = 0;
         let html = getHeader() + `<div class="path">A:\ROOT</div><ul>`;
         for (let folder in database) {
+            if (folder === "SECRET_VAULT" && inputBuffer !== SECRET_PIN) continue;
             html += `<li onclick="openDir('${folder}')">drwxr-xr-x   [DIR]  ${folder.toUpperCase()}</li>`;
         }
-        html += `</ul><p style="font-size:8pt; opacity:0.5; padding:10px;">TOTAL FOLDERS: ${Object.keys(database).length}</p>`;
-        terminal.innerHTML = html;
+        terminal.innerHTML = html + `</ul>`;
         updateSelection();
     }
 
-    function openDir(name) {
-        viewState = "dir";
-        selectedIndex = 1;
-        currentFolderName = name;
+    function openDir(name, useMemory = false) {
+        viewState = "dir"; currentFolderName = name; 
+        selectedIndex = useMemory ? lastFileSelectionIndex : 1; 
         let html = getHeader() + `<div class="path">A:\\${name.toUpperCase()}</div><ul>`;
-        html += `<li onclick="renderRoot()">[..] GO BACK</li>`;
+        html += `<li onclick="renderRoot(); playSound(600, 'sine', 0.1, 0.05);">[..] GO BACK</li>`;
         database[name].forEach((card, i) => {
-            html += `<li onclick="viewCard('${name}', ${i})">-rw-r--r--   ${card.size}   ${card.title}.IMG</li>`;
+            html += `<li onclick="viewCard('${name}', ${i}); playSound(1500, 'sine', 0.05, 0.05);">-rw-r--r--   ${card.size}   ${card.title}.IMG</li>`;
         });
         terminal.innerHTML = html + `</ul>`;
         updateSelection();
     }
 
-    function viewCard(dir, idx) {
-        viewState = "file";
-        currentFileIndex = idx;
-        const folder = database[dir];
-        const card = folder[idx];
-        
-        const nextIdx = (idx + 1) % folder.length;
-        const prevIdx = (idx - 1 + folder.length) % folder.length;
-
-        terminal.innerHTML = getHeader() + `<div class="path">LOADING: ${card.title}</div><div class="card-view"><p class="glitch">READING SECTOR ${Math.floor(Math.random()*500)}...</p></div>`;
-        
-        setTimeout(() => {
-            terminal.innerHTML = getHeader() + `
-                <div class="path">A:\\${dir.toUpperCase()}\\${card.title}.IMG</div>
-                <div class="card-view">
-                    <img src="${card.file}" class="terminal-img" onerror="this.src='https://via.placeholder.com/400x300/050505/00FF41?text=SIGNAL_LOST'">
-                    
-                    <div style="display: flex; gap: 30px; margin-bottom: 10px;">
-                        <span class="clickable" onclick="viewCard('${dir}', ${prevIdx})">[ PREVIOUS ]</span>
-                        <span style="color: var(--dark-green)">|</span>
-                        <span class="clickable" onclick="viewCard('${dir}', ${nextIdx})">[ NEXT ]</span>
-                    </div>
-
-                    <table class="metadata-table">
-                        <tr><td>REF_ID</td><td>${card.id}</td><td>INDEX</td><td>${idx + 1} / ${folder.length}</td></tr>
-                        <tr><td>DATA</td><td colspan="3">${card.caption}</td></tr>
-                    </table>
-                    
-                    <p class="clickable selected" style="margin-top:15px; border:1px solid; padding:5px 20px;" onclick="openDir('${dir}')">[ ESC: RETURN TO LIST ]</p>
-                </div>
-            `;
-            // Focus the "Return" button by default
-            selectedIndex = 2; // Index of the Return button in the .clickable list
-        }, 300);
+    function navigateGallery(direction) {
+        const files = database[currentFolderName];
+        playSound(1000, 'sine', 0.02, 0.05);
+        currentFileIndex = (currentFileIndex + direction + files.length) % files.length;
+        viewCard(currentFolderName, currentFileIndex);
     }
+
+    function viewCard(dir, idx) {
+    viewState = "file"; 
+    currentFileIndex = idx;
+    lastFileSelectionIndex = idx + 1; 
+    const card = database[dir][idx];
+    const total = database[dir].length;
+
+    // We set the innerHTML first with a placeholder to prevent the layout "jump"
+    terminal.innerHTML = getHeader() + `
+        <div class="path">A:\\${dir.toUpperCase()}\\${card.title}.IMG</div>
+        <div class="card-view">
+            <div id="image-container" style="height: 250px; width: 90%; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                <p class="glitch" style="font-size: 1.2rem;">>>> RETRIEVING DATA...</p>
+            </div>
+            <table class="metadata-table">
+                <tr><td>REF_ID</td><td>${card.id}</td><td>INDEX</td><td>${idx + 1} / ${total}</td></tr>
+                <tr><td>DATE ADDED</td><td>${card.date}</td><td>SIZE</td><td>${card.size}</td></tr>
+                <tr><td colspan="2">CAPTION</td><td colspan="2">${card.caption}</td></tr>
+            </table>
+            <div style="margin-top: 15px; display: flex; gap: 15px;">
+                <span class="clickable" onclick="navigateGallery(-1)">[ ← PREV ]</span>
+                <span class="clickable" onclick="playSound(600, 'sine', 0.1, 0.05); openDir('${dir}', true)">[ ESC: EXIT ]</span>
+                <span class="clickable" onclick="navigateGallery(1)">[ NEXT → ]</span>
+            </div>
+        </div>
+    `;
+
+    // Now we load the image in the background
+    const img = new Image();
+    img.src = card.file;
+    img.className = "terminal-img";
+    img.onclick = () => openModal(card.file);
+    
+    // Once the image is ready, swap the "RETRIEVING" text for the actual image
+    img.onload = () => {
+        const container = document.getElementById('image-container');
+        if (container) {
+            container.innerHTML = '';
+            container.appendChild(img);
+        }
+    };
+}
+
+    function openModal(src) {
+        document.getElementById('modal-img').src = src;
+        document.getElementById('image-modal').style.display = 'flex';
+        playSound(1500, 'sine', 0.1, 0.05);
+    }
+
+    function closeModal() { 
+        document.getElementById('image-modal').style.display = 'none'; 
+        playSound(600, 'sine', 0.1, 0.05); 
+    }
+	
+    document.addEventListener('mousedown', () => {
+        stopPurr();
+        resetIdle();
+    });
 </script>
 
 </body>
