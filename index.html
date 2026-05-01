@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMC VAULT 1.21</title>
+    <title>CMC VAULT 1.22</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
@@ -88,7 +88,7 @@
             box-shadow: var(--crt-glow);
         }
 
-        .terminal-img { max-height: 250px; max-width: 90%; margin-bottom: 10px; cursor: zoom-in; }
+        .terminal-img { max-height: 250px; max-width: 90%; cursor: zoom-in; }
 
         #image-modal {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -152,18 +152,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 <div class="monitor-frame">
     <div class="crt-screen" id="crt-screen">
         <div id="terminal-content">
-            <div class="card-view" onclick="bootSystem()">
-                <pre class="glitch" style="font-size: 8pt; line-height: 1;">
- ██████╗███╗   ███╗ ██████╗ 
-██╔════╝████╗ ████║██╔════╝ 
-██║     ██╔████╔██║██║      
-██║     ██║╚██╔╝██║██║      
-╚██████╗██║ ╚═╝ ██║╚██████╗ 
- ╚═════╝╚═╝     ╚═╝ ╚═════╝ 
-                </pre>
-                <p>[ ANXIOUS SEQUENCING SYSTEM ]</p>
-                <p style="border: 1px solid var(--bright-green); padding: 8px 20px; cursor: pointer;">PRESS ANY KEY TO START</p>
-            </div>
+            <!-- Initial Splash Logic will be injected here via renderSplash -->
         </div>
     </div>
 </div>
@@ -174,42 +163,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     let purrOsc, purrGain;
     const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
     let konamiIndex = 0;
-    let idleTimer;
-
-    function initAudio() { if (!audioCtx) audioCtx = new AudioCtx(); }
-
-    function playSound(freq, type, dur, vol) {
-        initAudio();
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.type = type;
-        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-        gain.gain.setValueAtTime(vol, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur);
-        osc.connect(gain); gain.connect(audioCtx.destination);
-        osc.start(); osc.stop(audioCtx.currentTime + dur);
-    }
-
-    function startPurr() {
-        initAudio();
-        purrOsc = audioCtx.createOscillator();
-        const lfo = audioCtx.createOscillator();
-        purrGain = audioCtx.createGain();
-        const lfoGain = audioCtx.createGain();
-        purrOsc.type = 'sawtooth'; purrOsc.frequency.setValueAtTime(25, audioCtx.currentTime);
-        lfo.frequency.setValueAtTime(2, audioCtx.currentTime);
-        lfoGain.gain.setValueAtTime(0.005, audioCtx.currentTime);
-        lfo.connect(lfoGain); lfoGain.connect(purrGain.gain);
-        purrGain.gain.setValueAtTime(0.01, audioCtx.currentTime);
-        purrOsc.connect(purrGain); purrGain.connect(audioCtx.destination);
-        purrOsc.start(); lfo.start();
-        document.getElementById('idle-pet').classList.add('purring');
-    }
-
-    function stopPurr() {
-        if (purrOsc) { purrOsc.stop(); purrOsc.disconnect(); }
-        document.getElementById('idle-pet').classList.remove('purring');
-    }
+    let idleTimer, sessionTimeout;
 
     const database = {
         "Repo_Man_1984": [
@@ -346,11 +300,11 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
             { id: "04ab", title: "#S4", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieyazlelyokgkzk6jisk2cfxgxysijnpl55vcfusgwhrtzpubyi6e", size: "149kb", date: "28/04/25", caption: "Keith David as 'Frank'" },
             { id: "04ac", title: "#S5", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiev2rmzkipqpndgvjkik2eivpwg5q5257s7poodvai5ymc3bqqfvm", size: "149kb", date: "29/04/25", caption: "Original Theatrical Poster, 1988" },
             { id: "04ad", title: "#S6", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigmrujvg66ljzaoahczeo6nyjr2ewzckhrubccp4lcmyqoq4daqca", size: "149kb", date: "30/04/25", caption: "John Carpenter, Director 'They Live'" }
-            
-        ],
+        
+		],
         "SECRET_VAULT": [
-            { id: "??", title: "#1", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreidblitjuf2rer7y3vz6g7cqylvnjongbwcipoelk6j736an5ymomi", size: "149kb", caption: "Zzoom // Imagine Software // 1983", date: "20/01/25" },
-			{ id: "??", title: "#2", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreiabfqqaoo6pej7y5vxezpkqtb2syllpx3jxxnfyjiu477ounx7dly", size: "149kb", caption: "Maziacs // DK'Tronics Ltd // 1983", date: "20/01/25" }
+            { id: "zx1", title: "#1", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreidblitjuf2rer7y3vz6g7cqylvnjongbwcipoelk6j736an5ymomi", size: "149kb", caption: "Zzoom // Imagine Software // 1983", date: "20/01/25" },
+			{ id: "zx2", title: "#2", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreiabfqqaoo6pej7y5vxezpkqtb2syllpx3jxxnfyjiu477ounx7dly", size: "149kb", caption: "Maziacs // DK'Tronics Ltd // 1983", date: "20/01/25" }
         ]
     };
 
@@ -359,16 +313,60 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     const CORRECT_PIN = "2038";
     const SECRET_PIN = "1984";
     let selectedIndex = 0;
-    let viewState = "boot";
+    let viewState = "splash";
     let currentFolderName = "";
     let currentFileIndex = 0;
     let lastFileSelectionIndex = 1;
+
+    function initAudio() { if (!audioCtx) audioCtx = new AudioCtx(); }
+
+    function playSound(freq, type, dur, vol) {
+        initAudio();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(vol, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur);
+        osc.connect(gain); gain.connect(audioCtx.destination);
+        osc.start(); osc.stop(audioCtx.currentTime + dur);
+    }
+
+    function startPurr() {
+        initAudio();
+        purrOsc = audioCtx.createOscillator();
+        const lfo = audioCtx.createOscillator();
+        purrGain = audioCtx.createGain();
+        const lfoGain = audioCtx.createGain();
+        purrOsc.type = 'sawtooth'; purrOsc.frequency.setValueAtTime(25, audioCtx.currentTime);
+        lfo.frequency.setValueAtTime(2, audioCtx.currentTime);
+        lfoGain.gain.setValueAtTime(0.005, audioCtx.currentTime);
+        lfo.connect(lfoGain); lfoGain.connect(purrGain.gain);
+        purrGain.gain.setValueAtTime(0.01, audioCtx.currentTime);
+        purrOsc.connect(purrGain); purrGain.connect(audioCtx.destination);
+        purrOsc.start(); lfo.start();
+        document.getElementById('idle-pet').classList.add('purring');
+    }
+
+    function stopPurr() {
+        if (purrOsc) { try { purrOsc.stop(); purrOsc.disconnect(); } catch(e){} }
+        document.getElementById('idle-pet').classList.remove('purring');
+    }
 
     function resetIdle() {
         const pet = document.getElementById('idle-pet');
         pet.style.opacity = "0"; stopPurr();
         clearTimeout(idleTimer);
         idleTimer = setTimeout(() => { pet.style.opacity = "0.6"; startPurr(); }, 20000);
+
+        // Security Auto-Lock (3 Minutes) - Returns to Splash Screen
+        clearTimeout(sessionTimeout);
+        if (viewState !== "splash") {
+            sessionTimeout = setTimeout(() => {
+                playSound(150, 'sawtooth', 0.5, 0.2);
+                renderSplash();
+            }, 180000); 
+        }
     }
 
     function getHeader() {
@@ -390,29 +388,17 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
                 playSound(2000, 'sine', 0.2, 0.1);
                 konamiIndex = 0;
             }
-        } else {
-            konamiIndex = 0;
-        }
+        } else { konamiIndex = 0; }
 
         if (document.getElementById('image-modal').style.display === 'flex') {
             if (e.key === "Escape" || e.key === "Enter") closeModal();
             return;
         }
 
-        if (viewState === "boot") { playSound(800, 'sine', 0.05, 0.1); bootSystem(); return; }
+        if (viewState === "splash") { playSound(800, 'sine', 0.05, 0.1); bootSystem(); return; }
 
         const items = terminal.querySelectorAll('li, .pin-btn, .clickable');
         
-        if (viewState === "file") {
-            if (e.key === "ArrowRight") navigateGallery(1);
-            else if (e.key === "ArrowLeft") navigateGallery(-1);
-            else if (e.key === "Escape") {
-                playSound(600, 'sine', 0.1, 0.05);
-                openDir(currentFolderName, true);
-            }
-            return;
-        }
-
         if (e.key === "ArrowDown") {
             selectedIndex = (selectedIndex + 1) % items.length;
             playSound(1200, 'sine', 0.01, 0.05);
@@ -423,8 +409,12 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
             items[selectedIndex].click();
         } else if (e.key === "Escape") {
             playSound(600, 'sine', 0.1, 0.05);
-            viewState === "dir" ? renderRoot() : openDir(currentFolderName);
-        } else if (!isNaN(e.key) && viewState === "pin") pressKey(e.key);
+            if (viewState === "root") renderSplash(); // Changed from bootSystem() to renderSplash()
+            else if (viewState === "dir") renderRoot();
+            else if (viewState === "file") openDir(currentFolderName, true);
+        } else if (viewState === "file" && e.key === "ArrowRight") navigateGallery(1);
+        else if (viewState === "file" && e.key === "ArrowLeft") navigateGallery(-1);
+        else if (!isNaN(e.key) && viewState === "pin") pressKey(e.key);
         
         updateSelection();
     }
@@ -434,10 +424,28 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         items.forEach((item, idx) => {
             const isSelected = idx === selectedIndex;
             item.classList.toggle('selected', isSelected);
-            if (isSelected && viewState === "dir") {
+            if (isSelected && (viewState === "dir" || viewState === "root")) {
                 item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
             }
         });
+    }
+
+    function renderSplash() {
+        viewState = "splash";
+        terminal.innerHTML = `
+            <div class="card-view" onclick="bootSystem()">
+                <pre class="glitch" style="font-size: 8pt; line-height: 1;">
+ ██████╗███╗   ███╗ ██████╗ 
+██╔════╝████╗ ████║██╔════╝ 
+██║     ██╔████╔██║██║      
+██║     ██║╚██╔╝██║██║      
+╚██████╗██║ ╚═╝ ██║╚██████╗ 
+ ╚═════╝╚═╝     ╚═╝ ╚═════╝ 
+                </pre>
+                <p>[ SECURE VAULT ACCESS ]</p>
+                <p style="border: 1px solid var(--bright-green); padding: 8px 20px; cursor: pointer;">PRESS ANY KEY TO START</p>
+            </div>
+        `;
     }
 
     function bootSystem() {
@@ -481,6 +489,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     function renderRoot() {
         viewState = "root"; selectedIndex = 0;
         let html = getHeader() + `<div class="path">A:\ROOT</div><ul>`;
+        html += `<li onclick="renderSplash(); playSound(600, 'sine', 0.1, 0.05);">[!] LOGOFF SYSTEM</li>`;
         for (let folder in database) {
             if (folder === "SECRET_VAULT" && inputBuffer !== SECRET_PIN) continue;
             html += `<li onclick="openDir('${folder}')">drwxr-xr-x   [DIR]  ${folder.toUpperCase()}</li>`;
@@ -503,53 +512,45 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 
     function navigateGallery(direction) {
         const files = database[currentFolderName];
-        playSound(1000, 'sine', 0.02, 0.05);
         currentFileIndex = (currentFileIndex + direction + files.length) % files.length;
         viewCard(currentFolderName, currentFileIndex);
     }
 
     function viewCard(dir, idx) {
-    viewState = "file"; 
-    currentFileIndex = idx;
-    lastFileSelectionIndex = idx + 1; 
-    const card = database[dir][idx];
-    const total = database[dir].length;
+        viewState = "file"; 
+        currentFileIndex = idx;
+        lastFileSelectionIndex = idx + 1; 
+        const card = database[dir][idx];
+        const total = database[dir].length;
 
-    // We set the innerHTML first with a placeholder to prevent the layout "jump"
-    terminal.innerHTML = getHeader() + `
-        <div class="path">A:\\${dir.toUpperCase()}\\${card.title}.IMG</div>
-        <div class="card-view">
-            <div id="image-container" style="height: 250px; width: 90%; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
-                <p class="glitch" style="font-size: 1.2rem;">>>> RETRIEVING DATA...</p>
+        terminal.innerHTML = getHeader() + `
+            <div class="path">A:\\${dir.toUpperCase()}\\${card.title}.IMG</div>
+            <div class="card-view">
+                <div id="image-container" style="height: 250px; width: 90%; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                    <p class="glitch" style="font-size: 1.2rem;">>>> RETRIEVING DATA...</p>
+                </div>
+                <table class="metadata-table">
+                    <tr><td>REF_ID</td><td>${card.id}</td><td>INDEX</td><td>${idx + 1} / ${total}</td></tr>
+                    <tr><td>DATE ADDED</td><td>${card.date}</td><td>SIZE</td><td>${card.size}</td></tr>
+                    <tr><td colspan="2">CAPTION</td><td colspan="2">${card.caption}</td></tr>
+                </table>
+                <div style="margin-top: 15px; display: flex; gap: 15px;">
+                    <span class="clickable" onclick="navigateGallery(-1)">[ ← PREV ]</span>
+                    <span class="clickable" onclick="playSound(600, 'sine', 0.1, 0.05); openDir('${dir}', true)">[ ESC: EXIT ]</span>
+                    <span class="clickable" onclick="navigateGallery(1)">[ NEXT → ]</span>
+                </div>
             </div>
-            <table class="metadata-table">
-                <tr><td>REF_ID</td><td>${card.id}</td><td>INDEX</td><td>${idx + 1} / ${total}</td></tr>
-                <tr><td>DATE ADDED</td><td>${card.date}</td><td>SIZE</td><td>${card.size}</td></tr>
-                <tr><td colspan="2">CAPTION</td><td colspan="2">${card.caption}</td></tr>
-            </table>
-            <div style="margin-top: 15px; display: flex; gap: 15px;">
-                <span class="clickable" onclick="navigateGallery(-1)">[ ← PREV ]</span>
-                <span class="clickable" onclick="playSound(600, 'sine', 0.1, 0.05); openDir('${dir}', true)">[ ESC: EXIT ]</span>
-                <span class="clickable" onclick="navigateGallery(1)">[ NEXT → ]</span>
-            </div>
-        </div>
-    `;
+        `;
 
-    // Now we load the image in the background
-    const img = new Image();
-    img.src = card.file;
-    img.className = "terminal-img";
-    img.onclick = () => openModal(card.file);
-    
-    // Once the image is ready, swap the "RETRIEVING" text for the actual image
-    img.onload = () => {
-        const container = document.getElementById('image-container');
-        if (container) {
-            container.innerHTML = '';
-            container.appendChild(img);
-        }
-    };
-}
+        const img = new Image();
+        img.src = card.file;
+        img.className = "terminal-img";
+        img.onclick = () => openModal(card.file);
+        img.onload = () => {
+            const container = document.getElementById('image-container');
+            if (container) { container.innerHTML = ''; container.appendChild(img); }
+        };
+    }
 
     function openModal(src) {
         document.getElementById('modal-img').src = src;
@@ -562,10 +563,10 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         playSound(600, 'sine', 0.1, 0.05); 
     }
 	
-    document.addEventListener('mousedown', () => {
-        stopPurr();
-        resetIdle();
-    });
+    document.addEventListener('mousedown', resetIdle);
+    
+    // Initialize
+    renderSplash();
 </script>
 
 </body>
