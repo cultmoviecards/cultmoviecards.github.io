@@ -1062,24 +1062,11 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
                     <tr><td>DATE ADDED</td><td>${card.date}</td><td>SIZE</td><td>${card.size}</td></tr>
                     <tr><td colspan="2">CAPTION</td><td colspan="2">${card.caption}</td></tr>
                 </table>
-                <div style="margin-top: 15px; display: flex; flex-direction: column; align-items: center; gap: 10px;">
-
-    <div style="display: flex; gap: 15px;">
-        <span class="clickable" onclick="navigateGallery(-1)">[ ← PREV ]</span>
-
-        <span class="clickable"
-            onclick="playSound(600, 'sine', 0.1, 0.05); openDir('${dir}', true, '${sub}')">
-            [ ESC: EXIT ]
-        </span>
-
-        <span class="clickable" onclick="navigateGallery(1)">[ NEXT → ]</span>
-    </div>
-
-    <span class="clickable" onclick="downloadImage()">
-        [ DOWNLOAD ]
-    </span>
-
-</div>
+                <div style="margin-top: 15px; display: flex; gap: 15px;">
+                    <span class="clickable" onclick="navigateGallery(-1)">[ ← PREV ]</span>
+                    <span class="clickable" onclick="playSound(600, 'sine', 0.1, 0.05); openDir('${dir}', true, '${sub}')">[ ESC: EXIT ]</span>
+                    <span class="clickable" onclick="navigateGallery(1)">[ NEXT → ]</span>
+                </div>
             </div>
         `;
 
@@ -1103,65 +1090,6 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         document.getElementById('image-modal').style.display = 'none'; 
         playSound(600, 'sine', 0.1, 0.05); 
     }
-	
-	async function downloadImage() {
-
-    const files = currentSubFolder
-        ? database[currentFolderName][currentSubFolder]
-        : database[currentFolderName];
-
-    const currentCard = files[currentFileIndex];
-
-    if (!currentCard || !currentCard.file) {
-        alert('No image found.');
-        return;
-    }
-
-    try {
-
-        // Fetch REAL image file
-        const response = await fetch(currentCard.file);
-
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
-        }
-
-        // Convert to blob
-        const blob = await response.blob();
-
-        // Create local blob URL
-        const blobUrl = window.URL.createObjectURL(blob);
-
-        // Create hidden download link
-        const link = document.createElement('a');
-
-        link.href = blobUrl;
-
-        // Get original extension
-        const extension =
-            currentCard.file.split('.').pop().split('?')[0] || 'jpg';
-
-        link.download = `${currentCard.title}.${extension}`;
-
-        document.body.appendChild(link);
-
-        link.click();
-
-        document.body.removeChild(link);
-
-        // Cleanup
-        window.URL.revokeObjectURL(blobUrl);
-
-        playSound(1800, 'triangle', 0.05, 0.05);
-
-    } catch (err) {
-
-        console.error('Download failed:', err);
-
-        alert('Failed to download image.');
-
-    }
-}
 	
     document.addEventListener('mousedown', resetIdle);
     renderSplash();
