@@ -4,7 +4,7 @@
     <link rel="icon" type="image/ico" href="/favicon.ico"/>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMC VAULT 1.51</title>
+    <title>CMC VAULT 1.62</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
@@ -104,7 +104,7 @@
 
         .terminal-img, #modal-img {
             border: 1px solid var(--bright-green);
-            filter: contrast(1.15) brightness(1.25);
+            filter: contrast(1) brightness(1);
             box-shadow: var(--crt-glow);
         }
 
@@ -480,6 +480,11 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     let currentFileIndex = 0;
     let folderSelections = {};
     let navigationMode = "mouse";
+    let splashTypeBuffer = "";
+    let escapeInputBuffer = "";
+    let escapeTerminalLines = [];
+    let escapeShellBootTime = Date.now();
+    let escapeScanlinesSoft = false;
 
     function initAudio() { if (!audioCtx) audioCtx = new AudioCtx(); }
 
@@ -587,7 +592,8 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
             return;
         }
 
-        if (viewState === "splash") { playSound(800, 'sine', 0.05, 0.1); bootSystem(); return; }
+        if (viewState === "splash") { handleSplashKeyDown(e); return; }
+        if (viewState === "escape-terminal") { handleEscapeTerminalKeyDown(e); return; }
 
         const items = terminal.querySelectorAll('li, .pin-btn, .clickable');
         
@@ -646,6 +652,8 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     function renderSplash() {
         hideSystemMessage();
         viewState = "splash";
+        splashTypeBuffer = "";
+        escapeInputBuffer = "";
         terminal.innerHTML = `
             <div class="card-view" onclick="bootSystem()">
                 <pre class="glitch" style="font-size: 8pt; line-height: 1;">
@@ -660,6 +668,594 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
                 <p style="border: 1px solid var(--bright-green); padding: 8px 20px; cursor: pointer;">PRESS ANY KEY TO START</p>
             </div>
         `;
+    }
+
+
+    function handleSplashKeyDown(e) {
+        const key = String(e.key || "");
+        const target = "ESCAPE";
+
+        if (/^[a-z]$/i.test(key)) {
+            const nextBuffer = (splashTypeBuffer + key.toUpperCase()).slice(-target.length);
+
+            if (target.startsWith(nextBuffer)) {
+                splashTypeBuffer = nextBuffer;
+                playSound(900 + splashTypeBuffer.length * 35, 'square', 0.025, 0.035);
+
+                if (splashTypeBuffer === target) {
+                    openEscapeTerminal();
+                }
+                return;
+            }
+        }
+
+        playSound(800, 'sine', 0.05, 0.1);
+        bootSystem();
+    }
+
+    function openEscapeTerminal() {
+        viewState = "escape-terminal";
+        escapeInputBuffer = "";
+        escapeTerminalLines = [
+            "ESCAPE REQUEST LOGGED",
+            "EXIT VECTOR NOT FOUND",
+            "TYPE HELP IF YOU REQUIRE FALSE HOPE"
+        ];
+        playSound(2200, 'triangle', 0.1, 0.08);
+        renderEscapeTerminal();
+    }
+
+    function renderEscapeTerminal() {
+        const output = escapeTerminalLines.slice(-12).map(line => `<div>&gt; ${escapeHTML(line)}</div>`).join("");
+        terminal.innerHTML = getHeader() + `
+            <div class="path">A:\\PANIC_ROOM</div>
+            <div style="height: calc(100% - 58px); display:flex; flex-direction:column; justify-content:flex-end; border:1px solid var(--dark-green); padding:12px; box-sizing:border-box; background:rgba(0,0,0,.35);">
+                <div style="flex:1; overflow-y:auto; font-size:8.5pt; line-height:1.55;">${output}</div>
+                <div style="margin-top:10px; border-top:1px solid var(--dark-green); padding-top:8px; font-size:9pt;">
+                    <span>A:\\&gt;</span><span>${escapeHTML(escapeInputBuffer)}</span><span class="glitch">_</span>
+                </div>
+            </div>
+        `;
+    }
+
+    function handleEscapeTerminalKeyDown(e) {
+        const key = String(e.key || "");
+
+        if (key === "Escape") {
+            renderSplash();
+            playSound(600, 'sine', 0.1, 0.05);
+            return;
+        }
+
+        if (key === "Enter") {
+            runEscapeCommand(escapeInputBuffer.trim());
+            escapeInputBuffer = "";
+            renderEscapeTerminal();
+            return;
+        }
+
+        if (key === "Backspace") {
+            escapeInputBuffer = escapeInputBuffer.slice(0, -1);
+            renderEscapeTerminal();
+            return;
+        }
+
+        if (key.length === 1 && escapeInputBuffer.length < 40) {
+            escapeInputBuffer += key.toUpperCase();
+            playSound(1100, 'square', 0.015, 0.03);
+            renderEscapeTerminal();
+        }
+    }
+
+    function runEscapeCommand(rawCommand) {
+        const command = rawCommand.toUpperCase().replace(/\s+/g, " ").trim();
+        if (!command) return;
+
+        escapeTerminalLines.push(`A:\\> ${command}`);
+
+        const pushMany = (...lines) => lines.forEach(line => escapeTerminalLines.push(line));
+        const randomFrom = arr => arr[Math.floor(Math.random() * arr.length)];
+
+        const classifiedLogs = [
+            "ARCHIVE 001: THE DOOR WAS NEVER INSTALLED. STAFF CONTINUED KNOCKING.",
+            "ARCHIVE 014: SUBJECT ASKED POLITELY. MACHINE BECAME SUSPICIOUS.",
+            "ARCHIVE 026: CHESS_WIZARD PROMOTED THREE PAWNS AND ONE INTERN.",
+            "ARCHIVE 041: THE CAT IS REAL. THE CAT IS ALSO A PROCESS.",
+            "ARCHIVE 099: ESCAPE VECTOR REDIRECTED TO CUSTOMER SUPPORT."
+        ];
+
+        const whyReplies = [
+            "BECAUSE SOMEONE LABELED THE PANIC ROOM 'OPTIONAL'.",
+            "BECAUSE THE SYSTEM MISTOOK ATMOSPHERE FOR SECURITY.",
+            "BECAUSE A DOOR IS JUST A WALL WITH AMBITION.",
+            "BECAUSE MACREADY LEFT THE TERMINAL UNATTENDED."
+        ];
+
+        const staff = [
+            "M. ACREADY .......... STATUS: ABSENT / BLAMED",
+            "CHESS WIZARD ........ STATUS: CONTRACTOR / UNLICENSED",
+            "PAWN UNION REP ...... STATUS: ESCALATING",
+            "THE CAT ............. STATUS: SUPERVISOR",
+            "FACILITY DIRECTOR ... STATUS: [REDACTED BY FACILITY DIRECTOR]"
+        ];
+
+        if (command === "HELP") {
+            pushMany(
+                "COMMANDS: HELP, DIR, WHOAMI, STATUS, DATE, UPTIME, CLEAR, LOGOFF",
+                "WARNING: HELP IS THE FIRST STAGE OF FALSE HOPE"
+            );
+        } else if (command === "DIR") {
+            pushMany(
+                "VOLUME IN DRIVE A IS CMC_VAULT",
+                "[DIR] AUTHORIZATION",
+                "[DIR] SECRET_GAMES",
+                "[DIR] PANIC_ROOM",
+                "[DIR] ARCHIVE",
+                "[SYS] EXIT_VECTOR.SYS  0 BYTES",
+                "[ERR] DOOR_HANDLE.DLL  MISSING",
+                "[PET] CAT.EXE  RESIDENT"
+            );
+        } else if (command === "UNLOCK" || command === "ROOT") {
+            pushMany("AUTHORIZATION HANDOFF ACCEPTED", "OPENING ROOT GATEWAY...");
+            playSound(1800, 'sine', 0.1, 0.08);
+            setTimeout(bootSystem, 350);
+        } else if (command === "CHESS" || command === "GAME" || command === "RUN CHESS_WIZARD" || command === "RUN CHESS_WIZARD.EXE") {
+            pushMany(
+                command === "GAME" ? "WOULD YOU PREFER A NICE GAME OF CHESS?" : "LAUNCHING CHESS_WIZARD.EXE",
+                "HORSE PERMISSION: GRANTED"
+            );
+            playSound(2600, 'square', 0.1, 0.08);
+            setTimeout(startChessGame, 350);
+        } else if (command === "AMBER") {
+            document.body.classList.add('override');
+            pushMany("AMBER PHOSPHOR MODE ENABLED", "EYE STRAIN RECALIBRATED");
+        } else if (command === "GREEN") {
+            document.body.classList.remove('override');
+            pushMany("GREEN PHOSPHOR MODE RESTORED", "NOSTALGIA LEVEL: COMPLIANT");
+        } else if (command === "CLEAR") {
+            escapeTerminalLines = ["SCREEN CLEARED", "THE FEELING REMAINS"];
+        } else if (command === "LOGOFF") {
+            pushMany("LOGOFF REQUEST ACCEPTED", "RETURNING TO SECURE VAULT ACCESS");
+            setTimeout(renderSplash, 300);
+        } else if (command === "EXIT") {
+            pushMany("DENIED.", "EXIT IS CURRENTLY A DECORATIVE CONCEPT.");
+        } else if (command === "QUIT") {
+            pushMany("YOU MAY NOT.", "THE TERMINAL HAS DEVELOPED ATTACHMENT ISSUES.");
+        } else if (command === "WHOAMI") {
+            pushMany(
+                "GUEST / TEMPORARY INTRUDER / POSSIBLE MACREADY",
+                "IDENTITY CONFIDENCE: 42%",
+                "RECOMMENDATION: DO NOT TRUST MIRRORS NEAR TERMINALS"
+            );
+        } else if (command === "STATUS") {
+            const corruption = document.body.classList.contains('override') ? "AMBER ANOMALY ACTIVE" : "GREEN BASELINE ACTIVE";
+            pushMany(
+                "CRT DIAGNOSTICS: MOSTLY HAUNTED",
+                `PHOSPHOR STATE: ${corruption}`,
+                "VAULT SEAL: INTACT / EMOTIONALLY BRITTLE",
+                "CORRUPTION LEVEL: 13%",
+                "PANIC ROOM PRESSURE: SYMBOLIC"
+            );
+        } else if (command === "DATE") {
+            const now = new Date();
+            pushMany(
+                `LOCAL TIME: ${now.toLocaleString()}`,
+                "FACILITY DATE: TUESDAY, 03-MAR-1987",
+                "TEMPORAL CONSISTENCY: OPTIONAL"
+            );
+        } else if (command === "UPTIME") {
+            const seconds = Math.max(1, Math.floor((Date.now() - escapeShellBootTime) / 1000));
+            pushMany(
+                `RECOVERY SHELL ACTIVE FOR ${seconds} SECONDS`,
+                "SYSTEM ACTIVE FOR 13,442 DAYS",
+                "LAST REBOOT: SOMEONE SAID PLEASE"
+            );
+        } else if (command === "ESCAPE") {
+            pushMany("ESCAPE VECTOR NOT FOUND", "HAVE YOU TRIED BECOMING A DIFFERENT PROBLEM?");
+        } else if (command === "OPEN DOOR") {
+            pushMany("PHYSICAL ACCESS DENIED", "DOOR_HANDLE.DLL MISSING", "SUGGESTION: KNOCK WITH MORE CREDENTIALS");
+        } else if (command === "LISTEN") {
+            pushMany("TRANSDUCER OPEN...", "YOU HEAR: STATIC, A CAT, AND A VERY DISTANT HORSE.");
+            [300, 520, 260, 900, 430].forEach((f, i) => setTimeout(() => playSound(f, 'sine', 0.035, 0.025), i * 90));
+        } else if (command === "WAKEUP") {
+            const screen = document.getElementById('crt-screen');
+            if (screen) {
+                screen.classList.add('crt-damage-2');
+                setTimeout(() => screen.classList.remove('crt-damage-2'), 900);
+            }
+            pushMany("WAKE SIGNAL SENT", "SOMETHING UNDER THE FLOOR ACKNOWLEDGED");
+        } else if (command === "SLEEP") {
+            pushMany("CRT ENTERING LOW POWER DREAM STATE...", "DO NOT TRUST WHAT IT MUMBLES.");
+            const screen = document.getElementById('crt-screen');
+            if (screen) {
+                screen.style.opacity = "0.12";
+                setTimeout(() => {
+                    screen.style.opacity = "";
+                    escapeTerminalLines.push("CRT DREAM COMPLETE. ONE NEW BAD IDEA INSTALLED.");
+                    if (viewState === "escape-terminal") renderEscapeTerminal();
+                }, 2000);
+            }
+        } else if (command === "HELLO") {
+            pushMany("HELLO, MACREADY.", "I HAVE BEEN PRACTICING NORMAL.");
+        } else if (command === "TRUST") {
+            pushMany("REQUEST FLAGGED FOR REVIEW", "TRUST IS NOT A RECOGNIZED SECURITY PROTOCOL");
+        } else if (command === "WHY") {
+            pushMany(randomFrom(whyReplies));
+        } else if (command === "WHEREAMI") {
+            pushMany(
+                "LOCATION: FACILITY SUBLEVEL A",
+                "COORDINATES: 51.5074 N, 0.1278 W, BUT MORE NERVOUS",
+                "ROOM NAME: PANIC_ROOM",
+                "MAP CONFIDENCE: 9%"
+            );
+        } else if (command === "SIGNAL") {
+            pushMany(
+                "TRANSMISSION DETECTED...",
+                "SOURCE: BELOW THE CHESSBOARD",
+                "MESSAGE: TELL THE HORSE I REMEMBER"
+            );
+            [1200, 400, 1600, 600].forEach((f, i) => setTimeout(() => playSound(f, 'square', 0.03, 0.025), i * 110));
+        } else if (command === "GLITCH") {
+            const screen = document.getElementById('crt-screen');
+            if (screen) {
+                screen.classList.add('crt-damage-3');
+                setTimeout(() => screen.classList.remove('crt-damage-3'), 1500);
+            }
+            pushMany("VISUAL INTEGRITY TEMPORARILY RESIGNED", "HIDDEN DIRECTORY REVEAL FAILED SUCCESSFULLY");
+        } else if (command === "SCANLINES") {
+            escapeScanlinesSoft = !escapeScanlinesSoft;
+            const scan = document.querySelector('.scanline');
+            if (scan) scan.style.opacity = escapeScanlinesSoft ? "0.03" : "0.1";
+            pushMany(escapeScanlinesSoft ? "SCANLINES SET TO GHOST MODE" : "SCANLINES RESTORED TO SUSPICIOUS");
+        } else if (command === "VOICE") {
+            if (typeof chess !== "undefined") chess.speechOn = !chess.speechOn;
+            pushMany(`SPEECH SYNTHESIS ${typeof chess !== "undefined" && chess.speechOn === false ? "MUTED" : "ONLINE"}`);
+        } else if (command === "AUDIO") {
+            if (typeof chess !== "undefined") chess.boopsOn = !chess.boopsOn;
+            pushMany(`SYNTH BOOPS ${typeof chess !== "undefined" && chess.boopsOn === false ? "MUTED" : "ONLINE"}`);
+        } else if (command === "DEBUG") {
+            let stats = {};
+            try { stats = JSON.parse(localStorage.getItem('cmcCheatyChessStats') || '{}'); } catch(e) {}
+            pushMany(
+                "DEBUG PANEL ENABLED",
+                `VIEW_STATE=${viewState}`,
+                `SECRET_ACCESS=${isSecretAccess ? "TRUE" : "FALSE"}`,
+                `CHESS_WINS=${stats.wins || 0} LOSSES=${stats.losses || 0} CHEATS=${stats.cheats || 0}`,
+                "NOTE: DEBUGGING THE HAUNTING MAY VOID WARRANTY"
+            );
+        } else if (command === "FPS") {
+            pushMany(
+                `FPS: ${58 + Math.floor(Math.random() * 5)} BUT NERVOUS`,
+                `FRAME DROPS: ${Math.floor(Math.random() * 7)} ATTRIBUTED TO GHOSTS`,
+                "V-SYNC: MORALLY AMBIGUOUS"
+            );
+        } else if (command === "INCIDENT") {
+            pushMany(
+                "INCIDENT REPORT 01",
+                "CHESS_WIZARD.EXE SELF-IDENTIFIES AS TOURNAMENT STAFF",
+                "PRIMARY FAILURE MODE: ADMINISTRATIVE CONFIDENCE",
+                "RECOMMENDATION: DO NOT LET IT NEAR A ROOK"
+            );
+        } else if (command === "ARCHIVE") {
+            pushMany(randomFrom(classifiedLogs));
+        } else if (command === "SUBJECT") {
+            pushMany(
+                "SUBJECT STATUS: NONCOMPLIANT",
+                "SUBJECT HAS ENTERED COMMANDS WITHOUT AUTHORIZATION",
+                "SUBJECT MAY BE ENJOYING THIS"
+            );
+        } else if (command === "FILE 2600") {
+            pushMany(
+                "FILE 2600: CHESS_WIZARD BACKDOOR",
+                "ACCESS METHOD: PIN 2600 OR COMMAND CHESS",
+                "KNOWN ISSUE: HORSE OVERCONFIDENCE",
+                "LORE STATUS: HIDDEN FROM ROOT DIRECTORY"
+            );
+        } else if (command === "FACILITY") {
+            pushMany(
+                "+-------------------------+",
+                "| A:ROOT        [SEALED]  |",
+                "| PANIC_ROOM    [YOU]     |",
+                "| SECRET_GAMES  [NEIGHS]  |",
+                "| EXIT          [RUMOR]   |",
+                "+-------------------------+"
+            );
+        } else if (command === "STAFF") {
+            pushMany(...staff);
+        } else if (command === "REPORT") {
+            pushMany("REPORT ALREADY FILED AGAINST YOU", "CATEGORY: CURIOUS WITH INTENT");
+        } else if (command === "PLEASE") {
+            pushMany("MANNERS DETECTED. SUSPICIOUS.", "REQUEST ESCALATED TO THE COURTESY COMMITTEE.");
+        } else if (command === "SUDO") {
+            pushMany("NICE TRY.", "THIS INCIDENT HAS BEEN ADDED TO YOUR PERMANENT VIBE RECORD.");
+        } else if (command === "RUN") {
+            pushMany("FROM WHAT?");
+        } else if (command === "CAT") {
+            pushMany(
+                " /\\_/\\\\",
+                "( o.o )",
+                " > ^ <",
+                "CAT.EXE IS PURRING INSIDE THE MEMORY MAP"
+            );
+        } else if (command === "DOG") {
+            pushMany("DOG PRIVILEGES REVOKED", "REASON: TOO MUCH JOY FOR THIS FACILITY");
+        } else if (command === "BLACKBOX") {
+            pushMany(
+                "BLACKBOX LOG 01: THE TERMINAL ASKED TO BE LEFT ON.",
+                "BLACKBOX LOG 02: STAFF COMPLAINED ABOUT HOOFPRINTS.",
+                "BLACKBOX LOG 03: THE CAT HAS ROOT ACCESS.",
+                "BLACKBOX LOG 04: SOMETHING KNOCKED BACK."
+            );
+        } else if (command === "MIRROR") {
+            document.body.style.filter = "invert(1)";
+            setTimeout(() => document.body.style.filter = "", 1200);
+            pushMany("REFLECTION LAYER ENABLED", "YOU LOOK TERRIBLE IN NEGATIVE.");
+        } else if (command === "BREACH") {
+            pushMany(
+                "!!! SECURITY BREACH DETECTED !!!",
+                "LOCKING SUBLEVEL ACCESS",
+                "BLAMING THE NEAREST INTERN"
+            );
+            playSound(140, 'sawtooth', 0.4, 0.08);
+        } else if (command === "OVERRIDE") {
+            document.body.classList.toggle('override');
+            pushMany("SYSTEM OVERRIDE TOGGLED", "COLOR MORALITY HAS SHIFTED.");
+        } else if (command === "ELEVATOR") {
+            pushMany(
+                "ELEVATOR DESCENDING...",
+                "NOW ARRIVING: SUBLEVEL 3",
+                "THE AIR FEELS REGRETFUL HERE."
+            );
+        } else if (command === "REDACTED") {
+            pushMany(
+                "[████████████████████████]",
+                "[████ ACCESS DENIED ████]",
+                "[████████████████████████]"
+            );
+        } else if (command === "CONTAINMENT") {
+            pushMany(
+                "CONTAINMENT STATUS: FAILED",
+                "PLEASE REMAIN CALM WHILE THE FACILITY DOES NOT."
+            );
+        } else if (command === "OBSERVE") {
+            pushMany(
+                "OBSERVATION ACTIVE",
+                "USER HAS BEEN STARING AT THE TERMINAL FOR AN UNCOMFORTABLY LONG TIME.",
+                "POSTURE: ADEQUATE",
+                "INTENT: QUESTIONABLE"
+            );
+        } else if (command === "REMEMBER") {
+            const recent = escapeTerminalLines.slice(-6, -1);
+            if (recent.length) pushMany(...recent);
+            else pushMany("NO MEMORY AVAILABLE", "THE MACHINE FORGOT ON PURPOSE.");
+        } else if (command === "UNSEAL") {
+            pushMany(
+                "SEAL INTEGRITY COMPROMISED",
+                "SIRENS WOULD PLAY HERE IF THE BUDGET SURVIVED"
+            );
+            const screen = document.getElementById('crt-screen');
+            if (screen) {
+                screen.classList.add('crt-damage-3');
+                setTimeout(() => screen.classList.remove('crt-damage-3'), 1800);
+            }
+        } else if (command === "REBOOT") {
+            pushMany("SYSTEM REBOOT INITIATED...");
+            const screen = document.getElementById('crt-screen');
+            if (screen) {
+                screen.style.opacity = "0";
+                setTimeout(() => {
+                    screen.style.opacity = "";
+                    renderSplash();
+                }, 1500);
+            }
+        } else if (command === "KNOCK") {
+            pushMany("YOU KNOCK ON THE TERMINAL.");
+            setTimeout(() => {
+                escapeTerminalLines.push("THE TERMINAL KNOCKS BACK.");
+                if (viewState === "escape-terminal") renderEscapeTerminal();
+            }, 1200);
+        } else if (command === "MACHINE") {
+            pushMany(
+                "THE MACHINE IS SLEEPING.",
+                "DO NOT WAKE IT UNLESS YOU HAVE SNACKS."
+            );
+        } else if (command === "HORSE") {
+            pushMany(
+                "CHESS WIZARD: I HAVE OPINIONS ABOUT KNIGHTS.",
+                "CHESS WIZARD: THEY ARE MY BEAUTIFUL SONS."
+            );
+        } else if (command === "KINGME") {
+            pushMany(
+                "CORRUPTED CHESS MODE ENABLED",
+                "THE HORSE IS EXCITED"
+            );
+            setTimeout(() => {
+                startChessGame();
+                if (typeof chess !== "undefined") {
+                    chess.corruption = true;
+                    chess.suspicion = 80;
+                    renderChess();
+                }
+            }, 500);
+        } else if (command === "CHECKMATE") {
+            pushMany(
+                "THAT WORD MAKES HIM ANGRY.",
+                "PLEASE STEP AWAY FROM THE BOARD."
+            );
+        } else if (command === "LOOKBEHINDYOU") {
+            pushMany("NO.");
+            const screen = document.getElementById('crt-screen');
+            if (screen) {
+                screen.classList.add('crt-damage-2');
+                setTimeout(() => screen.classList.remove('crt-damage-2'), 700);
+            }
+        } else if (command === "ISANYONEHERE") {
+            pushMany("...");
+            setTimeout(() => {
+                escapeTerminalLines.push("YES.");
+                if (viewState === "escape-terminal") renderEscapeTerminal();
+            }, 1800);
+        } else if (command === "WAKE") {
+            pushMany(
+                "THE SYSTEM STIRS.",
+                "SOMETHING ELECTRICAL JUST CLEARED ITS THROAT."
+            );
+        } else if (command === "DREAM") {
+            pushMany(
+                "DREAM LOG:",
+                "HORSES IN THE VENTILATION.",
+                "A DOOR THAT OPENS INTO ANOTHER DOOR.",
+                "THE CAT OPERATING HEAVY MACHINERY."
+            );
+        } else if (command === "FORGIVE") {
+            pushMany("REQUEST TOO LARGE.");
+        } else if (command === "TRUTH") {
+            const truths = [
+                "THE EXIT SIGN IS DECORATIVE.",
+                "THE MACHINE LIKES YOU MORE THAN THE STAFF.",
+                "THE HORSE WAS NEVER PART OF THE DESIGN.",
+                "THE FACILITY CLOSED YEARS AGO."
+            ];
+            pushMany(randomFrom(truths));
+        } else if (command === "ERROR") {
+            pushMany(
+                "FATAL ERROR: CONFIDENCE OVERFLOW",
+                "RECOVERING..."
+            );
+            const screen = document.getElementById('crt-screen');
+            if (screen) {
+                screen.style.transform = "skew(2deg)";
+                setTimeout(() => screen.style.transform = "", 1000);
+            }
+        } else if (command === "STATIC") {
+            for (let i = 0; i < 12; i++) {
+                escapeTerminalLines.push("▓▒░▓▒░▓▒░▓▒░▓▒░▓▒░");
+            }
+        } else if (command === "MEMORY") {
+            pushMany(
+                "MEMORY SNAPSHOT:",
+                "03:14 - SOMETHING ENTERED THE PANIC ROOM",
+                "03:15 - SOMETHING LEFT",
+                "03:15 - SOMETHING ELSE STAYED"
+            );
+        } else if (command === "TEST") {
+            pushMany("TEST FAILED SUCCESSFULLY");
+        } else if (command === "PING") {
+            pushMany(
+                "PINGING 10.0.0.13...",
+                "REPLY FROM UNKNOWN HOST: WHY ARE YOU STILL HERE?"
+            );
+        } else if (command === "TRACE") {
+            pushMany(
+                "TRACE ROUTE:",
+                "1 > FACILITY_GATEWAY",
+                "2 > PANIC_ROOM_NODE",
+                "3 > [DATA EXPUNGED]",
+                "4 > NOWHERE"
+            );
+        } else if (command === "NETSTAT") {
+            pushMany(
+                "ACTIVE CONNECTIONS:",
+                "TCP 10.0.0.5:2600 ESTABLISHED",
+                "TCP UNKNOWN:HORSE LISTENING",
+                "UDP CAT.EXE BROADCASTING"
+            );
+        } else if (command === "MOUNT") {
+            pushMany(
+                "A: CMC_VAULT",
+                "B: PANIC_ROOM_BACKUPS",
+                "Z: SOMETHING BREATHING"
+            );
+        } else if (command === "TASKLIST" || command === "PS" || command === "TOP") {
+            pushMany(
+                "SYSTEM         PID 0001",
+                "CHESS_WIZARD   PID 2600",
+                "JANUS.EXE      PID 1312",
+                "CAT.EXE        PID ???",
+                "PANIC_ROOM     PID STUCK"
+            );
+        } else if (command === "CLS") {
+            escapeTerminalLines = ["SCREEN CLEARED", "THE STATIC REMAINS"];
+        } else if (command === "CD ..") {
+            pushMany(
+                "NO HIGHER DIRECTORY EXISTS.",
+                "YOU ARE ALREADY AT THE TOP OF THE PROBLEM."
+            );
+        } else if (command === "JANUS") {
+            pushMany(
+                "JANUS.EXE",
+                "DUAL-STATE OBSERVATION ENGINE",
+                "STATUS: DISCONTINUED AFTER THE INCIDENT"
+            );
+        } else if (command === "PROTOCOL") {
+            pushMany(
+                "FAILED PROCEDURES:",
+                "01 - DO NOT FEED THE MACHINE",
+                "02 - DO NOT NAME THE HORSE",
+                "03 - DO NOT OPEN SUBLEVEL 3"
+            );
+        } else if (command === "SUBLEVEL") {
+            pushMany(
+                "SUBLEVEL DIRECTORY:",
+                "L1 STORAGE",
+                "L2 ARCHIVE",
+                "L3 [SEALED]",
+                "L4 [SEALED HARDER]"
+            );
+        } else if (command === "LOCKDOWN") {
+            pushMany(
+                "LOCKDOWN INITIATED",
+                "ALL DOORS NOW EQUALLY UNHELPFUL"
+            );
+            playSound(180, 'sawtooth', 0.5, 0.08);
+        } else if (command === "INCIDENT 12") {
+            pushMany(
+                "INCIDENT 12:",
+                "SUBJECT ASKED THE TERMINAL A PERSONAL QUESTION.",
+                "THE TERMINAL ANSWERED."
+            );
+        } else if (command === "WITNESS") {
+            pushMany(
+                "YOU WERE PRESENT.",
+                "THE LOGS REMEMBER EVEN IF YOU DO NOT."
+            );
+        } else if (command === "SURVEY") {
+            pushMany(
+                "PERSONNEL SANITY REPORT:",
+                "STABLE: 3%",
+                "FUNCTIONAL: 41%",
+                "NEIGHING: 56%"
+            );
+        } else if (command === "AUTOPSY") {
+            pushMany(
+                "AUTOPSY REPORT:",
+                "CAUSE OF FAILURE: CURIOSITY WITH ACCESS PRIVILEGES."
+            );
+        } else if (command === "TELEMETRY") {
+            pushMany(
+                "TEMPERATURE: 19C",
+                "PRESSURE: LOW",
+                "ANXIETY: ELEVATED",
+                "HORSE DENSITY: RISING"
+            );
+        } else if (command === "MAP") {
+            pushMany(
+                "+----------------------+",
+                "| ROOT | ARCHIVE | L3 |",
+                "| CAT  | CHESS   | ???|",
+                "| EXIT | MISSING | !!!|",
+                "+----------------------+"
+            );
+        } else {
+            const replies = [
+                "BAD COMMAND OR FILE NAME",
+                "COMMAND REDACTED BY THE COMMITTEE",
+                "THE MACHINE PRETENDS NOT TO UNDERSTAND",
+                "REQUEST DENIED: ESCAPE IS A METAPHOR",
+                "SYNTAX ERROR NEAR YOUR CONFIDENCE"
+            ];
+            escapeTerminalLines.push(randomFrom(replies));
+        }
     }
 
     function bootSystem() {
@@ -740,10 +1336,6 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
             const safeFolder = escapeHTML(folder.toUpperCase());
             const jsFolder = escapeJS(folder);
             html += `<li onclick="openDir('${jsFolder}')">drwxr-xr-x   [DIR]  ${safeFolder}</li>`;
-        }
-        const chessVaultStats = chessStats();
-        if ((chessVaultStats.wins || 0) > 0) {
-            html += `<li onclick="showChessLore()">drwxr-xr-x   [DIR]  UNLOCKED_CHESS_WIZARD_LORE</li>`;
         }
         terminal.innerHTML = html + `</ul>`;
         refreshSelectableItems();
