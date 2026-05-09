@@ -447,7 +447,8 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     let currentFolderName = "";
     let currentSubFolder = "";
     let currentFileIndex = 0;
-    let lastFileSelectionIndex = 1;
+    let folderSelections = {};
+    let navigationMode = "mouse";
 
     function initAudio() { if (!audioCtx) audioCtx = new AudioCtx(); }
 
@@ -518,7 +519,8 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         if (!files || !files.length) return renderDatabaseError();
 
         currentFileIndex = (currentFileIndex + direction + files.length) % files.length;
-        lastFileSelectionIndex = currentFileIndex + 1;
+        const selectionKey = `${currentFolderName}::${currentSubFolder}`;
+        folderSelections[selectionKey] = currentFileIndex + 1;
 
         const card = files[currentFileIndex];
         const modalImg = document.getElementById("modal-img");
@@ -529,6 +531,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     }
 
     function handleKeyDown(e) {
+        navigationMode = "keyboard";
         resetIdle();
 
         if (e.key === konamiCode[konamiIndex]) {
@@ -581,10 +584,16 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         const items = terminal.querySelectorAll('li, .pin-btn, .clickable');
         items.forEach((item, idx) => {
             item.addEventListener("mouseenter", () => {
+                if (navigationMode !== "mouse") return;
+
                 selectedIndex = idx;
                 updateSelection();
             });
+            item.addEventListener("mousemove", () => {
+                navigationMode = "mouse";
+            });
             item.addEventListener("click", () => {
+                navigationMode = "mouse";
                 selectedIndex = idx;
                 updateSelection();
             });
@@ -708,7 +717,10 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         viewState = "dir";
         currentFolderName = name;
         currentSubFolder = sub;
-        selectedIndex = useMemory ? lastFileSelectionIndex : 1;
+        const selectionKey = `${name}::${sub}`;
+        selectedIndex = useMemory
+            ? (folderSelections[selectionKey] || 1)
+            : 1;
 
         const db = getDatabase();
         if (!db) return renderDatabaseError();
@@ -758,7 +770,8 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     function viewCard(dir, idx, sub = "") {
         viewState = "file";
         currentFileIndex = idx;
-        lastFileSelectionIndex = idx + 1;
+        const selectionKey = `${dir}::${sub}`;
+        folderSelections[selectionKey] = idx + 1;
 
         const db = getDatabase();
         if (!db) return renderDatabaseError();
