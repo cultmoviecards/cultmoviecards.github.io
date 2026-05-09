@@ -104,7 +104,7 @@
 
         .terminal-img, #modal-img {
             border: 1px solid var(--bright-green);
-            filter: contrast(1.25) brightness(1.15);
+            filter: contrast(1.4) brightness(0.9);
             box-shadow: var(--crt-glow);
         }
 
@@ -172,6 +172,19 @@
             background: var(--bright-green);
             color: var(--bg-black);
             font-weight: bold;
+        }
+
+        #system-message .prompt-options {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        #system-message .prompt-hint {
+            margin-top: 8px;
+            opacity: 0.75;
+            font-size: 7.5pt;
         }
 
 
@@ -367,6 +380,15 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         systemMessageTimer = setTimeout(() => {
             box.style.display = "none";
         }, duration);
+    }
+
+    function hideSystemMessage() {
+        clearTimeout(systemMessageTimer);
+        const box = document.getElementById("system-message");
+        if (box) {
+            box.style.display = "none";
+            box.innerHTML = "";
+        }
     }
 
     function showSaveHelp(event, url) {
@@ -612,6 +634,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     }
 
     function renderSplash() {
+        hideSystemMessage();
         viewState = "splash";
         terminal.innerHTML = `
             <div class="card-view" onclick="bootSystem()">
@@ -860,12 +883,38 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 	
 
     // --- Secret Chess Gremlin mini-game. Activated by PIN 2600. ---
-    const chess = { board: [], turn: 'w', cursor: [6,4], selected: null, legal: [], log: [], over: false, thinking:false, lastMove:null, boom:null, glitch:false, sass:0 };
+    const chess = {
+        board: [], turn: 'w', cursor: [6,4], selected: null, legal: [], log: [], over: false,
+        thinking:false, lastMove:null, boom:null, glitch:false, moveCount:0, suspicion:0,
+        corruption:false, reviewReady:false, achievements:{}, status:''
+    };
     const SPRITE_COLUMNS = { r:0, n:1, b:2, q:3, k:4, p:0 };
     const pieceNames = { p:'PAWN', r:'ROOK', n:'KNIGHT', b:'BISHOP', q:'QUEEN', k:'KING' };
     const glyphs = { wk:'♔', wq:'♕', wr:'♖', wb:'♗', wn:'♘', wp:'♙', bk:'♚', bq:'♛', br:'♜', bb:'♝', bn:'♞', bp:'♟' };
     const chessSprite = new Image();
     let chessSpriteReady = false;
+
+    const wizardThoughts = [
+        'CONSULTING ORACLE...', 'DEFRAGMENTING KNIGHT...', 'CALIBRATING TACTICAL VIBES...',
+        'CONTACTING FIDE HOTLINE...', 'DOWNLOADING MORE ROOK...', 'CHECKING RULES, THEN IGNORING THEM...'
+    ];
+    const checkLines = {
+        w: ['SYSTEM: YOUR KING IS EXPERIENCING A SECURITY INCIDENT.', 'CHESS WIZARD: CHECK. PLEASE REMAIN CALM WHILE PANICKING.'],
+        b: ['SYSTEM: BLACK KING UNDER AUDIT.', 'CHESS WIZARD: CHECK? THAT SEEMS ADMINISTRATIVELY INCONVENIENT.']
+    };
+    const playerAccusations = [
+        'SYSTEM: UNUSUAL CONFIDENCE DETECTED.', 'CHESS WIZARD: YOUR LAST MOVE LOOKED PREMEDITATED.',
+        'SYSTEM: PLEASE KEEP BOTH HANDS VISIBLE.', 'CHESS WIZARD: I AM NOT SAYING YOU CHEATED. I AM PRINTING IT.'
+    ];
+    const pieceFlavor = {
+        n: ['CHESS WIZARD: HORSE DEPLOYED.', 'SYSTEM: KNIGHT HAS FILED A TRAVEL EXPENSE.'],
+        b: ['CHESS WIZARD: RELIGIOUS DIAGONAL ACTIVATED.', 'SYSTEM: BISHOP CLEARED FOR SLANT OPERATIONS.'],
+        q: ['SYSTEM: HR HAS APPROVED AGGRESSION.', 'CHESS WIZARD: QUEEN ONLINE. INCIDENT LIKELY.'],
+        r: ['CHESS WIZARD: ROOK HAS ENTERED THE CORRIDOR.', 'SYSTEM: CASTLE-ADJACENT OBJECT MOVED.'],
+        p: ['SYSTEM: PAWN UNION REPRESENTATIVE NOTIFIED.', 'CHESS WIZARD: SMALL EMPLOYEE ADVANCES.'],
+        k: ['SYSTEM: EXECUTIVE WADDLE LOGGED.', 'CHESS WIZARD: THE MANAGER HAS MOVED ONE SQUARE.']
+    };
+
     function loadChessSprite() {
         if (chessSprite.src) return;
         chessSprite.onload = () => { chessSpriteReady = true; document.body.classList.remove('sprite-fallback'); if (viewState === 'chess') renderChess(); };
@@ -882,43 +931,25 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         const { col, row } = spriteCell(piece);
         const cellW = chessSprite.naturalWidth / 8;
         const cellH = chessSprite.naturalHeight / 8;
-        canvas.width = cellW;
-        canvas.height = cellH;
-        ctx.imageSmoothingEnabled = false;
+        canvas.width = cellW; canvas.height = cellH; ctx.imageSmoothingEnabled = false;
         ctx.drawImage(chessSprite, col * cellW, row * cellH, cellW, cellH, 0, 0, cellW, cellH);
     }
-    function chessStats(){
-        try { return JSON.parse(localStorage.getItem('cmcCheatyChessStats') || '{"wins":0,"losses":0,"draws":0,"cheats":0}'); }
-        catch(e){ return {wins:0,losses:0,draws:0,cheats:0}; }
-    }
+    function chessStats(){ try { return JSON.parse(localStorage.getItem('cmcCheatyChessStats') || '{"wins":0,"losses":0,"draws":0,"cheats":0}'); } catch(e){ return {wins:0,losses:0,draws:0,cheats:0}; } }
     function saveChessStats(s){ localStorage.setItem('cmcCheatyChessStats', JSON.stringify(s)); }
     function bumpStat(key){ const s=chessStats(); s[key]=(s[key]||0)+1; saveChessStats(s); }
     function initChessBoard() {
         const back = ['r','n','b','q','k','b','n','r'];
         chess.board = Array.from({length:8},()=>Array(8).fill(''));
         for (let c=0;c<8;c++) { chess.board[0][c]='b'+back[c]; chess.board[1][c]='bp'; chess.board[6][c]='wp'; chess.board[7][c]='w'+back[c]; }
-        Object.assign(chess,{turn:'w', cursor:[6,4], selected:null, legal:[], over:false, thinking:false, lastMove:null, boom:null, glitch:false, sass:0});
-        chess.log=['CHESS WIZARD: HELLO MACREADY. WOULD YOU LIKE TO PLAY ANOTHER GAME?'];
-        preloadChessSprites();
-    }
-    function preloadChessSprites(){
+        Object.assign(chess,{turn:'w', cursor:[6,4], selected:null, legal:[], over:false, thinking:false, lastMove:null, boom:null, glitch:false, moveCount:0, suspicion:0, corruption:false, reviewReady:false, achievements:{}, status:'', endPromptSelection:0});
+        chess.log=['CHESS WIZARD: HELLO MACREADY. WOULD YOU LIKE TO PLAY ANOTHER GAME?','SYSTEM: FAIR MODE ENABLED. FOR NOW.'];
         loadChessSprite();
     }
-    function startChessGame() { initChessBoard(); renderChess(); voiceReady(); speakChess('Hello macready. Would you like to play another game?'); bootBoops(); }
+    function startChessGame() { hideSystemMessage(); initChessBoard(); renderChess(); voiceReady(); speakChess('Hello macready. Fair mode enabled. For now.'); bootBoops(); }
     function chessSay(line, voice=false) {
-    chess.log.unshift(line);
-
-    if (chess.log.length > 18)
-        chess.log.length = 18;
-
-    if (voice) {
-        const spoken = line
-            .replace(/^CHESS WIZARD:\s*/,'')
-            .replace(/^SYSTEM:\s*/,'');
-
-        speakChess(spoken);
+        chess.log.unshift(line); if (chess.log.length > 24) chess.log.length = 24;
+        if (voice) speakChess(line.replace(/^CHESS WIZARD:\s*/,'').replace(/^SYSTEM:\s*/,''));
     }
-}
     function voiceReady(){ if ('speechSynthesis' in window) speechSynthesis.getVoices(); }
     function speakChess(text) {
         text = String(text || '').replace(/\bBLEEP\.?\s*/gi, '').replace(/\bBOOP\.?\s*/gi, '').trim();
@@ -926,36 +957,40 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         const u = new SpeechSynthesisUtterance(text); const voices = speechSynthesis.getVoices();
         u.voice = voices.find(v => /samantha|victoria|zira|karen|serena|moira|tessa|female/i.test(v.name)) || voices.find(v => /^en/i.test(v.lang)) || null;
         u.pitch = 1.45 + Math.random()*0.12; u.rate = 1.02 + Math.random()*0.08; u.volume = 0.78;
-        u.onend = () => roboticChirp();
-        u.onerror = () => roboticChirp();
-        speechSynthesis.cancel(); speechSynthesis.speak(u);
+        u.onend = () => roboticChirp(); u.onerror = () => roboticChirp(); speechSynthesis.cancel(); speechSynthesis.speak(u);
     }
     function bootBoops(){ [300,520,780,1040].forEach((f,i)=>setTimeout(()=>playSound(f,'square',.035,.035),i*65)); }
     function roboticChirp(){ [1300,900,1500].forEach((f,i)=>setTimeout(()=>playSound(f,'sine',.025,.025),i*45)); }
     function pieceScore(pc){ return ({p:1,n:3,b:3,r:5,q:9,k:80})[pc?.[1]] || 0; }
     function boardScore(){ let s=0; for(let r=0;r<8;r++) for(let c=0;c<8;c++){ const pc=chess.board[r][c]; if(pc) s += (pc[0]==='w'?1:-1)*pieceScore(pc); } return s; }
     function squareName(r,c){ return 'abcdefgh'[c] + (8-r); }
+    function other(color){ return color==='w'?'b':'w'; }
+    function rand(a){ return a[Math.floor(Math.random()*a.length)]; }
     function describeMove(pc, r, c, rr, cc, target, promoted=false) {
-        const who = pc?.[0] === 'b' ? 'BLACK' : 'WHITE';
-        const name = pieceNames[pc?.[1]] || 'PIECE';
-        const from = squareName(r,c);
-        const to = squareName(rr,cc);
+        const who = pc?.[0] === 'b' ? 'BLACK' : 'WHITE', name = pieceNames[pc?.[1]] || 'PIECE', from = squareName(r,c), to = squareName(rr,cc);
         const action = target ? `CAPTURES ${pieceNames[target[1]] || 'PIECE'} ON ${to}` : `TO ${to}`;
         const promo = promoted ? '. PROMOTED TO QUEEN, BECAUSE AMBITION IS A BUG' : '';
         return `${who} ${name} FROM ${from} ${action}${promo}.`;
     }
+    function suspicionLabel(){ return chess.suspicion<25?'LOW':chess.suspicion<55?'IMPOLITE':chess.suspicion<85?'COMBATIVE':'AUDIT-CATASTROPHIC'; }
+    function raiseSuspicion(n, line){ chess.suspicion=Math.min(100,chess.suspicion+n); if(line) chessSay(line, true); if(chess.suspicion>=55&&!chess.corruption){ chess.corruption=true; chessSay('SYSTEM: CORRUPTED MODE ENABLED FOR PERFORMANCE REASONS.', true); achievement('SURVIVED ADMINISTRATIVE BIAS'); } }
+    function achievement(name){ if(chess.achievements[name]) return; chess.achievements[name]=true; chessSay(`ACHIEVEMENT UNLOCKED: ${name}`, false); playSound(1900,'triangle',0.08,0.05); }
+
     function renderChess() {
         viewState='chess'; selectedIndex=0;
-        const st=chessStats(), score=boardScore();
+        const st=chessStats(), score=boardScore(), chk=inCheck(chess.turn);
+        const mode = chess.corruption ? 'CORRUPTED MODE' : 'FAIR MODE';
         terminal.innerHTML = getHeader() + `<div class="path">A:\\SECRET_GAMES\\CHESS_WIZARD.EXE</div>
-        <div class="chess-wrap"><div id="chess-board" class="${chess.glitch?'cheat-glitch':''}"></div><div class="chess-panel">
+        <div class="chess-wrap"><div id="chess-board" class="${(chess.glitch||chess.corruption)?'cheat-glitch':''}"></div><div class="chess-panel">
         <p class="glitch">CHESS WIZARD</p>
-        <div>TURN: ${chess.thinking?'CHESS WIZARD IS PRETENDING TO THINK':(chess.turn==='w'?'YOU / WHITE':'CHESS WIZARD / BLACK')}</div>
+        <div>TURN: ${chess.over?'GAME OVER':chess.thinking?'CHESS WIZARD IS PRETENDING TO THINK':(chess.turn==='w'?'YOU / WHITE':'CHESS WIZARD / BLACK')}</div>
+        <div>RULESET: ${mode} ${chk?' · CHECK DETECTED':''}</div>
         <div class="chess-stats"><div>WINS ${st.wins||0}</div><div>LOSSES ${st.losses||0}</div><div>CHEATS ${st.cheats||0}</div></div>
+        <div>SUSPICION METER: ${suspicionLabel()} [${chess.suspicion}/100]</div>
         <div>MATERIAL VIBE: ${score>0?'YOU ARE RUDELY AHEAD':score<0?'CHESS WIZARD IS THRIVING':'BALANCED, ALLEGEDLY'}</div>
-        <div class="chess-log">${chess.log.slice(0,8).map(x=>`<div>&gt; ${escapeHTML(x)}</div>`).join('')}</div>
-        <div class="chess-help">ARROWS MOVE CURSOR · ENTER SELECT/MOVE · ESC QUIT<br>PIN 2600 REOPENS THIS HIGHLY ACCREDITED TOURNAMENT SOFTWARE.</div>
-        <div><span class="clickable" onclick="renderSplash(); playSound(600,'sine',0.1,0.05);">[ ABANDON DIGNITY / EXIT ]</span></div></div></div>`;
+        <div class="chess-log">${chess.log.slice(0,9).map(x=>`<div>&gt; ${escapeHTML(x)}</div>`).join('')}</div>
+        <div class="chess-help">ARROWS MOVE CURSOR · ENTER SELECT/MOVE · ESC QUIT<br>REAL CHECK/CHECKMATE NOW INSTALLED. CORRUPTION IS STILL A FEATURE.</div>
+        <div><span class="clickable" onclick="renderSplash(); playSound(600,'sine',0.1,0.05);">[ ABANDON DIGNITY / EXIT ]</span>${chess.reviewReady?` <span class="clickable" onclick="reviewMove()">[ REVIEW MOVE ]</span>`:''}</div></div></div>`;
         const board = document.getElementById('chess-board');
         for (let r=0;r<8;r++) for (let c=0;c<8;c++) {
             const sq=document.createElement('div'); sq.className=`chess-square ${((r+c)%2?'dark':'light')}`;
@@ -969,9 +1004,55 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
             board.appendChild(sq);
         }
     }
+    function reviewMove(){ chess.reviewReady=false; chessSay('SYSTEM: MOVE VERIFIED BY INTERNAL COMMITTEE. NO IRREGULARITIES FOUND.', true); achievement('UNAUTHORIZED EN PASSANT'); renderChess(); }
+
+    function showNewGamePrompt() {
+        const box = document.getElementById("system-message");
+        if (!box) return;
+        clearTimeout(systemMessageTimer);
+
+        const yesClass = chess.endPromptSelection === 0 ? "clickable selected" : "clickable";
+        const noClass = chess.endPromptSelection === 1 ? "clickable selected" : "clickable";
+
+        box.innerHTML = `
+            <div class="system-title">NEW GAME?</div>
+            <div>&gt; CHESS WIZARD IS REQUESTING ANOTHER HIGHLY REGULATED CONTEST.</div>
+            <div>&gt; SELECT YES TO RESET THE BOARD.</div>
+            <div>&gt; SELECT NO TO RETURN TO SECURE VAULT ACCESS.</div>
+            <div class="prompt-options">
+                <span class="${yesClass}" onclick="chooseNewGamePrompt(true)">[ YES ]</span>
+                <span class="${noClass}" onclick="chooseNewGamePrompt(false)">[ NO ]</span>
+            </div>
+            <div class="prompt-hint">ARROWS SELECT · ENTER CONFIRMS · Y/N ALSO ACCEPTED</div>
+        `;
+        box.style.display = "block";
+    }
+
+    function chooseNewGamePrompt(wantsNewGame) {
+        playSound(wantsNewGame ? 1600 : 600, 'sine', 0.1, 0.05);
+        hideSystemMessage();
+        if (wantsNewGame) startChessGame();
+        else renderSplash();
+    }
+
+    function handleChessEndPromptKey(e) {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+            chess.endPromptSelection = chess.endPromptSelection ? 0 : 1;
+            playSound(900, 'square', 0.025, 0.04);
+            showNewGamePrompt();
+            return;
+        }
+        if (e.key === 'Enter') {
+            chooseNewGamePrompt(chess.endPromptSelection === 0);
+            return;
+        }
+        if (String(e.key).toLowerCase() === 'y') chooseNewGamePrompt(true);
+        else if (String(e.key).toLowerCase() === 'n' || e.key === 'Escape') chooseNewGamePrompt(false);
+    }
     function handleChessKeyDown(e) {
+        if (chess.over) { handleChessEndPromptKey(e); return; }
         if (e.key==='Escape') { renderSplash(); return; }
-        if (chess.thinking || chess.over) return;
+        if (chess.thinking) return;
         const [r,c]=chess.cursor;
         if (e.key==='ArrowUp') chess.cursor=[Math.max(0,r-1),c];
         else if (e.key==='ArrowDown') chess.cursor=[Math.min(7,r+1),c];
@@ -986,56 +1067,167 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         if (!chess.selected) { if (pc && pc[0]==='w') { chess.selected=[r,c]; chess.legal=legalMoves(r,c); playSound(1300,'triangle',0.04,0.05); } renderChess(); return; }
         const [sr,sc]=chess.selected, sp=chess.board[sr][sc];
         if (sp==='wk' && sr===7 && sc===4 && r===7 && (c===6||c===2)) { chessSay('CHESS WIZARD: CASTLING HAS BEEN DEPRECATED FOR SECURITY REASONS.', true); playSound(120,'sawtooth',.18,.12); chess.selected=null; chess.legal=[]; renderChess(); return; }
-        if (chess.legal.some(m=>m[0]===r&&m[1]===c)) { makeMove(sr,sc,r,c); chess.selected=null; chess.legal=[]; chess.turn='b'; chess.thinking=true; renderChess(); const delay=650+Math.random()*900; setTimeout(()=>chessSay('CHESS WIZARD: ANALYZING... PLEASE HOLD YOUR APPLAUSE.', false), 120); setTimeout(computerMove, delay); }
-        else { chess.selected=null; chess.legal=[]; playSound(160,'sawtooth',.1,.08); renderChess(); }
+        if (chess.legal.some(m=>m[0]===r&&m[1]===c)) {
+            const made=makeMove(sr,sc,r,c); chess.moveCount++; chess.selected=null; chess.legal=[];
+            chessSay('SYSTEM: ' + made.notation, false); maybePieceFlavor(made.pc); if (Math.random()<0.18) chessSay(rand(playerAccusations), false);
+            if (finishIfGameOver('b')) { renderChess(); return; }
+            if (inCheck('b')) chessSay(rand(checkLines.b), true);
+            chess.turn='b'; chess.thinking=true; renderChess(); const delay=650+Math.random()*900;
+            setTimeout(()=>chessSay('CHESS WIZARD: '+rand(wizardThoughts), false), 120); setTimeout(computerMove, delay);
+        } else { chess.selected=null; chess.legal=[]; playSound(160,'sawtooth',.1,.08); chessSay('SYSTEM: ILLEGAL MOVE BLOCKED. THE RULES ARE SHOWING OFF.', false); renderChess(); }
     }
-    function legalMoves(r,c) {
-        const pc=chess.board[r][c]; if (!pc) return []; const color=pc[0], t=pc[1], enemy=color==='w'?'b':'w', out=[];
-        const add=(rr,cc)=>{ if(rr<0||rr>7||cc<0||cc>7) return false; const q=chess.board[rr][cc]; if(!q){out.push([rr,cc]); return true;} if(q[0]===enemy) out.push([rr,cc]); return false; };
-        if(t==='p'){ const dir=color==='w'?-1:1, start=color==='w'?6:1; if(!chess.board[r+dir]?.[c]) { add(r+dir,c); if(r===start && !chess.board[r+2*dir]?.[c]) add(r+2*dir,c); } [[r+dir,c-1],[r+dir,c+1]].forEach(([rr,cc])=>{ if(chess.board[rr]?.[cc]?.[0]===enemy) out.push([rr,cc]); }); }
+    function maybePieceFlavor(pc){ const lines=pieceFlavor[pc?.[1]]||[]; if(lines.length && Math.random()<0.22) chessSay(rand(lines), false); }
+
+    function rawMoves(r,c, board=chess.board) {
+        const pc=board[r]?.[c]; if (!pc) return []; const color=pc[0], t=pc[1], enemy=other(color), out=[];
+        const add=(rr,cc)=>{ if(rr<0||rr>7||cc<0||cc>7) return false; const q=board[rr][cc]; if(!q){out.push([rr,cc]); return true;} if(q[0]===enemy && q[1] !== 'k') out.push([rr,cc]); return false; };
+        if(t==='p'){
+            const dir=color==='w'?-1:1, start=color==='w'?6:1;
+            if(!board[r+dir]?.[c]) { add(r+dir,c); if(r===start && !board[r+2*dir]?.[c]) add(r+2*dir,c); }
+            [[r+dir,c-1],[r+dir,c+1]].forEach(([rr,cc])=>{ const q=board[rr]?.[cc]; if(q?.[0]===enemy && q[1] !== 'k') out.push([rr,cc]); });
+        }
         if(t==='n') [[1,2],[2,1],[-1,2],[-2,1],[1,-2],[2,-1],[-1,-2],[-2,-1]].forEach(d=>add(r+d[0],c+d[1]));
         if(t==='k') for(let dr=-1;dr<=1;dr++) for(let dc=-1;dc<=1;dc++) if(dr||dc) add(r+dr,c+dc);
         const rays=[]; if('rbq'.includes(t)){ if('rq'.includes(t)) rays.push([1,0],[-1,0],[0,1],[0,-1]); if('bq'.includes(t)) rays.push([1,1],[1,-1],[-1,1],[-1,-1]); rays.forEach(([dr,dc])=>{ let rr=r+dr,cc=c+dc; while(add(rr,cc)){ rr+=dr; cc+=dc; } }); }
-        return out.filter(([rr,cc])=>chess.board[rr][cc]!==color+'k');
+        return out;
     }
-    function makeMove(r,c,rr,cc,opts={}) {
-        const pc=chess.board[r][c], target=chess.board[rr][cc];
-        let promoted = false;
-        chess.board[rr][cc]=pc; chess.board[r][c]=''; chess.lastMove=[r,c,rr,cc];
+    function findKing(color, board=chess.board){ for(let r=0;r<8;r++) for(let c=0;c<8;c++) if(board[r][c]===color+'k') return [r,c]; return null; }
+    function attacksSquare(r,c,tr,tc, board=chess.board){
+        const pc=board[r]?.[c]; if(!pc) return false; const color=pc[0], t=pc[1];
+        const dr=tr-r, dc=tc-c, adr=Math.abs(dr), adc=Math.abs(dc);
+        if(t==='p'){ const dir=color==='w'?-1:1; return tr===r+dir && adc===1; }
+        if(t==='k') return Math.max(adr,adc)===1;
+        if(t==='n') return (adr===1&&adc===2)||(adr===2&&adc===1);
+        const straight = dr === 0 || dc === 0;
+        const diagonal = adr === adc;
+        const canSlide =
+            (t === 'q' && (straight || diagonal)) ||
+            (t === 'r' && straight) ||
+            (t === 'b' && diagonal);
+
+        if (!canSlide) return false;
+
+        const stepR = Math.sign(dr);
+        const stepC = Math.sign(dc);
+        let rr = r + stepR;
+        let cc = c + stepC;
+
+        while (rr !== tr || cc !== tc) {
+            if (rr < 0 || rr > 7 || cc < 0 || cc > 7) return false;
+            if (board[rr][cc]) return false;
+            rr += stepR;
+            cc += stepC;
+        }
+
+        return true;
+    }
+    function isAttacked(tr,tc, byColor, board=chess.board){ for(let r=0;r<8;r++) for(let c=0;c<8;c++) if(board[r][c]?.[0]===byColor && attacksSquare(r,c,tr,tc,board)) return true; return false; }
+    function inCheck(color, board=chess.board){ const k=findKing(color,board); return k ? isAttacked(k[0],k[1],other(color),board) : false; }
+    function cloneBoard(board=chess.board){ return board.map(row=>row.slice()); }
+    function legalMoves(r,c) {
+        const pc=chess.board[r]?.[c]; if(!pc) return [];
+        const color=pc[0];
+        return rawMoves(r,c).filter(([rr,cc])=>{
+            const b=cloneBoard(); b[rr][cc]=b[r][c]; b[r][c]='';
+            if (b[rr][cc]?.[1]==='p' && (rr===0||rr===7)) b[rr][cc]=color+'q';
+            return !inCheck(color,b);
+        });
+    }
+    function allLegalMoves(color){ const a=[]; for(let r=0;r<8;r++) for(let c=0;c<8;c++) if(chess.board[r][c]?.[0]===color) legalMoves(r,c).forEach(m=>a.push([r,c,m[0],m[1],pieceScore(chess.board[m[0]][m[1]])])); return a; }
+    function finishIfGameOver(sideToMove){
+        const moves=allLegalMoves(sideToMove), checked=inCheck(sideToMove);
+        if(moves.length) return false;
+        chess.over=true;
+        if(checked){
+            if(sideToMove==='b'){ chessSay('SYSTEM: EXECUTIVE MONARCH TERMINATED. CHECKMATE.', true); bumpStat('wins'); achievement('KING NOT TAKEN, JUST PROFESSIONALLY CORNERED'); }
+            else { chessSay('CHESS WIZARD: CHECKMATE. YOUR KING HAS BEEN PLACED ON ADMINISTRATIVE LEAVE.', true); bumpStat('losses'); }
+        } else { chessSay('CHESS WIZARD: WE APPEAR TO HAVE INVENTED PEACE. DISGUSTING. STALEMATE.', true); bumpStat('draws'); achievement('ACCIDENTAL DIPLOMACY'); }
+        chess.endPromptSelection = 0;
+        setTimeout(showNewGamePrompt, 120);
+        return true;
+    }
+    function makeMove(r,c,rr,cc) {
+        const pc=chess.board[r][c], target=chess.board[rr][cc]; let promoted = false;
+        chess.board[rr][cc]=pc; chess.board[r][c]=''; chess.lastMove=[r,c,rr,cc]; chess.reviewReady=false;
         if (target) { chess.boom=[rr,cc]; setTimeout(()=>{ chess.boom=null; if(viewState==='chess') renderChess(); }, 450); }
-        if (pc[1]==='p' && (rr===0||rr===7)) { chess.board[rr][cc]=pc[0]+'q'; promoted = true; chessSay('SYSTEM: PAWN PROMOTED. HR DEPARTMENT ALARMED.'); }
+        if (pc[1]==='p' && (rr===0||rr===7)) { chess.board[rr][cc]=pc[0]+'q'; promoted = true; chessSay('SYSTEM: PAWN PROMOTED. HR DEPARTMENT ALARMED.'); achievement('CAREER ADVANCEMENT INCIDENT'); }
         playSound(target?220:1100,target?'sawtooth':'sine',target?0.12:0.04,target?0.12:0.05);
-        if (target && target[1]==='k') { chess.over=true; const winner=pc[0]==='w'?'YOU':'CHESS WIZARD'; chessSay(winner+': KING CAPTURED. CHECKMATE-ISH.', true); bumpStat(pc[0]==='w'?'wins':'losses'); }
         return { pc, target, promoted, notation: describeMove(pc,r,c,rr,cc,target,promoted) };
     }
+    function chooseComputerMove() {
+        const moves = allLegalMoves('b');
+        if (!moves.length) return null;
+
+        // Prefer captures, then small developing moves. This makes the opponent visibly move
+        // every turn instead of only logging a bureaucratic complaint.
+        moves.sort((a,b)=>{
+            const captureDiff = b[4] - a[4];
+            if (captureDiff) return captureDiff;
+            const aAdvance = a[2] - a[0];
+            const bAdvance = b[2] - b[0];
+            return bAdvance - aAdvance;
+        });
+        return Math.random() < 0.76 ? moves[0] : rand(moves);
+    }
+
     function computerMove() {
         if (chess.over) return;
-        chess.thinking=false;
-        const cheatChance = boardScore()>2 ? 0.48 : 0.22;
-        if (Math.random()<cheatChance) return computerCheat();
-        const moves=[]; for(let r=0;r<8;r++) for(let c=0;c<8;c++) if(chess.board[r][c]?.[0]==='b') legalMoves(r,c).forEach(m=>moves.push([r,c,m[0],m[1],pieceScore(chess.board[m[0]][m[1]])]));
-        if(!moves.length){ chessSay('CHESS WIZARD: I HAVE NO MOVES. I BLAME THE MOUSE.', true); chess.turn='w'; bumpStat('draws'); renderChess(); return; }
-        moves.sort((a,b)=>b[4]-a[4]);
-        const m = Math.random()<0.7 ? moves[0] : moves[Math.floor(Math.random()*moves.length)];
-        const made = makeMove(m[0],m[1],m[2],m[3]);
-        chessSay('CHESS WIZARD: ' + made.notation, true);
-        const sass = boardScore()>3 ? ['CHESS WIZARD: WOW. LOOK WHO READ A CHESS PAMPHLET.','CHESS WIZARD: PLEASE STOP WINNING, IT IS UNPROFESSIONAL.','CHESS WIZARD: YOUR MATERIAL ADVANTAGE HAS BEEN REPORTED.'] : ['CHESS WIZARD: A PERFECTLY NORMAL MOVE, FILED IN TRIPLICATE.','CHESS WIZARD: I HAVE CALCULATED YOUR VIBES.','CHESS WIZARD: MY HORSEY HAS A DIPLOMA.'];
-        chessSay(sass[Math.floor(Math.random()*sass.length)], false);
-        chess.turn='w'; renderChess();
+        chess.thinking = false;
+
+        try {
+            if (finishIfGameOver('b')) { renderChess(); return; }
+
+            const m = chooseComputerMove();
+            if (!m) { finishIfGameOver('b'); renderChess(); return; }
+
+            const made = makeMove(m[0],m[1],m[2],m[3]);
+            chess.moveCount++;
+            chessSay('CHESS WIZARD: ' + made.notation, true);
+            maybePieceFlavor(made.pc);
+
+            const sass = boardScore()>3
+                ? ['CHESS WIZARD: WOW. LOOK WHO READ A CHESS PAMPHLET.','CHESS WIZARD: PLEASE STOP WINNING, IT IS UNPROFESSIONAL.','SYSTEM: CHESS WIZARD HAS OPENED AN HR CASE.']
+                : ['CHESS WIZARD: A PERFECTLY NORMAL MOVE, FILED IN TRIPLICATE.','CHESS WIZARD: I HAVE CALCULATED YOUR VIBES.','CHESS WIZARD: MY HORSEY HAS A DIPLOMA.'];
+            chessSay(rand(sass), false);
+
+            // Cheating is now an extra flourish after the wizard has made a real move,
+            // so the player never gets two normal turns in a row by accident.
+            const score = boardScore();
+            const cheatChance = chess.corruption ? (score>2?0.42:0.24) : (chess.moveCount>10 && score>4 ? 0.14 : 0.00);
+            if (!chess.over && Math.random() < cheatChance) computerCheat(false);
+
+            if (finishIfGameOver('w')) { renderChess(); return; }
+            if (inCheck('w')) chessSay(rand(checkLines.w), true);
+
+            chess.turn = 'w';
+            renderChess();
+        } catch (err) {
+            console.error('CHESS WIZARD MOVE FAILURE', err);
+            chessSay('SYSTEM: CHESS WIZARD TRIPPED OVER A CABLE. TURN RECOVERED.', false);
+            chess.turn = 'w';
+            chess.thinking = false;
+            renderChess();
+        }
     }
-    function computerCheat() {
-        const cheats=[cheatExtraPawn, cheatTeleport, cheatStealTurn, cheatIllegalCapture, cheatTinyAdjustment, cheatTournamentWarning];
-        cheats[Math.floor(Math.random()*cheats.length)](); bumpStat('cheats'); chess.turn='w'; chess.glitch=true; renderChess(); setTimeout(()=>{ chess.glitch=false; if(viewState==='chess') renderChess(); }, 850);
+
+    function computerCheat(renderAfter = true) {
+        // Non-moving cheats are allowed only as add-ons now, never as the wizard's whole turn.
+        const cheats=[cheatExtraPawn, cheatTeleport, cheatStealTurn, cheatIllegalCapture, cheatTinyAdjustment, cheatTournamentWarning, cheatOpeningDoctrine];
+        rand(cheats)(); bumpStat('cheats'); raiseSuspicion(18); chess.glitch=true; chess.reviewReady=true;
+        if(chess.suspicion>=85) achievement('USER HAS BECOME COMBATIVE');
+        if (renderAfter) renderChess();
+        setTimeout(()=>{ chess.glitch=false; if(viewState==='chess') renderChess(); }, 850);
     }
     function emptySquares(){ const a=[]; for(let r=0;r<8;r++) for(let c=0;c<8;c++) if(!chess.board[r][c]) a.push([r,c]); return a; }
     function blackPieces(filter=()=>true){ const a=[]; for(let r=0;r<8;r++) for(let c=0;c<8;c++) if(chess.board[r][c]?.[0]==='b' && filter(chess.board[r][c],r,c)) a.push([r,c]); return a; }
     function whitePieces(filter=()=>true){ const a=[]; for(let r=0;r<8;r++) for(let c=0;c<8;c++) if(chess.board[r][c]?.[0]==='w' && filter(chess.board[r][c],r,c)) a.push([r,c]); return a; }
-    function cheatExtraPawn(){ const e=emptySquares().filter(x=>x[0]>1&&x[0]<5); if(e.length){ const [r,c]=e[Math.floor(Math.random()*e.length)]; chess.board[r][c]='bp'; chess.boom=[r,c]; chessSay('CHESS WIZARD: A PAWN HAS VOLUNTEERED FROM ACCOUNTING.', true); playSound(80,'square',0.2,0.15);} }
-    function cheatTeleport(){ const pieces=blackPieces(pc=>pc[1]!=='k'), e=emptySquares(); if(pieces.length&&e.length){ const a=pieces[Math.floor(Math.random()*pieces.length)], b=e[Math.floor(Math.random()*e.length)]; chess.board[b[0]][b[1]]=chess.board[a[0]][a[1]]; chess.board[a[0]][a[1]]=''; chess.lastMove=[a[0],a[1],b[0],b[1]]; chessSay('CHESS WIZARD: LEGAL NOTICE: TELEPORTATION WAS IN THE PATCH NOTES.', true); playSound(2000,'sawtooth',0.18,0.08);} }
-    function cheatStealTurn(){ const moves=[]; for(let r=0;r<8;r++) for(let c=0;c<8;c++) if(chess.board[r][c]?.[0]==='b') legalMoves(r,c).forEach(m=>moves.push([r,c,m[0],m[1]])); if(moves.length){ const made = makeMove(...moves[Math.floor(Math.random()*moves.length)]); chessSay('CHESS WIZARD: ' + made.notation + ' ALSO I TOOK AN EXTRA TURN. ITS CALLED INITIATIVE.', true);} }
-    function cheatIllegalCapture(){ const b=blackPieces(pc=>pc[1]!=='k'), w=whitePieces(pc=>pc[1]!=='k'); if(b.length&&w.length){ const a=b[Math.floor(Math.random()*b.length)], victim=w.sort((x,y)=>pieceScore(chess.board[y[0]][y[1]])-pieceScore(chess.board[x[0]][x[1]]))[0]; chess.board[victim[0]][victim[1]]=chess.board[a[0]][a[1]]; chess.board[a[0]][a[1]]=''; chess.lastMove=[a[0],a[1],victim[0],victim[1]]; chess.boom=[victim[0],victim[1]]; chessSay('CHESS WIZARD: ILLEGAL CAPTURE? I DONT THINK SO.', true); playSound(90,'sawtooth',.25,.18);} }
-    function cheatTinyAdjustment(){ const pieces=blackPieces(pc=>pc[1]!=='k'); if(!pieces.length) return cheatExtraPawn(); const a=pieces[Math.floor(Math.random()*pieces.length)], dirs=[[1,0],[0,1],[-1,0],[0,-1],[1,1],[-1,-1]]; for(const [dr,dc] of dirs.sort(()=>Math.random()-.5)){ const rr=a[0]+dr, cc=a[1]+dc; if(rr>=0&&rr<8&&cc>=0&&cc<8&&!chess.board[rr][cc]){ chess.board[rr][cc]=chess.board[a[0]][a[1]]; chess.board[a[0]][a[1]]=''; chess.lastMove=[a[0],a[1],rr,cc]; chessSay('CHESS WIZARD: JUST MOVING THIS ONE A LITTLE. DO NOT PERCEIVE ME.', true); return; } } cheatTeleport(); }
+    function cheatExtraPawn(){ const e=emptySquares().filter(x=>x[0]>1&&x[0]<5); if(e.length){ const [r,c]=rand(e); chess.board[r][c]='bp'; chess.boom=[r,c]; chessSay('CHESS WIZARD: A PAWN HAS VOLUNTEERED FROM ACCOUNTING.', true); playSound(80,'square',0.2,0.15);} }
+    function cheatTeleport(){ const pieces=blackPieces(pc=>pc[1]!=='k'), e=emptySquares(); if(pieces.length&&e.length){ const a=rand(pieces), b=rand(e); chess.board[b[0]][b[1]]=chess.board[a[0]][a[1]]; chess.board[a[0]][a[1]]=''; chess.lastMove=[a[0],a[1],b[0],b[1]]; chessSay('CHESS WIZARD: LEGAL NOTICE: TELEPORTATION WAS IN THE PATCH NOTES.', true); playSound(2000,'sawtooth',0.18,0.08);} }
+    function cheatStealTurn(){ const moves=allLegalMoves('b'); if(moves.length){ const made = makeMove(...rand(moves).slice(0,4)); chessSay('CHESS WIZARD: ' + made.notation + ' ALSO I TOOK AN EXTRA TURN. ITS CALLED INITIATIVE.', true);} }
+    function cheatIllegalCapture(){ const b=blackPieces(pc=>pc[1]!=='k'), w=whitePieces(pc=>pc[1]!=='k'); if(b.length&&w.length){ const a=rand(b), victim=w.sort((x,y)=>pieceScore(chess.board[y[0]][y[1]])-pieceScore(chess.board[x[0]][x[1]]))[0]; chess.board[victim[0]][victim[1]]=chess.board[a[0]][a[1]]; chess.board[a[0]][a[1]]=''; chess.lastMove=[a[0],a[1],victim[0],victim[1]]; chess.boom=[victim[0],victim[1]]; chessSay('CHESS WIZARD: PER SECTION 4B, MY BISHOP NOW HAS CLEARANCE. ILLEGAL CAPTURE APPROVED.', true); playSound(90,'sawtooth',.25,.18);} }
+    function cheatTinyAdjustment(){ const pieces=blackPieces(pc=>pc[1]!=='k'); if(!pieces.length) return cheatExtraPawn(); const a=rand(pieces), dirs=[[1,0],[0,1],[-1,0],[0,-1],[1,1],[-1,-1]]; for(const [dr,dc] of dirs.sort(()=>Math.random()-.5)){ const rr=a[0]+dr, cc=a[1]+dc; if(rr>=0&&rr<8&&cc>=0&&cc<8&&!chess.board[rr][cc]){ chess.board[rr][cc]=chess.board[a[0]][a[1]]; chess.board[a[0]][a[1]]=''; chess.lastMove=[a[0],a[1],rr,cc]; chessSay('CHESS WIZARD: JUST MOVING THIS ONE A LITTLE. DO NOT PERCEIVE ME.', true); return; } } cheatTeleport(); }
     function cheatTournamentWarning(){ chessSay('SYSTEM: WARNING. CHESS WIZARD HAS FILED A FORM 7B: OPPONENT TOO CONFIDENT.', true); playSound(55,'square',.35,.16); }
+    function cheatOpeningDoctrine(){ chessSay('CHESS WIZARD: INITIATING SICILIAN-ADJACENT DEFENSE. YOUR OBJECTION HAS BEEN DENIED.', true); cheatTinyAdjustment(); }
 
     document.addEventListener('mousedown', resetIdle);
     renderSplash();
