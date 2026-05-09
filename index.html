@@ -86,7 +86,7 @@
             box-sizing: border-box;
         }
 
-        #terminal-content { padding: 15px; height: 100%; display: flex; flex-direction: column; }
+        #terminal-content { padding: 15px; height: 100%; display: flex; flex-direction: column; box-sizing: border-box; overflow: hidden; }
 
         .system-stats {
             display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
@@ -132,7 +132,12 @@
         }
 
         .metadata-table { width: 100%; border-collapse: collapse; font-size: 8pt; margin-top: 5px; }
-        .metadata-table td { border: 1px solid var(--dark-green); padding: 4px 10px; }
+        .metadata-table td {
+            border: 1px solid var(--dark-green);
+            padding: 4px 10px;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
 
         .glitch { animation: glitch-text 0.5s infinite; }
         @keyframes glitch-text {
@@ -198,6 +203,7 @@
             }
 
             #system-message {
+                position: fixed;
                 width: 82%;
                 bottom: 18px;
             }
@@ -217,6 +223,37 @@
                 opacity: 0.15;
             }
         }
+
+
+
+        /* --- Secret Chess Gremlin mini-game --- */
+        .chess-wrap { display: grid; grid-template-columns: minmax(260px, 400px) 1fr; gap: 16px; height: calc(100% - 92px); min-height: 0; align-items: start; overflow: hidden; }
+        #chess-board { width: min(400px, 52vh, 88vw); height: min(400px, 52vh, 88vw); display: grid; grid-template-columns: repeat(8,1fr); grid-template-rows: repeat(8,1fr); border: 2px solid var(--bright-green); box-shadow: var(--crt-glow); position: relative; overflow:hidden; transition: filter .2s, transform .2s; }
+        #chess-board.cheat-glitch { animation: board-corrupt .22s steps(2,end) 8; filter: hue-rotate(40deg) saturate(2) contrast(1.4); }
+        @keyframes board-corrupt { 0%{transform:translate(0,0) skew(0deg)} 25%{transform:translate(2px,-1px) skew(.5deg)} 50%{transform:translate(-2px,1px) skew(-.5deg)} 75%{transform:translate(1px,2px)} 100%{transform:translate(0,0)} }
+        .chess-square { position: relative; display: flex; align-items: center; justify-content: center; cursor: pointer; overflow:hidden; }
+        .chess-square.light { background: #141414; }
+        .chess-square.dark { background: #030303; }
+        .chess-square.cursor { outline: 3px solid var(--amber); outline-offset: -3px; z-index:2; }
+        .chess-square.pick { box-shadow: inset 0 0 0 3px var(--bright-green); }
+        .chess-square.last { box-shadow: inset 0 0 14px rgba(255,176,0,.55); }
+        .chess-square.legal::after { content:""; width: 14px; height:14px; border: 1px solid var(--bright-green); border-radius:50%; opacity:.85; position:absolute; }
+        .chess-piece { width: 96%; height: 96%; image-rendering: pixelated; filter: drop-shadow(0 0 2px var(--bright-green)); transition: transform .18s ease, filter .18s ease; position:relative; z-index:1; display:flex; align-items:center; justify-content:center; }
+        .chess-piece.moved { animation: piece-pop .22s ease; }
+        .chess-piece.thinking { animation: think-wiggle .25s steps(2,end) infinite; }
+        .chess-piece canvas { width:100%; height:100%; image-rendering: pixelated; }
+        .chess-piece::after { content: attr(data-fallback); color: var(--bright-green); font-weight:bold; font-size: 26px; position:absolute; inset:0; display:none; align-items:center; justify-content:center; text-shadow:0 0 8px var(--bright-green); }
+        body.sprite-fallback .chess-piece { border:1px solid var(--dark-green); }
+        body.sprite-fallback .chess-piece::after { display:flex; }
+        .chess-boom { position:absolute; inset:8%; border:2px solid var(--amber); border-radius:50%; animation: chess-boom .42s ease-out forwards; pointer-events:none; z-index:3; }
+        @keyframes chess-boom { from{transform:scale(.1); opacity:1;} to{transform:scale(1.8); opacity:0;} }
+        @keyframes piece-pop { 0%{transform:scale(.7)} 60%{transform:scale(1.12)} 100%{transform:scale(1)} }
+        @keyframes think-wiggle { 0%,100%{transform:translateX(0)} 50%{transform:translateX(1px)} }
+        .chess-panel { font-size: 8pt; line-height: 1.45; align-self: stretch; display:flex; flex-direction:column; gap:8px; overflow:hidden; }
+        .chess-log { border: 1px solid var(--dark-green); padding: 8px; min-height: 108px; max-height: 176px; overflow-y:auto; background:rgba(0,0,0,.35); }
+        .chess-stats { border:1px solid var(--dark-green); padding:5px 8px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; }
+        .chess-help { opacity:.9; border-top:1px solid var(--dark-green); padding-top:8px; }
+        @media (max-width: 720px) { .chess-wrap { grid-template-columns: 1fr; gap: 8px; overflow-y:auto; height: calc(100% - 82px); } #chess-board { width: min(82vw, 360px); height: min(82vw, 360px); justify-self:center; } .chess-panel { font-size:7pt; } }
 
         .keypad-grid { display: grid; grid-template-columns: repeat(3, 60px); gap: 10px; margin-top: 20px; }
         .pin-btn { 
@@ -239,6 +276,43 @@
             50% { transform: translate(0.5px, 0.5px); }
             100% { transform: translate(0, 0); }
         }
+    
+        /* Chess fit patch: prevent the board border from clipping at the bottom. */
+        .chess-wrap {
+            align-items: flex-start !important;
+            overflow: visible !important;
+        }
+        .chess-board {
+            width: min(43vw, 480px, calc(100vh - 300px)) !important;
+            height: min(43vw, 480px, calc(100vh - 300px)) !important;
+            min-width: 360px;
+            min-height: 360px;
+            box-sizing: border-box !important;
+            flex: 0 0 auto !important;
+        }
+        .chess-square {
+            min-width: 0;
+            min-height: 0;
+        }
+        .chess-piece {
+            width: 86% !important;
+            height: 86% !important;
+        }
+        @media (max-height: 820px) {
+            .chess-board {
+                width: min(41vw, 440px, calc(100vh - 320px)) !important;
+                height: min(41vw, 440px, calc(100vh - 320px)) !important;
+                min-width: 320px;
+                min-height: 320px;
+            }
+            .chess-side {
+                font-size: 7.8pt !important;
+            }
+            .chess-log {
+                max-height: 170px !important;
+            }
+        }
+
     </style>
 </head>
 <body onkeydown="handleKeyDown(event)">
@@ -344,6 +418,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 
     function renderDatabaseError() {
         viewState = "error";
+        selectedIndex = 0;
         terminal.innerHTML = getHeader() + `
             <div class="path">A:\\SYSTEM\\ERROR</div>
             <div class="card-view">
@@ -352,11 +427,14 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
                 <p class="clickable" onclick="location.reload()">[ RETRY ]</p>
             </div>
         `;
+        refreshSelectableItems();
+        updateSelection();
     }
 
     let inputBuffer = "";
     const CORRECT_PIN_HASH = "b20a51d1d0cd4d4e2f5c6f6b9939e8a4d4db0fb202efc513a8e1cddf9021bf4e";
     const SECRET_PIN_HASH = "4dea5c7cb70f50322ec9d734aa4aa078be9227c05251e18991c596f387552370";
+    const CHESS_PIN_HASH = "3a0e14026c6b1d6b4cae899e451e9ebcbd9646c44a956440f2227b2212447be6"; // PIN 2600
     let isSecretAccess = false;
 
     async function sha256(text) {
@@ -431,6 +509,25 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         `;
     }
 
+
+    function navigateModalGallery(direction) {
+        const db = getDatabase();
+        if (!db) return renderDatabaseError();
+
+        const files = currentSubFolder ? db[currentFolderName][currentSubFolder] : db[currentFolderName];
+        if (!files || !files.length) return renderDatabaseError();
+
+        currentFileIndex = (currentFileIndex + direction + files.length) % files.length;
+        lastFileSelectionIndex = currentFileIndex + 1;
+
+        const card = files[currentFileIndex];
+        const modalImg = document.getElementById("modal-img");
+        modalImg.src = card.file;
+        modalImg.alt = card.caption || `${card.title}.IMG`;
+
+        playSound(1500, "sine", 0.05, 0.04);
+    }
+
     function handleKeyDown(e) {
         resetIdle();
 
@@ -443,18 +540,14 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
             }
         } else { konamiIndex = 0; }
 
+        if (viewState === "chess") { handleChessKeyDown(e); return; }
+
         if (document.getElementById('image-modal').style.display === 'flex') {
             if (e.key === "Escape" || e.key === "Enter") closeModal();
             else if (e.key === "ArrowRight") {
-                navigateGallery(1);
-                const files = currentSubFolder ? getDatabase()[currentFolderName][currentSubFolder] : getDatabase()[currentFolderName];
-                const card = files[currentFileIndex];
-                openModal(card.file, card.caption || `${card.title}.IMG`);
+                navigateModalGallery(1);
             } else if (e.key === "ArrowLeft") {
-                navigateGallery(-1);
-                const files = currentSubFolder ? getDatabase()[currentFolderName][currentSubFolder] : getDatabase()[currentFolderName];
-                const card = files[currentFileIndex];
-                openModal(card.file, card.caption || `${card.title}.IMG`);
+                navigateModalGallery(-1);
             }
             return;
         }
@@ -576,7 +669,11 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 
     async function verifyPin() {
         const enteredHash = await sha256(inputBuffer);
-        if (enteredHash === CORRECT_PIN_HASH || enteredHash === SECRET_PIN_HASH) {
+        if (inputBuffer === "2600" || enteredHash === CHESS_PIN_HASH) {
+            isSecretAccess = false;
+            playSound(2600, 'square', 0.1, 0.08);
+            startChessGame();
+        } else if (enteredHash === CORRECT_PIN_HASH || enteredHash === SECRET_PIN_HASH) {
             isSecretAccess = enteredHash === SECRET_PIN_HASH;
             playSound(1800, 'sine', 0.1, 0.1);
             renderRoot();
@@ -608,18 +705,28 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     }
 
     function openDir(name, useMemory = false, sub = "") {
-        viewState = "dir"; currentFolderName = name; currentSubFolder = sub;
+        viewState = "dir";
+        currentFolderName = name;
+        currentSubFolder = sub;
         selectedIndex = useMemory ? lastFileSelectionIndex : 1;
-        const data = database[name];
-        
-        let pathStr = `A:\\${name.toUpperCase()}`;
-        if(sub) pathStr += `\\${sub.toUpperCase()}`;
-        
+
+        const db = getDatabase();
+        if (!db) return renderDatabaseError();
+
+        const data = db[name];
+        if (!data) return renderDatabaseError();
+
+        let pathStr = `A:\\${escapeHTML(name.toUpperCase())}`;
+        if (sub) pathStr += `\\${escapeHTML(sub.toUpperCase())}`;
+
         let html = getHeader() + `<div class="path">${pathStr}</div><ul>`;
-        
-        if(sub) {
+
+        if (sub) {
+            const subData = data[sub];
+            if (!Array.isArray(subData)) return renderDatabaseError();
+
             html += `<li onclick="openDir('${escapeJS(name)}'); playSound(600, 'sine', 0.1, 0.05);">[..] GO BACK</li>`;
-            data[sub].forEach((card, i) => {
+            subData.forEach((card, i) => {
                 html += `<li onclick="viewCard('${escapeJS(name)}', ${i}, '${escapeJS(sub)}'); playSound(1500, 'sine', 0.05, 0.05);">-rw-r--r--   ${escapeHTML(card.size)}   ${escapeHTML(card.title)}.IMG</li>`;
             });
         } else if (!Array.isArray(data)) {
@@ -633,7 +740,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
                 html += `<li onclick="viewCard('${escapeJS(name)}', ${i}); playSound(1500, 'sine', 0.05, 0.05);">-rw-r--r--   ${escapeHTML(card.size)}   ${escapeHTML(card.title)}.IMG</li>`;
             });
         }
-        
+
         terminal.innerHTML = html + `</ul>`;
         refreshSelectableItems();
         updateSelection();
@@ -643,6 +750,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         const db = getDatabase();
         if (!db) return renderDatabaseError();
         const files = currentSubFolder ? db[currentFolderName][currentSubFolder] : db[currentFolderName];
+        if (!files || !files.length) return renderDatabaseError();
         currentFileIndex = (currentFileIndex + direction + files.length) % files.length;
         viewCard(currentFolderName, currentFileIndex, currentSubFolder);
     }
@@ -737,6 +845,185 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         playSound(600, 'sine', 0.1, 0.05); 
     }
 	
+
+    // --- Secret Chess Gremlin mini-game. Activated by PIN 2600. ---
+    const chess = { board: [], turn: 'w', cursor: [6,4], selected: null, legal: [], log: [], over: false, thinking:false, lastMove:null, boom:null, glitch:false, sass:0 };
+    const SPRITE_COLUMNS = { r:0, n:1, b:2, q:3, k:4, p:0 };
+    const pieceNames = { p:'PAWN', r:'ROOK', n:'KNIGHT', b:'BISHOP', q:'QUEEN', k:'KING' };
+    const glyphs = { wk:'♔', wq:'♕', wr:'♖', wb:'♗', wn:'♘', wp:'♙', bk:'♚', bq:'♛', br:'♜', bb:'♝', bn:'♞', bp:'♟' };
+    const chessSprite = new Image();
+    let chessSpriteReady = false;
+    function loadChessSprite() {
+        if (chessSprite.src) return;
+        chessSprite.onload = () => { chessSpriteReady = true; document.body.classList.remove('sprite-fallback'); if (viewState === 'chess') renderChess(); };
+        chessSprite.onerror = () => { chessSpriteReady = false; document.body.classList.add('sprite-fallback'); if (viewState === 'chess') renderChess(); };
+        chessSprite.src = 'chess_sprites.png';
+    }
+    function spriteCell(piece) {
+        const pc = String(piece || '');
+        const color = pc[0], type = pc[1];
+        return { col: SPRITE_COLUMNS[type] ?? 0, row: color === 'w' ? (type === 'p' ? 6 : 7) : (type === 'p' ? 1 : 0) };
+    }
+    function drawChessSprite(canvas, piece) {
+        const ctx = canvas.getContext('2d');
+        const { col, row } = spriteCell(piece);
+        const cellW = chessSprite.naturalWidth / 8;
+        const cellH = chessSprite.naturalHeight / 8;
+        canvas.width = cellW;
+        canvas.height = cellH;
+        ctx.imageSmoothingEnabled = false;
+        ctx.drawImage(chessSprite, col * cellW, row * cellH, cellW, cellH, 0, 0, cellW, cellH);
+    }
+    function chessStats(){
+        try { return JSON.parse(localStorage.getItem('cmcCheatyChessStats') || '{"wins":0,"losses":0,"draws":0,"cheats":0}'); }
+        catch(e){ return {wins:0,losses:0,draws:0,cheats:0}; }
+    }
+    function saveChessStats(s){ localStorage.setItem('cmcCheatyChessStats', JSON.stringify(s)); }
+    function bumpStat(key){ const s=chessStats(); s[key]=(s[key]||0)+1; saveChessStats(s); }
+    function initChessBoard() {
+        const back = ['r','n','b','q','k','b','n','r'];
+        chess.board = Array.from({length:8},()=>Array(8).fill(''));
+        for (let c=0;c<8;c++) { chess.board[0][c]='b'+back[c]; chess.board[1][c]='bp'; chess.board[6][c]='wp'; chess.board[7][c]='w'+back[c]; }
+        Object.assign(chess,{turn:'w', cursor:[6,4], selected:null, legal:[], over:false, thinking:false, lastMove:null, boom:null, glitch:false, sass:0});
+        chess.log=['CHESS WIZARD: HELLO MACREADY. WOULD YOU LIKE TO PLAY ANOTHER GAME?'];
+        preloadChessSprites();
+    }
+    function preloadChessSprites(){
+        loadChessSprite();
+    }
+    function startChessGame() { initChessBoard(); renderChess(); voiceReady(); speakChess('Hello macready. Would you like to play another game?'); bootBoops(); }
+    function chessSay(line, voice=false) {
+    chess.log.unshift(line);
+
+    if (chess.log.length > 18)
+        chess.log.length = 18;
+
+    if (voice) {
+        const spoken = line
+            .replace(/^CHESS WIZARD:\s*/,'')
+            .replace(/^SYSTEM:\s*/,'');
+
+        speakChess(spoken);
+    }
+}
+    function voiceReady(){ if ('speechSynthesis' in window) speechSynthesis.getVoices(); }
+    function speakChess(text) {
+        text = String(text || '').replace(/\bBLEEP\.?\s*/gi, '').replace(/\bBOOP\.?\s*/gi, '').trim();
+        if (!('speechSynthesis' in window)) { roboticChirp(); return; }
+        const u = new SpeechSynthesisUtterance(text); const voices = speechSynthesis.getVoices();
+        u.voice = voices.find(v => /samantha|victoria|zira|karen|serena|moira|tessa|female/i.test(v.name)) || voices.find(v => /^en/i.test(v.lang)) || null;
+        u.pitch = 1.45 + Math.random()*0.12; u.rate = 1.02 + Math.random()*0.08; u.volume = 0.78;
+        u.onend = () => roboticChirp();
+        u.onerror = () => roboticChirp();
+        speechSynthesis.cancel(); speechSynthesis.speak(u);
+    }
+    function bootBoops(){ [300,520,780,1040].forEach((f,i)=>setTimeout(()=>playSound(f,'square',.035,.035),i*65)); }
+    function roboticChirp(){ [1300,900,1500].forEach((f,i)=>setTimeout(()=>playSound(f,'sine',.025,.025),i*45)); }
+    function pieceScore(pc){ return ({p:1,n:3,b:3,r:5,q:9,k:80})[pc?.[1]] || 0; }
+    function boardScore(){ let s=0; for(let r=0;r<8;r++) for(let c=0;c<8;c++){ const pc=chess.board[r][c]; if(pc) s += (pc[0]==='w'?1:-1)*pieceScore(pc); } return s; }
+    function squareName(r,c){ return 'abcdefgh'[c] + (8-r); }
+    function describeMove(pc, r, c, rr, cc, target, promoted=false) {
+        const who = pc?.[0] === 'b' ? 'BLACK' : 'WHITE';
+        const name = pieceNames[pc?.[1]] || 'PIECE';
+        const from = squareName(r,c);
+        const to = squareName(rr,cc);
+        const action = target ? `CAPTURES ${pieceNames[target[1]] || 'PIECE'} ON ${to}` : `TO ${to}`;
+        const promo = promoted ? '. PROMOTED TO QUEEN, BECAUSE AMBITION IS A BUG' : '';
+        return `${who} ${name} FROM ${from} ${action}${promo}.`;
+    }
+    function renderChess() {
+        viewState='chess'; selectedIndex=0;
+        const st=chessStats(), score=boardScore();
+        terminal.innerHTML = getHeader() + `<div class="path">A:\\SECRET_GAMES\\CHESS_WIZARD.EXE</div>
+        <div class="chess-wrap"><div id="chess-board" class="${chess.glitch?'cheat-glitch':''}"></div><div class="chess-panel">
+        <p class="glitch">CHESS WIZARD</p>
+        <div>TURN: ${chess.thinking?'CHESS WIZARD IS PRETENDING TO THINK':(chess.turn==='w'?'YOU / WHITE':'CHESS WIZARD / BLACK')}</div>
+        <div class="chess-stats"><div>WINS ${st.wins||0}</div><div>LOSSES ${st.losses||0}</div><div>CHEATS ${st.cheats||0}</div></div>
+        <div>MATERIAL VIBE: ${score>0?'YOU ARE RUDELY AHEAD':score<0?'CHESS WIZARD IS THRIVING':'BALANCED, ALLEGEDLY'}</div>
+        <div class="chess-log">${chess.log.slice(0,8).map(x=>`<div>&gt; ${escapeHTML(x)}</div>`).join('')}</div>
+        <div class="chess-help">ARROWS MOVE CURSOR · ENTER SELECT/MOVE · ESC QUIT<br>PIN 2600 REOPENS THIS HIGHLY ACCREDITED TOURNAMENT SOFTWARE.</div>
+        <div><span class="clickable" onclick="renderSplash(); playSound(600,'sine',0.1,0.05);">[ ABANDON DIGNITY / EXIT ]</span></div></div></div>`;
+        const board = document.getElementById('chess-board');
+        for (let r=0;r<8;r++) for (let c=0;c<8;c++) {
+            const sq=document.createElement('div'); sq.className=`chess-square ${((r+c)%2?'dark':'light')}`;
+            if (chess.cursor[0]===r && chess.cursor[1]===c) sq.classList.add('cursor');
+            if (chess.selected && chess.selected[0]===r && chess.selected[1]===c) sq.classList.add('pick');
+            if (chess.lastMove && ((chess.lastMove[0]===r&&chess.lastMove[1]===c)||(chess.lastMove[2]===r&&chess.lastMove[3]===c))) sq.classList.add('last');
+            if (chess.legal.some(m=>m[0]===r&&m[1]===c)) sq.classList.add('legal');
+            sq.onclick=()=>{ chess.cursor=[r,c]; chessClick(); };
+            if (chess.boom && chess.boom[0]===r && chess.boom[1]===c) { const boom=document.createElement('div'); boom.className='chess-boom'; sq.appendChild(boom); }
+            const pc=chess.board[r][c]; if (pc) { const d=document.createElement('div'); d.className='chess-piece'; d.dataset.fallback=glyphs[pc]||'?'; d.title=pieceNames[pc[1]]; if (chessSpriteReady) { const cv=document.createElement('canvas'); drawChessSprite(cv, pc); d.appendChild(cv); } else { document.body.classList.add('sprite-fallback'); } if(chess.lastMove && chess.lastMove[2]===r && chess.lastMove[3]===c) d.classList.add('moved'); if(chess.thinking && pc[0]==='b') d.classList.add('thinking'); sq.appendChild(d); }
+            board.appendChild(sq);
+        }
+    }
+    function handleChessKeyDown(e) {
+        if (e.key==='Escape') { renderSplash(); return; }
+        if (chess.thinking || chess.over) return;
+        const [r,c]=chess.cursor;
+        if (e.key==='ArrowUp') chess.cursor=[Math.max(0,r-1),c];
+        else if (e.key==='ArrowDown') chess.cursor=[Math.min(7,r+1),c];
+        else if (e.key==='ArrowLeft') chess.cursor=[r,Math.max(0,c-1)];
+        else if (e.key==='ArrowRight') chess.cursor=[r,Math.min(7,c+1)];
+        else if (e.key==='Enter') { chessClick(); return; }
+        playSound(700+(chess.cursor[0]*70)+(chess.cursor[1]*15), 'square', 0.025, 0.035); renderChess();
+    }
+    function chessClick() {
+        if (chess.over || chess.turn!=='w' || chess.thinking) return;
+        const [r,c]=chess.cursor, pc=chess.board[r][c];
+        if (!chess.selected) { if (pc && pc[0]==='w') { chess.selected=[r,c]; chess.legal=legalMoves(r,c); playSound(1300,'triangle',0.04,0.05); } renderChess(); return; }
+        const [sr,sc]=chess.selected, sp=chess.board[sr][sc];
+        if (sp==='wk' && sr===7 && sc===4 && r===7 && (c===6||c===2)) { chessSay('CHESS WIZARD: CASTLING HAS BEEN DEPRECATED FOR SECURITY REASONS.', true); playSound(120,'sawtooth',.18,.12); chess.selected=null; chess.legal=[]; renderChess(); return; }
+        if (chess.legal.some(m=>m[0]===r&&m[1]===c)) { makeMove(sr,sc,r,c); chess.selected=null; chess.legal=[]; chess.turn='b'; chess.thinking=true; renderChess(); const delay=650+Math.random()*900; setTimeout(()=>chessSay('CHESS WIZARD: ANALYZING... PLEASE HOLD YOUR APPLAUSE.', false), 120); setTimeout(computerMove, delay); }
+        else { chess.selected=null; chess.legal=[]; playSound(160,'sawtooth',.1,.08); renderChess(); }
+    }
+    function legalMoves(r,c) {
+        const pc=chess.board[r][c]; if (!pc) return []; const color=pc[0], t=pc[1], enemy=color==='w'?'b':'w', out=[];
+        const add=(rr,cc)=>{ if(rr<0||rr>7||cc<0||cc>7) return false; const q=chess.board[rr][cc]; if(!q){out.push([rr,cc]); return true;} if(q[0]===enemy) out.push([rr,cc]); return false; };
+        if(t==='p'){ const dir=color==='w'?-1:1, start=color==='w'?6:1; if(!chess.board[r+dir]?.[c]) { add(r+dir,c); if(r===start && !chess.board[r+2*dir]?.[c]) add(r+2*dir,c); } [[r+dir,c-1],[r+dir,c+1]].forEach(([rr,cc])=>{ if(chess.board[rr]?.[cc]?.[0]===enemy) out.push([rr,cc]); }); }
+        if(t==='n') [[1,2],[2,1],[-1,2],[-2,1],[1,-2],[2,-1],[-1,-2],[-2,-1]].forEach(d=>add(r+d[0],c+d[1]));
+        if(t==='k') for(let dr=-1;dr<=1;dr++) for(let dc=-1;dc<=1;dc++) if(dr||dc) add(r+dr,c+dc);
+        const rays=[]; if('rbq'.includes(t)){ if('rq'.includes(t)) rays.push([1,0],[-1,0],[0,1],[0,-1]); if('bq'.includes(t)) rays.push([1,1],[1,-1],[-1,1],[-1,-1]); rays.forEach(([dr,dc])=>{ let rr=r+dr,cc=c+dc; while(add(rr,cc)){ rr+=dr; cc+=dc; } }); }
+        return out.filter(([rr,cc])=>chess.board[rr][cc]!==color+'k');
+    }
+    function makeMove(r,c,rr,cc,opts={}) {
+        const pc=chess.board[r][c], target=chess.board[rr][cc];
+        let promoted = false;
+        chess.board[rr][cc]=pc; chess.board[r][c]=''; chess.lastMove=[r,c,rr,cc];
+        if (target) { chess.boom=[rr,cc]; setTimeout(()=>{ chess.boom=null; if(viewState==='chess') renderChess(); }, 450); }
+        if (pc[1]==='p' && (rr===0||rr===7)) { chess.board[rr][cc]=pc[0]+'q'; promoted = true; chessSay('SYSTEM: PAWN PROMOTED. HR DEPARTMENT ALARMED.'); }
+        playSound(target?220:1100,target?'sawtooth':'sine',target?0.12:0.04,target?0.12:0.05);
+        if (target && target[1]==='k') { chess.over=true; const winner=pc[0]==='w'?'YOU':'CHESS WIZARD'; chessSay(winner+': KING CAPTURED. CHECKMATE-ISH.', true); bumpStat(pc[0]==='w'?'wins':'losses'); }
+        return { pc, target, promoted, notation: describeMove(pc,r,c,rr,cc,target,promoted) };
+    }
+    function computerMove() {
+        if (chess.over) return;
+        chess.thinking=false;
+        const cheatChance = boardScore()>2 ? 0.48 : 0.22;
+        if (Math.random()<cheatChance) return computerCheat();
+        const moves=[]; for(let r=0;r<8;r++) for(let c=0;c<8;c++) if(chess.board[r][c]?.[0]==='b') legalMoves(r,c).forEach(m=>moves.push([r,c,m[0],m[1],pieceScore(chess.board[m[0]][m[1]])]));
+        if(!moves.length){ chessSay('CHESS WIZARD: I HAVE NO MOVES. I BLAME THE MOUSE.', true); chess.turn='w'; bumpStat('draws'); renderChess(); return; }
+        moves.sort((a,b)=>b[4]-a[4]);
+        const m = Math.random()<0.7 ? moves[0] : moves[Math.floor(Math.random()*moves.length)];
+        const made = makeMove(m[0],m[1],m[2],m[3]);
+        chessSay('CHESS WIZARD: ' + made.notation, true);
+        const sass = boardScore()>3 ? ['CHESS WIZARD: WOW. LOOK WHO READ A CHESS PAMPHLET.','CHESS WIZARD: PLEASE STOP WINNING, IT IS UNPROFESSIONAL.','CHESS WIZARD: YOUR MATERIAL ADVANTAGE HAS BEEN REPORTED.'] : ['CHESS WIZARD: A PERFECTLY NORMAL MOVE, FILED IN TRIPLICATE.','CHESS WIZARD: I HAVE CALCULATED YOUR VIBES.','CHESS WIZARD: MY HORSEY HAS A DIPLOMA.'];
+        chessSay(sass[Math.floor(Math.random()*sass.length)], false);
+        chess.turn='w'; renderChess();
+    }
+    function computerCheat() {
+        const cheats=[cheatExtraPawn, cheatTeleport, cheatStealTurn, cheatIllegalCapture, cheatTinyAdjustment, cheatTournamentWarning];
+        cheats[Math.floor(Math.random()*cheats.length)](); bumpStat('cheats'); chess.turn='w'; chess.glitch=true; renderChess(); setTimeout(()=>{ chess.glitch=false; if(viewState==='chess') renderChess(); }, 850);
+    }
+    function emptySquares(){ const a=[]; for(let r=0;r<8;r++) for(let c=0;c<8;c++) if(!chess.board[r][c]) a.push([r,c]); return a; }
+    function blackPieces(filter=()=>true){ const a=[]; for(let r=0;r<8;r++) for(let c=0;c<8;c++) if(chess.board[r][c]?.[0]==='b' && filter(chess.board[r][c],r,c)) a.push([r,c]); return a; }
+    function whitePieces(filter=()=>true){ const a=[]; for(let r=0;r<8;r++) for(let c=0;c<8;c++) if(chess.board[r][c]?.[0]==='w' && filter(chess.board[r][c],r,c)) a.push([r,c]); return a; }
+    function cheatExtraPawn(){ const e=emptySquares().filter(x=>x[0]>1&&x[0]<5); if(e.length){ const [r,c]=e[Math.floor(Math.random()*e.length)]; chess.board[r][c]='bp'; chess.boom=[r,c]; chessSay('CHESS WIZARD: A PAWN HAS VOLUNTEERED FROM ACCOUNTING.', true); playSound(80,'square',0.2,0.15);} }
+    function cheatTeleport(){ const pieces=blackPieces(pc=>pc[1]!=='k'), e=emptySquares(); if(pieces.length&&e.length){ const a=pieces[Math.floor(Math.random()*pieces.length)], b=e[Math.floor(Math.random()*e.length)]; chess.board[b[0]][b[1]]=chess.board[a[0]][a[1]]; chess.board[a[0]][a[1]]=''; chess.lastMove=[a[0],a[1],b[0],b[1]]; chessSay('CHESS WIZARD: LEGAL NOTICE: TELEPORTATION WAS IN THE PATCH NOTES.', true); playSound(2000,'sawtooth',0.18,0.08);} }
+    function cheatStealTurn(){ const moves=[]; for(let r=0;r<8;r++) for(let c=0;c<8;c++) if(chess.board[r][c]?.[0]==='b') legalMoves(r,c).forEach(m=>moves.push([r,c,m[0],m[1]])); if(moves.length){ const made = makeMove(...moves[Math.floor(Math.random()*moves.length)]); chessSay('CHESS WIZARD: ' + made.notation + ' ALSO I TOOK AN EXTRA TURN. ITS CALLED INITIATIVE.', true);} }
+    function cheatIllegalCapture(){ const b=blackPieces(pc=>pc[1]!=='k'), w=whitePieces(pc=>pc[1]!=='k'); if(b.length&&w.length){ const a=b[Math.floor(Math.random()*b.length)], victim=w.sort((x,y)=>pieceScore(chess.board[y[0]][y[1]])-pieceScore(chess.board[x[0]][x[1]]))[0]; chess.board[victim[0]][victim[1]]=chess.board[a[0]][a[1]]; chess.board[a[0]][a[1]]=''; chess.lastMove=[a[0],a[1],victim[0],victim[1]]; chess.boom=[victim[0],victim[1]]; chessSay('CHESS WIZARD: ILLEGAL CAPTURE? I DONT THINK SO.', true); playSound(90,'sawtooth',.25,.18);} }
+    function cheatTinyAdjustment(){ const pieces=blackPieces(pc=>pc[1]!=='k'); if(!pieces.length) return cheatExtraPawn(); const a=pieces[Math.floor(Math.random()*pieces.length)], dirs=[[1,0],[0,1],[-1,0],[0,-1],[1,1],[-1,-1]]; for(const [dr,dc] of dirs.sort(()=>Math.random()-.5)){ const rr=a[0]+dr, cc=a[1]+dc; if(rr>=0&&rr<8&&cc>=0&&cc<8&&!chess.board[rr][cc]){ chess.board[rr][cc]=chess.board[a[0]][a[1]]; chess.board[a[0]][a[1]]=''; chess.lastMove=[a[0],a[1],rr,cc]; chessSay('CHESS WIZARD: JUST MOVING THIS ONE A LITTLE. DO NOT PERCEIVE ME.', true); return; } } cheatTeleport(); }
+    function cheatTournamentWarning(){ chessSay('SYSTEM: WARNING. CHESS WIZARD HAS FILED A FORM 7B: OPPONENT TOO CONFIDENT.', true); playSound(55,'square',.35,.16); }
+
     document.addEventListener('mousedown', resetIdle);
     renderSplash();
 </script>
