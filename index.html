@@ -84,10 +84,10 @@
         @keyframes flicker { 0% { opacity: 0.98; } 50% { opacity: 1; } 100% { opacity: 0.99; } }
 
         .terminal-img, #modal-img {
-            border: 1px solid var(--bright-green);
-            filter: none(1) hue-rotate(90deg) contrast(1.4) brightness(0.9);
-            box-shadow: var(--crt-glow);
-        }
+		border: 1px solid var(--bright-green);
+		filter: contrast(1.4) brightness(0.9);
+		box-shadow: var(--crt-glow);
+}
 
         .terminal-img { max-height: 250px; max-width: 90%; cursor: zoom-in; }
 
@@ -169,7 +169,53 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     let konamiIndex = 0;
     let idleTimer, sessionTimeout;
 
-    const database = {
+    
+async function downloadImage(event, url, filenameBase) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    const button = event ? event.currentTarget : null;
+    const originalText = button ? button.textContent : "";
+
+    try {
+        if (button) button.textContent = "[ DOWNLOADING... ]";
+
+        const res = await fetch(url, { mode: "cors" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        const blob = await res.blob();
+        const ext = blob.type === "image/webp" ? "webp" :
+                    blob.type === "image/jpeg" ? "jpg" :
+                    blob.type === "image/png" ? "png" : "img";
+
+        const blobUrl = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = blobUrl;
+        a.download = `${filenameBase}.${ext}`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(blobUrl);
+
+        if (button) button.textContent = "[ DOWNLOAD ]";
+    } catch (err) {
+        console.warn("Direct download was blocked by the image host:", err);
+        if (button) button.textContent = "[ DOWNLOAD BLOCKED ]";
+
+        alert(
+            "The image host blocked direct button-downloading from this page. " +
+            "Right-click the image and choose Save Image As. It will save as the original .webp file."
+        );
+
+        setTimeout(() => {
+            if (button) button.textContent = originalText || "[ DOWNLOAD ]";
+        }, 2000);
+    }
+}
+
+const database = {
         "CMC_Repo_Man_1984": [
 			{ id: "01#T1", title: "#T1", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibtniucrpfcjg66dj6s6k2nu3p5u3wynjupwbjprctua6cqeyd52i", size: "149kb", date: "31/12/24", caption: "Title Card, Repo Man" },
             { id: "01#01", title: "#01", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieyjr7xngipwqtiwxltajleaxeqn63f2wccxqjhlecdhmglujym7m", size: "149kb", date: "31/12/24", caption: "What's in the trunk?" },
@@ -1067,6 +1113,9 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
                     <span class="clickable" onclick="playSound(600, 'sine', 0.1, 0.05); openDir('${dir}', true, '${sub}')">[ ESC: EXIT ]</span>
                     <span class="clickable" onclick="navigateGallery(1)">[ NEXT → ]</span>
                 </div>
+<div style="margin-top: 10px;">
+    <span class="clickable" onclick="downloadImage(event, '${card.file}', '${card.id}')">[ DOWNLOAD ]</span>
+</div>
             </div>
         `;
 
