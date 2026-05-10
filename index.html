@@ -119,16 +119,132 @@
             background: rgba(0, 0, 0, 0.98); z-index: 110;
             justify-content: center; align-items: center; cursor: zoom-out;
             animation: flicker 0.15s infinite;
+            box-sizing: border-box;
+            padding: 118px 150px 34px;
         }
 
-        #image-modal,
         #modal-img {
             cursor: zoom-out !important;
+            max-width: calc(100vw - 330px);
+            max-height: calc(100vh - 170px);
         }
 
-        #modal-img {
-            max-width: 90%;
-            max-height: 90%;
+        #modal-loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            transform: none;
+            z-index: 114;
+            min-width: 360px;
+            padding: 14px 22px;
+            border: 1px solid var(--bright-green);
+            background: rgba(5, 5, 5, 0.92);
+            color: var(--bright-green);
+            font-size: clamp(14px, 2vw, 28px);
+            letter-spacing: 1px;
+            text-align: center;
+            text-shadow: 0 0 8px rgba(0, 255, 65, 0.75);
+            box-shadow: var(--crt-glow);
+            pointer-events: none;
+        }
+
+        #image-modal.loading #modal-loading {
+            display: block;
+        }
+
+        #image-modal.loading #modal-img {
+            opacity: 0.28;
+        }
+
+        #modal-topbar {
+            position: absolute;
+            top: 24px;
+            left: 36px;
+            right: 36px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 18px;
+            align-items: start;
+            border-bottom: 1px solid var(--dark-green);
+            padding-bottom: 12px;
+            color: var(--bright-green);
+            font-size: 9pt;
+            line-height: 1.5;
+            cursor: default;
+            z-index: 112;
+        }
+
+        #modal-close-hint {
+            text-align: center;
+            opacity: 0.9;
+            white-space: nowrap;
+        }
+
+        #modal-user-info {
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 113;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            border: 0;
+            background: transparent;
+            color: var(--bright-green);
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-shadow: 0 0 8px rgba(0, 255, 65, 0.65);
+        }
+
+        .modal-prev { left: 46px; }
+        .modal-next { right: 46px; }
+
+        .modal-arrow {
+            font-size: clamp(56px, 8vw, 118px);
+            line-height: 0.8;
+        }
+
+        .modal-label {
+            font-size: clamp(13px, 1.8vw, 22px);
+            letter-spacing: 1px;
+        }
+
+        .modal-nav:hover .modal-label,
+        .modal-nav:focus .modal-label {
+            background: var(--bright-green);
+            color: var(--bg-black);
+        }
+
+        @media (max-width: 720px) {
+            #image-modal {
+                padding: 82px 62px 20px;
+            }
+            #modal-img {
+                max-width: calc(100vw - 136px);
+                max-height: calc(100vh - 125px);
+            }
+            .modal-prev { left: 8px; }
+            .modal-next { right: 8px; }
+            #modal-topbar {
+                left: 16px;
+                right: 16px;
+                grid-template-columns: 1fr;
+                gap: 2px;
+                font-size: 7.2pt;
+            }
+            #modal-close-hint,
+            #modal-user-info {
+                text-align: left;
+            }
         }
 
         .metadata-table { width: 100%; border-collapse: collapse; font-size: 8pt; margin-top: 5px; }
@@ -340,7 +456,21 @@
 <body onkeydown="handleKeyDown(event)">
 
 <div id="image-modal" onclick="closeModal()">
-    <img id="modal-img" src="" alt="Enlarged View">
+    <div id="modal-topbar" onclick="event.stopPropagation()">
+        <div id="modal-file-info"></div>
+        <div id="modal-close-hint">[ CLICK IMAGE TO CLOSE ]</div>
+        <div id="modal-user-info"></div>
+    </div>
+    <button class="modal-nav modal-prev" type="button" onclick="event.stopPropagation(); navigateModalGallery(-1);">
+        <span class="modal-arrow">←</span>
+        <span class="modal-label">[ PREV ]</span>
+    </button>
+    <img id="modal-img" src="" alt="Enlarged View" onclick="closeModal()">
+    <div id="modal-loading"><span class="glitch">>>> RETRIEVING DATA...</span></div>
+    <button class="modal-nav modal-next" type="button" onclick="event.stopPropagation(); navigateModalGallery(1);">
+        <span class="modal-arrow">→</span>
+        <span class="modal-label">[ NEXT ]</span>
+    </button>
 </div>
 
 <div id="idle-pet">
@@ -479,6 +609,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     let currentSubFolder = "";
     let currentFileIndex = 0;
     let folderSelections = {};
+    let randomRetrievalTimer;
     let navigationMode = "mouse";
     let splashTypeBuffer = "";
     let escapeInputBuffer = "";
@@ -548,6 +679,43 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     }
 
 
+    function showModalLoading() {
+        const modal = document.getElementById("image-modal");
+        if (modal) modal.classList.add("loading");
+    }
+
+    function hideModalLoading() {
+        const modal = document.getElementById("image-modal");
+        if (modal) modal.classList.remove("loading");
+    }
+
+    function updateModalInfo() {
+        const db = getDatabase();
+        const fileInfo = document.getElementById("modal-file-info");
+        const userInfo = document.getElementById("modal-user-info");
+        if (!db || !fileInfo || !userInfo) return;
+
+        const files = currentSubFolder ? db[currentFolderName]?.[currentSubFolder] : db[currentFolderName];
+        const card = files?.[currentFileIndex];
+        if (!card) return;
+
+        const setName = currentSubFolder || currentFolderName;
+        const pathParts = ["A:", currentFolderName.toUpperCase()];
+        if (currentSubFolder) pathParts.push(currentSubFolder.toUpperCase());
+        pathParts.push(`${card.title}.IMG`);
+        const pathStr = pathParts.join("\\");
+
+        fileInfo.innerHTML = `
+            <div>FILE: ${escapeHTML(pathStr)}</div>
+            <div>SET: ${escapeHTML(setName.toUpperCase())}</div>
+            <div>REF_ID: ${escapeHTML(card.id || "UNKNOWN")} &nbsp;&nbsp; RES: ${escapeHTML(card.size || "UNKNOWN")} &nbsp;&nbsp; INDEX: ${currentFileIndex + 1} / ${files.length}</div>
+        `;
+        userInfo.innerHTML = `
+            <div>USER: ${isSecretAccess ? "ROOT" : "GUEST"}</div>
+            <div>TIME: ${new Date().toLocaleTimeString()}</div>
+        `;
+    }
+
     function navigateModalGallery(direction) {
         const db = getDatabase();
         if (!db) return renderDatabaseError();
@@ -561,8 +729,23 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 
         const card = files[currentFileIndex];
         const modalImg = document.getElementById("modal-img");
-        modalImg.src = card.file;
-        modalImg.alt = card.caption || `${card.title}.IMG`;
+        if (!modalImg) return;
+
+        showModalLoading();
+        updateModalInfo();
+
+        const preload = new Image();
+        preload.onload = () => {
+            modalImg.src = card.file;
+            modalImg.alt = card.caption || `${card.title}.IMG`;
+            hideModalLoading();
+        };
+        preload.onerror = () => {
+            modalImg.alt = `IMAGE LOAD FAILED: ${card.caption || card.title || "UNKNOWN"}`;
+            hideModalLoading();
+            showSystemMessage("IMAGE LOAD FAILED", [card.title || "UNKNOWN FILE"], 3500);
+        };
+        preload.src = card.file;
 
         playSound(1500, "sine", 0.05, 0.04);
     }
@@ -594,6 +777,10 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 
         if (viewState === "splash") { handleSplashKeyDown(e); return; }
         if (viewState === "escape-terminal") { handleEscapeTerminalKeyDown(e); return; }
+        if (viewState === "random-retrieval") {
+            if (e.key === "Escape") { clearTimeout(randomRetrievalTimer); renderRoot(); }
+            return;
+        }
 
         const items = terminal.querySelectorAll('li, .pin-btn, .clickable');
         
@@ -613,6 +800,9 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
             else if (viewState === "dir" && currentSubFolder) openDir(currentFolderName);
             else if (viewState === "dir") renderRoot();
             else if (viewState === "file") openDir(currentFolderName, true, currentSubFolder);
+        } else if (["root", "dir", "file"].includes(viewState) && ["r", "R", "*"].includes(e.key)) {
+            e.preventDefault();
+            playRandomCardSequence(openRandomCard);
         } else if (viewState === "file" && e.key === "ArrowRight") navigateGallery(1);
         else if (viewState === "file" && e.key === "ArrowLeft") navigateGallery(-1);
         else if (!isNaN(e.key) && viewState === "pin") pressKey(e.key);
@@ -1328,11 +1518,12 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         viewState = "root"; selectedIndex = 0;
         let html = getHeader() + `<div class="path">A:\ROOT</div><ul>`;
         html += `<li onclick="renderSplash(); playSound(600, 'sine', 0.1, 0.05);">[!] LOGOFF SYSTEM</li>`;
+        html += `<li onclick="playRandomCardSequence(openRandomCard);">[R] RANDOM CARD</li>`;
         const db = getDatabase();
         if (!db) return renderDatabaseError();
 
         for (let folder in db) {
-            if (folder === "SECRET_VAULT" && !isSecretAccess) continue;
+            if ((folder === "SECRET_VAULT" || folder === "HIDDEN_VAULT") && !isSecretAccess) continue;
             const safeFolder = escapeHTML(folder.toUpperCase());
             const jsFolder = escapeJS(folder);
             html += `<li onclick="openDir('${jsFolder}')">drwxr-xr-x   [DIR]  ${safeFolder}</li>`;
@@ -1340,6 +1531,164 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         terminal.innerHTML = html + `</ul>`;
         refreshSelectableItems();
         updateSelection();
+    }
+
+
+    function getRandomCardPool() {
+        const db = getDatabase();
+        if (!db) return [];
+
+        const viewCounts = JSON.parse(localStorage.getItem('cmcRandomCardViews') || '{}');
+        const pool = [];
+
+        for (let folder in db) {
+            if ((folder === "SECRET_VAULT" || folder === "HIDDEN_VAULT") && !isSecretAccess) continue;
+            const data = db[folder];
+
+            const pushCard = (sub, card, idx) => {
+                const key = `${folder}::${sub || ""}::${idx}`;
+                const viewed = viewCounts[key] || 0;
+                let weight = 10;
+
+                // Prefer under-seen cards so RANDOM feels more like discovery than shuffle.
+                weight += Math.max(0, 8 - viewed * 2);
+
+                // Slightly favor nested/curated folders; they usually feel more archival.
+                if (sub) weight += 4;
+
+                // Seasonal and modern anomalies get a tiny nudge without dominating.
+                const title = String(card?.title || "").toUpperCase();
+                if (/CHRISTMAS|HALLOWEEN|FRIGHT|FEATURES|SERIES/.test(title)) weight += 2;
+
+                pool.push({ folder, sub: sub || "", idx, weight, key });
+            };
+
+            if (Array.isArray(data)) {
+                data.forEach((card, idx) => pushCard("", card, idx));
+            } else if (data && typeof data === "object") {
+                Object.keys(data).forEach(sub => {
+                    if (Array.isArray(data[sub])) data[sub].forEach((card, idx) => pushCard(sub, card, idx));
+                });
+            }
+        }
+
+        return pool;
+    }
+
+    function weightedRandomPick(pool) {
+        const total = pool.reduce((sum, item) => sum + Math.max(1, item.weight || 1), 0);
+        let roll = Math.random() * total;
+
+        for (const item of pool) {
+            roll -= Math.max(1, item.weight || 1);
+            if (roll <= 0) return item;
+        }
+
+        return pool[pool.length - 1];
+    }
+
+    function recordRandomCardView(pick) {
+        try {
+            const viewCounts = JSON.parse(localStorage.getItem('cmcRandomCardViews') || '{}');
+            viewCounts[pick.key] = (viewCounts[pick.key] || 0) + 1;
+            localStorage.setItem('cmcRandomCardViews', JSON.stringify(viewCounts));
+        } catch (e) {}
+    }
+
+    function renderRandomRetrieval(lines) {
+        viewState = "random-retrieval";
+        selectedIndex = 0;
+        terminal.innerHTML = getHeader() + `
+            <div class="path">A:\RANDOM_RETRIEVAL</div>
+            <div class="card-view">
+                <p class="glitch">${escapeHTML(lines[0])}</p>
+                <div style="width: 78%; border: 1px solid var(--dark-green); padding: 12px; line-height: 1.65; font-size: 8.5pt; background: rgba(0,0,0,.35);">
+                    ${lines.slice(1).map(line => `<div>&gt; ${escapeHTML(line)}</div>`).join("")}
+                </div>
+                <p style="opacity:.75; font-size:7.5pt; margin-top:12px;">R OR * = REROLL AFTER RETRIEVAL</p>
+            </div>
+        `;
+    }
+
+    
+    function playRandomCardSequence(callback) {
+        const tones = [620, 740, 880, 520];
+        tones.forEach((freq, i) => {
+            setTimeout(() => {
+                playSound(freq, i < 3 ? 'square' : 'sine', 0.05, 0.04);
+            }, i * 90);
+        });
+
+        showSystemMessage("RANDOM RETRIEVAL", [
+            "SEARCHING ARCHIVE...",
+            "INDEXING TAPE...",
+            "SIGNAL FOUND"
+        ], 700);
+
+        setTimeout(() => {
+            if (typeof callback === 'function') callback();
+        }, 320);
+    }
+
+function openRandomCard() {
+        clearTimeout(randomRetrievalTimer);
+        hideSystemMessage();
+
+        const db = getDatabase();
+        if (!db) return renderDatabaseError();
+
+        const pool = getRandomCardPool();
+        if (!pool.length) {
+            showSystemMessage("RANDOM RETRIEVAL", ["NO INDEXABLE CARDS FOUND", "ARCHIVE SHRUGGED"], 4500);
+            return;
+        }
+
+        const anomalyRoll = Math.random();
+        const corrupted = anomalyRoll < 0.10;
+        const lorePull = corrupted && anomalyRoll < 0.025;
+        const pick = weightedRandomPick(pool);
+
+        const lines = corrupted
+            ? [
+                "!!! ARCHIVE INDEX MISMATCH !!!",
+                "SEARCHING ARCHIVE...",
+                "INDEXING TAPE...",
+                "SIGNAL FOUND IN WRONG DRAWER",
+                lorePull ? "ROUTING TO UNDOCUMENTED SUBSYSTEM" : "OPENING CORRUPTED RETRIEVAL"
+            ]
+            : [
+                "RANDOM RETRIEVAL INITIATED",
+                "SEARCHING ARCHIVE...",
+                "INDEXING TAPE...",
+                "CROSS-CHECKING DUST PATTERNS...",
+                "SIGNAL FOUND"
+            ];
+
+        renderRandomRetrieval(lines);
+        playSound(corrupted ? 220 : 1700, corrupted ? 'sawtooth' : 'triangle', corrupted ? 0.25 : 0.08, corrupted ? 0.10 : 0.06);
+
+        const screen = document.getElementById('crt-screen');
+        if (corrupted && screen) {
+            screen.classList.add('crt-damage-2');
+            setTimeout(() => screen.classList.remove('crt-damage-2'), 1200);
+        }
+
+        randomRetrievalTimer = setTimeout(() => {
+            if (lorePull && typeof showChessLore === "function") {
+                showChessLore();
+                showSystemMessage("RANDOM CARD WARNING", ["CARD REQUEST ESCALATED TO CHESS_WIZARD_LORE", "THIS IS NOT A BUG. IT IS A PERSONALITY."], 7000);
+                return;
+            }
+
+            recordRandomCardView(pick);
+            viewCard(pick.folder, pick.idx, pick.sub);
+
+            if (corrupted) {
+                showSystemMessage("RANDOM CARD WARNING", ["ARCHIVE INDEX MISMATCH", "METADATA MAY BE STARING BACK", "PRESS R OR * TO REROLL"], 7000);
+            } else {
+                showSystemMessage("RANDOM CARD", ["ARCHIVE SELECTION COMPLETE", "PRESS R OR * TO REROLL"], 2500);
+            }
+        }, corrupted ? 850 : 520);
     }
 
     function showChessLore() {
@@ -1411,8 +1760,10 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 
     function viewCard(dir, idx, sub = "") {
         viewState = "file";
+        currentFolderName = dir;
+        currentSubFolder = sub || "";
         currentFileIndex = idx;
-        const selectionKey = `${dir}::${sub}`;
+        const selectionKey = `${dir}::${sub || ""}`;
         folderSelections[selectionKey] = idx + 1;
 
         const db = getDatabase();
@@ -1455,8 +1806,9 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
                     <span class="clickable" onclick="playSound(600, 'sine', 0.1, 0.05); openDir('${jsDir}', true, '${jsSub}')">[ ESC: EXIT ]</span>
                     <span class="clickable" onclick="navigateGallery(1)">[ NEXT → ]</span>
                 </div>
-                <div style="margin-top: 10px;">
+                <div style="margin-top: 10px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
                     <span class="clickable" onclick="showSaveHelp(event, '${jsFile}')">[ SAVE HELP ]</span>
+                    <span class="clickable" onclick="playRandomCardSequence(openRandomCard);">[ RANDOM CARD ]</span>
                 </div>
             </div>
         `;
@@ -1488,15 +1840,47 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     }
 
     function openModal(src, altText = "Enlarged image view") {
+        const modal = document.getElementById('image-modal');
         const modalImg = document.getElementById('modal-img');
-        modalImg.src = src;
-        modalImg.alt = altText;
-        document.getElementById('image-modal').style.display = 'flex';
+        if (!modal || !modalImg) return;
+
+        modal.style.display = 'flex';
+        showModalLoading();
+        updateModalInfo();
+
+        const preload = new Image();
+        preload.onload = () => {
+            modalImg.src = src;
+            modalImg.alt = altText;
+            hideModalLoading();
+        };
+        preload.onerror = () => {
+            modalImg.alt = `IMAGE LOAD FAILED: ${altText}`;
+            hideModalLoading();
+            showSystemMessage("IMAGE LOAD FAILED", [altText], 3500);
+        };
+        preload.src = src;
+
         playSound(1500, 'sine', 0.1, 0.05);
     }
 
     function closeModal() { 
-        document.getElementById('image-modal').style.display = 'none'; 
+        const modal = document.getElementById('image-modal');
+        if (modal) {
+            modal.style.display = 'none';
+            modal.classList.remove('loading');
+        }
+
+        // If the user navigated inside the enlarged modal, keep the main card view
+        // synchronized with the modal's current card when the modal closes.
+        if (viewState === "file" && currentFolderName) {
+            const folder = getDatabase()?.[currentFolderName];
+            const files = currentSubFolder ? folder?.[currentSubFolder] : folder;
+            if (files && files[currentFileIndex]) {
+                viewCard(currentFolderName, currentFileIndex, currentSubFolder);
+            }
+        }
+
         playSound(600, 'sine', 0.1, 0.05); 
     }
 	
