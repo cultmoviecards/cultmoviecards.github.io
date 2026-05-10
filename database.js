@@ -554,6 +554,13 @@ const database = {
 
 
 		],
+		"CMC_Faux_Motion_Series_2026": [
+            { id: "23#01", title: "#01", file: "https://i.postimg.cc/mgsBW9hL/1-Big-Trouble-In-Little-China.gif",																			 size: "1.9mb", date: "30/03/26", caption: "Big Trouble In Little China (1986)" },
+            { id: "23#02", title: "#02", file: "https://i.postimg.cc/CLwcyLS0/2-From-Dusk-Til-Dawn.gif",																					 size: "1.9mb", date: "26/04/26", caption: "From Dusk Till Dawn (1996)" },
+            { id: "23#03", title: "#03", file: "https://i.postimg.cc/FRcLzcbn/3-Beetlejuice.gif",																							 size: "1.9mb", date: "28/04/26", caption: "Beetlejuice (1988)" }
+
+
+		],
 	"SECRET_VAULT": {
         "CMC_Children_Shouldnt_Play_With_Dead_Things_1972": [
             { id: "101#T1", title: "#T1", file: "https://i.postimg.cc/CKfF2qj4/T1.png", 																									 size: "1.9mb", date: "01/06/25", caption: "Title Card, 'Children Shouldn't Play With Dead Things'" },
@@ -609,7 +616,7 @@ const database = {
 			{ id: "104#3R", title: "#3R", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifh77shrvo2jmtrtopytdasghoh2rk4uwdpq4jrjrxumt66knqz6i", size: "149kb", date: "04/02/26", caption: "Rollerball 1975 // # 3R of 20R // Fleer 'Mimic'" },
 			{ id: "104#4F", title: "#4F", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicpwedj4ixinguumggcmjh65yxw4tfn4f6g3aqldt2q5nhltmxbbi", size: "149kb", date: "12/02/26", caption: "Rollerball 1975 // # 4F of 20F // Fleer 'Mimic'" },
 			{ id: "104#4R", title: "#4R", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigcardfgfudt2tthoeklvmod7ichuqljicrfgzlfxolagu6mqircq", size: "149kb", date: "12/02/26", caption: "Rollerball 1975 // # 4R of 20R // Fleer 'Mimic'" }
-			 ],
+		],
 		"CMC_Vault_Shell_Commands_List": [
             { id: "105#VCL", title: "#VCL", file: "https://i.postimg.cc/9f0fsVwj/vault-command-list.png",																					  size: "1.9mb", date: "10/05/26", caption: "CMC Vault Shell Commands List *CLASSIFIED*" }
 			]
