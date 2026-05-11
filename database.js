@@ -561,6 +561,33 @@ const database = {
 
 
 		],
+		"CMC_Fright_Club_Features_Series_III_2026": [
+            { id: "24#01", title: "#01", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihaiyqerwndzdm6vbbiwr324eefsinwaqxga4xb7j42ighvq6z6i4", size: "149kb", date: "11/04/26", caption: "A Better Tomorrow II (1987)" },
+            { id: "24#02", title: "#02", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigxbc6dnntsetqwkzcsg64cdfvbqiwjyah5nigm5wyd744gjfuxvm", size: "149kb", date: "12/04/26", caption: "Somnium (2024)" },
+            { id: "24#03", title: "#03", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreig6gexbo6eyl6ml5liy6ymahyolf7m7rgkgomfyjt2szbiu6y4mh4", size: "149kb", date: "13/04/26", caption: "Burnt Offerings (1976)" },
+            { id: "24#04", title: "#04", file: "https://i.postimg.cc/J4FW834z/4-The-Old-Dark-House.gif",																					 size: "1.9mb", date: "15/04/26", caption: "The Old Dark House (1963)" },
+            { id: "24#05", title: "#05", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifuyuuty6sg7ya5hko5lrtxutbxfhhzgq24ccrm4jgfw6cpip4hje", size: "149kb", date: "17/04/26", caption: "Blood Creek (2009)" },
+			{ id: "24#06", title: "#06", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicmyiqmdg3jyjhyudrn2oxek7oo7qqm6flccm6qyir3y5uyubfatu", size: "149kb", date: "17/04/26", caption: "The Vampire Bat (1933)" },
+			{ id: "24#07", title: "#07", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigvbbpfqg5n2thnfur6czkih6ema3nui45t66gxhofoi4rwh7u2ny", size: "149kb", date: "19/04/26", caption: "Children Of The Night (1991)" },
+			{ id: "24#08", title: "#08", file: "https://i.postimg.cc/ZYMTYzwR/8-The-Fog.gif",																								 size: "1.9mb", date: "21/04/26", caption: "The Fog (1980)" },
+			{ id: "24#09", title: "#09", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigrgcm7irsye6saoao4qfzaocs4awz7eturw2ylvylehopzgqhrwe", size: "149kb", date: "22/04/26", caption: "The Man Who Could Cheat Death (1959)" },
+			{ id: "24#10", title: "#10", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidml3zngc5vd2bbbwy6ev5sxzbaz3tlps2ueb36tvxbhptkvecqna", size: "149kb", date: "24/04/26", caption: "THEM! (1954)" },
+			{ id: "24#11", title: "#11", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreig5azegossrauh67lyhqfbpcxlrw7kbvibvulenh2umrt2uky2k5e", size: "149kb", date: "24/04/26", caption: "Earth Vs. The Spider (1958)" },
+			{ id: "24#12", title: "#12", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreie7nxrs6pg224gd343svkb7rkqmmynrxyci4rahjzlugqav3eb7pu", size: "149kb", date: "25/04/26", caption: "The Skin I Live In (2011)" },
+			{ id: "24#13", title: "#13", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigqcg76djblo73aqqz5jypj74hsnzovkhif7r74fyipfsneishbdu", size: "149kb", date: "26/04/26", caption: "Him (2025)" },
+			{ id: "24#14", title: "#14", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibib6geizltbsywdt6beq6l7rxw5mys6x7u7azdleqaxmxxgbquou", size: "149kb", date: "28/04/26", caption: "Shiver (2012)" },
+			{ id: "24#15", title: "#15", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigsptvdlhg5c3lalp25jrt4kmww7vanhy4ltdl6lewepi7xqdfsym", size: "149kb", date: "30/04/26", caption: "Straight On Till Morning (1972)" },
+			{ id: "24#16", title: "#16", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidx3yz7cf6t643uqpiemrqan2qqiw7okguhetbpqrfld6kchgd2i4", size: "149kb", date: "02/05/26", caption: "The Killing (1956)" },
+			{ id: "24#17", title: "#17", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibeok4stbn62ddw7ttmbc4khw47wzetqgspmbanykiepytw2ncadi", size: "149kb", date: "02/05/26", caption: "Free Fire (2016)" },
+			{ id: "24#18", title: "#18", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibgugt4sestzuy7djepubgsrunnuvjsw44lmo567cgrejxnw42p6m", size: "149kb", date: "03/05/26", caption: "One Cut Of The Dead (2017)" },
+			{ id: "24#19", title: "#19", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih65iw2zf65faljbw5cjvq474zd7bujgt3eioxuswt5bzj3vslc5i", size: "149kb", date: "03/05/26", caption: "The Wolf Of Snow Hollow (2020)" },
+			{ id: "24#20", title: "#20", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib2e3n25jgjitnmocvgbel5g7usq2ccv54jp2l4jfaus7omocugnm", size: "149kb", date: "04/05/26", caption: "The Wasp Woman (1959)" },
+			{ id: "24#21", title: "#21", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid653ndnrpdr76sscmz24ts4g2wft5zgd4z6bitixus5mcwat2ity", size: "149kb", date: "05/05/26", caption: "Nightmare Cinema (2018)" },
+			{ id: "24#22", title: "#22", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiei74ikxossnogdbzk6y7gblonc7c2ovx64j67tfvvsifhp6574ou", size: "149kb", date: "07/05/26", caption: "Stream (2024)" },
+			{ id: "24#23", title: "#23", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibuhxgwc4tuzh6j4bzq6lra4on6rso6vjtmaujaplqvuyykekijqa", size: "149kb", date: "08/05/26", caption: "Mudborn (2025)" },
+            { id: "24#24", title: "#24", file: "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiclahjdqlmazgoj5u446iwfl4r5vl437pymsiw22p32k7psvswute", size: "149kb", date: "03/05/26", caption: "Dolly (2025)" }
+		
+		],
 	"SECRET_VAULT": {
         "CMC_Children_Shouldnt_Play_With_Dead_Things_1972": [
             { id: "101#T1", title: "#T1", file: "https://i.postimg.cc/CKfF2qj4/T1.png", 																									 size: "1.9mb", date: "01/06/25", caption: "Title Card, 'Children Shouldn't Play With Dead Things'" },
