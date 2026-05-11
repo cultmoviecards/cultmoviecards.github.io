@@ -4,7 +4,7 @@
     <link rel="icon" type="image/ico" href="/favicon.ico"/>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMC VAULT 1.78</title>
+    <title>CMC VAULT 2.01</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
@@ -338,12 +338,366 @@
             }
         }
 
+
+
+        /* --- Analog phosphor persistence / ghost trails --- */
+        .phosphor-ghost {
+            position: fixed;
+            margin: 0;
+            pointer-events: none;
+            z-index: 150;
+            opacity: 0;
+            filter: blur(1.05px) drop-shadow(0 0 7px var(--bright-green));
+            mix-blend-mode: screen;
+            transform: translate(var(--ghost-dx, 0px), var(--ghost-dy, 0px));
+            animation: phosphor-afterimage var(--ghost-life, 520ms) ease-out forwards;
+            will-change: opacity, transform, filter;
+        }
+
+        @keyframes phosphor-afterimage {
+            0% { opacity: var(--ghost-opacity, 0.16); }
+            38% { opacity: calc(var(--ghost-opacity, 0.16) * 0.72); }
+            72% { opacity: calc(var(--ghost-opacity, 0.16) * 0.28); }
+            100% {
+                opacity: 0;
+                transform: translate(calc(var(--ghost-dx, 0px) * 2.2), calc(var(--ghost-dy, 0px) * 2.2));
+                filter: blur(1.35px) drop-shadow(0 0 3px var(--bright-green));
+            }
+        }
+
+        /* --- Site-wide phosphor burn-in persistence ---
+           When terminal content changes, a faint snapshot of the previous frame
+           lingers briefly over the new one, mimicking slow-decay phosphor. */
+        .screen-burn-ghost {
+            position: fixed;
+            pointer-events: none;
+            z-index: 122;
+            overflow: hidden;
+            box-sizing: border-box;
+            color: var(--bright-green);
+            background: transparent;
+            opacity: 0;
+            filter: blur(0.55px) drop-shadow(0 0 4px var(--bright-green));
+            mix-blend-mode: screen;
+            animation: screen-burn-persist var(--burn-life, 720ms) ease-out forwards;
+            transform: translate(var(--burn-x, 0px), var(--burn-y, 0px));
+            contain: layout paint style;
+        }
+
+        .screen-burn-ghost * {
+            pointer-events: none !important;
+        }
+
+        @keyframes screen-burn-persist {
+            0% {
+                opacity: var(--burn-opacity, 0.045);
+                transform: translate(var(--burn-x, 0px), var(--burn-y, 0px)) scale(1);
+                filter: blur(0.45px) drop-shadow(0 0 4px var(--bright-green));
+            }
+            42% {
+                opacity: calc(var(--burn-opacity, 0.045) * 0.58);
+                transform: translate(calc(var(--burn-x, 0px) * 1.35), calc(var(--burn-y, 0px) * 1.35)) scale(1.002);
+            }
+            78% {
+                opacity: calc(var(--burn-opacity, 0.045) * 0.18);
+                filter: blur(1.25px) drop-shadow(0 0 5px var(--bright-green));
+            }
+            100% {
+                opacity: 0;
+                transform: translate(calc(var(--burn-x, 0px) * 1.8), calc(var(--burn-y, 0px) * 1.8)) scale(1.006);
+                filter: blur(1.7px) drop-shadow(0 0 2px var(--bright-green));
+            }
+        }
+
+        .chess-piece.phosphor-piece-trail {
+            position: absolute;
+            inset: 7%;
+            width: 86% !important;
+            height: 86% !important;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0;
+            filter: blur(0.7px) drop-shadow(0 0 4px var(--bright-green));
+            mix-blend-mode: screen;
+            transform: translate(var(--trail-x, 0px), var(--trail-y, 0px));
+            animation: phosphor-piece-trail 230ms ease-out forwards;
+        }
+
+        @keyframes phosphor-piece-trail {
+            0% { opacity: 0.10; }
+            55% { opacity: 0.055; }
+            100% { opacity: 0; transform: translate(0,0); filter: blur(1px) drop-shadow(0 0 2px var(--bright-green)); }
+        }
+
+
+
+        /* --- CRT hardware fatigue / imperfect scanline zones --- */
+        .crt-fatigue {
+            position: absolute;
+            inset: 0;
+            z-index: 45;
+            pointer-events: none;
+            overflow: hidden;
+            mix-blend-mode: screen;
+            opacity: 0.9;
+        }
+
+        .crt-fatigue::before,
+        .crt-fatigue::after {
+            content: "";
+            position: absolute;
+            left: -3%;
+            right: -3%;
+            pointer-events: none;
+            will-change: transform, opacity;
+        }
+
+        /* A dimmer tired patch through the middle of the tube. */
+        .crt-fatigue::before {
+            top: 38%;
+            height: 23%;
+            background:
+                linear-gradient(180deg,
+                    rgba(0,0,0,0) 0%,
+                    rgba(0,0,0,0.075) 18%,
+                    rgba(0,0,0,0.13) 52%,
+                    rgba(0,0,0,0.065) 78%,
+                    rgba(0,0,0,0) 100%);
+            mix-blend-mode: normal;
+            animation: crt-dim-drift 11s ease-in-out infinite alternate;
+        }
+
+        /* Soft bright/dark horizontal fatigue bands with nonuniform timing. */
+        .crt-fatigue::after {
+            top: -10%;
+            bottom: -10%;
+            background:
+                linear-gradient(180deg,
+                    transparent 0%,
+                    rgba(0,255,65,0.018) 10%,
+                    transparent 16%,
+                    transparent 33%,
+                    rgba(0,0,0,0.105) 39%,
+                    rgba(0,0,0,0.055) 45%,
+                    transparent 53%,
+                    transparent 66%,
+                    rgba(0,255,65,0.014) 72%,
+                    rgba(0,0,0,0.08) 78%,
+                    transparent 86%,
+                    transparent 100%);
+            opacity: 0.62;
+            animation: crt-band-drift 17s ease-in-out infinite;
+        }
+
+        .crt-warp-edge {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 9%;
+            pointer-events: none;
+            z-index: 46;
+            opacity: 0.34;
+            mix-blend-mode: screen;
+            background:
+                repeating-linear-gradient(180deg,
+                    rgba(0,255,65,0.018) 0 1px,
+                    rgba(0,0,0,0) 1px 3px),
+                linear-gradient(90deg,
+                    rgba(0,255,65,0.032),
+                    rgba(0,0,0,0));
+            filter: blur(0.25px);
+            will-change: transform, opacity;
+        }
+
+        .crt-warp-edge.left {
+            left: 0;
+            transform-origin: left center;
+            animation: crt-edge-bend-left 7.5s ease-in-out infinite;
+        }
+
+        .crt-warp-edge.right {
+            right: 0;
+            transform-origin: right center;
+            transform: scaleX(-1);
+            animation: crt-edge-bend-right 9s ease-in-out infinite;
+        }
+
+        .crt-collapse-band {
+            position: absolute;
+            left: -4%;
+            right: -4%;
+            top: 17%;
+            height: 8%;
+            z-index: 47;
+            pointer-events: none;
+            opacity: 0.12;
+            background:
+                repeating-linear-gradient(180deg,
+                    rgba(0,255,65,0.055) 0 1px,
+                    transparent 1px 4px),
+                linear-gradient(180deg, transparent, rgba(0,255,65,0.045), transparent);
+            filter: blur(0.35px);
+            transform: translateY(0) skewX(-0.35deg);
+            animation: crt-collapse-wobble 5.8s ease-in-out infinite;
+            mix-blend-mode: screen;
+        }
+
+        @keyframes crt-dim-drift {
+            0% { transform: translateY(-1.5%) scaleY(0.96); opacity: 0.75; }
+            50% { transform: translateY(2%) scaleY(1.04); opacity: 0.95; }
+            100% { transform: translateY(-0.5%) scaleY(1); opacity: 0.82; }
+        }
+
+        @keyframes crt-band-drift {
+            0%, 100% { transform: translateY(-1%) skewY(0deg); opacity: 0.48; }
+            35% { transform: translateY(1.8%) skewY(0.18deg); opacity: 0.68; }
+            72% { transform: translateY(-0.6%) skewY(-0.14deg); opacity: 0.57; }
+        }
+
+        @keyframes crt-edge-bend-left {
+            0%, 100% { transform: translateX(0) skewY(0deg) scaleX(1); opacity: 0.24; }
+            28% { transform: translateX(1px) skewY(0.65deg) scaleX(1.08); opacity: 0.38; }
+            63% { transform: translateX(-1px) skewY(-0.45deg) scaleX(0.96); opacity: 0.29; }
+        }
+
+        @keyframes crt-edge-bend-right {
+            0%, 100% { transform: scaleX(-1) translateX(0) skewY(0deg); opacity: 0.21; }
+            42% { transform: scaleX(-1) translateX(1px) skewY(-0.55deg); opacity: 0.36; }
+            76% { transform: scaleX(-1) translateX(-1px) skewY(0.42deg); opacity: 0.27; }
+        }
+
+        @keyframes crt-collapse-wobble {
+            0%, 100% { transform: translateY(0) skewX(-0.25deg); opacity: 0.08; }
+            18% { transform: translateY(2px) skewX(0.55deg); opacity: 0.15; }
+            54% { transform: translateY(-1px) skewX(-0.75deg); opacity: 0.11; }
+            82% { transform: translateY(1px) skewX(0.2deg); opacity: 0.18; }
+        }
+
+
+
+        /* --- CRT edge convergence distortion / corner fringing --- */
+        .crt-convergence {
+            position: absolute;
+            inset: 0;
+            z-index: 49;
+            pointer-events: none;
+            overflow: hidden;
+            opacity: 0.72;
+            mix-blend-mode: screen;
+        }
+
+        .crt-convergence::before,
+        .crt-convergence::after {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            pointer-events: none;
+            opacity: 0.5;
+            will-change: transform, opacity, filter;
+        }
+
+        /* Red/cyan registration error strongest where the tube meets the bezel. */
+        .crt-convergence::before {
+            background:
+                radial-gradient(circle at 0% 0%, rgba(255, 28, 28, 0.145), transparent 24%),
+                radial-gradient(circle at 100% 100%, rgba(0, 185, 255, 0.13), transparent 25%),
+                linear-gradient(90deg, rgba(255,0,0,0.055), transparent 12%, transparent 88%, rgba(0,190,255,0.05)),
+                linear-gradient(180deg, rgba(255,0,0,0.04), transparent 14%, transparent 86%, rgba(0,190,255,0.04));
+            filter: blur(0.45px);
+            transform: translate(-0.65px, -0.2px);
+            animation: crt-convergence-red 8.8s ease-in-out infinite;
+        }
+
+        .crt-convergence::after {
+            background:
+                radial-gradient(circle at 100% 0%, rgba(0, 255, 180, 0.105), transparent 23%),
+                radial-gradient(circle at 0% 100%, rgba(255, 64, 64, 0.085), transparent 24%),
+                repeating-linear-gradient(180deg, rgba(0,255,65,0.026) 0 1px, transparent 1px 4px);
+            filter: blur(0.65px);
+            transform: translate(0.7px, 0.25px) skewY(0.06deg);
+            animation: crt-convergence-cyan 10.6s ease-in-out infinite;
+        }
+
+        .crt-corner-fringe {
+            position: absolute;
+            width: 23%;
+            height: 23%;
+            pointer-events: none;
+            opacity: 0.36;
+            mix-blend-mode: screen;
+            filter: blur(0.45px);
+            background:
+                linear-gradient(90deg, rgba(255,0,0,0.12), transparent 34%),
+                linear-gradient(180deg, rgba(0,180,255,0.09), transparent 42%),
+                repeating-linear-gradient(0deg, rgba(0,255,65,0.03) 0 1px, transparent 1px 3px);
+            animation: crt-corner-crawl 12s ease-in-out infinite;
+        }
+
+        .crt-corner-fringe.tl { top: 0; left: 0; transform-origin: top left; }
+        .crt-corner-fringe.tr { top: 0; right: 0; transform: scaleX(-1); transform-origin: top right; animation-duration: 13.5s; }
+        .crt-corner-fringe.bl { bottom: 0; left: 0; transform: scaleY(-1); transform-origin: bottom left; animation-duration: 11.2s; }
+        .crt-corner-fringe.br { bottom: 0; right: 0; transform: scale(-1); transform-origin: bottom right; animation-duration: 14.1s; opacity: 0.46; }
+
+        /* Tiny global registration error for terminal chrome: visible on borders/file names, still readable. */
+        .path,
+        li,
+        .metadata-table td,
+        .system-stats,
+        #system-message {
+            text-shadow:
+                -0.65px 0 rgba(255, 32, 32, 0.22),
+                0.7px 0 rgba(0, 210, 255, 0.18),
+                0 0 5px rgba(0, 255, 65, 0.18);
+        }
+
+        .path,
+        .metadata-table td,
+        #system-message,
+        .terminal-img,
+        #chess-board,
+        .chess-log,
+        .chess-history,
+        .chess-stats {
+            box-shadow:
+                var(--crt-glow),
+                -1px 0 rgba(255, 32, 32, 0.08),
+                1px 0 rgba(0, 210, 255, 0.07);
+        }
+
+        @keyframes crt-convergence-red {
+            0%, 100% { transform: translate(-0.55px, -0.15px) skewY(0.03deg); opacity: 0.42; }
+            32% { transform: translate(-1px, 0.15px) skewY(-0.05deg); opacity: 0.56; }
+            68% { transform: translate(-0.25px, -0.35px) skewY(0.08deg); opacity: 0.47; }
+        }
+
+        @keyframes crt-convergence-cyan {
+            0%, 100% { transform: translate(0.55px, 0.2px) skewY(0.04deg); opacity: 0.36; }
+            40% { transform: translate(0.95px, -0.1px) skewY(0.1deg); opacity: 0.52; }
+            75% { transform: translate(0.2px, 0.45px) skewY(-0.06deg); opacity: 0.43; }
+        }
+
+        @keyframes crt-corner-crawl {
+            0%, 100% { opacity: 0.25; filter: blur(0.4px); }
+            45% { opacity: 0.46; filter: blur(0.75px); }
+            72% { opacity: 0.32; filter: blur(0.55px); }
+        }
+
         @media (prefers-reduced-motion: reduce) {
             .scanline,
             .card-view,
             .glitch,
             .purring,
-            #image-modal {
+            #image-modal,
+            .phosphor-ghost,
+            .phosphor-piece-trail,
+            .crt-fatigue::before,
+            .crt-fatigue::after,
+            .crt-warp-edge,
+            .crt-collapse-band,
+            .crt-convergence::before,
+            .crt-convergence::after,
+            .crt-corner-fringe,
+            #image-modal::before {
                 animation: none !important;
             }
 
@@ -451,6 +805,536 @@
             }
         }
 
+        /* Keep persistence clones out of layout.
+           Chess-square clones also carry .chess-square, whose later rules set
+           position: relative; without this override the temporary afterimage
+           becomes a real flex item in <body> and nudges the whole CRT sideways. */
+        .phosphor-ghost,
+        .phosphor-ghost.chess-square,
+        .phosphor-ghost.clickable,
+        .phosphor-ghost.pin-btn {
+            position: fixed !important;
+            flex: none !important;
+            box-sizing: border-box !important;
+            contain: layout paint;
+        }
+        .phosphor-ghost.chess-square {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            min-width: 0 !important;
+            min-height: 0 !important;
+        }
+
+
+        /* --- SAFE RETRO GLITCH PACK 1-9 (Firefox-friendly) ---
+           Uses lightweight overlay elements instead of animating the whole page/body. */
+        .crt-glitch-layer {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 119;
+            contain: layout paint;
+        }
+
+        .crt-glitch-layer .sync-tear-band {
+            position: absolute;
+            left: -6%;
+            width: 112%;
+            height: var(--tear-h, 22px);
+            top: var(--tear-y, 42%);
+            opacity: 0;
+            background:
+                repeating-linear-gradient(0deg, rgba(0,255,65,.07) 0 1px, transparent 1px 3px),
+                linear-gradient(90deg, transparent 0%, rgba(0,255,65,.2) 30%, rgba(255,255,255,.08) 50%, transparent 100%);
+            box-shadow: 0 0 18px rgba(0,255,65,.16);
+            mix-blend-mode: screen;
+            transform: translateX(0);
+        }
+
+        .crt-glitch-layer .signal-flash {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            background:
+                linear-gradient(90deg, rgba(255,0,40,.12), transparent 18%, transparent 82%, rgba(0,200,255,.12)),
+                repeating-linear-gradient(0deg, transparent 0 3px, rgba(255,255,255,.045) 4px, transparent 6px);
+            mix-blend-mode: screen;
+        }
+
+        .crt-glitch-layer .vhs-bands {
+            position: absolute;
+            inset: -20% 0;
+            opacity: .08;
+            background:
+                repeating-linear-gradient(0deg, transparent 0 7px, rgba(255,255,255,.025) 8px, transparent 12px),
+                linear-gradient(180deg, transparent 0%, rgba(0,255,65,.05) 15%, transparent 22%, transparent 55%, rgba(255,255,255,.04) 61%, transparent 67%, transparent 100%);
+            background-size: 100% 160px, 100% 320px;
+            animation: safe-vhs-roll 9s linear infinite;
+            mix-blend-mode: screen;
+        }
+
+        .crt-glitch-layer .dead-pixel {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background: currentColor;
+            color: var(--bright-green);
+            opacity: var(--dead-opacity, .25);
+            box-shadow: 0 0 3px currentColor;
+            animation: safe-dead-flicker var(--dead-speed, 5s) steps(2,end) infinite;
+        }
+
+        .crt-glitch-layer.sync-tearing .sync-tear-band {
+            animation: safe-sync-tear 135ms steps(2,end) forwards;
+        }
+
+        .crt-glitch-layer.signal-corrupting .signal-flash {
+            animation: safe-signal-flash 155ms steps(2,end) forwards;
+        }
+
+        .crt-glitch-layer.vhs-bursting .vhs-bands {
+            opacity: .22;
+            animation: safe-vhs-roll 350ms steps(3,end) infinite;
+        }
+
+        .crt-glitch-layer.boot-warming .signal-flash {
+            animation: safe-boot-warm 720ms ease-out forwards;
+        }
+
+        #terminal-content.audio-jitter-safe {
+            animation: safe-audio-jitter 65ms steps(2,end);
+        }
+
+        .char-corrupt-safe {
+            text-shadow: 1px 0 #ff0033, -1px 0 #00ccff, 0 0 8px var(--bright-green) !important;
+        }
+
+        .char-corrupt-persistent-safe {
+            text-shadow:
+                1px 0 rgba(255, 0, 51, .75),
+                -1px 0 rgba(0, 204, 255, .65),
+                0 0 7px var(--bright-green) !important;
+        }
+
+        .recursive-modal-ghost-safe {
+            position: fixed;
+            pointer-events: none;
+            z-index: 111;
+            object-fit: contain;
+            opacity: 0;
+            filter: blur(.8px) drop-shadow(0 0 7px var(--bright-green));
+            mix-blend-mode: screen;
+            animation: safe-recursive-modal-ghost 520ms ease-out forwards;
+        }
+
+        @keyframes safe-sync-tear {
+            0% { opacity: 0; transform: translateX(0); }
+            20% { opacity: .95; transform: translateX(var(--tear-x, 12px)); }
+            60% { opacity: .62; transform: translateX(var(--tear-x-alt, -7px)); }
+            100% { opacity: 0; transform: translateX(0); }
+        }
+
+        @keyframes safe-signal-flash {
+            0% { opacity: 0; }
+            25% { opacity: .9; }
+            45% { opacity: .28; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes safe-boot-warm {
+            0% { opacity: .72; background: radial-gradient(ellipse at center, rgba(0,255,65,.28), rgba(0,0,0,0) 58%); }
+            42% { opacity: .32; background: radial-gradient(ellipse at center, rgba(255,176,0,.18), rgba(0,0,0,0) 64%); }
+            100% { opacity: 0; }
+        }
+
+        @keyframes safe-audio-jitter {
+            0% { transform: translate(0,0); }
+            50% { transform: translate(1px,-1px); }
+            100% { transform: translate(0,0); }
+        }
+
+        @keyframes safe-vhs-roll {
+            from { background-position: 0 0, 0 -320px; }
+            to { background-position: 0 160px, 0 320px; }
+        }
+
+        @keyframes safe-dead-flicker {
+            0%, 76%, 100% { opacity: var(--dead-opacity, .25); }
+            77%, 84% { opacity: .03; }
+            85%, 88% { opacity: .62; }
+        }
+
+        @keyframes safe-recursive-modal-ghost {
+            0% { opacity: var(--modal-ghost-opacity, .16); transform: translate(var(--modal-ghost-x,0), var(--modal-ghost-y,0)) scale(1); }
+            100% { opacity: 0; transform: translate(calc(var(--modal-ghost-x,0) * 2), calc(var(--modal-ghost-y,0) * 2)) scale(1.012); }
+        }
+
+
+        /* --- Recursive ghosting for boot / splash screen --- */
+        .recursive-boot-ghost-safe {
+            position: fixed;
+            pointer-events: none;
+            z-index: 48;
+            opacity: 0;
+            color: var(--bright-green);
+            filter: blur(.55px) drop-shadow(0 0 7px var(--bright-green));
+            mix-blend-mode: screen;
+            text-transform: uppercase;
+            animation: safe-recursive-boot-ghost 640ms ease-out forwards;
+            contain: layout paint;
+        }
+
+        @keyframes safe-recursive-boot-ghost {
+            0% {
+                opacity: var(--boot-ghost-opacity, .13);
+                transform: translate(var(--boot-ghost-x, 0), var(--boot-ghost-y, 0)) scale(1);
+            }
+            58% {
+                opacity: calc(var(--boot-ghost-opacity, .13) * .44);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(calc(var(--boot-ghost-x, 0) * 2.2), calc(var(--boot-ghost-y, 0) * 2.2)) scale(1.018);
+            }
+        }
+
+
+
+        /* --- Boot-time CRT tube warmup geometry warp (safe re-implementation) ---
+           Applied only to the monitor screen for under a second: vertical collapse,
+           outward expansion, phosphor bloom, then stable geometry. */
+        .crt-screen.tube-warming {
+            transform-origin: center center;
+            animation: safe-tube-geometry-warm 880ms cubic-bezier(.18,.86,.24,1) forwards;
+            will-change: transform;
+        }
+
+        .crt-screen.tube-warming::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 118;
+            pointer-events: none;
+            opacity: 0;
+            background:
+                radial-gradient(ellipse at center,
+                    rgba(0,255,65,.42) 0%,
+                    rgba(0,255,65,.22) 18%,
+                    rgba(255,255,255,.08) 31%,
+                    rgba(0,0,0,0) 68%),
+                linear-gradient(180deg,
+                    rgba(255,255,255,.10),
+                    rgba(0,255,65,.07) 48%,
+                    rgba(0,0,0,0));
+            mix-blend-mode: screen;
+            animation: safe-tube-bloom 880ms ease-out forwards;
+        }
+
+        .crt-screen.tube-warming #terminal-content {
+            transform-origin: center center;
+            animation: safe-tube-content-warm 880ms cubic-bezier(.18,.86,.24,1) forwards;
+            will-change: transform, opacity;
+        }
+
+        @keyframes safe-tube-geometry-warm {
+            0%   { transform: scaleX(.92) scaleY(.045); }
+            18%  { transform: scaleX(1.055) scaleY(.22); }
+            42%  { transform: scaleX(1.028) scaleY(1.075); }
+            67%  { transform: scaleX(.992) scaleY(.985); }
+            100% { transform: scaleX(1) scaleY(1); }
+        }
+
+        @keyframes safe-tube-content-warm {
+            0%   { opacity: 0; transform: scaleY(.12); }
+            20%  { opacity: .18; transform: scaleY(.28); }
+            46%  { opacity: 1; transform: scaleY(1.08); }
+            72%  { opacity: .94; transform: scaleY(.985); }
+            100% { opacity: 1; transform: scaleY(1); }
+        }
+
+        @keyframes safe-tube-bloom {
+            0%   { opacity: .92; transform: scaleY(.055); }
+            20%  { opacity: .72; transform: scaleY(.24); }
+            43%  { opacity: .52; transform: scaleY(1.1); }
+            68%  { opacity: .18; transform: scaleY(1); }
+            100% { opacity: 0; transform: scaleY(1); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .crt-glitch-layer .vhs-bands,
+            .crt-glitch-layer .dead-pixel,
+            .crt-glitch-layer.sync-tearing .sync-tear-band,
+            .crt-glitch-layer.signal-corrupting .signal-flash,
+            .crt-glitch-layer.boot-warming .signal-flash,
+            .crt-screen.tube-warming,
+            .crt-screen.tube-warming::before,
+            .crt-screen.tube-warming #terminal-content,
+            #terminal-content.audio-jitter-safe,
+            .recursive-modal-ghost-safe,
+            .recursive-boot-ghost-safe {
+                animation: none !important;
+            }
+        }
+
+
+        /* --- Brief Signal Corruption Flash v2 (safe overlay + content kick) --- */
+        .crt-glitch-layer .signal-flash::before,
+        .crt-glitch-layer .signal-flash::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .crt-glitch-layer .signal-flash::before {
+            background:
+                linear-gradient(90deg,
+                    rgba(255,0,38,.34) 0%,
+                    transparent 12%,
+                    transparent 46%,
+                    rgba(255,255,255,.16) 50%,
+                    transparent 54%,
+                    transparent 88%,
+                    rgba(0,220,255,.32) 100%),
+                repeating-linear-gradient(0deg,
+                    transparent 0 2px,
+                    rgba(255,255,255,.08) 3px,
+                    transparent 5px);
+            transform: translateX(var(--signal-rgb-x, 0px));
+            mix-blend-mode: screen;
+        }
+
+        .crt-glitch-layer .signal-flash::after {
+            top: var(--signal-band-y, 34%);
+            height: var(--signal-band-h, 18%);
+            bottom: auto;
+            background:
+                repeating-linear-gradient(0deg,
+                    rgba(0,255,65,.16) 0 1px,
+                    transparent 1px 3px),
+                linear-gradient(90deg,
+                    transparent,
+                    rgba(255,255,255,.2),
+                    rgba(0,255,65,.14),
+                    transparent);
+            box-shadow: 0 0 26px rgba(0,255,65,.22);
+            transform: translateX(var(--signal-band-x, 0px)) skewX(var(--signal-skew, 0deg));
+            mix-blend-mode: screen;
+        }
+
+        .crt-glitch-layer.signal-corrupting .signal-flash {
+            animation: safe-signal-corrupt-flash-v2 165ms steps(3,end) forwards !important;
+        }
+
+        .crt-screen.signal-corrupt-flash-safe #terminal-content {
+            animation: safe-signal-content-kick-v2 165ms steps(3,end) forwards;
+        }
+
+        @keyframes safe-signal-corrupt-flash-v2 {
+            0% { opacity: 0; transform: translateX(0); filter: none; }
+            12% { opacity: .88; transform: translateX(-1px); filter: contrast(1.7) brightness(1.55) saturate(1.5); }
+            34% { opacity: .34; transform: translateX(2px); filter: contrast(.8) brightness(.7) blur(.45px); }
+            58% { opacity: .72; transform: translateX(-2px); filter: contrast(1.45) brightness(1.25) saturate(1.9); }
+            100% { opacity: 0; transform: translateX(0); filter: none; }
+        }
+
+        @keyframes safe-signal-content-kick-v2 {
+            0% { filter: none; transform: translate(0,0); }
+            18% { filter: contrast(1.35) brightness(1.18) saturate(1.5); transform: translate(1px,-1px); }
+            42% { filter: contrast(.92) brightness(.82) blur(.35px); transform: translate(-1px,1px); }
+            68% { filter: contrast(1.22) brightness(1.08); transform: translate(1px,0); }
+            100% { filter: none; transform: translate(0,0); }
+        }
+
+
+        /* --- VHS Tracking Noise Bands v2 (safe overlay-only) ---
+        .crt-glitch-layer .vhs-bands {
+            opacity: .105;
+            background:
+                repeating-linear-gradient(0deg,
+                    transparent 0 5px,
+                    rgba(255,255,255,.024) 6px,
+                    transparent 9px),
+                linear-gradient(180deg,
+                    transparent 0%,
+                    rgba(0,255,65,.045) 13%,
+                    transparent 21%,
+                    transparent 46%,
+                    rgba(255,255,255,.042) 52%,
+                    rgba(0,0,0,.075) 56%,
+                    transparent 64%,
+                    transparent 100%);
+            filter: blur(.12px);
+        }
+
+        .crt-glitch-layer .vhs-bands::before,
+        .crt-glitch-layer .vhs-bands::after {
+            content: "";
+            position: absolute;
+            left: -8%;
+            width: 116%;
+            pointer-events: none;
+            mix-blend-mode: screen;
+            opacity: 0;
+        }
+
+        .crt-glitch-layer .vhs-bands::before {
+            top: var(--tracking-y, 28%);
+            height: var(--tracking-h, 54px);
+            background:
+                repeating-linear-gradient(0deg,
+                    rgba(255,255,255,.09) 0 1px,
+                    transparent 1px 3px,
+                    rgba(0,255,65,.05) 3px 4px,
+                    transparent 4px 7px),
+                linear-gradient(90deg,
+                    transparent,
+                    rgba(255,255,255,.11) 21%,
+                    rgba(0,255,65,.13) 48%,
+                    rgba(0,190,255,.08) 65%,
+                    transparent);
+            box-shadow:
+                0 -8px 18px rgba(0,0,0,.22),
+                0 8px 22px rgba(0,255,65,.09);
+            transform: translateX(var(--tracking-x, 0px)) skewX(var(--tracking-skew, 0deg));
+        }
+
+        .crt-glitch-layer .vhs-bands::after {
+            top: var(--tracking-y2, 62%);
+            height: var(--tracking-h2, 18px);
+            background:
+                repeating-linear-gradient(0deg,
+                    rgba(0,0,0,.18) 0 2px,
+                    rgba(255,255,255,.055) 2px 3px,
+                    transparent 3px 6px),
+                linear-gradient(90deg,
+                    rgba(255,0,38,.07),
+                    transparent 18%,
+                    rgba(255,255,255,.12) 50%,
+                    transparent 82%,
+                    rgba(0,220,255,.07));
+            filter: blur(.22px);
+            transform: translateX(calc(var(--tracking-x, 0px) * -0.55));
+        }
+
+        .crt-glitch-layer.vhs-tracking .vhs-bands::before {
+            animation: safe-vhs-tracking-band 620ms steps(4,end) forwards;
+        }
+
+        .crt-glitch-layer.vhs-tracking .vhs-bands::after {
+            animation: safe-vhs-tracking-band-secondary 620ms steps(4,end) forwards;
+        }
+
+        .crt-screen.vhs-tracking-kick-safe #terminal-content {
+            animation: safe-vhs-content-shimmy 620ms steps(4,end) forwards;
+        }
+
+        @keyframes safe-vhs-tracking-band {
+            0% { opacity: 0; transform: translateX(0) skewX(0deg); }
+            12% { opacity: .52; transform: translateX(var(--tracking-x, 0px)) skewX(var(--tracking-skew, 0deg)); }
+            34% { opacity: .28; transform: translateX(calc(var(--tracking-x, 0px) * -0.45)) skewX(calc(var(--tracking-skew, 0deg) * -0.5)); }
+            58% { opacity: .42; transform: translateX(calc(var(--tracking-x, 0px) * .7)) skewX(var(--tracking-skew, 0deg)); }
+            100% { opacity: 0; transform: translateX(0) skewX(0deg); }
+        }
+
+        @keyframes safe-vhs-tracking-band-secondary {
+            0% { opacity: 0; }
+            18% { opacity: .32; }
+            52% { opacity: .18; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes safe-vhs-content-shimmy {
+            0%, 100% { transform: translate(0,0); filter: none; }
+            16% { transform: translate(1px,0); filter: brightness(1.07) contrast(1.08); }
+            40% { transform: translate(-1px,1px); filter: brightness(.94) contrast(1.14); }
+            64% { transform: translate(1px,-1px); filter: brightness(1.04) contrast(1.06); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .crt-glitch-layer.vhs-tracking .vhs-bands::before,
+            .crt-glitch-layer.vhs-tracking .vhs-bands::after,
+            .crt-screen.vhs-tracking-kick-safe #terminal-content {
+                animation: none !important;
+            }
+        }
+
+
+        /* --- Live system header stats --- */
+        [data-live-stat="cpu-bar"],
+        [data-live-stat="mem-bar"] {
+            display: inline-block;
+            min-width: 10ch;
+            letter-spacing: 0.5px;
+        }
+
+        [data-live-stat="cpu-pct"],
+        [data-live-stat="mem-pct"] {
+            display: inline-block;
+            min-width: 4ch;
+            text-align: right;
+        }
+
+        .live-stat-corruptible [data-live-stat],
+        .live-stat-corruptible [data-live-stat-label] {
+            display: inline-block;
+        }
+
+        .live-stat-corruptible .char-corrupt-persistent-safe,
+        .live-stat-corruptible .char-corrupt-safe {
+            text-shadow:
+                1px 0 rgba(255, 32, 32, 0.55),
+                -1px 0 rgba(0, 210, 255, 0.45),
+                0 0 7px rgba(0, 255, 65, 0.55);
+        }
+
+
+        /* --- CRT themed scrollbars --- */
+        * {
+            scrollbar-color: var(--bright-green) rgba(0, 59, 0, 0.28);
+            scrollbar-width: thin;
+        }
+
+        ul::-webkit-scrollbar,
+        .chess-panel::-webkit-scrollbar,
+        .chess-log::-webkit-scrollbar,
+        .chess-history::-webkit-scrollbar,
+        #terminal-content::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        ul::-webkit-scrollbar-track,
+        .chess-panel::-webkit-scrollbar-track,
+        .chess-log::-webkit-scrollbar-track,
+        .chess-history::-webkit-scrollbar-track,
+        #terminal-content::-webkit-scrollbar-track {
+            background: rgba(0, 59, 0, 0.22);
+            border: 1px solid var(--dark-green);
+            box-shadow: inset 0 0 8px rgba(0, 255, 65, 0.12);
+        }
+
+        ul::-webkit-scrollbar-thumb,
+        .chess-panel::-webkit-scrollbar-thumb,
+        .chess-log::-webkit-scrollbar-thumb,
+        .chess-history::-webkit-scrollbar-thumb,
+        #terminal-content::-webkit-scrollbar-thumb {
+            background: var(--bright-green);
+            border: 2px solid var(--bg-black);
+            box-shadow: 0 0 8px rgba(0, 255, 65, 0.45);
+        }
+
+        ul::-webkit-scrollbar-button,
+        .chess-panel::-webkit-scrollbar-button,
+        .chess-log::-webkit-scrollbar-button,
+        .chess-history::-webkit-scrollbar-button,
+        #terminal-content::-webkit-scrollbar-button {
+            background: var(--dark-green);
+            border: 1px solid var(--bright-green);
+        }
+
     </style>
 </head>
 <body onkeydown="handleKeyDown(event)">
@@ -488,6 +1372,23 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     <div class="crt-screen" id="crt-screen">
         <div id="terminal-content">
             <!-- Initial Splash Logic will be injected here via renderSplash -->
+        </div>
+        <div class="crt-fatigue" aria-hidden="true">
+            <div class="crt-warp-edge left"></div>
+            <div class="crt-warp-edge right"></div>
+            <div class="crt-collapse-band"></div>
+        </div>
+        <div class="crt-convergence" aria-hidden="true">
+            <div class="crt-corner-fringe tl"></div>
+            <div class="crt-corner-fringe tr"></div>
+            <div class="crt-corner-fringe bl"></div>
+            <div class="crt-corner-fringe br"></div>
+        </div>
+
+        <div class="crt-glitch-layer" id="crt-glitch-layer" aria-hidden="true">
+            <div class="vhs-bands"></div>
+            <div class="sync-tear-band"></div>
+            <div class="signal-flash"></div>
         </div>
         <div id="system-message" role="status" aria-live="polite"></div>
     </div>
@@ -550,6 +1451,123 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 
 
     const terminal = document.getElementById('terminal-content');
+
+
+    function emitPhosphorGhostFromElement(el, options = {}) {
+        if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        const rect = el.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+
+        const ghost = el.cloneNode(true);
+        ghost.classList.add('phosphor-ghost');
+        ghost.style.position = 'fixed';
+        ghost.removeAttribute('id');
+        ghost.style.left = `${rect.left}px`;
+        ghost.style.top = `${rect.top}px`;
+        ghost.style.width = `${rect.width}px`;
+        ghost.style.height = `${rect.height}px`;
+        ghost.style.setProperty('--ghost-opacity', options.opacity || '0.08');
+        ghost.style.setProperty('--ghost-dx', options.dx || '0px');
+        ghost.style.setProperty('--ghost-dy', options.dy || '0px');
+        ghost.style.setProperty('--ghost-life', `${options.life || 520}ms`);
+
+        ghost.querySelectorAll('[id]').forEach(node => node.removeAttribute('id'));
+        ghost.querySelectorAll('button, a, input, [onclick]').forEach(node => {
+            node.removeAttribute('onclick');
+            node.tabIndex = -1;
+        });
+
+        document.body.appendChild(ghost);
+        setTimeout(() => ghost.remove(), options.life || 620);
+    }
+
+    let burnInLastHTML = "";
+    let burnInLastEmit = 0;
+    let burnInObserverStarted = false;
+
+    function sanitizeBurnInSnapshot(root) {
+        root.querySelectorAll('[id]').forEach(node => node.removeAttribute('id'));
+        root.querySelectorAll('button, a, input, [onclick]').forEach(node => {
+            node.removeAttribute('onclick');
+            node.tabIndex = -1;
+        });
+        root.querySelectorAll('.phosphor-ghost, .screen-burn-ghost, script').forEach(node => node.remove());
+    }
+
+    function emitScreenBurnInSnapshot(previousHTML, options = {}) {
+        if (!previousHTML || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (!terminal || !document.body.contains(terminal)) return;
+
+        const rect = terminal.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+
+        const ghost = document.createElement('div');
+        ghost.className = 'screen-burn-ghost';
+        ghost.style.left = `${rect.left}px`;
+        ghost.style.top = `${rect.top}px`;
+        ghost.style.width = `${rect.width}px`;
+        ghost.style.height = `${rect.height}px`;
+        ghost.style.setProperty('--burn-opacity', options.opacity || '0.04');
+        ghost.style.setProperty('--burn-life', `${options.life || 720}ms`);
+        ghost.style.setProperty('--burn-x', options.dx || '1px');
+        ghost.style.setProperty('--burn-y', options.dy || '0px');
+        ghost.innerHTML = previousHTML;
+        sanitizeBurnInSnapshot(ghost);
+
+        document.body.appendChild(ghost);
+        setTimeout(() => ghost.remove(), options.life || 760);
+    }
+
+    function startSiteWideBurnInPersistence() {
+        if (burnInObserverStarted || !terminal || !('MutationObserver' in window)) return;
+        burnInObserverStarted = true;
+        burnInLastHTML = terminal.innerHTML;
+
+        const observer = new MutationObserver(() => {
+            const now = Date.now();
+            const nextHTML = terminal.innerHTML;
+            if (!burnInLastHTML || nextHTML === burnInLastHTML) {
+                burnInLastHTML = nextHTML;
+                return;
+            }
+
+            if (now - burnInLastEmit > 240) {
+                burnInLastEmit = now;
+                const isMajorChange = Math.abs(nextHTML.length - burnInLastHTML.length) > 80 || viewState === 'splash' || viewState === 'file' || viewState === 'dir' || viewState === 'root';
+                emitScreenBurnInSnapshot(burnInLastHTML, {
+                    opacity: isMajorChange ? '0.045' : '0.025',
+                    life: isMajorChange ? 760 : 440,
+                    dx: Math.random() > 0.5 ? '1px' : '-1px',
+                    dy: Math.random() > 0.72 ? '1px' : '0px'
+                });
+            }
+
+            requestAnimationFrame(() => {
+                burnInLastHTML = terminal.innerHTML;
+            });
+        });
+
+        observer.observe(terminal, {
+            childList: true,
+            subtree: true,
+            characterData: true
+        });
+    }
+
+    requestAnimationFrame(startSiteWideBurnInPersistence);
+
+    function emitCurrentSelectionGhost(nextIndex) {
+        const items = terminal.querySelectorAll('li, .pin-btn, .clickable');
+        if (items[selectedIndex] && selectedIndex !== nextIndex) {
+            emitPhosphorGhostFromElement(items[selectedIndex], { opacity: '0.075', dx: '1px', dy: '0px', life: 220 });
+        }
+    }
+
+    function emitChessCursorGhost() {
+        const el = document.querySelector('#chess-board .chess-square.cursor');
+        if (el) emitPhosphorGhostFromElement(el, { opacity: '0.09', dx: '0px', dy: '1px', life: 210 });
+    }
 
     function escapeHTML(value) {
         return String(value ?? "")
@@ -669,11 +1687,66 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         }
     }
 
+    let liveCpuPercent = 42;
+    let liveMemPercent = 37;
+    let liveStatsTimer;
+
+    function clampLiveStat(value, min, max) {
+        return Math.max(min, Math.min(max, value));
+    }
+
+    function makeLiveStatBar(percent, slots = 10) {
+        const filled = clampLiveStat(Math.round((percent / 100) * slots), 1, slots);
+        return '|'.repeat(filled) + '.'.repeat(slots - filled);
+    }
+
+    function formatLiveClock() {
+        return new Date().toLocaleTimeString([], {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        });
+    }
+
+    function getLiveSystemStats() {
+        return {
+            cpu: liveCpuPercent,
+            mem: liveMemPercent,
+            cpuBar: makeLiveStatBar(liveCpuPercent),
+            memBar: makeLiveStatBar(liveMemPercent)
+        };
+    }
+
+    function fluctuateLiveSystemStats() {
+        liveCpuPercent = clampLiveStat(liveCpuPercent + Math.round((Math.random() - 0.42) * 12), 7, 96);
+        liveMemPercent = clampLiveStat(liveMemPercent + Math.round((Math.random() - 0.48) * 5), 22, 88);
+    }
+
+    function updateLiveSystemHeader() {
+        const stats = getLiveSystemStats();
+        document.querySelectorAll('[data-live-stat="cpu-bar"]').forEach(el => { el.textContent = stats.cpuBar; });
+        document.querySelectorAll('[data-live-stat="cpu-pct"]').forEach(el => { el.textContent = `${stats.cpu}%`; });
+        document.querySelectorAll('[data-live-stat="mem-bar"]').forEach(el => { el.textContent = stats.memBar; });
+        document.querySelectorAll('[data-live-stat="mem-pct"]').forEach(el => { el.textContent = `${stats.mem}%`; });
+        document.querySelectorAll('[data-live-stat="user"]').forEach(el => { el.textContent = isSecretAccess ? 'ROOT' : 'GUEST'; });
+        document.querySelectorAll('[data-live-stat="time"]').forEach(el => { el.textContent = formatLiveClock(); });
+    }
+
+    function startLiveSystemHeader() {
+        clearInterval(liveStatsTimer);
+        updateLiveSystemHeader();
+        liveStatsTimer = setInterval(() => {
+            fluctuateLiveSystemStats();
+            updateLiveSystemHeader();
+        }, 1000);
+    }
+
     function getHeader() {
+        const stats = getLiveSystemStats();
         return `
-            <div class="system-stats">
-                <div>CPU [|||||| 42%] <br> MEM [||| 1.2GB/8GB]</div>
-                <div style="text-align: right">USER: ${isSecretAccess ? "ROOT" : "GUEST"}<br>TIME: ${new Date().toLocaleTimeString()}</div>
+            <div class="system-stats live-stat-corruptible">
+                <div><span data-live-stat-label="cpu">CPU</span> [<span data-live-stat="cpu-bar">${stats.cpuBar}</span> <span data-live-stat="cpu-pct">${stats.cpu}%</span>] <br> <span data-live-stat-label="mem">MEM</span> [<span data-live-stat="mem-bar">${stats.memBar}</span> <span data-live-stat="mem-pct">${stats.mem}%</span>]</div>
+                <div style="text-align: right"><span data-live-stat-label="user-label">USER</span>: <span data-live-stat="user">${isSecretAccess ? "ROOT" : "GUEST"}</span><br><span data-live-stat-label="time-label">TIME</span>: <span data-live-stat="time">${formatLiveClock()}</span></div>
             </div>
         `;
     }
@@ -785,10 +1858,12 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         const items = terminal.querySelectorAll('li, .pin-btn, .clickable');
         
         if (e.key === "ArrowDown") {
+            emitCurrentSelectionGhost((selectedIndex + 1) % items.length);
             selectedIndex = (selectedIndex + 1) % items.length;
             playSound(1200, 'sine', 0.01, 0.05);
             updateSelection();
         } else if (e.key === "ArrowUp") {
+            emitCurrentSelectionGhost((selectedIndex - 1 + items.length) % items.length);
             selectedIndex = (selectedIndex - 1 + items.length) % items.length;
             playSound(1200, 'sine', 0.01, 0.05);
             updateSelection();
@@ -832,6 +1907,10 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         const items = terminal.querySelectorAll('li, .pin-btn, .clickable');
         items.forEach((item, idx) => {
             const isSelected = idx === selectedIndex;
+            const wasSelected = item.classList.contains('selected');
+            if (wasSelected && !isSelected) {
+                emitPhosphorGhostFromElement(item, { opacity: '0.065', dx: '1px', dy: '0px', life: 210 });
+            }
             item.classList.toggle('selected', isSelected);
             if (isSelected && (viewState === "dir" || viewState === "root")) {
                 item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
@@ -2052,9 +3131,22 @@ function openRandomCard() {
             if (chess.selected && chess.selected[0]===r && chess.selected[1]===c) sq.classList.add('pick');
             if (chess.lastMove && ((chess.lastMove[0]===r&&chess.lastMove[1]===c)||(chess.lastMove[2]===r&&chess.lastMove[3]===c))) sq.classList.add('last');
             if (chess.legal.some(m=>m[0]===r&&m[1]===c)) sq.classList.add('legal');
-            sq.onclick=()=>{ chess.cursor=[r,c]; chessClick(); };
+            sq.onclick=()=>{ emitChessCursorGhost(); chess.cursor=[r,c]; chessClick(); };
             if (chess.boom && chess.boom[0]===r && chess.boom[1]===c) { const boom=document.createElement('div'); boom.className='chess-boom'; sq.appendChild(boom); }
-            const pc=chess.board[r][c]; if (pc) { const d=document.createElement('div'); d.className='chess-piece'; d.dataset.fallback=glyphs[pc]||'?'; d.title=pieceNames[pc[1]]; if (chessSpriteReady) { const cv=document.createElement('canvas'); drawChessSprite(cv, pc); d.appendChild(cv); } else { document.body.classList.add('sprite-fallback'); } if(chess.lastMove && chess.lastMove[2]===r && chess.lastMove[3]===c) d.classList.add('moved'); if(chess.thinking && pc[0]==='b') d.classList.add('thinking'); sq.appendChild(d); }
+            const pc=chess.board[r][c]; if (pc) {
+                const isRecentDestination = chess.lastMove && chess.lastMove[2]===r && chess.lastMove[3]===c;
+                if (isRecentDestination) {
+                    const trail=document.createElement('div');
+                    trail.className='chess-piece phosphor-piece-trail';
+                    trail.dataset.fallback=glyphs[pc]||'?';
+                    const dx=(chess.lastMove[1]-chess.lastMove[3])*7;
+                    const dy=(chess.lastMove[0]-chess.lastMove[2])*7;
+                    trail.style.setProperty('--trail-x', `${dx}px`);
+                    trail.style.setProperty('--trail-y', `${dy}px`);
+                    if (chessSpriteReady) { const tv=document.createElement('canvas'); drawChessSprite(tv, pc); trail.appendChild(tv); }
+                    sq.appendChild(trail);
+                }
+                const d=document.createElement('div'); d.className='chess-piece'; d.dataset.fallback=glyphs[pc]||'?'; d.title=pieceNames[pc[1]]; if (chessSpriteReady) { const cv=document.createElement('canvas'); drawChessSprite(cv, pc); d.appendChild(cv); } else { document.body.classList.add('sprite-fallback'); } if(isRecentDestination) d.classList.add('moved'); if(chess.thinking && pc[0]==='b') d.classList.add('thinking'); sq.appendChild(d); }
             board.appendChild(sq);
         }
     }
@@ -2108,6 +3200,8 @@ function openRandomCard() {
         if (e.key==='Escape') { renderSplash(); return; }
         if (chess.thinking) return;
         const [r,c]=chess.cursor;
+        const cursorMoved = ['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key);
+        if (cursorMoved) emitChessCursorGhost();
         if (e.key==='ArrowUp') chess.cursor=[Math.max(0,r-1),c];
         else if (e.key==='ArrowDown') chess.cursor=[Math.min(7,r+1),c];
         else if (e.key==='ArrowLeft') chess.cursor=[r,Math.max(0,c-1)];
@@ -2290,7 +3384,416 @@ function openRandomCard() {
     function cheatTournamentWarning(){ chessSay('SYSTEM: WARNING. CHESS WIZARD HAS FILED A FORM 7B: OPPONENT TOO CONFIDENT.', true); playSound(55,'square',.35,.16); }
     function cheatOpeningDoctrine(){ chessSay('CHESS WIZARD: INITIATING SICILIAN-ADJACENT DEFENSE. YOUR OBJECTION HAS BEEN DENIED.', true); cheatTinyAdjustment(); }
 
+
+    // --- SAFE RETRO GLITCH PACK 1-9 (Firefox-friendly runtime) ---
+    const safeGlitchGlyphs = "█▓▒░#@$%&?*+<>/\\0123456789";
+    const safeCharCorruptOriginals = new WeakMap();
+    let safeGlitchInterval;
+    let safePanicTimer;
+    let safePersistentCharTimer;
+
+    function safeGlitchMotionOK() {
+        return !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+
+    function safeGlitchLayer() {
+        return document.getElementById('crt-glitch-layer');
+    }
+
+    function safePulseClass(el, className, duration) {
+        if (!el || !safeGlitchMotionOK()) return;
+        el.classList.remove(className);
+        void el.offsetWidth;
+        el.classList.add(className);
+        setTimeout(() => el.classList.remove(className), duration);
+    }
+
+    function safeSeedDeadPixels() {
+        const layer = safeGlitchLayer();
+        if (!layer || layer.dataset.deadPixelsReady) return;
+        layer.dataset.deadPixelsReady = '1';
+        const colors = ['var(--bright-green)', '#ff0033', '#00ccff', '#ffb000'];
+        for (let i = 0; i < 32; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'dead-pixel';
+            dot.style.left = `${Math.random() * 100}%`;
+            dot.style.top = `${Math.random() * 100}%`;
+            dot.style.color = colors[Math.floor(Math.random() * colors.length)];
+            dot.style.setProperty('--dead-opacity', (0.06 + Math.random() * 0.26).toFixed(2));
+            dot.style.setProperty('--dead-speed', `${2.8 + Math.random() * 7}s`);
+            layer.appendChild(dot);
+        }
+    }
+
+    function safeTriggerSyncTear(force = false) {
+        const layer = safeGlitchLayer();
+        if (!layer || (!force && Math.random() > 0.1)) return;
+        layer.style.setProperty('--tear-y', `${12 + Math.floor(Math.random() * 72)}%`);
+        layer.style.setProperty('--tear-h', `${10 + Math.floor(Math.random() * 34)}px`);
+        const x = (Math.random() < .5 ? -1 : 1) * (6 + Math.floor(Math.random() * 16));
+        layer.style.setProperty('--tear-x', `${x}px`);
+        layer.style.setProperty('--tear-x-alt', `${Math.round(x * -0.55)}px`);
+        safePulseClass(layer, 'sync-tearing', 145);
+    }
+
+    function safeTriggerSignalCorruption(force = false) {
+        const layer = safeGlitchLayer();
+        const screen = document.getElementById('crt-screen');
+        if (!layer || (!force && Math.random() > 0.075)) return;
+
+        const rgbX = (Math.random() < .5 ? -1 : 1) * (1 + Math.floor(Math.random() * 4));
+        const bandX = (Math.random() < .5 ? -1 : 1) * (8 + Math.floor(Math.random() * 22));
+        layer.style.setProperty('--signal-rgb-x', `${rgbX}px`);
+        layer.style.setProperty('--signal-band-x', `${bandX}px`);
+        layer.style.setProperty('--signal-band-y', `${12 + Math.floor(Math.random() * 68)}%`);
+        layer.style.setProperty('--signal-band-h', `${8 + Math.floor(Math.random() * 18)}%`);
+        layer.style.setProperty('--signal-skew', `${(Math.random() < .5 ? -1 : 1) * (0.35 + Math.random() * 0.9)}deg`);
+
+        safePulseClass(layer, 'signal-corrupting', 175);
+        safePulseClass(screen, 'signal-corrupt-flash-safe', 175);
+        if (force || Math.random() < .52) safePulseClass(layer, 'vhs-bursting', 360);
+        safeCorruptVisibleText(force ? 4 : 2, force ? 170 : 105);
+        safePersistentCharacterCorruptionTick(force);
+    }
+
+    function safeBootWarmup() {
+        const screen = document.getElementById('crt-screen');
+        safePulseClass(screen, 'tube-warming', 900);
+        safePulseClass(safeGlitchLayer(), 'boot-warming', 730);
+        setTimeout(() => safeTriggerSignalCorruption(true), 360);
+        setTimeout(() => safeTriggerVHSTracking(true), 520);
+    }
+
+    function safeAudioJitter() {
+        // Disabled: this translated #terminal-content by 1px on every sound/button press,
+        // which made the whole CRT image appear to jog. Other glitch layers remain active.
+        return;
+    }
+
+    function safeCorruptTextValue(value) {
+        return String(value).split('').map(ch => {
+            if (/\s/.test(ch) || Math.random() > 0.16) return ch;
+            return safeGlitchGlyphs[Math.floor(Math.random() * safeGlitchGlyphs.length)];
+        }).join('');
+    }
+
+    function safeCorruptVisibleText(count = 1, duration = 90) {
+        if (!safeGlitchMotionOK()) return;
+        const candidates = Array.from(document.querySelectorAll('#terminal-content .glitch, #terminal-content li, #terminal-content .path, #terminal-content [data-live-stat], #terminal-content [data-live-stat-label], #system-message div, #modal-loading .glitch'))
+            .filter(el => el && el.childElementCount === 0 && el.textContent.trim().length > 3 && !el.dataset.cleanTextSafe);
+        candidates.sort(() => Math.random() - .5).slice(0, count).forEach(el => {
+            el.dataset.cleanTextSafe = el.textContent;
+            el.classList.add('char-corrupt-safe');
+            el.textContent = safeCorruptTextValue(el.textContent);
+            setTimeout(() => {
+                if (el.dataset.cleanTextSafe) el.textContent = el.dataset.cleanTextSafe;
+                delete el.dataset.cleanTextSafe;
+                el.classList.remove('char-corrupt-safe');
+            }, duration);
+        });
+    }
+
+
+    function safeTextNodeIsCorruptible(node) {
+        if (!node || node.nodeType !== Node.TEXT_NODE) return false;
+        const text = node.nodeValue || '';
+        if (text.trim().length < 4) return false;
+        const parent = node.parentElement;
+        if (!parent) return false;
+        if (parent.closest('script, style, noscript, input, textarea, select')) return false;
+        if (parent.closest('.dead-pixel, .recursive-modal-ghost-safe, .no-char-corrupt')) return false;
+        if (safeCharCorruptOriginals.has(node)) return false;
+
+        const host = parent.closest('#terminal-content, #system-message, #image-modal, #idle-pet, .monitor-frame');
+        if (!host) return false;
+
+        const rects = parent.getClientRects();
+        if (!rects || rects.length === 0) return false;
+        const style = window.getComputedStyle(parent);
+        if (style.visibility === 'hidden' || style.display === 'none' || Number(style.opacity) === 0) return false;
+        return true;
+    }
+
+    function safeCollectTextNodesForPersistentCorruption() {
+        const nodes = [];
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+            acceptNode(node) {
+                return safeTextNodeIsCorruptible(node) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+            }
+        });
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        return nodes;
+    }
+
+    function safeCorruptTextNode(node, duration = 140) {
+        if (!safeTextNodeIsCorruptible(node)) return;
+        const clean = node.nodeValue;
+        safeCharCorruptOriginals.set(node, clean);
+        if (node.parentElement) node.parentElement.classList.add('char-corrupt-persistent-safe');
+        node.nodeValue = safeCorruptTextValue(clean);
+        setTimeout(() => {
+            const original = safeCharCorruptOriginals.get(node);
+            if (typeof original === 'string') node.nodeValue = original;
+            safeCharCorruptOriginals.delete(node);
+            if (node.parentElement) node.parentElement.classList.remove('char-corrupt-persistent-safe');
+        }, duration);
+    }
+
+    function safePersistentCharacterCorruptionTick(force = false) {
+        if (!safeGlitchMotionOK() || document.hidden) return;
+        if (!force && Math.random() > 0.72) return;
+        const nodes = safeCollectTextNodesForPersistentCorruption();
+        if (!nodes.length) return;
+
+        const bursts = force ? 5 : (Math.random() < 0.16 ? 3 : 1);
+        nodes.sort(() => Math.random() - 0.5).slice(0, bursts).forEach((node, i) => {
+            setTimeout(() => safeCorruptTextNode(node, force ? 220 : 95 + Math.random() * 120), i * 35);
+        });
+    }
+
+    function safeStartPersistentCharacterCorruption() {
+        clearInterval(safePersistentCharTimer);
+        safePersistentCharTimer = setInterval(() => safePersistentCharacterCorruptionTick(false), 520);
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) safePersistentCharacterCorruptionTick(true);
+        });
+    }
+
+    function safeModalGhost() {
+        const modal = document.getElementById('image-modal');
+        const img = document.getElementById('modal-img');
+        if (!modal || !img || modal.style.display !== 'flex' || !img.src || !safeGlitchMotionOK()) return;
+        const rect = img.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+        for (let i = 0; i < 3; i++) {
+            const ghost = img.cloneNode(false);
+            ghost.removeAttribute('id');
+            ghost.className = 'recursive-modal-ghost-safe';
+            ghost.style.left = `${rect.left}px`;
+            ghost.style.top = `${rect.top}px`;
+            ghost.style.width = `${rect.width}px`;
+            ghost.style.height = `${rect.height}px`;
+            ghost.style.setProperty('--modal-ghost-opacity', `${0.15 - i * 0.035}`);
+            ghost.style.setProperty('--modal-ghost-x', `${(i + 1) * (Math.random() < .5 ? -3 : 3)}px`);
+            ghost.style.setProperty('--modal-ghost-y', `${(i + 1) * 2}px`);
+            ghost.style.animationDelay = `${i * 55}ms`;
+            document.body.appendChild(ghost);
+            setTimeout(() => ghost.remove(), 760 + i * 90);
+        }
+    }
+
+
+    function safeTriggerVHSTracking(force = false) {
+        const layer = safeGlitchLayer();
+        const screen = document.getElementById('crt-screen');
+        if (!layer || (!force && Math.random() > 0.11)) return;
+
+        const y = 10 + Math.floor(Math.random() * 72);
+        const h = 22 + Math.floor(Math.random() * 58);
+        const x = (Math.random() < .5 ? -1 : 1) * (4 + Math.floor(Math.random() * 18));
+        const skew = (Math.random() < .5 ? -1 : 1) * (0.25 + Math.random() * 1.1);
+
+        layer.style.setProperty('--tracking-y', `${y}%`);
+        layer.style.setProperty('--tracking-h', `${h}px`);
+        layer.style.setProperty('--tracking-y2', `${Math.max(5, Math.min(88, y + 18 + Math.floor(Math.random() * 26)))}%`);
+        layer.style.setProperty('--tracking-h2', `${10 + Math.floor(Math.random() * 22)}px`);
+        layer.style.setProperty('--tracking-x', `${x}px`);
+        layer.style.setProperty('--tracking-skew', `${skew.toFixed(2)}deg`);
+
+        safePulseClass(layer, 'vhs-tracking', 650);
+        safePulseClass(screen, 'vhs-tracking-kick-safe', 650);
+    }
+
+    function safeTerminalPanicEvent(force = false) {
+        if (!force && (viewState === 'splash' || Math.random() > .45)) return;
+        safeTriggerSyncTear(true);
+        setTimeout(() => safeTriggerSignalCorruption(true), 80);
+        setTimeout(() => safeTriggerVHSTracking(true), 135);
+        setTimeout(() => safeTriggerSyncTear(true), 190);
+        showSystemMessage('SIGNAL DESYNC DETECTED', [
+            'RELOCKING MEMORY BANKS',
+            'TRACKING ERROR: SELF-CORRECTED',
+            'DO NOT ADJUST YOUR TERMINAL'
+        ], 2200);
+        [90, 1440, 410, 2200, 120].forEach((freq, i) => setTimeout(() => playSound(freq, i % 2 ? 'square' : 'sawtooth', 0.04, 0.03), i * 70));
+    }
+
+    function safeStartAmbientGlitches() {
+        safeSeedDeadPixels();
+        safeStartPersistentCharacterCorruption();
+        clearInterval(safeGlitchInterval);
+        clearInterval(safePanicTimer);
+        safeGlitchInterval = setInterval(() => {
+            safeTriggerSyncTear();
+            safeTriggerSignalCorruption();
+            safeTriggerVHSTracking();
+            if (Math.random() < .018) safePersistentCharacterCorruptionTick(true);
+        }, 1700);
+        safePanicTimer = setInterval(() => safeTerminalPanicEvent(), 26000);
+    }
+
+    // Wrap existing functions instead of editing core logic.
+    const originalPlaySound = playSound;
+    playSound = function(freq, type, dur, vol) {
+        safeAudioJitter();
+        return originalPlaySound(freq, type, dur, vol);
+    };
+
+    const originalBootSystem = bootSystem;
+    bootSystem = function() {
+        safeBootWarmup();
+        return originalBootSystem.apply(this, arguments);
+    };
+
+    const originalNavigateModalGallery = navigateModalGallery;
+    navigateModalGallery = function(direction) {
+        safeModalGhost();
+        return originalNavigateModalGallery.apply(this, arguments);
+    };
+
+    const originalOpenModal = openModal;
+    openModal = function() {
+        safeModalGhost();
+        return originalOpenModal.apply(this, arguments);
+    };
+
+    safeStartAmbientGlitches();
+
+    /* --- Recursive modal ghosting v2: persistent while enlarged images are open --- */
+    let safeRecursiveModalGhostTimer;
+
+    function safeBurstModalGhosts(count = 3, spacing = 90) {
+        if (!safeGlitchMotionOK()) return;
+        for (let i = 0; i < count; i++) {
+            setTimeout(() => safeModalGhost(), i * spacing);
+        }
+    }
+
+    function safeStartRecursiveModalGhosting() {
+        clearInterval(safeRecursiveModalGhostTimer);
+        safeBurstModalGhosts(4, 85);
+        safeRecursiveModalGhostTimer = setInterval(() => {
+            const modal = document.getElementById('image-modal');
+            if (!modal || modal.style.display !== 'flex') {
+                clearInterval(safeRecursiveModalGhostTimer);
+                return;
+            }
+            if (Math.random() < 0.72) safeModalGhost();
+        }, 620);
+    }
+
+    function safeStopRecursiveModalGhosting() {
+        clearInterval(safeRecursiveModalGhostTimer);
+        document.querySelectorAll('.recursive-modal-ghost-safe').forEach(node => node.remove());
+    }
+
+    const originalOpenModalRecursiveGhost = openModal;
+    openModal = function() {
+        const result = originalOpenModalRecursiveGhost.apply(this, arguments);
+        safeStartRecursiveModalGhosting();
+        setTimeout(() => safeBurstModalGhosts(3, 110), 260);
+        return result;
+    };
+
+    const originalNavigateModalGalleryRecursiveGhost = navigateModalGallery;
+    navigateModalGallery = function(direction) {
+        const result = originalNavigateModalGalleryRecursiveGhost.apply(this, arguments);
+        safeBurstModalGhosts(5, 75);
+        setTimeout(() => safeBurstModalGhosts(3, 95), 260);
+        return result;
+    };
+
+    const originalCloseModalRecursiveGhost = closeModal;
+    closeModal = function() {
+        safeStopRecursiveModalGhosting();
+        return originalCloseModalRecursiveGhost.apply(this, arguments);
+    };
+
+    const safeRecursiveModalImage = document.getElementById('modal-img');
+    if (safeRecursiveModalImage) {
+        safeRecursiveModalImage.addEventListener('load', () => {
+            const modal = document.getElementById('image-modal');
+            if (modal && modal.style.display === 'flex') {
+                safeBurstModalGhosts(4, 80);
+            }
+        });
+    }
+
+
+    /* --- Recursive ghosting for the boot / splash screen --- */
+    let safeRecursiveBootGhostTimer;
+
+    function safeBootScreenGhost() {
+        if (!safeGlitchMotionOK() || viewState !== 'splash') return;
+        const source = document.querySelector('#terminal-content .card-view');
+        if (!source) return;
+        const rect = source.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+
+        for (let i = 0; i < 3; i++) {
+            const ghost = source.cloneNode(true);
+            ghost.className = 'recursive-boot-ghost-safe';
+            ghost.removeAttribute('onclick');
+            ghost.querySelectorAll('[id]').forEach(node => node.removeAttribute('id'));
+            ghost.querySelectorAll('[onclick], button, a, input').forEach(node => {
+                node.removeAttribute('onclick');
+                node.tabIndex = -1;
+            });
+            ghost.style.left = `${rect.left}px`;
+            ghost.style.top = `${rect.top}px`;
+            ghost.style.width = `${rect.width}px`;
+            ghost.style.height = `${rect.height}px`;
+            ghost.style.display = 'flex';
+            ghost.style.flexDirection = 'column';
+            ghost.style.alignItems = 'center';
+            ghost.style.justifyContent = 'center';
+            ghost.style.setProperty('--boot-ghost-opacity', `${0.13 - i * 0.03}`);
+            ghost.style.setProperty('--boot-ghost-x', `${(i + 1) * (Math.random() < .5 ? -2 : 2)}px`);
+            ghost.style.setProperty('--boot-ghost-y', `${(i + 1) * (Math.random() < .5 ? -1 : 2)}px`);
+            ghost.style.animationDelay = `${i * 65}ms`;
+            document.body.appendChild(ghost);
+            setTimeout(() => ghost.remove(), 820 + i * 90);
+        }
+    }
+
+    function safeBurstBootScreenGhosts(count = 4, spacing = 115) {
+        if (!safeGlitchMotionOK()) return;
+        for (let i = 0; i < count; i++) {
+            setTimeout(() => safeBootScreenGhost(), i * spacing);
+        }
+    }
+
+    function safeStartRecursiveBootGhosting() {
+        clearInterval(safeRecursiveBootGhostTimer);
+        document.querySelectorAll('.recursive-boot-ghost-safe').forEach(node => node.remove());
+        safeBurstBootScreenGhosts(5, 90);
+        safeRecursiveBootGhostTimer = setInterval(() => {
+            if (viewState !== 'splash') {
+                clearInterval(safeRecursiveBootGhostTimer);
+                document.querySelectorAll('.recursive-boot-ghost-safe').forEach(node => node.remove());
+                return;
+            }
+            if (Math.random() < 0.78) safeBootScreenGhost();
+        }, 740);
+    }
+
+    const originalRenderSplashRecursiveBootGhost = renderSplash;
+    renderSplash = function() {
+        const result = originalRenderSplashRecursiveBootGhost.apply(this, arguments);
+        setTimeout(() => safeStartRecursiveBootGhosting(), 40);
+        return result;
+    };
+
+    const originalBootSystemRecursiveBootGhost = bootSystem;
+    bootSystem = function() {
+        clearInterval(safeRecursiveBootGhostTimer);
+        document.querySelectorAll('.recursive-boot-ghost-safe').forEach(node => node.remove());
+        return originalBootSystemRecursiveBootGhost.apply(this, arguments);
+    };
+
+
     document.addEventListener('mousedown', resetIdle);
+    startLiveSystemHeader();
     renderSplash();
 </script>
 
