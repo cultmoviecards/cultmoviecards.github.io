@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Database Validator</title>
+<style>
+    body {
+        font-family: monospace;
+        background: #111;
+        color: #00ff41;
+        padding: 20px;
+        line-height: 1.45;
+    }
+    h2 { margin-top: 0; }
+    .error { color: #ff5555; }
+    .ok { color: #55ff55; }
+    .warn { color: #ffb000; }
+</style>
+</head>
+<body>
+
+<h2>Database Validator</h2>
+<pre id="output">Running...</pre>
+
+<script src="database.js"></script>
+<script>
+function validateDatabase() {
+    const output = document.getElementById("output");
+
+    if (typeof getDatabase !== "function") {
+        output.innerHTML = '<span class="error">✕ getDatabase() not found</span>';
+        return;
+    }
+
+    const db = getDatabase();
+    const cards = [];
+    const errors = [];
+    const warnings = [];
+
+    function collectCards(value) {
+        if (Array.isArray(value)) {
+            value.forEach(item => {
+                if (item && typeof item === "object") {
+                    if (Array.isArray(item.cards)) collectCards(item.cards);
+                    else if (Array.isArray(item.items)) collectCards(item.items);
+                    else if (Array.isArray(item.files)) collectCards(item.files);
+                    else cards.push(item);
+                }
+            });
+        } else if (value && typeof value === "object") {
+            Object.values(value).forEach(collectCards);
+        }
+    }
+
+    collectCards(db);
+
+    const required = ["id", "title", "file", "size", "date", "caption"];
+    const seenIds = new Map();
+
+    // General rule: folder number, #, then an alphanumeric code.
+    // Examples: 01#01, 01#T1, 01#S1, 08#WW, 20#SE, 21#F13, 101#01
+    const validIdPattern = /^\d{2,3}#[A-Z0-9]+$/i;
+
+    cards.forEach((card, index) => {
+        const label = card.id || `UNKNOWN CARD ${index + 1}`;
+
+        required.forEach(field => {
+            if (card[field] === undefined || card[field] === null || card[field] === "") {
+                errors.push(`Missing "${field}" in ${label}`);
+            }
+        });
+
+        if (card.id) {
+            if (seenIds.has(card.id)) {
+                errors.push(`Duplicate ID: ${card.id}`);
+            } else {
+                seenIds.set(card.id, card);
+            }
+
+            if (!validIdPattern.test(card.id)) {
+                errors.push(`Invalid ID format: ${card.id}`);
+            }
+        }
+
+        // Accept local image files and hosted image URLs.
+        // Warn only if the value is not a URL and does not end in a known image extension.
+        if (
+            card.file &&
+            !/^https?:\/\//i.test(card.file) &&
+            !/\.(webp|jpg|jpeg|png|gif)(\?.*)?$/i.test(card.file)
+        ) {
+            warnings.push(`Unusual image/file extension in ${label}: ${card.file}`);
+        }
+    });
+
+    let result = "";
+
+    if (errors.length === 0) {
+        result += `<span class="ok">✔ Checked ${cards.length} cards\n✔ No errors found</span>`;
+    } else {
+        result += `<span class="error">✕ Found ${errors.length} issue${errors.length === 1 ? "" : "s"}:\n\n${errors.join("\n")}</span>`;
+    }
+
+    if (warnings.length > 0) {
+        result += `\n\n<span class="warn">⚠ ${warnings.length} warning${warnings.length === 1 ? "" : "s"}:\n\n${warnings.join("\n")}</span>`;
+    }
+
+    output.innerHTML = result;
+}
+
+validateDatabase();
+</script>
+
+</body>
+</html>
