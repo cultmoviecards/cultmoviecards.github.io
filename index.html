@@ -1783,6 +1783,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     let viewState = "splash";
     let currentFolderName = "";
     let currentSubFolder = "";
+    let currentPath = [];
     let currentFileIndex = 0;
     let folderSelections = {};
     let randomRetrievalTimer;
@@ -1926,13 +1927,11 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         const userInfo = document.getElementById("modal-user-info");
         if (!db || !fileInfo || !userInfo) return;
 
-        const files = currentSubFolder ? db[currentFolderName]?.[currentSubFolder] : db[currentFolderName];
+        const files = getFilesAtPath(currentPath);
         const card = files?.[currentFileIndex];
         if (!card) return;
 
-        const setName = currentSubFolder || currentFolderName;
-        const pathParts = ["A:", currentFolderName.toUpperCase()];
-        if (currentSubFolder) pathParts.push(currentSubFolder.toUpperCase());
+        const pathParts = ["A:", ...currentPath.map(part => String(part).toUpperCase())];
         pathParts.push(`${card.title}.IMG`);
         const pathStr = pathParts.join("\\");
 
@@ -1955,11 +1954,11 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         const db = getDatabase();
         if (!db) return renderDatabaseError();
 
-        const files = currentSubFolder ? db[currentFolderName][currentSubFolder] : db[currentFolderName];
+        const files = getFilesAtPath(currentPath);
         if (!files || !files.length) return renderDatabaseError();
 
         currentFileIndex = (currentFileIndex + direction + files.length) % files.length;
-        const selectionKey = `${currentFolderName}::${currentSubFolder}`;
+        const selectionKey = pathKey(currentPath);
         folderSelections[selectionKey] = currentFileIndex + 1;
 
         const card = files[currentFileIndex];
@@ -2035,9 +2034,9 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         } else if (e.key === "Escape") {
             playSound(600, 'sine', 0.1, 0.05);
             if (viewState === "root") renderSplash();
-            else if (viewState === "dir" && currentSubFolder) openDir(currentFolderName);
+            else if (viewState === "dir" && currentPath.length > 1) openPath(currentPath.slice(0, -1));
             else if (viewState === "dir") renderRoot();
-            else if (viewState === "file") openDir(currentFolderName, true, currentSubFolder);
+            else if (viewState === "file") openPath(currentPath, true);
         } else if (["root", "dir", "file"].includes(viewState) && ["r", "R", "*"].includes(e.key)) {
             e.preventDefault();
             playRandomCardSequence(openRandomCard);
@@ -2758,23 +2757,82 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 
     function renderRoot() {
         viewState = "root"; selectedIndex = 0;
-        let html = getHeader() + `<div class="path">A:\ROOT</div><ul>`;
+        currentPath = [];
+        currentFolderName = "";
+        currentSubFolder = "";
+        let html = getHeader() + `<div class="path">A:\\ROOT</div><ul>`;
         html += `<li onclick="renderSplash(); playSound(600, 'sine', 0.1, 0.05);">[!] LOGOFF SYSTEM</li>`;
         html += `<li onclick="playRandomCardSequence(openRandomCard);">[R] RANDOM CARD</li>`;
         const db = getDatabase();
         if (!db) return renderDatabaseError();
 
         for (let folder in db) {
-            if ((folder === "SECRET_VAULT" || folder === "HIDDEN_VAULT") && !isSecretAccess) continue;
+            if (isRestrictedRootFolder(folder)) continue;
             const safeFolder = escapeHTML(folder.toUpperCase());
-            const jsFolder = escapeJS(folder);
-            html += `<li onclick="openDir('${jsFolder}')">drwxr-xr-x   [DIR]  ${safeFolder}</li>`;
+            const jsPath = encodePathForJS([folder]);
+            html += `<li onclick="openPathFromEncoded('${jsPath}')">drwxr-xr-x   [DIR]  ${safeFolder}</li>`;
         }
         terminal.innerHTML = html + `</ul>`;
         refreshSelectableItems();
         updateSelection();
     }
 
+    function isRestrictedRootFolder(folder) {
+        return (folder === "SECRET_VAULT" || folder === "HIDDEN_VAULT") && !isSecretAccess;
+    }
+
+    function normalizePath(path) {
+        if (Array.isArray(path)) return path.filter(part => part !== undefined && part !== null && String(part) !== "").map(String);
+        if (typeof path === "string" && path) return [path];
+        return [];
+    }
+
+    function pathKey(path) {
+        return normalizePath(path).join("::");
+    }
+
+    function encodePathForJS(path) {
+        return escapeJS(encodeURIComponent(JSON.stringify(normalizePath(path))));
+    }
+
+    function decodePath(encodedPath) {
+        try {
+            const decoded = JSON.parse(decodeURIComponent(encodedPath));
+            return normalizePath(decoded);
+        } catch (e) {
+            return [];
+        }
+    }
+
+    function getNodeAtPath(path) {
+        const db = getDatabase();
+        if (!db) return null;
+        const parts = normalizePath(path);
+        if (!parts.length) return db;
+        if (isRestrictedRootFolder(parts[0])) return null;
+
+        let node = db;
+        for (const part of parts) {
+            if (!node || typeof node !== "object" || !(part in node)) return null;
+            node = node[part];
+        }
+        return node;
+    }
+
+    function getFilesAtPath(path) {
+        const node = getNodeAtPath(path);
+        return Array.isArray(node) ? node : null;
+    }
+
+    function isCardRecord(item) {
+        return item && typeof item === "object" && !Array.isArray(item) && ("title" in item || "file" in item || "id" in item);
+    }
+
+    function pathDisplay(path, fileTitle = "") {
+        const parts = ["A:", ...normalizePath(path).map(part => String(part).toUpperCase())];
+        if (fileTitle) parts.push(`${String(fileTitle).toUpperCase()}.IMG`);
+        return parts.map(escapeHTML).join("\\");
+    }
 
     function getRandomCardPool() {
         const db = getDatabase();
@@ -2783,37 +2841,38 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         const viewCounts = JSON.parse(localStorage.getItem('cmcRandomCardViews') || '{}');
         const pool = [];
 
-        for (let folder in db) {
-            if ((folder === "SECRET_VAULT" || folder === "HIDDEN_VAULT") && !isSecretAccess) continue;
-            const data = db[folder];
+        const walk = (node, path) => {
+            if (Array.isArray(node)) {
+                node.forEach((card, idx) => {
+                    if (!isCardRecord(card)) return;
+                    const key = `${pathKey(path)}::${idx}`;
+                    const viewed = viewCounts[key] || 0;
+                    let weight = 10;
 
-            const pushCard = (sub, card, idx) => {
-                const key = `${folder}::${sub || ""}::${idx}`;
-                const viewed = viewCounts[key] || 0;
-                let weight = 10;
+                    // Prefer under-seen cards so RANDOM feels more like discovery than shuffle.
+                    weight += Math.max(0, 8 - viewed * 2);
 
-                // Prefer under-seen cards so RANDOM feels more like discovery than shuffle.
-                weight += Math.max(0, 8 - viewed * 2);
+                    // Slightly favor nested/curated folders; they usually feel more archival.
+                    if (path.length > 1) weight += 4;
 
-                // Slightly favor nested/curated folders; they usually feel more archival.
-                if (sub) weight += 4;
+                    // Seasonal and modern anomalies get a tiny nudge without dominating.
+                    const title = String(card?.title || "").toUpperCase();
+                    if (/CHRISTMAS|HALLOWEEN|FRIGHT|FEATURES|SERIES/.test(title)) weight += 2;
 
-                // Seasonal and modern anomalies get a tiny nudge without dominating.
-                const title = String(card?.title || "").toUpperCase();
-                if (/CHRISTMAS|HALLOWEEN|FRIGHT|FEATURES|SERIES/.test(title)) weight += 2;
+                    pool.push({ path: [...path], folder: path[0] || "", sub: path.slice(1).join("\\"), idx, weight, key });
+                });
+                return;
+            }
 
-                pool.push({ folder, sub: sub || "", idx, weight, key });
-            };
-
-            if (Array.isArray(data)) {
-                data.forEach((card, idx) => pushCard("", card, idx));
-            } else if (data && typeof data === "object") {
-                Object.keys(data).forEach(sub => {
-                    if (Array.isArray(data[sub])) data[sub].forEach((card, idx) => pushCard(sub, card, idx));
+            if (node && typeof node === "object") {
+                Object.keys(node).forEach(key => {
+                    if (path.length === 0 && isRestrictedRootFolder(key)) return;
+                    walk(node[key], [...path, key]);
                 });
             }
-        }
+        };
 
+        walk(db, []);
         return pool;
     }
 
@@ -2841,7 +2900,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         viewState = "random-retrieval";
         selectedIndex = 0;
         terminal.innerHTML = getHeader() + `
-            <div class="path">A:\RANDOM_RETRIEVAL</div>
+            <div class="path">A:\\RANDOM_RETRIEVAL</div>
             <div class="card-view">
                 <p class="glitch">${escapeHTML(lines[0])}</p>
                 <div style="width: 78%; border: 1px solid var(--dark-green); padding: 12px; line-height: 1.65; font-size: 8.5pt; background: rgba(0,0,0,.35);">
@@ -2923,7 +2982,7 @@ function openRandomCard() {
             }
 
             recordRandomCardView(pick);
-            viewCard(pick.folder, pick.idx, pick.sub);
+            viewCardByPath(pick.path, pick.idx);
 
             if (corrupted) {
                 showSystemMessage("RANDOM CARD WARNING", ["ARCHIVE INDEX MISMATCH", "METADATA MAY BE STARING BACK", "PRESS R OR * TO REROLL"], 7000);
@@ -2946,44 +3005,52 @@ function openRandomCard() {
         updateSelection();
     }
 
+    function openPathFromEncoded(encodedPath, useMemory = false) {
+        openPath(decodePath(encodedPath), useMemory);
+    }
+
     function openDir(name, useMemory = false, sub = "") {
+        const path = [name];
+        if (sub) path.push(...String(sub).split("\\").filter(Boolean));
+        openPath(path, useMemory);
+    }
+
+    function openPath(path, useMemory = false) {
+        const normalized = normalizePath(path);
         viewState = "dir";
-        currentFolderName = name;
-        currentSubFolder = sub;
-        const selectionKey = `${name}::${sub}`;
+        currentPath = normalized;
+        currentFolderName = normalized[0] || "";
+        currentSubFolder = normalized.slice(1).join("\\");
+        const selectionKey = pathKey(normalized);
         selectedIndex = useMemory
             ? (folderSelections[selectionKey] || 1)
             : 1;
 
-        const db = getDatabase();
-        if (!db) return renderDatabaseError();
+        const node = getNodeAtPath(normalized);
+        if (!node) return renderDatabaseError();
 
-        const data = db[name];
-        if (!data) return renderDatabaseError();
+        const parent = normalized.slice(0, -1);
+        const backAction = parent.length
+            ? `openPathFromEncoded('${encodePathForJS(parent)}')`
+            : `renderRoot()`;
 
-        let pathStr = `A:\\${escapeHTML(name.toUpperCase())}`;
-        if (sub) pathStr += `\\${escapeHTML(sub.toUpperCase())}`;
+        let html = getHeader() + `<div class="path">${pathDisplay(normalized)}</div><ul>`;
+        html += `<li onclick="${backAction}; playSound(600, 'sine', 0.1, 0.05);">[..] GO BACK</li>`;
 
-        let html = getHeader() + `<div class="path">${pathStr}</div><ul>`;
-
-        if (sub) {
-            const subData = data[sub];
-            if (!Array.isArray(subData)) return renderDatabaseError();
-
-            html += `<li onclick="openDir('${escapeJS(name)}'); playSound(600, 'sine', 0.1, 0.05);">[..] GO BACK</li>`;
-            subData.forEach((card, i) => {
-                html += `<li onclick="viewCard('${escapeJS(name)}', ${i}, '${escapeJS(sub)}'); playSound(1500, 'sine', 0.05, 0.05);">-rw-r--r--   ${escapeHTML(card.size)}   ${escapeHTML(card.title)}.IMG</li>`;
+        if (Array.isArray(node)) {
+            node.forEach((card, i) => {
+                if (!isCardRecord(card)) return;
+                html += `<li onclick="viewCardFromEncodedPath('${encodePathForJS(normalized)}', ${i}); playSound(1500, 'sine', 0.05, 0.05);">-rw-r--r--   ${escapeHTML(card.size || "----")}   ${escapeHTML(card.title || `CARD_${i + 1}`)}.IMG</li>`;
             });
-        } else if (!Array.isArray(data)) {
-            html += `<li onclick="renderRoot(); playSound(600, 'sine', 0.1, 0.05);">[..] GO BACK</li>`;
-            Object.keys(data).forEach(subKey => {
-                html += `<li onclick="openDir('${escapeJS(name)}', false, '${escapeJS(subKey)}')">drwxr-xr-x   [DIR]  ${escapeHTML(subKey)}</li>`;
+        } else if (node && typeof node === "object") {
+            Object.keys(node).forEach(childKey => {
+                const child = node[childKey];
+                if (Array.isArray(child) || (child && typeof child === "object")) {
+                    html += `<li onclick="openPathFromEncoded('${encodePathForJS([...normalized, childKey])}')">drwxr-xr-x   [DIR]  ${escapeHTML(childKey.toUpperCase())}</li>`;
+                }
             });
         } else {
-            html += `<li onclick="renderRoot(); playSound(600, 'sine', 0.1, 0.05);">[..] GO BACK</li>`;
-            data.forEach((card, i) => {
-                html += `<li onclick="viewCard('${escapeJS(name)}', ${i}); playSound(1500, 'sine', 0.05, 0.05);">-rw-r--r--   ${escapeHTML(card.size)}   ${escapeHTML(card.title)}.IMG</li>`;
-            });
+            return renderDatabaseError();
         }
 
         terminal.innerHTML = html + `</ul>`;
@@ -2992,48 +3059,47 @@ function openRandomCard() {
     }
 
     function navigateGallery(direction) {
-        const db = getDatabase();
-        if (!db) return renderDatabaseError();
-        const files = currentSubFolder ? db[currentFolderName][currentSubFolder] : db[currentFolderName];
+        const files = getFilesAtPath(currentPath);
         if (!files || !files.length) return renderDatabaseError();
         currentFileIndex = (currentFileIndex + direction + files.length) % files.length;
-        viewCard(currentFolderName, currentFileIndex, currentSubFolder);
+        viewCardByPath(currentPath, currentFileIndex);
+    }
+
+    function viewCardFromEncodedPath(encodedPath, idx) {
+        viewCardByPath(decodePath(encodedPath), idx);
     }
 
     function viewCard(dir, idx, sub = "") {
+        const path = [dir];
+        if (sub) path.push(...String(sub).split("\\").filter(Boolean));
+        viewCardByPath(path, idx);
+    }
+
+    function viewCardByPath(path, idx) {
+        const normalized = normalizePath(path);
         viewState = "file";
-        currentFolderName = dir;
-        currentSubFolder = sub || "";
+        currentPath = normalized;
+        currentFolderName = normalized[0] || "";
+        currentSubFolder = normalized.slice(1).join("\\");
         currentFileIndex = idx;
-        const selectionKey = `${dir}::${sub || ""}`;
+        const selectionKey = pathKey(normalized);
         folderSelections[selectionKey] = idx + 1;
 
-        const db = getDatabase();
-        if (!db) return renderDatabaseError();
-
-        const folder = db[dir];
-        const files = sub ? folder?.[sub] : folder;
+        const files = getFilesAtPath(normalized);
         if (!files || !files[idx]) return renderDatabaseError();
 
         const card = files[idx];
         const total = files.length;
-        const safeDir = escapeHTML(dir.toUpperCase());
-        const safeSub = escapeHTML(sub.toUpperCase());
-        const safeTitle = escapeHTML(card.title);
-        const safeCaption = escapeHTML(card.caption);
-        const safeId = escapeHTML(card.id);
-        const safeDate = escapeHTML(card.date);
-        const safeSize = escapeHTML(card.size);
-        const jsDir = escapeJS(dir);
-        const jsSub = escapeJS(sub);
-        const jsFile = escapeJS(card.file);
-
-        let pathStr = `A:\\${safeDir}`;
-        if (sub) pathStr += `\\${safeSub}`;
-        pathStr += `\\${safeTitle}.IMG`;
+        const safeTitle = escapeHTML(card.title || `CARD_${idx + 1}`);
+        const safeCaption = escapeHTML(card.caption || "UNKNOWN");
+        const safeId = escapeHTML(card.id || "UNKNOWN");
+        const safeDate = escapeHTML(card.date || "UNKNOWN");
+        const safeSize = escapeHTML(card.size || "UNKNOWN");
+        const jsPath = encodePathForJS(normalized);
+        const jsFile = escapeJS(card.file || "");
 
         terminal.innerHTML = getHeader() + `
-            <div class="path">${pathStr}</div>
+            <div class="path">${pathDisplay(normalized, card.title || `CARD_${idx + 1}`)}</div>
             <div class="card-view">
                 <div id="image-container" style="height: 315px; width: 94%; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
                     <p class="glitch" style="font-size: 1.2rem;">>>> RETRIEVING DATA...</p>
@@ -3045,7 +3111,7 @@ function openRandomCard() {
                 </table>
                 <div style="margin-top: 4px; display: flex; gap: 9px; justify-content: center; flex-wrap: wrap;">
                     <span class="clickable" onclick="navigateGallery(-1)">[ ← PREV ]</span>
-                    <span class="clickable" onclick="playSound(600, 'sine', 0.1, 0.05); openDir('${jsDir}', true, '${jsSub}')">[ ESC: EXIT ]</span>
+                    <span class="clickable" onclick="playSound(600, 'sine', 0.1, 0.05); openPathFromEncoded('${jsPath}', true)">[ ESC: EXIT ]</span>
                     <span class="clickable" onclick="navigateGallery(1)">[ NEXT → ]</span>
                 </div>
                 <div style="margin-top: 0px; display: flex; gap: 9px; justify-content: center; flex-wrap: wrap;">
@@ -3115,11 +3181,10 @@ function openRandomCard() {
 
         // If the user navigated inside the enlarged modal, keep the main card view
         // synchronized with the modal's current card when the modal closes.
-        if (viewState === "file" && currentFolderName) {
-            const folder = getDatabase()?.[currentFolderName];
-            const files = currentSubFolder ? folder?.[currentSubFolder] : folder;
+        if (viewState === "file" && currentPath.length) {
+            const files = getFilesAtPath(currentPath);
             if (files && files[currentFileIndex]) {
-                viewCard(currentFolderName, currentFileIndex, currentSubFolder);
+                viewCardByPath(currentPath, currentFileIndex);
             }
         }
 
