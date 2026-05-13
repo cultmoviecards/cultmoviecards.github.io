@@ -763,55 +763,6 @@
         .chess-square.check { outline: 3px solid #ffb000; outline-offset: -6px; animation: piece-pop .35s ease infinite alternate; }
         .prompt-options { margin-top: 10px; display:flex; gap:12px; justify-content:center; }
         .prompt-hint { margin-top:8px; opacity:.75; font-size:7.5pt; }
-
-        .roulette-strip {
-            display: grid;
-            grid-template-columns: repeat(9, 1fr);
-            gap: 4px;
-            margin: 12px 0 2px;
-            text-align: center;
-        }
-
-        .roulette-strip span {
-            border: 1px solid var(--dark-green);
-            padding: 4px 2px;
-            min-width: 3ch;
-            box-shadow: inset 0 0 8px rgba(0, 255, 65, 0.08);
-        }
-
-        .roulette-strip span.roulette-focus {
-            background: var(--bright-green);
-            color: var(--bg-black);
-            font-weight: bold;
-        }
-
-        .roulette-strip span.win-slot:not(.roulette-focus) {
-            color: var(--amber);
-            border-color: var(--amber);
-            text-shadow: 0 0 6px var(--amber);
-        }
-
-        .roulette-strip span.near-miss-slot:not(.roulette-focus) {
-            opacity: 0.86;
-            text-shadow: 0 0 4px rgba(0, 255, 65, 0.35);
-        }
-
-        .roulette-arrow {
-            text-align: center;
-            color: var(--amber);
-            font-size: 14pt;
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-
-        .mythic-code {
-            display: inline-block;
-            margin-top: 8px;
-            padding: 4px 8px;
-            border: 1px solid var(--bright-green);
-            font-size: 1.15em;
-            letter-spacing: 1px;
-        }
         @media (max-width: 720px) { .chess-wrap { grid-template-columns: 1fr; gap: 8px; overflow-y:auto; height: calc(100% - 82px); } #chess-board { width: min(82vw, 360px); height: min(82vw, 360px); justify-self:center; } .chess-panel { font-size:7pt; overflow:visible; } .chess-history { min-height:70px; } }
 
         .keypad-grid { display: grid; grid-template-columns: repeat(3, 60px); gap: 10px; margin-top: 20px; }
@@ -1858,64 +1809,6 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         osc.start(); osc.stop(audioCtx.currentTime + dur);
     }
 
-
-    function playVectrexBootSound() {
-        if (typeof chess !== 'undefined' && chess.boopsOn === false) return;
-        initAudio();
-
-        const startVectrexChime = () => {
-            const now = audioCtx.currentTime + 0.01;
-            const master = audioCtx.createGain();
-            const filter = audioCtx.createBiquadFilter();
-            const osc = audioCtx.createOscillator();
-            const osc2 = audioCtx.createOscillator();
-            const lfo = audioCtx.createOscillator();
-            const lfoGain = audioCtx.createGain();
-
-            master.gain.setValueAtTime(0.0001, now);
-            master.gain.exponentialRampToValueAtTime(0.42, now + 0.08);
-            master.gain.exponentialRampToValueAtTime(0.0001, now + 1.05);
-
-            filter.type = "bandpass";
-            filter.frequency.setValueAtTime(520, now);
-            filter.frequency.exponentialRampToValueAtTime(2100, now + 0.82);
-            filter.Q.setValueAtTime(5.5, now);
-
-            osc.type = "sine";
-            osc.frequency.setValueAtTime(95, now);
-            osc.frequency.exponentialRampToValueAtTime(1450, now + 0.86);
-
-            osc2.type = "triangle";
-            osc2.frequency.setValueAtTime(190, now);
-            osc2.frequency.exponentialRampToValueAtTime(900, now + 0.72);
-
-            lfo.type = "sine";
-            lfo.frequency.setValueAtTime(21, now);
-            lfoGain.gain.setValueAtTime(18, now);
-            lfo.connect(lfoGain);
-            lfoGain.connect(osc.frequency);
-            lfoGain.connect(osc2.frequency);
-
-            osc.connect(filter);
-            osc2.connect(filter);
-            filter.connect(master);
-            master.connect(audioCtx.destination);
-
-            osc.start(now);
-            osc2.start(now);
-            lfo.start(now);
-            osc.stop(now + 1.12);
-            osc2.stop(now + 1.02);
-            lfo.stop(now + 1.12);
-        };
-
-        if (audioCtx.state === "suspended") {
-            audioCtx.resume().then(startVectrexChime).catch(() => {});
-        } else {
-            startVectrexChime();
-        }
-    }
-
     function startPurr() {
         initAudio();
         purrOsc = audioCtx.createOscillator();
@@ -2878,8 +2771,6 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
             const safeFolder = escapeHTML(folder.toUpperCase());
             const jsPath = encodePathForJS([folder]);
             html += `<li onclick="openPathFromEncoded('${jsPath}')">drwxr-xr-x   [DIR]  ${safeFolder}</li>`;
-        box.classList.add("glitch");
-        setTimeout(() => box.classList.remove("glitch"), 1200);
         }
         terminal.innerHTML = html + `</ul>`;
         refreshSelectableItems();
@@ -3305,7 +3196,7 @@ function openRandomCard() {
     const chess = {
         board: [], turn: 'w', cursor: [6,4], selected: null, legal: [], log: [], over: false,
         thinking:false, lastMove:null, boom:null, glitch:false, moveCount:0, suspicion:0,
-        corruption:false, reviewReady:false, achievements:{}, status:'', difficulty:'normal', phase:'CALM', history:[], undoStack:[], speechOn:true, boopsOn:true, lastOutcome:'', rouletteActive:false, tiltBuffer:''
+        corruption:false, reviewReady:false, achievements:{}, status:'', difficulty:'normal', phase:'CALM', history:[], undoStack:[], speechOn:true, boopsOn:true, lastOutcome:''
     };
     const SPRITE_COLUMNS = { r:0, n:1, b:2, q:3, k:4, p:0 };
     const pieceNames = { p:'PAWN', r:'ROOK', n:'KNIGHT', b:'BISHOP', q:'QUEEN', k:'KING' };
@@ -3364,7 +3255,7 @@ function openRandomCard() {
         const back = ['r','n','b','q','k','b','n','r'];
         chess.board = Array.from({length:8},()=>Array(8).fill(''));
         for (let c=0;c<8;c++) { chess.board[0][c]='b'+back[c]; chess.board[1][c]='bp'; chess.board[6][c]='wp'; chess.board[7][c]='w'+back[c]; }
-        Object.assign(chess,{turn:'w', cursor:[6,4], selected:null, legal:[], over:false, thinking:false, lastMove:null, boom:null, glitch:false, moveCount:0, suspicion:0, corruption:false, reviewReady:false, achievements:{}, status:'', difficulty:'normal', phase:'CALM', history:[], undoStack:[], speechOn:true, boopsOn:true, lastOutcome:'', rouletteActive:false, tiltBuffer:'', endPromptSelection:0});
+        Object.assign(chess,{turn:'w', cursor:[6,4], selected:null, legal:[], over:false, thinking:false, lastMove:null, boom:null, glitch:false, moveCount:0, suspicion:0, corruption:false, reviewReady:false, achievements:{}, status:'', difficulty:'normal', phase:'CALM', history:[], undoStack:[], speechOn:true, boopsOn:true, lastOutcome:'', endPromptSelection:0});
         chess.log=['CHESS WIZARD: HELLO MACREADY. WOULD YOU LIKE TO PLAY ANOTHER GAME?','SYSTEM: FAIR MODE ENABLED. FOR NOW.'];
         if (chess.difficulty === 'crimes') { chess.corruption=true; chess.suspicion=45; chess.log.unshift('SYSTEM: WIZARD CRIMES PRE-APPROVED.'); }
         loadChessSprite();
@@ -3489,177 +3380,6 @@ function openRandomCard() {
     }
     function reviewMove(){ chess.reviewReady=false; chessSay('SYSTEM: MOVE VERIFIED BY INTERNAL COMMITTEE. NO IRREGULARITIES FOUND.', true); achievement('UNAUTHORIZED EN PASSANT'); renderChess(); }
 
-    function mythicCode() {
-        const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-        const randomIndex = (max) => {
-            if (window.crypto && crypto.getRandomValues) {
-                const values = new Uint32Array(1);
-                crypto.getRandomValues(values);
-                return values[0] % max;
-            }
-            return Math.floor(Math.random() * max);
-        };
-        const part = () => Array.from({ length: 4 }, () => chars[randomIndex(chars.length)]).join("");
-        return `${part()}-${part()}-${part()}-${part()}`;
-    }
-
-    function rouletteWindow(slots, centreIndex) {
-        const out = [];
-        for (let i = -4; i <= 4; i++) {
-            const index = (centreIndex + i + slots.length) % slots.length;
-            const slot = slots[index];
-            const classes = [];
-            if (i === 0) classes.push('roulette-focus');
-            if (slot === 'WIN') classes.push('win-slot');
-            if (slot === 'LOSE') classes.push('near-miss-slot');
-            out.push(`<span class="${classes.join(' ')}">${slot}</span>`);
-        }
-        return out.join("");
-    }
-
-    function randomRouletteIndex(max) {
-        if (window.crypto && crypto.getRandomValues) {
-            const values = new Uint32Array(1);
-            crypto.getRandomValues(values);
-            return values[0] % max;
-        }
-        return Math.floor(Math.random() * max);
-    }
-
-    function buildMythicRouletteSlots() {
-        const slots = Array(37).fill("LOSE");
-        const firstWin = randomRouletteIndex(37);
-        // Keep exactly two WIN spaces, usually separated enough that both can be seen in the scan row.
-        const offsets = [7, 11, 13, 17, 19, 23, 29];
-        const secondWin = (firstWin + offsets[randomRouletteIndex(offsets.length)]) % 37;
-        slots[firstWin] = "WIN";
-        slots[secondWin] = "WIN";
-        return { slots, winIndexes: [firstWin, secondWin] };
-    }
-
-    function chooseMythicRouletteTarget(slots, winIndexes) {
-        // Two winning pockets on a 37-section European-style strip gives 2-in-37 prize odds.
-        const prizeWon = randomRouletteIndex(37) < 2;
-        if (prizeWon) return winIndexes[randomRouletteIndex(winIndexes.length)];
-
-        const loseIndexes = slots.map((slot, i) => slot === "LOSE" ? i : -1).filter(i => i >= 0);
-        const nearMissIndexes = [];
-        winIndexes.forEach(i => {
-            const before = (i + slots.length - 1) % slots.length;
-            const after = (i + 1) % slots.length;
-            if (slots[before] === "LOSE") nearMissIndexes.push(before);
-            if (slots[after] === "LOSE") nearMissIndexes.push(after);
-        });
-
-        // Bias the losing animation toward almost-wins without changing the prize odds.
-        if (nearMissIndexes.length && Math.random() < 0.68) {
-            return nearMissIndexes[randomRouletteIndex(nearMissIndexes.length)];
-        }
-        return loseIndexes[randomRouletteIndex(loseIndexes.length)];
-    }
-
-    function showMythicBubblegumWin(source = "roulette") {
-        const box = document.getElementById("system-message");
-        if (!box) return;
-
-        clearTimeout(systemMessageTimer);
-        box.innerHTML = `
-            <div class="system-title">WE GOT A WINNER!!</div>
-            <div>&gt; MYTHIC BUBBLEGUM CARD UNLOCKED.</div>
-            <div>&gt; ${source === "tilt" ? "TILT OVERRIDE ACCEPTED." : "ROULETTE PROTOCOL LANDED ON WIN."}</div>
-            <div>&gt; REDEMPTION CODE:</div>
-            <div class="mythic-code">FCKGW-RHQQ2-YXRKT-8TG6W-2B7Q8</div>
-            <div class="prompt-hint">REDEEM VIA THE CMC BLUESKY ACCOUNT.</div>
-        `;
-        box.style.display = "block";
-        box.classList.add("glitch");
-        setTimeout(() => box.classList.remove("glitch"), 1200);
-        achievement('MYTHIC BUBBLEGUM PROTOCOL');
-        playSound(1800, "triangle", 0.14, 0.08);
-    }
-
-    function handleChessTiltCode(e) {
-        if (!e || typeof e.key !== "string" || e.key.length !== 1) return false;
-        const key = e.key.toLowerCase();
-        if (!/^[a-z]$/.test(key)) return false;
-
-        chess.tiltBuffer = `${chess.tiltBuffer || ""}${key}`.slice(-4);
-        if (chess.tiltBuffer === "tilt") {
-            chess.tiltBuffer = "";
-            e.preventDefault();
-            chessSay('SYSTEM: TILT OVERRIDE DETECTED. PRIZE LOCKS DISENGAGED.', true);
-            playVectrexBootSound();
-            showMythicBubblegumWin("tilt");
-            return true;
-        }
-        return false;
-    }
-
-    function showMythicRoulette() {
-        const box = document.getElementById("system-message");
-        if (!box) return;
-
-        clearTimeout(systemMessageTimer);
-        chess.rouletteActive = true;
-
-        const { slots, winIndexes } = buildMythicRouletteSlots();
-        const finalIndex = chooseMythicRouletteTarget(slots, winIndexes);
-        const fullLoops = 3 + randomRouletteIndex(3);
-        const totalSteps = (37 * fullLoops) + finalIndex;
-        let step = 0;
-        let lastSlowdownNote = "";
-
-        const tick = () => {
-            const centre = step % slots.length;
-            const remaining = totalSteps - step;
-            const almostWin = slots[centre] === "LOSE" && winIndexes.some(i => Math.abs(i - centre) === 1 || Math.abs(i - centre) === 36);
-            if (remaining <= 14 && almostWin) lastSlowdownNote = " · ALMOST WIN DETECTED";
-
-            box.innerHTML = `
-                <div class="system-title">MYTHIC BUBBLEGUM ROULETTE</div>
-                <div>&gt; CHESS WIZARD DEFEATED. PRIZE PROTOCOL ARMED.</div>
-                <div class="roulette-strip">${rouletteWindow(slots, centre)}</div>
-                <div class="roulette-arrow">▲</div>
-                <div class="prompt-hint">37 SECTIONS · 2 WIN POCKETS${lastSlowdownNote}</div>
-            `;
-            box.style.display = "block";
-            playSound(260 + (step % 37) * 12, "square", 0.018, 0.025);
-
-            if (step >= totalSteps) {
-                const landed = slots[centre];
-                setTimeout(() => {
-                    if (landed === "WIN") {
-                        showMythicBubblegumWin("roulette");
-                    } else {
-                        const nearWin = winIndexes.some(i => Math.abs(i - centre) === 1 || Math.abs(i - centre) === 36);
-                        box.innerHTML = `
-                            <div class="system-title">NO PRIZE</div>
-                            <div>&gt; ROULETTE PROTOCOL LANDED ON LOSE.</div>
-                            <div>&gt; ${nearWin ? 'NEAR MISS CONFIRMED. CHESS WIZARD IS SWEATING STATIC.' : 'CHESS WIZARD IS RELIEVED AND ALSO SUSPICIOUS.'}</div>
-                            <div class="prompt-hint">37 SECTIONS · 2 WIN POCKETS · THE TERMINAL IS NOT YOUR FRIEND.</div>
-                        `;
-                        playSound(180, "sawtooth", 0.12, 0.08);
-                    }
-
-                    chess.rouletteActive = false;
-                    chess.endPromptSelection = 0;
-                    setTimeout(showNewGamePrompt, 6500);
-                }, 550);
-                return;
-            }
-
-            step++;
-            const progress = step / totalSteps;
-            const remainingToFinal = totalSteps - step;
-            const finalNearMiss = slots[finalIndex] === "LOSE" && winIndexes.some(i => Math.abs(i - finalIndex) === 1 || Math.abs(i - finalIndex) === 36);
-            const almostWinDrag = finalNearMiss && remainingToFinal < 10 ? 90 : 0;
-            const delay = 35 + Math.floor(210 * progress * progress) + almostWinDrag;
-            setTimeout(tick, delay);
-        };
-
-        tick();
-    }
-
     function showNewGamePrompt() {
         const box = document.getElementById("system-message");
         if (!box) return;
@@ -3690,7 +3410,6 @@ function openRandomCard() {
     }
 
     function handleChessEndPromptKey(e) {
-        if (chess.rouletteActive) return;
         if (e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'ArrowUp' || e.key === 'ArrowDown') {
             chess.endPromptSelection = chess.endPromptSelection ? 0 : 1;
             playSound(900, 'square', 0.025, 0.04);
@@ -3705,7 +3424,6 @@ function openRandomCard() {
         else if (String(e.key).toLowerCase() === 'n' || e.key === 'Escape') chooseNewGamePrompt(false);
     }
     function handleChessKeyDown(e) {
-        if (handleChessTiltCode(e)) return;
         if (chess.over) { handleChessEndPromptKey(e); return; }
         if (e.key==='Escape') { renderSplash(); return; }
         if (chess.thinking) return;
@@ -3797,30 +3515,13 @@ function openRandomCard() {
         const moves=allLegalMoves(sideToMove), checked=inCheck(sideToMove);
         if(moves.length) return false;
         chess.over=true;
-        chess.lastOutcome = '';
         if(checked){
-            if(sideToMove==='b'){
-                chess.lastOutcome = 'win';
-                chessSay('SYSTEM: EXECUTIVE MONARCH TERMINATED. CHECKMATE.', true);
-                bumpStat('wins');
-                achievement('KING NOT TAKEN, JUST PROFESSIONALLY CORNERED');
-                achievement('LORE FILES UNLOCKED');
-            }
-            else {
-                chess.lastOutcome = 'loss';
-                chessSay('CHESS WIZARD: CHECKMATE. YOUR KING HAS BEEN PLACED ON ADMINISTRATIVE LEAVE.', true);
-                bumpStat('losses');
-            }
-        } else {
-            chess.lastOutcome = 'draw';
-            chessSay('CHESS WIZARD: WE APPEAR TO HAVE INVENTED PEACE. DISGUSTING. STALEMATE.', true);
-            bumpStat('draws');
-            achievement('ACCIDENTAL DIPLOMACY');
-        }
+            if(sideToMove==='b'){ chessSay('SYSTEM: EXECUTIVE MONARCH TERMINATED. CHECKMATE.', true); bumpStat('wins'); achievement('KING NOT TAKEN, JUST PROFESSIONALLY CORNERED'); achievement('LORE FILES UNLOCKED'); }
+            else { chessSay('CHESS WIZARD: CHECKMATE. YOUR KING HAS BEEN PLACED ON ADMINISTRATIVE LEAVE.', true); bumpStat('losses'); }
+        } else { chessSay('CHESS WIZARD: WE APPEAR TO HAVE INVENTED PEACE. DISGUSTING. STALEMATE.', true); bumpStat('draws'); achievement('ACCIDENTAL DIPLOMACY'); }
         showEndRank();
         chess.endPromptSelection = 0;
-        if (chess.lastOutcome === 'win') setTimeout(showMythicRoulette, 450);
-        else setTimeout(showNewGamePrompt, 120);
+        setTimeout(showNewGamePrompt, 120);
         return true;
     }
     function makeMove(r,c,rr,cc) {
