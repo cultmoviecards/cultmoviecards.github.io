@@ -4881,6 +4881,14 @@ const database = {
                 "size": "149kb",
                 "date": "02/05/26",
                 "caption": "Tales From The Crypt (1972)"
+            },
+            {
+                "id": "37#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidhrs5djw6lh6vnvnop52gnsuvtef5vhmrqeo7bonfeuvmalyxn3u",
+                "size": "149kb",
+                "date": "14/05/26",
+                "caption": "Castle Freak (1995)"
             }
         ],
         "Monster_Machines": [
