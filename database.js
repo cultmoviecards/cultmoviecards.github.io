@@ -4701,6 +4701,14 @@ const database = {
                 "size": "149kb",
                 "date": "05/03/26",
                 "caption": "The Greasy Strangler (2016)"
+            },
+            {
+                "id": "35#22",
+                "title": "#22",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih3wrldzd4rx2tjs3a4a4lyiw5fl67wcqd6i7nro4ojnp7dejzunu",
+                "size": "149kb",
+                "date": "14/05/26",
+                "caption": "Haxan (1922)"
             }
         ],
         "Midnight_Cult_Series_III": [
