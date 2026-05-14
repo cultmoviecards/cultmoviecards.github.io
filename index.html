@@ -4,7 +4,7 @@
     <link rel="icon" type="image/ico" href="/favicon.ico"/>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMC v2.66</title>
+    <title>CMC v2.72</title>
     <style>
         @font-face {
             font-family: 'GlassTTY';
@@ -1569,22 +1569,29 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     let idleTimer, sessionTimeout;
     let systemMessageTimer;
 
-    function showSystemMessage(title, lines = [], duration = 4500) {
+    function showSystemMessage(title, lines = [], duration = 4500, options = {}) {
         const box = document.getElementById("system-message");
         if (!box) return;
 
         clearTimeout(systemMessageTimer);
 
+        const closeButton = options.showClose
+            ? `<div class="prompt-options"><span class="clickable" onclick="hideSystemMessage(); playSound(600, 'sine', 0.08, 0.04);">[ CLOSE ]</span></div>`
+            : "";
+
         box.innerHTML = `
             <div class="system-title">${title}</div>
             ${lines.map(line => `<div>&gt; ${line}</div>`).join("")}
+            ${closeButton}
         `;
 
         box.style.display = "block";
 
-        systemMessageTimer = setTimeout(() => {
-            box.style.display = "none";
-        }, duration);
+        if (duration > 0) {
+            systemMessageTimer = setTimeout(() => {
+                box.style.display = "none";
+            }, duration);
+        }
     }
 
     function hideSystemMessage() {
@@ -1610,6 +1617,90 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
             "SELECT SAVE IMAGE AS",
             "EXPECTED FILE FORMAT: WEBP"
         ]);
+    }
+
+    // Editable card set descriptions.
+    // Add or rewrite the text on the right-hand side for each set whenever you want to change the popup copy.
+    const SET_INFO_TEXT = {
+        "REPO_MAN": "Punk attitude meets sci-fi weirdness in this offbeat collection. Repo men, glowing trunks and government secrets collide in a set that captures the strange energy of cult cinema at its most unpredictable.",
+		"THE_NINTH_CONFIGURATION": "Part war film, part psychological spiral, this set explores madness, morality and the thin line between them. Expect intense moments, strange humour and conversations that linger long after they end.",
+		"WAKE_IN_FRIGHT": "Sun-soaked landscapes hide something far more unsettling in this brutal descent into isolation. This set captures the heat, the tension and the slow unravelling of a man pushed too far.",
+		"THEY_LIVE": "Obey, consume, conform… or start seeing things as they really are. This set dives into hidden messages, alien control and the fight to break free from a world that isn’t what it seems.",
+		"BIG_TROUBLE_IN_LITTLE_CHINA": "Magic, monsters and mayhem collide in this high-energy cult classic. This set brings together martial arts, mysticism and pure chaos in a world where anything can happen.",
+		"BLACK_CHRISTMAS": "The calls are coming from inside the house… This set captures the chilling atmosphere and slow-building dread of one of horror’s most influential and unsettling seasonal nightmares.",
+		"CHOPPING_MALL": "When shopping goes wrong, it goes very wrong. Killer robots, late-night retail and pure chaos combine in this set celebrating one of the most entertainingly absurd cult horrors around.",
+		"DAUGHTERS_OF_DARKNESS": "Elegant, eerie and dripping with atmosphere, this set explores seduction, mystery and the darker side of desire in a world where nothing is quite what it seems.",
+		"FRIGHT_CLUB_FEATURES_I": "Welcome to the first screening. This set brings together a curated selection of horror highlights, packed with unforgettable moments that define the Fright Club experience.",
+		"THIS_IS_SPINAL_TAP": "Turn it up to eleven. This set celebrates the chaos, comedy and sheer absurdity of rock ‘n’ roll excess, where everything goes wrong in the most entertaining way possible.",
+		"MIDNIGHT_CULT_SERIES_I": "The first wave of late-night classics. This set captures the energy of films that found their audience after dark — strange, bold and impossible to ignore.",
+		"FRIGHT_CLUB_FEATURES_II": "The second screening raises the stakes. More scares, more chaos and even stranger moments from the depths of cult horror cinema shown on Fright Club.",
+		"BATTLE_BEYOND_THE_STARS": "Space battles, rogue heroes and intergalactic adventure take centre stage in this sci-fi spectacle packed with action, ambition and classic cult charm.",
+		"FRIGHT_CLUB_FEATURES_III": "The horror continues. This set delivers another round of terrifying, bizarre and unforgettable moments straight from the Fright Club vault.",
+		"50S_CULT_CLASSICS": "A trip back to the golden age of sci-fi and creature features. This set celebrates the imagination, charm and occasional madness of 1950s cult cinema.",
+		"BANNED": "Too shocking, too controversial or simply too strange. This set brings together films that pushed boundaries and earned their place on the wrong side of approval.",
+		"CATACOMBS_CREATURES": "Deep below the surface, something is waiting. This set explores the dark, the hidden and the monstrous creatures lurking in places best left undisturbed.",
+		"COPS_N_ROBBERS": "Crime, chaos and high-stakes chases define this set. From law enforcers to outlaws, it’s all about the tension between those who chase and those who run.",
+		"CULT_LEADERS": "Charisma, control and dangerous influence. This set focuses on figures who command attention and shape the worlds around them — for better or worse.",
+		"CULTOONS": "Animation gets weird. This set dives into the stranger side of animated cult classics, where bold visuals and offbeat storytelling take centre stage.",
+		"DAVID_LYNCH_SERIES": "Dream logic, unsettling imagery and stories that refuse to explain themselves. This set explores the surreal and unforgettable world of David Lynch.",
+		"FAUX_MOTION": "Not everything is what it seems. This set plays with illusion, perception and visual trickery, capturing moments where reality feels just slightly off.",
+		"FRIGHT_CLUB_FEATURES_IV": "The fourth screening of Fright Club Features pushes things even further. Darker, stranger and packed with moments that refuse to leave your mind.",
+		"FUTURE_SHOCKS": "The future isn’t always bright. This set explores dystopian worlds, advanced tech and the consequences of progress gone wrong.",
+		"GIALLO_GELATO": "Stylish, violent and dripping with colour, this set celebrates the unique flair of giallo cinema — mystery, murder and unforgettable visuals.",
+		"HAUNTED_HOUSES": "Some places don’t forget. This set gathers eerie locations filled with spirits, secrets and the lingering presence of something unseen.",
+		"HEXY_BEASTS": "Magic and monsters collide in this collection of strange and supernatural creatures, where spells and chaos go hand in hand.",
+		"H_P_LOVECRAFT_SERIES": "Ancient horrors and cosmic dread define this set, where humanity is small, knowledge is dangerous and something vast waits just beyond understanding.",
+		"INVADERS": "They came from beyond — and they’re not leaving. This set explores alien encounters, invasions and the fear of something watching from the skies.",
+		"KILLER_QUEENS": "Deadly, stylish and impossible to ignore. This set celebrates powerful female figures who take control and leave a lasting impression.",
+		"KULT_KAIJU": "Giant monsters, massive destruction and city-crushing chaos. This set is all about scale, spectacle and creatures that refuse to stay hidden.",
+		"MARIO_BAVA_SERIES": "A master of atmosphere and visual style. This set highlights the bold colours, shadows and unforgettable imagery of Mario Bava’s work.",
+		"MIDNIGHT_CULT_SERIES_II": "The late-night journey continues. More strange, bold and unforgettable moments from films that thrive in the dark hours.",
+		"MIDNIGHT_CULT_SERIES_III": "Deeper into the night we go. This set brings even more surreal, chaotic and cult-defining moments to the surface.",
+		"MIDNIGHT_CULT_SERIES_IV": "The fourth stretch of the midnight experience. Strange, intense and impossible to forget, these films leave a lasting mark.",
+		"MONSTER_MACHINES": "When metal turns monstrous. This set features vehicles and machines that go beyond control and become something far more dangerous.",
+		"OZPLOITATIONS": "Wild, gritty and uniquely Australian. This set celebrates the bold energy and fearless storytelling of Ozploitation cinema.",
+		"PHELT_PHANTASIES": "Soft textures meet strange ideas in this offbeat collection. Playful, surreal and just a little unsettling.",
+		"PSEUDO_CLUEDO": "Mystery, suspects and secrets collide in this playful set inspired by classic whodunnit storytelling with a cult twist.",
+		"RIP_OFFS": "Inspired by… or suspiciously similar to. This set explores films that borrowed heavily and created something strangely unique in the process.",
+		"VIDEODROME": "Long live the new flesh. This set dives into media, control and the blurring line between screen and reality in one of cult cinema’s most iconic visions.",
+		"WILD_THINGS": "A set full of animals and insects that dominate the screen at every turn, and wreak havoc amongst the world and its inhabitants!",
+		"ZOMBIE_NATION": "The dead don’t stay down. This set is packed with shambling horrors, outbreaks and the relentless march of the undead.",
+		"HOUSEPIG": "Master of the Mythic Bubblegum, these card requests made by Housepig consist of massive deep-cuts, featuring movies rarely seen.. or heard of!",
+		"ERIN_A_DOYLE": "Erin A Doyle earned a Mythic Bubblegum card for her suggestion of 'Dark Shadows', which inspired an entire set!",
+		"ECLECTIC_COLLECTOR": "Eclectic Collector fought tooth-and-nail for a Mythic Bubblegum card, missing out on several occasions.. so when they got one, they put it to good use!",
+		"WAX_PACK_GLAM": "WPG has an unlimited supply of Mythic Bubblegum cards, but this one was traded-in for a very special Birthday card directly from Sybil Danning herself (sort of)!",
+		"GARTH_ARIZONA": "Garth Arizona creates a wonderful array of LEGO Kolchak sequences and stories.. they used their Mythic Bubblegum card to bring one of them to life through Faux-Motion!",
+		"SIEVETRONIX": "Winner of 'half' of the CMC This Is Spinal Tap 'Pap' Quiz, Sievetronix almost immediately traded his Mythic Bubblegum card in for this absolute beauty.",
+		"BD": "BD earned a Mythic Bubblegum card and sat on it for a while, basking in the pinky glow.. then they traded it in for this magnificent bastard of a card!",
+		"CHILDREN_SHOULDNT_PLAY_WITH_DEAD_THINGS": "This set was scheduled for release in June 2025, but was abandoned preceeding a lengthy hiatus. It was never completed, but the 21 cards that were finished are available here to view.",
+		"SAM_CRUISE_AGENCY": "These cards were based on the Topps 'Superman' series and were created for the CMC alt-account 'Sam Cruise Agency'. The account is now pretty much abandoned, but these ZX Spectrum themed cards live on. Over 100 were made in total.",
+		"CULT_VILLAINS": "These cards were intended to mimic the 1938 Hamilton Gum v289 vintage cards. Initial releases of these cards proved unpopular, and the set was ultimately abandoned. Card #5 of this set 'Nurse Ratched' was never released on Bluesky. ",
+		"ROLLERBALL_STICKERS_RUB_OFFS": "Unfathomable amounts of work went into the designs of these cards, a re-work of the Pac-Man Stickers & Rub-offs set from 1980. So much work in fact, that the set was abandoned due to exhaustion. Only 5 were ever made.",
+		"CMC_VAULT_SHELL_COMMANDS_LIST": "Not a movie card series, but a gateway.. this collection documents the commands, secrets and hidden functions that power the system itself."
+    };
+
+    function normalizeSetInfoKey(value) {
+        return String(value || "")
+            .toUpperCase()
+            .replace(/[^A-Z0-9]+/g, "_")
+            .replace(/^_+|_+$/g, "");
+    }
+
+    function showSetInfo(event) {
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        const setName = currentPath.length ? currentPath[currentPath.length - 1] : "UNKNOWN SET";
+        const setKey = normalizeSetInfoKey(setName);
+        const description = SET_INFO_TEXT[setKey] || `TODO: Add description for ${setName}.`;
+
+        playSound(1050, "sine", 0.08, 0.04);
+
+        showSystemMessage("CARD SET INFO", [
+            escapeHTML(description)
+        ], 15000, { showClose: true });
     }
 
 
@@ -3290,6 +3381,7 @@ function openRandomCard() {
                 </div>
                 <div style="margin-top: 0px; display: flex; gap: 9px; justify-content: center; flex-wrap: wrap;">
                     <span class="clickable" onclick="showSaveHelp(event, '${jsFile}')">[ SAVE HELP ]</span>
+                    <span class="clickable" onclick="showSetInfo(event)">[ SET INFO ]</span>
                     <span class="clickable" onclick="playRandomCardSequence(openRandomCard);">[ RANDOM CARD ]</span>
                 </div>
             </div>
