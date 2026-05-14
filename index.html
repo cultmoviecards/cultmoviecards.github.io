@@ -4,7 +4,7 @@
     <link rel="icon" type="image/ico" href="/favicon.ico"/>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMC v2.62</title>
+    <title>CMC v2.66</title>
     <style>
         @font-face {
             font-family: 'GlassTTY';
@@ -1459,6 +1459,47 @@
             }
         }
 
+
+        /* --- Boot screen Bluesky link --- */
+        .boot-social {
+            margin-top: 18px;
+            text-align: center;
+            font-size: 7.5pt;
+            opacity: 0.9;
+        }
+
+        .boot-social-label {
+            margin-bottom: 6px;
+            opacity: 0.72;
+        }
+
+        .bluesky-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 42px;
+            color: var(--bright-green);
+            text-decoration: none;
+            filter: drop-shadow(0 0 6px var(--bright-green));
+            transition: opacity 0.2s ease, transform 0.2s ease, filter 0.2s ease;
+            opacity: 0.76;
+        }
+
+        .bluesky-link:hover,
+        .bluesky-link:focus {
+            opacity: 1;
+            transform: scale(1.08);
+            filter: drop-shadow(0 0 9px var(--bright-green));
+            outline: none;
+        }
+
+        .bluesky-svg {
+            width: 42px;
+            height: auto;
+            fill: currentColor;
+        }
+
     </style>
 </head>
 <body onkeydown="handleKeyDown(event)">
@@ -2206,6 +2247,14 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
                 </pre>
                 <p>[ SECURE VAULT ACCESS ]</p>
                 <p style="border: 1px solid var(--bright-green); padding: 8px 20px; cursor: pointer;">PRESS ANY KEY TO START</p>
+                <div class="boot-social">
+                    <div class="boot-social-label">&gt; CMC BLUESKY</div>
+                    <a class="bluesky-link" href="https://bsky.app/profile/cultmovie.cards" target="_blank" rel="noopener noreferrer" aria-label="Open the CMC Bluesky account" onclick="event.stopPropagation();">
+                        <svg class="bluesky-svg" viewBox="0 0 600 530" aria-hidden="true" focusable="false">
+                            <path d="M135.72 44.03C202.22 93.95 273.74 195.17 300 249.49C326.26 195.17 397.78 93.95 464.28 44.03C512.26 8.01 590-19.86 590 68.84C590 86.56 579.84 217.73 573.89 239.02C553.18 313.24 477.75 332.2 410.64 320.75C527.94 340.76 557.77 407.03 493.33 473.29C370.94 599.12 317.42 441.72 303.7 401.38C301.19 393.94 300.01 390.45 300 390.45C299.99 390.45 298.81 393.94 296.3 401.38C282.58 441.72 229.06 599.12 106.67 473.29C42.23 407.03 72.06 340.76 189.36 320.75C122.25 332.2 46.82 313.24 26.11 239.02C20.16 217.73 10 86.56 10 68.84C10-19.86 87.74 8.01 135.72 44.03Z" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         `;
     }
