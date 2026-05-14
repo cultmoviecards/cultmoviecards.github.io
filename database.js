@@ -3979,7 +3979,7 @@ const database = {
                 "caption": "Lust For A Vampire (1971)"
             }
         ],
-        "Future Shocks": [
+        "Future_Shocks": [
             {
                 "id": "26#01",
                 "title": "#01",
@@ -4121,7 +4121,7 @@ const database = {
                 "caption": "The Shining (1980)"
             }
         ],
-        "Hexy Beasts": [
+        "Hexy_Beasts": [
             {
                 "id": "29#01",
                 "title": "#01",
