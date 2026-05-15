@@ -4303,6 +4303,16 @@ const database = {
                 "caption": "Laserblast (1978)"
             }
         ],
+		"Kickass_Karate!": [
+            {
+                "id": "45#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieyi2e5o7n276x73v75lidbvkwtwej7fgizza2a73xvrrghdpts7a",
+                "size": "149kb",
+                "date": "15/05/26",
+                "caption": "Miami Connection (1988)"
+            }
+        ],
         "Killer_Queens": [
             {
                 "id": "31#01",
@@ -5442,7 +5452,7 @@ const database = {
                 "date": "09/05/26",
                 "caption": "Burial Ground (1981)"
             }
-        ]
+        ],
     },
     "HALL_OF_FAME": {
         "Housepig": [
