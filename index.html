@@ -4,7 +4,7 @@
     <link rel="icon" type="image/ico" href="/favicon.ico"/>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMC v2.72</title>
+    <title>CMC v2.77</title>
     <style>
         @font-face {
             font-family: 'GlassTTY';
@@ -2075,7 +2075,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         const pet = document.getElementById('idle-pet');
         pet.style.opacity = "0"; stopPurr();
         clearTimeout(idleTimer);
-        idleTimer = setTimeout(() => { pet.style.opacity = "0.6"; startPurr(); }, 20000);
+        idleTimer = setTimeout(() => { pet.style.opacity = "0.6"; startPurr(); }, 60000);
 
         // Security Auto-Lock (3 Minutes) - Returns to Splash Screen
         clearTimeout(sessionTimeout);
@@ -2254,7 +2254,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         if (viewState === "splash") { handleSplashKeyDown(e); return; }
         if (viewState === "escape-terminal") { handleEscapeTerminalKeyDown(e); return; }
         if (viewState === "random-retrieval") {
-            if (e.key === "Escape") { clearTimeout(randomRetrievalTimer); renderRoot(); }
+            if (e.key === "Escape") { clearTimeout(randomRetrievalTimer); renderRoot(true); }
             return;
         }
 
@@ -2275,12 +2275,18 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         } else if (e.key === "Escape") {
             playSound(600, 'sine', 0.1, 0.05);
             if (viewState === "root") renderSplash();
-            else if (viewState === "dir" && currentPath.length > 1) openPath(currentPath.slice(0, -1));
-            else if (viewState === "dir") renderRoot();
+            else if (viewState === "dir" && currentPath.length > 1) {
+                rememberCurrentSelection();
+                openPath(currentPath.slice(0, -1), true);
+            }
+            else if (viewState === "dir") {
+                rememberCurrentSelection();
+                renderRoot(true);
+            }
             else if (viewState === "file") openPath(currentPath, true);
         } else if (["root", "dir", "file"].includes(viewState) && ["r", "R", "*"].includes(e.key)) {
             e.preventDefault();
-            playRandomCardSequence(openRandomCard);
+            startRandomCardSequence();
         } else if (viewState === "file" && e.key === "ArrowRight") navigateGallery(1);
         else if (viewState === "file" && e.key === "ArrowLeft") navigateGallery(-1);
         else if (!isNaN(e.key) && viewState === "pin") pressKey(e.key);
@@ -2300,6 +2306,12 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
             });
             item.addEventListener("click", () => {
                 navigationMode = "mouse";
+
+                // Inline onclick handlers may have just re-rendered the terminal.
+                // If this is now a detached old element, do not overwrite the
+                // restored selection on the newly rendered screen.
+                if (!document.body.contains(item)) return;
+
                 selectedIndex = idx;
                 updateSelection();
             });
@@ -2340,7 +2352,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
                 <p>[ SECURE VAULT ACCESS ]</p>
                 <p style="border: 1px solid var(--bright-green); padding: 8px 20px; cursor: pointer;">PRESS ANY KEY TO START</p>
                 <div class="boot-social">
-                    <div class="boot-social-label">&gt; CMC BLUESKY</div>
+                    
                     <a class="bluesky-link" href="https://bsky.app/profile/cultmovie.cards" target="_blank" rel="noopener noreferrer" aria-label="Open the CMC Bluesky account" onclick="event.stopPropagation();">
                         <svg class="bluesky-svg" viewBox="0 0 600 530" aria-hidden="true" focusable="false">
                             <path d="M135.72 44.03C202.22 93.95 273.74 195.17 300 249.49C326.26 195.17 397.78 93.95 464.28 44.03C512.26 8.01 590-19.86 590 68.84C590 86.56 579.84 217.73 573.89 239.02C553.18 313.24 477.75 332.2 410.64 320.75C527.94 340.76 557.77 407.03 493.33 473.29C370.94 599.12 317.42 441.72 303.7 401.38C301.19 393.94 300.01 390.45 300 390.45C299.99 390.45 298.81 393.94 296.3 401.38C282.58 441.72 229.06 599.12 106.67 473.29C42.23 407.03 72.06 340.76 189.36 320.75C122.25 332.2 46.82 313.24 26.11 239.02C20.16 217.73 10 86.56 10 68.84C10-19.86 87.74 8.01 135.72 44.03Z" />
@@ -3021,14 +3033,14 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         }
     }
 
-    function renderRoot() {
-        viewState = "root"; selectedIndex = 0;
+    function renderRoot(useMemory = false) {
+        viewState = "root"; selectedIndex = useMemory ? (folderSelections[ROOT_SELECTION_KEY] || 0) : 0;
         currentPath = [];
         currentFolderName = "";
         currentSubFolder = "";
         let html = getHeader() + `<div class="path">A:\\ROOT</div><ul>`;
         html += `<li onclick="renderSplash(); playSound(600, 'sine', 0.1, 0.05);">[!] LOGOFF SYSTEM</li>`;
-        html += `<li onclick="playRandomCardSequence(openRandomCard);">[R] RANDOM CARD</li>`;
+        html += `<li onclick="startRandomCardSequence();">[R] RANDOM CARD</li>`;
         const db = getDatabase();
         if (!db) return renderDatabaseError();
 
@@ -3036,7 +3048,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
             if (isRestrictedRootFolder(folder)) continue;
             const safeFolder = escapeHTML(folder.toUpperCase());
             const jsPath = encodePathForJS([folder]);
-            html += `<li onclick="openPathFromEncoded('${jsPath}')">drwxr-xr-x   [DIR]  ${safeFolder}</li>`;
+            html += `<li onclick="openPathAndRemember('${jsPath}')">drwxr-xr-x   [DIR]  ${safeFolder}</li>`;
         }
         terminal.innerHTML = html + `</ul>`;
         refreshSelectableItems();
@@ -3055,6 +3067,69 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 
     function pathKey(path) {
         return normalizePath(path).join("::");
+    }
+
+    const ROOT_SELECTION_KEY = "__ROOT__";
+
+    function rememberCurrentSelection() {
+        if (viewState === "root") {
+            folderSelections[ROOT_SELECTION_KEY] = selectedIndex;
+        } else if (viewState === "dir") {
+            folderSelections[pathKey(currentPath)] = selectedIndex;
+        }
+    }
+
+
+    function getChildSelectionIndex(parentPath, childName) {
+        const normalizedParent = normalizePath(parentPath);
+        const target = String(childName);
+
+        if (normalizedParent.length === 0) {
+            const db = getDatabase();
+            if (!db) return 0;
+            const rootFolders = Object.keys(db).filter(folder => !isRestrictedRootFolder(folder));
+            const rootIndex = rootFolders.indexOf(target);
+            return rootIndex >= 0 ? rootIndex + 2 : 0; // [0] logoff, [1] random card
+        }
+
+        const node = getNodeAtPath(normalizedParent);
+        if (!node || Array.isArray(node) || typeof node !== "object") return 0;
+
+        const childFolders = Object.keys(node).filter(key => {
+            const child = node[key];
+            return Array.isArray(child) || (child && typeof child === "object");
+        });
+        const childIndex = childFolders.indexOf(target);
+        return childIndex >= 0 ? childIndex + 1 : 0; // [0] go back
+    }
+
+    function rememberSelectionTrail(path, fileIndex) {
+        const normalized = normalizePath(path);
+
+        for (let depth = 0; depth < normalized.length; depth++) {
+            const parentPath = normalized.slice(0, depth);
+            const childName = normalized[depth];
+            const index = getChildSelectionIndex(parentPath, childName);
+            if (parentPath.length === 0) {
+                folderSelections[ROOT_SELECTION_KEY] = index;
+            } else {
+                folderSelections[pathKey(parentPath)] = index;
+            }
+        }
+
+        if (normalized.length) {
+            folderSelections[pathKey(normalized)] = fileIndex + 1;
+        }
+    }
+
+    function openPathAndRemember(encodedPath, useMemory = false) {
+        rememberCurrentSelection();
+        openPathFromEncoded(encodedPath, useMemory);
+    }
+
+    function renderRootAndRemember() {
+        rememberCurrentSelection();
+        renderRoot(true);
     }
 
     function encodePathForJS(path) {
@@ -3197,6 +3272,13 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         }, 320);
     }
 
+    function startRandomCardSequence() {
+        // RANDOM CARD is a navigation path too, so preserve the current cursor
+        // before the retrieval screen/card render replaces the current view.
+        rememberCurrentSelection();
+        playRandomCardSequence(openRandomCard);
+    }
+
 function openRandomCard() {
         clearTimeout(randomRetrievalTimer);
         hideSystemMessage();
@@ -3297,8 +3379,8 @@ function openRandomCard() {
 
         const parent = normalized.slice(0, -1);
         const backAction = parent.length
-            ? `openPathFromEncoded('${encodePathForJS(parent)}')`
-            : `renderRoot()`;
+            ? `openPathAndRemember('${encodePathForJS(parent)}', true)`
+            : `renderRootAndRemember()`;
 
         let html = getHeader() + `<div class="path">${pathDisplay(normalized)}</div><ul>`;
         html += `<li onclick="${backAction}; playSound(600, 'sine', 0.1, 0.05);">[..] GO BACK</li>`;
@@ -3312,7 +3394,7 @@ function openRandomCard() {
             Object.keys(node).forEach(childKey => {
                 const child = node[childKey];
                 if (Array.isArray(child) || (child && typeof child === "object")) {
-                    html += `<li onclick="openPathFromEncoded('${encodePathForJS([...normalized, childKey])}')">drwxr-xr-x   [DIR]  ${escapeHTML(childKey.toUpperCase())}</li>`;
+                    html += `<li onclick="openPathAndRemember('${encodePathForJS([...normalized, childKey])}')">drwxr-xr-x   [DIR]  ${escapeHTML(childKey.toUpperCase())}</li>`;
                 }
             });
         } else {
@@ -3348,8 +3430,7 @@ function openRandomCard() {
         currentFolderName = normalized[0] || "";
         currentSubFolder = normalized.slice(1).join("\\");
         currentFileIndex = idx;
-        const selectionKey = pathKey(normalized);
-        folderSelections[selectionKey] = idx + 1;
+        rememberSelectionTrail(normalized, idx);
 
         const files = getFilesAtPath(normalized);
         if (!files || !files[idx]) return renderDatabaseError();
@@ -3383,7 +3464,7 @@ function openRandomCard() {
                 <div style="margin-top: 0px; display: flex; gap: 9px; justify-content: center; flex-wrap: wrap;">
                     <span class="clickable" onclick="showSaveHelp(event, '${jsFile}')">[ SAVE HELP ]</span>
                     <span class="clickable" onclick="showSetInfo(event)">[ SET INFO ]</span>
-                    <span class="clickable" onclick="playRandomCardSequence(openRandomCard);">[ RANDOM CARD ]</span>
+                    <span class="clickable" onclick="startRandomCardSequence();">[ RANDOM CARD ]</span>
                 </div>
             </div>
         `;
