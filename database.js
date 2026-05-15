@@ -4303,7 +4303,7 @@ const database = {
                 "caption": "Laserblast (1978)"
             }
         ],
-		"Kickass_Karate!": [
+        "Kickass_Karate!": [
             {
                 "id": "45#01",
                 "title": "#01",
@@ -4889,6 +4889,14 @@ const database = {
                 "size": "149kb",
                 "date": "28/04/26",
                 "caption": "Demons (1985)"
+            },
+            {
+                "id": "36#22",
+                "title": "#22",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiarngyok3tlxuod77zl4zolxb3sykzbz4konj5q52jp5cxsjdipou",
+                "size": "149kb",
+                "date": "15/05/26",
+                "caption": "The Stuff (1985)"
             }
         ],
         "Midnight_Cult_Series_IV": [
@@ -5171,6 +5179,22 @@ const database = {
                 "size": "1.9mb",
                 "date": "12/03/26",
                 "caption": "Nightmare Vacation (2017)"
+            },
+            {
+                "id": "41#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreideriko2vulr2oikgvouk6wqc7d3ueaxdp7zx5lu2agvdn4gpfnau",
+                "size": "149kb",
+                "date": "15/05/26",
+                "caption": "Bugonia (2025)"
+            },
+            {
+                "id": "41#20",
+                "title": "#20",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidfvvjech76q6pg3jlo7kvep4s2bbkk4gcceygw4gkpkemphnvbke",
+                "size": "149kb",
+                "date": "15/05/26",
+                "caption": "House Red (2022)"
             }
         ],
         "Rip-Offs": [
@@ -5452,7 +5476,7 @@ const database = {
                 "date": "09/05/26",
                 "caption": "Burial Ground (1981)"
             }
-        ],
+        ]
     },
     "HALL_OF_FAME": {
         "Housepig": [
