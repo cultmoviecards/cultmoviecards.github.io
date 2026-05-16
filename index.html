@@ -4,7 +4,7 @@
     <link rel="icon" type="image/ico" href="/favicon.ico"/>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMC v2.77</title>
+    <title>CMC v2.75</title>
     <style>
         @font-face {
             font-family: 'GlassTTY';
@@ -273,6 +273,16 @@
             0% { text-shadow: 2px 0 red, -2px 0 blue; transform: translate(1px, 1px); }
             50% { text-shadow: -2px 0 red, 2px 0 blue; transform: translate(-1px, -1px); }
             100% { text-shadow: 2px 0 red, -2px 0 blue; transform: translate(1px, -1px); }
+        }
+
+        .crt-flicker-error {
+            animation: crt-error-flicker 0.12s ease-in-out 1;
+        }
+
+        @keyframes crt-error-flicker {
+            0% { opacity: 1; filter: none; }
+            50% { opacity: 0.82; filter: brightness(1.1); }
+            100% { opacity: 1; filter: none; }
         }
 
         .clickable { cursor: pointer; padding: 2px 8px; border: 1px solid transparent; }
@@ -2333,8 +2343,15 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         });
     }
 
+    function clearChessCrtDamage() {
+        const screen = document.getElementById('crt-screen');
+        if (!screen) return;
+        screen.classList.remove('crt-damage-1', 'crt-damage-2', 'crt-damage-3', 'signal-corrupt-flash-safe', 'vhs-tracking-kick-safe');
+    }
+
     function renderSplash() {
         hideSystemMessage();
+        clearChessCrtDamage();
         viewState = "splash";
         splashTypeBuffer = "";
         splashPinBuffer = "";
@@ -2364,40 +2381,60 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
     }
 
 
+    function triggerEscapeFailEffect() {
+        const screen = document.getElementById('crt-screen');
+        if (!screen) return;
+
+        screen.classList.add('crt-flicker-error');
+        setTimeout(() => {
+            screen.classList.remove('crt-flicker-error');
+        }, 120);
+    }
+
+    function playEscapeFailTone() {
+        // Slightly flat + falling tone = “almost right but wrong”.
+        playSound(760, 'sine', 0.035, 0.05);
+        setTimeout(() => {
+            playSound(620, 'triangle', 0.03, 0.06);
+        }, 35);
+    }
+
     function handleSplashKeyDown(e) {
         const key = String(e.key || "");
         const target = "ESCAPE";
 
-        if (/^[0-9]$/.test(key)) {
-            splashPinBuffer = (splashPinBuffer + key).slice(-4);
-            playSound(980 + splashPinBuffer.length * 45, 'triangle', 0.025, 0.045);
-
-            if (splashPinBuffer.length === 4) {
-                const bootCode = splashPinBuffer;
-                splashPinBuffer = "";
-                bootSystem();
-                inputBuffer = bootCode;
-                const display = document.getElementById('pin-display');
-                if (display) display.innerText = inputBuffer.padEnd(4, "_");
-                setTimeout(verifyPin, 120);
-            }
-            return;
-        }
-
+        // Boot screen rules:
+        // 1) Only the hidden E-S-C-A-P-E sequence may be typed here.
+        // 2) Any other key, including numbers, moves to the PIN entry screen.
+        // 3) A broken partial ESCAPE attempt also moves to the PIN screen.
         if (/^[a-z]$/i.test(key)) {
-            const nextBuffer = (splashTypeBuffer + key.toUpperCase()).slice(-target.length);
+            const candidate = splashTypeBuffer + key.toUpperCase();
 
-            if (target.startsWith(nextBuffer)) {
-                splashTypeBuffer = nextBuffer;
+            if (target.startsWith(candidate)) {
+                splashTypeBuffer = candidate;
                 playSound(900 + splashTypeBuffer.length * 35, 'square', 0.025, 0.035);
 
                 if (splashTypeBuffer === target) {
+                    splashTypeBuffer = "";
                     openEscapeTerminal();
                 }
                 return;
             }
         }
 
+        const wasAttemptingEscape = splashTypeBuffer.length > 0;
+
+        if (wasAttemptingEscape) {
+            triggerEscapeFailEffect();
+            playEscapeFailTone();
+            splashTypeBuffer = "";
+            splashPinBuffer = "";
+            setTimeout(bootSystem, 80);
+            return;
+        }
+
+        splashTypeBuffer = "";
+        splashPinBuffer = "";
         playSound(800, 'sine', 0.05, 0.1);
         bootSystem();
     }
@@ -3925,7 +3962,13 @@ function openRandomCard() {
         playSound(wantsNewGame ? 1600 : 600, 'sine', 0.1, 0.05);
         hideSystemMessage();
         if (wantsNewGame) startChessGame();
-        else renderSplash();
+        else {
+            chess.glitch = false;
+            chess.corruption = false;
+            chess.suspicion = 0;
+            clearChessCrtDamage();
+            renderSplash();
+        }
     }
 
     function handleChessEndPromptKey(e) {
