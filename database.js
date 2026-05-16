@@ -4735,6 +4735,14 @@ const database = {
                 "size": "149kb",
                 "date": "14/05/26",
                 "caption": "Haxan (1922)"
+            },
+            {
+                "id": "35#23",
+                "title": "#23",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreighrpw3eo3jktwrn4hgxrw54bv4msbjd7mvztyctc3mdyydddy4ry",
+                "size": "149kb",
+                "date": "16/05/26",
+                "caption": "Society (1989)"
             }
         ],
         "Midnight_Cult_Series_III": [
