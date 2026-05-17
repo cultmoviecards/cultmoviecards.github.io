@@ -5503,6 +5503,46 @@ const database = {
         ]
     },
     "HALL_OF_FAME": {
+        "bd": [
+            {
+                "id": "201#B10",
+                "title": "#B10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibubmvk2jpn46ou324pjqi5jgd2toy7ppnoj2sjo6xdjxjznf3dwy",
+                "size": "149kb",
+                "date": "10/05/26",
+                "caption": "Unmasked Part 25 (1988)"
+            }
+        ],
+        "Eclectic_Collector": [
+            {
+                "id": "201#B4",
+                "title": "#B4",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicbzmkjy35wmqk254gtym6ksfsbg6p3hye7yrnnbrdizdd52hyzdi",
+                "size": "149kb",
+                "date": "13/03/26",
+                "caption": "Dark City (1998)"
+            }
+        ],
+        "Erin_A_Doyle": [
+            {
+                "id": "201#B3",
+                "title": "#B3",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihw3enqcbibxsh52cmrwmjzekxswcylyg5335lfsc2kwxgsqu4acq",
+                "size": "149kb",
+                "date": "09/03/26",
+                "caption": "Dark Shadows (1966-1971)"
+            }
+        ],
+        "Garth_Arizona": [
+            {
+                "id": "201#B8",
+                "title": "#B8",
+                "file": "https://i.postimg.cc/gJcRFbtX/B8.gif",
+                "size": "1.9mb",
+                "date": "17/04/26",
+                "caption": "Kolchak: The Night Stalker (1974)"
+            }
+        ],
         "Housepig": [
             {
                 "id": "201#B1",
@@ -5537,44 +5577,14 @@ const database = {
                 "caption": "Kiss Daddy Goodbye (1981)"
             }
         ],
-        "Erin_A_Doyle": [
+        "MrBundren": [
             {
-                "id": "201#B3",
-                "title": "#B3",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihw3enqcbibxsh52cmrwmjzekxswcylyg5335lfsc2kwxgsqu4acq",
+                "id": "201#11",
+                "title": "#B11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibsan5k6oxsl3uue5docgrconopzgrn5rygl4lx5dwfjfmjq5hany",
                 "size": "149kb",
-                "date": "09/03/26",
-                "caption": "Dark Shadows (1966-1971)"
-            }
-        ],
-        "Eclectic_Collector": [
-            {
-                "id": "201#B4",
-                "title": "#B4",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicbzmkjy35wmqk254gtym6ksfsbg6p3hye7yrnnbrdizdd52hyzdi",
-                "size": "149kb",
-                "date": "13/03/26",
-                "caption": "Dark City (1998)"
-            }
-        ],
-        "Wax_Pack_Glam": [
-            {
-                "id": "201#B7",
-                "title": "#B7",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreian4pvsg2wrz3epusreheuzgxtkwib7vxmce655tyuyllxvs3loqq",
-                "size": "149kb",
-                "date": "05/04/26",
-                "caption": "Battle Beyond The Stars (1980)"
-            }
-        ],
-        "Garth_Arizona": [
-            {
-                "id": "201#B8",
-                "title": "#B8",
-                "file": "https://i.postimg.cc/gJcRFbtX/B8.gif",
-                "size": "1.9mb",
-                "date": "17/04/26",
-                "caption": "Kolchak: The Night Stalker (1974)"
+                "date": "17/05/26",
+                "caption": "Evil Dead III: Army Of Darkness (1992)"
             }
         ],
         "Sievetronix": [
@@ -5587,14 +5597,14 @@ const database = {
                 "caption": "The Last Dragon (1985)"
             }
         ],
-        "bd": [
+        "Wax_Pack_Glam": [
             {
-                "id": "201#B10",
-                "title": "#B10",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibubmvk2jpn46ou324pjqi5jgd2toy7ppnoj2sjo6xdjxjznf3dwy",
+                "id": "201#B7",
+                "title": "#B7",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreian4pvsg2wrz3epusreheuzgxtkwib7vxmce655tyuyllxvs3loqq",
                 "size": "149kb",
-                "date": "10/05/26",
-                "caption": "Unmasked Part 25 (1988)"
+                "date": "05/04/26",
+                "caption": "Battle Beyond The Stars (1980)"
             }
         ]
     },
