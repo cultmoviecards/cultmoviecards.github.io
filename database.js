@@ -5587,6 +5587,16 @@ const database = {
                 "caption": "Evil Dead III: Army Of Darkness (1992)"
             }
         ],
+        "Shaws_Ridler": [
+            {
+                "id": "201#B12",
+                "title": "#B12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihhgqwhbwspj3wmkpilmjk5qsqg2xhci3stxjddw6eb27loose4zm",
+                "size": "149kb",
+                "date": "17/05/26",
+                "caption": "The Shiver Of The Vampires (1971)"
+            }
+        ],
         "Sievetronix": [
             {
                 "id": "201#B9",
