@@ -4045,8 +4045,8 @@ const database = {
                 "caption": "Kane Hodder as Jason Voorhees (1988)"
             },
             {
-                "id": "21#RIP",
-                "title": "#RIP",
+                "id": "21#RIP1",
+                "title": "#RIP1",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih2n4tghyefptbdyhnuvaftyhrlxysc4ied3ov25arpcl6fnkekxm",
                 "size": "149kb",
                 "date": "20/03/26",
@@ -4054,7 +4054,7 @@ const database = {
             },
             {
                 "id": "21#RIP2",
-                "title": "#RIP",
+                "title": "#RIP2",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib7yylkwws73lcqvox6inziawv4baci2eszitlwujx5janlmctmxm",
                 "size": "149kb",
                 "date": "20/05/26",
