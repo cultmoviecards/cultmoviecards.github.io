@@ -4051,6 +4051,14 @@ const database = {
                 "size": "149kb",
                 "date": "20/03/26",
                 "caption": "Chuck Norris as Jim 'J.J.' McQuade (1983)"
+            },
+            {
+                "id": "21#RIP2",
+                "title": "#RIP",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib7yylkwws73lcqvox6inziawv4baci2eszitlwujx5janlmctmxm",
+                "size": "149kb",
+                "date": "20/05/26",
+                "caption": "George Eastman as Vood (1983)"
             }
         ],
         "Cultoons": [
@@ -4101,6 +4109,14 @@ const database = {
                 "size": "149kb",
                 "date": "10/05/26",
                 "caption": "Belladonna Of Sadness (1973)"
+            },
+            {
+                "id": "22#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih6ukcimmgyx3uycjkxve5se5n4igrb5t6obo2aphdpcjcf2davqu",
+                "size": "149kb",
+                "date": "21/05/26",
+                "caption": "Fantastic Planet (1973)"
             }
         ],
         "David_Lynch_Series": [
@@ -4119,6 +4135,14 @@ const database = {
                 "size": "149kb",
                 "date": "12/05/26",
                 "caption": "The Elephant Man (1980)"
+            },
+            {
+                "id": "34#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiebgvfk4747njmw3lklfvpg6g7pe7ayds2wyuy3htcoeirsjyf4wq",
+                "size": "149kb",
+                "date": "20/05/26",
+                "caption": "Dune (1984)"
             }
         ],
         "Faux_Motion": [
@@ -4179,6 +4203,30 @@ const database = {
                 "size": "149kb",
                 "date": "13/05/26",
                 "caption": "Lust For A Vampire (1971)"
+            },
+            {
+                "id": "25#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidr3hootdimjd4363uyog37sztradp4c6eheoeyfxogfr4b5p7uou",
+                "size": "149kb",
+                "date": "19/05/26",
+                "caption": "The Final Girls (2015)"
+            },
+            {
+                "id": "25#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihufxjjs6l3ftty3nyhb6o52rhwsx5ymdz7ad52lv4ywuig3j7dia",
+                "size": "149kb",
+                "date": "20/05/26",
+                "caption": "The Believers (1987)/(DE)"
+            },
+            {
+                "id": "25#07",
+                "title": "#07",
+                "file": "https://i.postimg.cc/QtGpCcJG/7-Twins-Of-Evil.gif",
+                "size": "1.9mb",
+                "date": "20/05/26",
+                "caption": "Twins Of Evil (1971)/(FM)"
             }
         ],
         "Future_Shocks": [
@@ -4321,6 +4369,14 @@ const database = {
                 "size": "149kb",
                 "date": "04/04/26",
                 "caption": "The Haunted Palace (1963)"
+            },
+            {
+                "id": "33#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidhfe6oso4adrh4lixbwk3lq3pa2kvvfhxtxcasswomz7vprgpiua",
+                "size": "149kb",
+                "date": "19/05/26",
+                "caption": "Necronomicon (1993)"
             }
         ],
         "Haunted_Houses": [
@@ -4947,6 +5003,14 @@ const database = {
                 "size": "149kb",
                 "date": "14/05/26",
                 "caption": "Castle Freak (1995)"
+            },
+            {
+                "id": "37#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif24uc6fvgziyuou7k4in7qhvj3ols5pmpntmyao6axre7ba77ecu",
+                "size": "149kb",
+                "date": "20/05/26",
+                "caption": "The House By The Cemetery (1981)"
             }
         ],
         "Monster_Machines": [
@@ -5399,6 +5463,30 @@ const database = {
                 "size": "149kb",
                 "date": "17/05/26",
                 "caption": "I've got something I want to play for you."
+            },
+            {
+                "id": "11#18",
+                "title": "#18",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib5jfhchmzyvshuw2z37pgyy2ayq4dgjtcvgz64b4xt47wovnkd3a",
+                "size": "149kb",
+                "date": "19/05/26",
+                "caption": "Max and the 'Fleshgun' are fused together"
+            },
+            {
+                "id": "11#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihsqllawt7do3rbthpadbebngwt5atvtdbwhs3ztgansvaa7cr7i4",
+                "size": "149kb",
+                "date": "20/05/26",
+                "caption": "Videodrome is death."
+            },
+            {
+                "id": "11#20",
+                "title": "#20",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibfj5rphugqlmbhee3k2bzsdpxx73jxodouimyysbxhqhp4wul7ha",
+                "size": "149kb",
+                "date": "21/05/26",
+                "caption": "See you in Pittsburgh."
             }
         ],
         "Wild_Things": [
