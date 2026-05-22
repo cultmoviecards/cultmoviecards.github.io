@@ -257,14 +257,6 @@ const database = {
                 "size": "153kb",
                 "date": "29/04/26",
                 "caption": "'Battle Beyond The Stars', Poster"
-            },
-            {
-                "id": "10#S7",
-                "title": "#S7",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigag44vmubtgvkoyb6muosl55fyckvmfbjekkc7vh5ywtye6hrrfi",
-                "size": "153kb",
-                "date": "29/04/26",
-                "caption": "Publishing test."
             }
         ],
         "Big_Trouble_In_Little_China": [
