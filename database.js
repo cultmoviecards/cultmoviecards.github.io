@@ -257,6 +257,14 @@ const database = {
                 "size": "153kb",
                 "date": "29/04/26",
                 "caption": "'Battle Beyond The Stars', Poster"
+            },
+            {
+                "id": "10#S7",
+                "title": "#S7",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigag44vmubtgvkoyb6muosl55fyckvmfbjekkc7vh5ywtye6hrrfi",
+                "size": "153kb",
+                "date": "29/04/26",
+                "caption": "Publishing test."
             }
         ],
         "Big_Trouble_In_Little_China": [
@@ -3778,7 +3786,7 @@ const database = {
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibdxvu3po2o5qqytfzta74tfbllgd5e677i7oo2muygzakuvcpoce",
                 "size": "87kb",
                 "date": "03/03/26",
-                "caption": "The Beyond (1981)"
+                "caption": "The Beyond (1981)/(DE)"
             },
             {
                 "id": "16#08",
@@ -5495,6 +5503,14 @@ const database = {
                 "size": "122kb",
                 "date": "21/05/26",
                 "caption": "See you in Pittsburgh."
+            },
+            {
+                "id": "11#21",
+                "title": "#21",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigbwd3yt7hlqszuzrsvayratn4lls5x36zysqe3awf5tuhrhcm6gm",
+                "size": "118KB",
+                "date": "22/05/26",
+                "caption": "Death to Videodrome, long live the new flesh!"
             }
         ],
         "Wild_Things": [
