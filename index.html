@@ -3396,6 +3396,10 @@ function openRandomCard() {
         openPath(decodePath(encodedPath), useMemory);
     }
 
+    function formatListSize(size) {
+        return String(size || "----").toUpperCase().padStart(7, " ");
+    }
+
     function openDir(name, useMemory = false, sub = "") {
         const path = [name];
         if (sub) path.push(...String(sub).split("\\").filter(Boolean));
@@ -3427,7 +3431,7 @@ function openRandomCard() {
         if (Array.isArray(node)) {
             node.forEach((card, i) => {
                 if (!isCardRecord(card)) return;
-                html += `<li onclick="viewCardFromEncodedPath('${encodePathForJS(normalized)}', ${i}); playSound(1500, 'sine', 0.05, 0.05);">-rw-r--r--   ${escapeHTML(card.size || "----")}   ${escapeHTML(card.title || `CARD_${i + 1}`)}.IMG</li>`;
+                html += `<li onclick="viewCardFromEncodedPath('${encodePathForJS(normalized)}', ${i}); playSound(1500, 'sine', 0.05, 0.05);">-rw-r--r--   ${escapeHTML(formatListSize(card.size))}   ${escapeHTML(card.title || `CARD_${i + 1}`)}.IMG</li>`;
             });
         } else if (node && typeof node === "object") {
             Object.keys(node).forEach(childKey => {
