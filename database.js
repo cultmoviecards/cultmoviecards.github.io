@@ -1,3 +1,4 @@
+// CMC DATABASE REBUILT: Complete / Current / SECRET_VAULT top-level structure
 const database = {
     "COMPLETE_SETS": {
         "Battle_Beyond_The_Stars": [
@@ -4984,6 +4985,14 @@ const database = {
                 "size": "54kb",
                 "date": "15/05/26",
                 "caption": "The Stuff (1985)"
+            },
+            {
+                "id": "36#23",
+                "title": "#23",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicg5hlrbdiisjvazln6fmoqpsd3vzn3duq3fvlzhs4qdkup4u5sde",
+                "size": "68KB",
+                "date": "21/05/26",
+                "caption": "From Beyond (1986)"
             }
         ],
         "Midnight_Cult_Series_IV": [
