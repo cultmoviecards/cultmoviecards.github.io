@@ -4037,10 +4037,18 @@ const database = {
                 "caption": "Darren McGavin as Carl Kolchak (1972)"
             },
             {
+                "id": "21#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihhfza5l2npbssyj77fmrnjtmi5jomcqwvxsxbxd3cxswbic5vi6i",
+                "size": "129KB",
+                "date": "",
+                "caption": "Tim Curry as Dr. Frank-N-Furter (1975)"
+            },
+            {
                 "id": "21#F13",
                 "title": "#F13",
                 "file": "https://i.postimg.cc/Zn7jYQNk/F13-Kane-Hodder.png",
-                "size": "3kb",
+                "size": "149kb",
                 "date": "13/03/26",
                 "caption": "Kane Hodder as Jason Voorhees (1988)"
             },
