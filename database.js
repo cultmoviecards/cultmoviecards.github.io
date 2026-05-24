@@ -4059,6 +4059,14 @@ const database = {
                 "size": "214kb",
                 "date": "20/05/26",
                 "caption": "George Eastman as Vood (1983)"
+            },
+            {
+                "id": "21#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihhfza5l2npbssyj77fmrnjtmi5jomcqwvxsxbxd3cxswbic5vi6i",
+                "size": "129KB",
+                "date": "24/05/26",
+                "caption": "Tim Curry as Dr. Frank-N-Furter (1975)"
             }
         ],
         "Cultoons": [
@@ -4227,6 +4235,22 @@ const database = {
                 "size": "27668kb",
                 "date": "20/05/26",
                 "caption": "Twins Of Evil (1971)/(FM)"
+            },
+            {
+                "id": "25#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibb3udjmuw2xpv6kuwmbe7ygrq2ydjkxkg4jypni6a7ipbwqpahdu",
+                "size": "67KB",
+                "date": "23/05/26",
+                "caption": "Zombieland (2009)"
+            },
+            {
+                "id": "25#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidqdoa2xhk3yvu5km6jeg72pgssp34phrqls5hwwmgvz2uoupqd7q",
+                "size": "70KB",
+                "date": "23/05/26",
+                "caption": "Zombieland, Double Tap (2019)"
             }
         ],
         "Future_Shocks": [
@@ -5299,6 +5323,22 @@ const database = {
                 "size": "91kb",
                 "date": "15/05/26",
                 "caption": "House Red (2022)"
+            },
+            {
+                "id": "41#21",
+                "title": "#21",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaugr2zcfv43w3c3qfqwuc3xlo4zwbwlyges62e3gs27jukb6pkzy",
+                "size": "82KB",
+                "date": "23/05/26",
+                "caption": "Starry Eyes (2014)"
+            },
+            {
+                "id": "41#22",
+                "title": "#22",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifgn53txkijvu7sw3jv3keeh22bvng2r6z5lfdrz35tmxj7nz2ykm",
+                "size": "83KB",
+                "date": "23/05/26",
+                "caption": "The Drone (2019)"
             }
         ],
         "Rip-Offs": [
@@ -5503,6 +5543,22 @@ const database = {
                 "size": "118KB",
                 "date": "22/05/26",
                 "caption": "Death to Videodrome, long live the new flesh!"
+            },
+            {
+                "id": "11#22",
+                "title": "#22",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifrjaadzopuvchxbxvwkma5mm2xdsn3hl6qjw3zynfbucwjuycw2u",
+                "size": "126KB",
+                "date": "23/05/26",
+                "caption": "Tumours erupt from Barry Convex.."
+            },
+            {
+                "id": "11#23",
+                "title": "#23",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaitle2ua4cunrsagu3ssso2rkfyrze2qlimokqos7ob62xw3dxbu",
+                "size": "110KB",
+                "date": "24/05/26",
+                "caption": "Watch. I'll show you how.."
             }
         ],
         "Wild_Things": [
