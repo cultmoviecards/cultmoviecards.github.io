@@ -4048,7 +4048,7 @@ const database = {
                 "id": "21#F13",
                 "title": "#F13",
                 "file": "https://i.postimg.cc/Zn7jYQNk/F13-Kane-Hodder.png",
-                "size": "149kb",
+                "size": "1MB",
                 "date": "13/03/26",
                 "caption": "Kane Hodder as Jason Voorhees (1988)"
             },
