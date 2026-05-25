@@ -4361,6 +4361,16 @@ const database = {
                 "caption": "Short Night Of Glass Dolls (1971)"
             }
         ],
+        "Gothik_Ghouls": [
+            {
+                "id": "46#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifzjcw6lekw3fhljzy3kf66trmyymdmla5q3q2w5qxkgc4lcqzohm",
+                "size": "124KB",
+                "date": "25/05/26",
+                "caption": "The Blood Spattered Bride (1972)"
+            }
+        ],
         "H_P_Lovecraft_Series": [
             {
                 "id": "33#01",
@@ -5575,6 +5585,14 @@ const database = {
                 "size": "119KB",
                 "date": "24/05/26",
                 "caption": "Long live the new flesh."
+            },
+            {
+                "id": "11#S1",
+                "title": "#S1",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigfdiy6ianphscu6tplbjnsr2ca4xykfyw4rrbo53llfppjqru4u4",
+                "size": "116KB",
+                "date": "25/05/26",
+                "caption": "James Woods as 'Max Renn'"
             }
         ],
         "Wild_Things": [
@@ -6211,6 +6229,166 @@ const database = {
                 "size": "96kb",
                 "date": "22/01/25",
                 "caption": "Avalon // Hewson Consultants // 1984"
+            },
+            {
+                "id": "102#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreicro2drvrenjy6e26nlxqycpgc274p2cayjniaffkgvr2pragpncq",
+                "size": "107KB",
+                "date": "22/01/25",
+                "caption": "Bounder // Gremlin Graphics // 1985"
+            },
+            {
+                "id": "102#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreibrwv5lwiqu4r2cwwrftiabplm2dztkdgnxbqut4yul6vnbibrf2a",
+                "size": "120KB",
+                "date": "23/01/25",
+                "caption": "Cobra // Ocean Software // 1986"
+            },
+            {
+                "id": "102#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreie2iozzmrqgtqim4prh7xivybfmlobc4cjyq2xnimlssoxr4abbti",
+                "size": "115KB",
+                "date": "24/01/25",
+                "caption": "Wheelie // Microsphere // 1983"
+            },
+            {
+                "id": "102#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreifn6x6hglmlsjplp2hww5hiadnw5zxlxsvbtcda4xpjx6sbrrkoyq",
+                "size": "90KB",
+                "date": "24/01/25",
+                "caption": "Codename MAT // Micromega // 1984"
+            },
+            {
+                "id": "102#15",
+                "title": "#15",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreidsl556dohaixc3ousuoxrxxttp4o25w2bgrf6rcmspuhcaxibpla",
+                "size": "141KB",
+                "date": "24/01/25",
+                "caption": "Trashman // New Generation Software // 1984"
+            },
+            {
+                "id": "102#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreigmttsdcrlth4tawnt3amew7yzvimp5b4khmu3nens7d65ewkezna",
+                "size": "122KB",
+                "date": "25/01/25",
+                "caption": "Guardian II // Hi-Tec Software // 1990"
+            },
+            {
+                "id": "102#17",
+                "title": "#17",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreidlsbx3ysfbitaoxd7o4s3u3wl7ksritmglrxixlbheipyjkwq56m",
+                "size": "124KB",
+                "date": "25/01/25",
+                "caption": "Technician Ted // Hewson Consultants // 1984"
+            },
+            {
+                "id": "102#18",
+                "title": "#18",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreiflxhfwgajr4cbgotnpzisbzwmn3arou4rzzn4dbntogyacoovkdy",
+                "size": "125KB",
+                "date": "25/01/25",
+                "caption": "Football Manager // Addictive Games // 1982"
+            },
+            {
+                "id": "102#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreifauz4gxjdudhqg6i6f4r7v46h5xynwiksur3zplknhaaz5rwasdu",
+                "size": "101KB",
+                "date": "26/01/25",
+                "caption": "Hyperaction // Silversoft Ltd // 1984"
+            },
+            {
+                "id": "102#20",
+                "title": "#20",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreidips7daruynrillloro3556mwkezb5qx3khanmcibwkv6piuge3i",
+                "size": "105KB",
+                "date": "26/01/25",
+                "caption": "Dark Star // Design Design // 1984"
+            },
+            {
+                "id": "102#21",
+                "title": "#21",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreif4udh3rmhgjw7vaazaq7zjkvjwhgpvuevb4cnxv6utri3vpxxc64",
+                "size": "108KB",
+                "date": "26/01/25",
+                "caption": "Sir Lancelot // Melbourne House // 1984"
+            },
+            {
+                "id": "102#22",
+                "title": "#22",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreid6vand7bywcquzhr3bda742ktkd5zkosxl5j6yh2nbicaqhlohm4",
+                "size": "106KB",
+                "date": "26/01/25",
+                "caption": "Atic Atac // Ultimate Play The Game // 1983"
+            },
+            {
+                "id": "102#23",
+                "title": "#23",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreihuq7c6syolc3aaci6yyyyswk2rixqwnipxu4pbewc2qwuhzoo5t4",
+                "size": "99KB",
+                "date": "26/01/25",
+                "caption": "Flying Shark // Firebird Software // 1987"
+            },
+            {
+                "id": "102#24",
+                "title": "#24",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreierflfsz67gn6ed2ql76mvxn3ss7cml2punmdoym4e5htpnkiymv4",
+                "size": "102KB",
+                "date": "26/01/25",
+                "caption": "Gyroscope // Melbourne House // 1985"
+            },
+            {
+                "id": "102#25",
+                "title": "#25",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreidowtb3unyt7zvyndzhpyfirsy6cgbtcopo5ape3wdbztfmuiwxmq",
+                "size": "122KB",
+                "date": "26/01/25",
+                "caption": "Three Weeks In Paradise // Mikro-Gen // 1986"
+            },
+            {
+                "id": "102#26",
+                "title": "#26",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreicky7qy2aqgmd5mfg4p6wx652mmpqmtlm6opjr76mterh4sqeutjy",
+                "size": "107KB",
+                "date": "26/01/25",
+                "caption": "Wriggler // Romantic Robot // 1985"
+            },
+            {
+                "id": "102#27",
+                "title": "#27",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreibbsdytqovl5etf2k6dcq7xf4mhu2q3ic2lpgx63engzeyo4rtgam",
+                "size": "161KB",
+                "date": "27/01/25",
+                "caption": "Pang // Ocean Software // 1990"
+            },
+            {
+                "id": "102#28",
+                "title": "#28",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreiajfjb6anxobx3kxrltqmyz63kcmbxfi7qcshvevgg7ocg4esvvvy",
+                "size": "117KB",
+                "date": "28/01/25",
+                "caption": "Popeye // DK'Tronics Ltd (UK) // 1985"
+            },
+            {
+                "id": "102#29",
+                "title": "#29",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreibg7u7q2ar42cuebtamjgghdldavbj4qohb6dal5ptqyy4q44aej4",
+                "size": "111KB",
+                "date": "29/01/25",
+                "caption": "Hijack // Electric Dreams Software // 1986"
+            },
+            {
+                "id": "102#30",
+                "title": "#30",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:dz3zknueb5t7nhsj4g2bkjsd/bafkreicoh77mvik3plispcmoyn7de67rfbvwzkal425ns7tqudmzeic4la",
+                "size": "120KB",
+                "date": "30/01/25",
+                "caption": "Frankie Goes To Hollywood // Ocean Software // 1985"
             }
         ]
     }
