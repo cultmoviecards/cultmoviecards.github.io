@@ -4445,6 +4445,22 @@ const database = {
                 "size": "70KB",
                 "date": "23/05/26",
                 "caption": "Zombieland, Double Tap (2019)"
+            },
+            {
+                "id": "25#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiavom6fws4zpojjwsocx3r6x3rxpjlela72tqmwcnqbduhxu57wk4",
+                "size": "78KB",
+                "date": "25/05/26",
+                "caption": "Into The Grizzly Maze (2015)"
+            },
+            {
+                "id": "25#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidib47wdo4f2a4r32z62nkpc734h4fd24nbyrb6ghfji5pql2lzfi",
+                "size": "110KB",
+                "date": "26/05/26",
+                "caption": "Whistle (2025)"
             }
         ],
         "Future_Shocks": [
@@ -5145,6 +5161,14 @@ const database = {
                 "caption": "Superman III (1983)"
             },
             {
+                "id": "38#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifnqo4g7ewed2b573ngyg6gfiolutu6vjyej6vkevkexxzlyhwjbe",
+                "size": "105KB",
+                "date": "26/05/26",
+                "caption": "Runaway (1984)"
+            },
+            {
                 "id": "38#FC",
                 "title": "#FC",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigv3uuwusewrsxuzasssc3qrlsqr5dush7ohfqwhqkq3edhgihmly",
@@ -5187,6 +5211,14 @@ const database = {
                 "size": "171kb",
                 "date": "21/04/26",
                 "caption": "The Dark Crystal (1982)"
+            },
+            {
+                "id": "40#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifnujfqjesqgdpicymydruwvl35ajjkddwtiz4miuojgksijmycna",
+                "size": "162KB",
+                "date": "27/05/26",
+                "caption": "The NeverEnding Story (1984)"
             }
         ],
         "Pseudo_Cluedo": [
@@ -5601,6 +5633,22 @@ const database = {
                 "size": "116KB",
                 "date": "25/05/26",
                 "caption": "James Woods as 'Max Renn'"
+            },
+            {
+                "id": "11#S2",
+                "title": "#S2",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiegsm3j4dhmwvkymccm75nzsaygwtvw7neseozg6tiluyn7zddpzy",
+                "size": "122KB",
+                "date": "26/05/26",
+                "caption": "Deborah Harry as 'Nicki Brand'"
+            },
+            {
+                "id": "11#S3",
+                "title": "#S3",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifeuqxpdp6kgj2l32w43wvnckfylvepfofygpghxehe54xxvg47b4",
+                "size": "121KB",
+                "date": "27/05/26",
+                "caption": "Leslie Carlson as 'Barry Convex'"
             }
         ],
         "Wild_Things": [
