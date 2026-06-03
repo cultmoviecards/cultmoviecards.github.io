@@ -4173,6 +4173,14 @@ const database = {
                 "size": "69kb",
                 "date": "30/04/26",
                 "caption": "The Man In The White Suit (1951)"
+            },
+            {
+                "id": "15#17",
+                "title": "#17",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigdtavtqpwzfzveoy2wyi7a2dvq5wdnrhwhhogof7q42junjbneei",
+                "size": "49KB",
+                "date": "31/05/26",
+                "caption": "The Deadly Mantis (1957)"
             }
         ],
         "Banned": [
@@ -4271,6 +4279,14 @@ const database = {
                 "size": "110kb",
                 "date": "21/01/26",
                 "caption": "Cannibal Apocalypse (1980)"
+            },
+            {
+                "id": "16#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidzct2lsiljrlbwfas5ya3srocyey73ywefbskjkibogqtjctk6ym",
+                "size": "91KB",
+                "date": "02/06/26",
+                "caption": "Faces Of Death (1978)"
             }
         ],
         "Catacombs_&_Creatures": [
@@ -4511,6 +4527,14 @@ const database = {
                 "size": "1MB",
                 "date": "13/03/26",
                 "caption": "Kane Hodder as Jason Voorhees (1988)"
+            },
+            {
+                "id": "21#F1000",
+                "title": "#F1000",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigwfxdcesykhkrukdhemiyery4sujvt5d2x2hddp54nd6ezz5vfn4",
+                "size": "218KB",
+                "date": "02/06/26",
+                "caption": "The Man Behind The Mask.. (1979)"
             },
             {
                 "id": "21#RIP1",
@@ -4843,6 +4867,14 @@ const database = {
                 "size": "175kb",
                 "date": "13/05/26",
                 "caption": "Short Night Of Glass Dolls (1971)"
+            },
+            {
+                "id": "27#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifhfosltazlho2puj3iuj2ojbmtwf5aztktrvol23qamousl7knhq",
+                "size": "169KB",
+                "date": "02/06/26",
+                "caption": "Deep Red (1975)"
             }
         ],
         "Gothik_Ghouls": [
@@ -5019,6 +5051,14 @@ const database = {
                 "size": "106kb",
                 "date": "13/05/26",
                 "caption": "Witchfinder General (1968)"
+            },
+            {
+                "id": "29#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif75vnson6uwgdpju6of5hl2bt6tgiovjygn6pke6c5imd7jba4hu",
+                "size": "73KB",
+                "date": "31/05/26",
+                "caption": "The Devil's Rain (1975)"
             }
         ],
         "Invaders!": [
@@ -5723,6 +5763,68 @@ const database = {
                 "caption": "Starcrash (1978) "
             }
         ],
+        "Single Scoops": [
+            {
+                "id": "48#FC",
+                "title": "#FC",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibwni4oflimvq7ahwt3h2c7igewpv6vcatl3i4xgyxrnjdfifulre",
+                "size": "127KB",
+                "date": "02/06/26",
+                "caption": "Baskin (2015)"
+            }
+        ],
+        "Sorcerer": [
+            {
+                "id": "47#WW",
+                "title": "#WW",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidda27hxeb3mjtqp45gcqn7rqh6q4f5z667phov2vpvhdje6t5zei",
+                "size": "228KB",
+                "date": "31/05/26",
+                "caption": "Wax Wrapper, 'Sorcerer'"
+            },
+            {
+                "id": "47#T1",
+                "title": "#T1",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieikigcybqaxd3dukv3urhelhlkxt3a6kqlf2jrxnslez3s4xq6ei",
+                "size": "153KB",
+                "date": "01/06/26",
+                "caption": "Title Card, 'Sorcerer'"
+            },
+            {
+                "id": "47#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreig6sbrrp5tlnawwn3tgcg63hnb3vdnj64pngk3mcx5d4v2cvwlbmq",
+                "size": "171KB",
+                "date": "01/06/26",
+                "caption": "Nilo, The Contract Killer"
+            },
+            {
+                "id": "47#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreien2kgu62ik322jiqndvbyqb53yxggk5otk6hvhrfbdvjy3rbyaoe",
+                "size": "164KB",
+                "date": "02/06/26",
+                "caption": "Martinez, The Militant"
+            },
+            {
+                "id": "47#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifj2oigfjjquof4ycu7fgoowde6e3qymujfxnvcnugf6qo5jrnbia",
+                "size": "162KB",
+                "date": "03/06/26",
+                "caption": "Serrano, The Fraudster"
+            }
+        ],
+        "Sticker Shots": [
+            {
+                "id": "49#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid2se2ljyavnhvjj5cqre2v6xwj3luvurf5iwmlzgxcyicxctw6wu",
+                "size": "111KB",
+                "date": "03/06/26",
+                "caption": "The Toxic Avenger (1984)"
+            }
+        ],
         "Wild_Things": [
             {
                 "id": "43#01",
@@ -5813,6 +5915,14 @@ const database = {
                 "caption": "Frogs (1972)"
             },
             {
+                "id": "43#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihkrs6yydqv4uiq7nr27kid4kfeyftwc3yx7ysahgqgj6cdlgow6a",
+                "size": "133KB",
+                "date": "02/06/26",
+                "caption": "Blue Monkey (1987)"
+            },
+            {
                 "id": "43#ESE",
                 "title": "#ESE",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidiyd7mzenojgrrgyb2lwidpi75uhoqawarqgnvv6ianmrd42i7o4",
@@ -5853,6 +5963,14 @@ const database = {
                 "size": "122kb",
                 "date": "09/05/26",
                 "caption": "Burial Ground (1981)"
+            },
+            {
+                "id": "44#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia25hvotkx7nheelh4q6dtja72qu3uwuqzhgz47hxmfqzjdyeqsza",
+                "size": "127KB",
+                "date": "01/06/26",
+                "caption": "The Return Of The Living Dead (1985)"
             }
         ]
     },
