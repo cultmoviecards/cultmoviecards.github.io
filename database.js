@@ -4313,6 +4313,14 @@ const database = {
                 "size": "91kb",
                 "date": "23/04/26",
                 "caption": "'Thulsa Doom', Conan The Barbarian (1982)"
+            },
+            {
+                "id": "18#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiceyedgxf7fbmsuf7etjuvu2jzdu57cyiybzyrqydfdrkuaqufafe",
+                "size": "128KB",
+                "date": "07/06/26",
+                "caption": "'Xusia The Sorcerer', The Sword & The Sorcerer (1982)"
             }
         ],
         "Cops_N_Robbers": [
@@ -4437,6 +4445,14 @@ const database = {
                 "size": "74kb",
                 "date": "25/04/26",
                 "caption": "Vanishing Point (1971)"
+            },
+            {
+                "id": "20#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid6k5mlarwperkbmbwdg6sf4nulvzfu3kcugjeb46mvwc2ty7wyz4",
+                "size": "82KB",
+                "date": "04/06/26",
+                "caption": "Death Race 2000 (1975)"
             },
             {
                 "id": "20#2FC",
@@ -4759,6 +4775,46 @@ const database = {
                 "size": "75KB",
                 "date": "28/05/26",
                 "caption": "The Gorgon (1964)"
+            },
+            {
+                "id": "25#13",
+                "title": "#13",
+                "file": "https://i.postimg.cc/GpdYpPBf/13-The-Hound-Of-The-Baskervilles.gif",
+                "size": "12MB",
+                "date": "03/06/2026",
+                "caption": "The Hound Of The Baskervilles (1959)/(FM)"
+            },
+            {
+                "id": "25#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigvn3olffd6ey2kfqn3cvnl5g5maopr4qkmwy7ruxu7gfnmk3laza",
+                "size": "62KB",
+                "date": "06/06/26",
+                "caption": "A Serbian Film (2010)"
+            },
+            {
+                "id": "25#15",
+                "title": "#15",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifm2aotdexptphvwjtbbqq4zesuzkkxs7ekpj267zhabfvax23qty",
+                "size": "80KB",
+                "date": "06/06/26",
+                "caption": "Cannibal Holocaust (1980)"
+            },
+            {
+                "id": "25#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih3yzbvg5tzx6no6ojnowlnnyvnzfcewzgljbfevubcgmsbz7udza",
+                "size": "48KB",
+                "date": "07/06/26",
+                "caption": "The Human Centipede (2009)"
+            },
+            {
+                "id": "25#17",
+                "title": "#17",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih7isnsgwur3g472v3bdwslv7vbo7lo7vkpix7dvd64hdkailr3ke",
+                "size": "60KB",
+                "date": "07/06/26",
+                "caption": "The Human Centipede II (2011)"
             }
         ],
         "Future_Shocks": [
@@ -4817,6 +4873,14 @@ const database = {
                 "size": "117KB",
                 "date": "24/05/26",
                 "caption": "The Fifth Element (1997)"
+            },
+            {
+                "id": "26#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidwxojtvllclkejycq76im4ezbyoegrvf7gqmgvoyyzgypcv4ymlq",
+                "size": "106KB",
+                "date": "06/06/26",
+                "caption": "The 10th Victim (1965)"
             }
         ],
         "Giallo_Gelato!": [
@@ -5389,6 +5453,14 @@ const database = {
                 "size": "135kb",
                 "date": "23/04/26",
                 "caption": "Hatchet For The Honeymoon (1970)"
+            },
+            {
+                "id": "17#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif5pp6hhxfmilj3hjkoq54w7ygedp4wamjyniaiire257yokmr564",
+                "size": "102KB",
+                "date": "05/06/26",
+                "caption": "Roy Colt & Winchester Jack (1970)"
             }
         ],
         "Midnight_Cult_Series_IV": [
@@ -5505,6 +5577,24 @@ const database = {
                 "size": "111kb",
                 "date": "26/03/26",
                 "caption": "The Stepford Wives (1975)"
+            }
+        ],
+        "Mytho-Litho": [
+            {
+                "id": "50#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiakudsbrycg45t5bakdexkdbaidzue5woukpm7scjzvirzcvra4dm",
+                "size": "133KB",
+                "date": "05/06/26",
+                "caption": "'Jonathan E.', Rollerball (1975)"
+            },
+            {
+                "id": "50#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihtk2qy2vbdwu2hov4agobuamembcnr6kbwwcyk67qzrfbu2eixk4",
+                "size": "147KB",
+                "date": "06/06/26",
+                "caption": "'Jack Hanson', Slap Shot (1977)"
             }
         ],
         "Ozploitations": [
@@ -5813,6 +5903,30 @@ const database = {
                 "size": "162KB",
                 "date": "03/06/26",
                 "caption": "Serrano, The Fraudster"
+            },
+            {
+                "id": "47#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreic45ek5jagwfkzaqscpwuz4qf6rirgztrnhwxlfweie4sbvz4vnte",
+                "size": "162KB",
+                "date": "04/06/26",
+                "caption": "Dominguez, The Getaway Driver"
+            },
+            {
+                "id": "47#05",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih7wnq7woim7i24l2jt22hxbndwitin2ijfclux4nijmgsr43vvdu",
+                "size": "174KB",
+                "date": "05/06/26",
+                "caption": "Pazuzu, The Wind Demon"
+            },
+            {
+                "id": "47#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreic7pvbvcyc4e65jtugej5jdycv2jmabfzh7m4wzmdv6dypbnbpwg4",
+                "size": "167KB",
+                "date": "06/06/26",
+                "caption": "Porvenir, A Squalid Oil Town"
             }
         ],
         "Sticker Shots": [
@@ -5823,6 +5937,14 @@ const database = {
                 "size": "111KB",
                 "date": "03/06/26",
                 "caption": "The Toxic Avenger (1984)"
+            },
+            {
+                "id": "49#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiefpwvgbmuqgeahbyrlojqc5w6olriemfrqye4lpfc7yic2yklgv4",
+                "size": "80KB",
+                "date": "04/06/26",
+                "caption": "The Monster Squad (1987)"
             }
         ],
         "Wild_Things": [
