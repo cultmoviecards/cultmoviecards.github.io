@@ -2463,6 +2463,200 @@ const database = {
                 "caption": "TerrorVision (1986)"
             }
         ],
+        "Pseudo_Cluedo": [
+            {
+                "id": "41#01",
+                "title": "#01",
+                "file": "https://i.postimg.cc/vHxpjQZs/1.png",
+                "size": "3kb",
+                "date": "04/01/25",
+                "caption": "Humanoids From The Deep (1980)"
+            },
+            {
+                "id": "41#02",
+                "title": "#02",
+                "file": "https://i.postimg.cc/RVJj8MZQ/2.png",
+                "size": "3kb",
+                "date": "04/01/25",
+                "caption": "Tenebre (1982) "
+            },
+            {
+                "id": "41#03",
+                "title": "#03",
+                "file": "https://i.postimg.cc/XYMT6TrG/3.png",
+                "size": "3kb",
+                "date": "18/01/25",
+                "caption": "The Ghoul (1975)"
+            },
+            {
+                "id": "41#04",
+                "title": "#04",
+                "file": "https://i.postimg.cc/vZRpwp41/4.png",
+                "size": "3kb",
+                "date": "18/01/25",
+                "caption": "Death Race 2000 (1975)"
+            },
+            {
+                "id": "41#05",
+                "title": "#05",
+                "file": "https://i.postimg.cc/K8Xdhd1g/5.png",
+                "size": "3kb",
+                "date": "01/02/25",
+                "caption": "Evil Dead 2: Dead By Dawn (1987)"
+            },
+            {
+                "id": "41#06",
+                "title": "#06",
+                "file": "https://i.postimg.cc/x1rWVWXF/6.png",
+                "size": "3kb",
+                "date": "01/02/25",
+                "caption": "Master Killer (1978)"
+            },
+            {
+                "id": "41#07",
+                "title": "#07",
+                "file": "https://i.postimg.cc/8zhxptvY/7.png",
+                "size": "3kb",
+                "date": "27/02/25",
+                "caption": "The Wicker Man (1973)"
+            },
+            {
+                "id": "41#08",
+                "title": "#08",
+                "file": "https://i.postimg.cc/T3rBdCbF/8.png",
+                "size": "3kb",
+                "date": "27/02/25",
+                "caption": "Kill List (2011)"
+            },
+            {
+                "id": "41#09",
+                "title": "#09",
+                "file": "https://i.postimg.cc/6pdFWYRx/9.png",
+                "size": "3kb",
+                "date": "06/02/26",
+                "caption": "Tormented (1960)"
+            },
+            {
+                "id": "41#10",
+                "title": "#10",
+                "file": "https://i.postimg.cc/kgxLJf8d/10.png",
+                "size": "3kb",
+                "date": "08/02/26",
+                "caption": "Mother Of Flies (2025)"
+            },
+            {
+                "id": "41#11",
+                "title": "#11",
+                "file": "https://i.postimg.cc/52wD4nvN/11.png",
+                "size": "3kb",
+                "date": "12/02/26",
+                "caption": "Curse Of The Queerwolf (1988)"
+            },
+            {
+                "id": "41#12",
+                "title": "#12",
+                "file": "https://i.postimg.cc/mgQKL8MD/12.png",
+                "size": "3kb",
+                "date": "12/02/26",
+                "caption": "The Deceased Won't Desist! (2021)"
+            },
+            {
+                "id": "41#13",
+                "title": "#13",
+                "file": "https://i.postimg.cc/9QGsmJT0/13.png",
+                "size": "3kb",
+                "date": "22/02/26",
+                "caption": "Black Magic (1975)"
+            },
+            {
+                "id": "41#14",
+                "title": "#14",
+                "file": "https://i.postimg.cc/P5m0X2ZN/14.png",
+                "size": "3kb",
+                "date": "22/02/26",
+                "caption": "Black Magic 2 (1976)"
+            },
+            {
+                "id": "41#15",
+                "title": "#15",
+                "file": "https://i.postimg.cc/YSMZhYfk/15.png",
+                "size": "3kb",
+                "date": "28/02/26",
+                "caption": "Squirm (1976)"
+            },
+            {
+                "id": "41#16",
+                "title": "#16",
+                "file": "https://i.postimg.cc/W4TChg6s/16.png",
+                "size": "3kb",
+                "date": "28/02/26",
+                "caption": "Larva (2005)"
+            },
+            {
+                "id": "41#17",
+                "title": "#17",
+                "file": "https://i.postimg.cc/bvpWskHy/17.png",
+                "size": "3kb",
+                "date": "12/03/26",
+                "caption": "Bloody Moon (1981)"
+            },
+            {
+                "id": "41#18",
+                "title": "#18",
+                "file": "https://i.postimg.cc/YSMZhYf2/18.png",
+                "size": "3kb",
+                "date": "12/03/26",
+                "caption": "Nightmare Vacation (2017)"
+            },
+            {
+                "id": "41#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreideriko2vulr2oikgvouk6wqc7d3ueaxdp7zx5lu2agvdn4gpfnau",
+                "size": "115kb",
+                "date": "15/05/26",
+                "caption": "Bugonia (2025)"
+            },
+            {
+                "id": "41#20",
+                "title": "#20",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidfvvjech76q6pg3jlo7kvep4s2bbkk4gcceygw4gkpkemphnvbke",
+                "size": "91kb",
+                "date": "15/05/26",
+                "caption": "House Red (2022)"
+            },
+            {
+                "id": "41#21",
+                "title": "#21",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaugr2zcfv43w3c3qfqwuc3xlo4zwbwlyges62e3gs27jukb6pkzy",
+                "size": "82KB",
+                "date": "23/05/26",
+                "caption": "Starry Eyes (2014)"
+            },
+            {
+                "id": "41#22",
+                "title": "#22",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifgn53txkijvu7sw3jv3keeh22bvng2r6z5lfdrz35tmxj7nz2ykm",
+                "size": "83KB",
+                "date": "23/05/26",
+                "caption": "The Drone (2019)"
+            },
+            {
+                "id": "41#23",
+                "title": "#23",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihtpgpsjatrdre3zr5bg56c4ovawafywlqjmniy2rqfnq7dfenpam",
+                "size": "136KB",
+                "date": "13/06/26",
+                "caption": "The Blob (1958)"
+            },
+            {
+                "id": "42#24",
+                "title": "#24",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidsrhtx22wd7ft6zhwtropnntuu5vfx6yawans4jopdttuvujnofy",
+                "size": "142KB",
+                "date": "13/06/26",
+                "caption": "Beware! The Blob (1972)"
+            }
+        ],
         "Repo_Man": [
             {
                 "id": "01#T1",
@@ -4347,6 +4541,14 @@ const database = {
                 "size": "80kb",
                 "date": "16/05/26",
                 "caption": "Filth (2013)"
+            },
+            {
+                "id": "19#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid24jqagszaow5tyw7mj3uaou6e7hehraztjyrxisbpgclesirwx4",
+                "size": "115KB",
+                "date": "11/06/26",
+                "caption": "To Live And Die In L.A. (1985)"
             }
         ],
         "Cult_Carnage": [
@@ -4625,6 +4827,22 @@ const database = {
                 "size": "147kb",
                 "date": "21/05/26",
                 "caption": "Fantastic Planet (1973)"
+            },
+            {
+                "id": "22#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiazetxg66jmd37urdgbxfrcteazjdgcffd3kvvo5ngct4uemodo4q",
+                "size": "109KB",
+                "date": "13/06/26",
+                "caption": "The Last Unicorn (1982)"
+            },
+            {
+                "id": "22#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihlikk43mlqksbjxx5dn2so3kiwvfgbi62d5pmqajdcgoxo2cmksi",
+                "size": "148KB",
+                "date": "15/06/26",
+                "caption": "I Am Frankelda (2025)"
             }
         ],
         "David_Lynch_Series": [
@@ -4677,6 +4895,14 @@ const database = {
                 "size": "20964kb",
                 "date": "28/04/26",
                 "caption": "Beetlejuice (1988)/(FM)"
+            },
+            {
+                "id": "23#04",
+                "title": "#04",
+                "file": "https://i.postimg.cc/SxdXLcS9/4-Day-Of-The-Dead.gif",
+                "size": "16MB",
+                "date": "11/06/2026",
+                "caption": "Day Of The Dead (1985)/(FM)"
             }
         ],
         "Fright_Club_Features_IV": [
@@ -4815,6 +5041,22 @@ const database = {
                 "size": "60KB",
                 "date": "07/06/26",
                 "caption": "The Human Centipede II (2011)"
+            },
+            {
+                "id": "25#18",
+                "title": "#18",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihmx2pwdwdxczmrzd4pejm6kcyosethliffe2ppnj3hombkyrcnri",
+                "size": "71KB",
+                "date": "09/06/25",
+                "caption": "Crack In The World (1965)"
+            },
+            {
+                "id": "25#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiczmpwvu4uzsgd656wjdgejtroatqj34lzqetkjsaaeetze7bxcja",
+                "size": "153KB",
+                "date": "10/06/26",
+                "caption": "Creatures The World Forgot (1971)"
             }
         ],
         "Future_Shocks": [
@@ -4881,6 +5123,14 @@ const database = {
                 "size": "106KB",
                 "date": "06/06/26",
                 "caption": "The 10th Victim (1965)"
+            },
+            {
+                "id": "26#FC",
+                "title": "#FC",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib7gm4xtonri6ghda6lqnvsb4ydipth4j7u26nmlyjzcgskbng46a",
+                "size": "110KB",
+                "date": "09/06/26",
+                "caption": "Repo! The Genetic Opera (2008)"
             }
         ],
         "Giallo_Gelato!": [
@@ -4999,6 +5249,56 @@ const database = {
                 "size": "170kb",
                 "date": "19/05/26",
                 "caption": "Necronomicon (1993)"
+            },
+            {
+                "id": "33#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihkkc57xse6hnnpe5mpnsoupz55zprc5vfghmnknblf7ydx3rkxiu",
+                "size": "160KB",
+                "date": "11/06/26",
+                "caption": "Dagon (2001)"
+            }
+        ],
+        "Hammer_Series": [
+            {
+                "id": "51#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicukvezjrt2e34qnkh7rfizgik2h2v7l7poo4zoexuyag6szazcz4",
+                "size": "81KB",
+                "date": "09/06/26",
+                "caption": "The Quatermass Xperiment (1955)"
+            },
+            {
+                "id": "51#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifuqcfgy6zisnsyf3rscroqtkv65sddanu2bjhdjotw5eaiqh4d7y",
+                "size": "136KB",
+                "date": "10/06/26",
+                "caption": "X The Unknown (1956)"
+            },
+            {
+                "id": "51#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih6eo7bkhpzkyvwdjhdrs7yzuvzlgctyyav5u3563gyueae25nydy",
+                "size": "102KB",
+                "date": "11/06/26",
+                "caption": "The Curse Of Frankenstein (1957)"
+            },
+            {
+                "id": "51#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifzvlyaw3pzuiawxg6p3he7vqgcw6wahiqfvv7vkk75etbrvvvemq",
+                "size": "145KB",
+                "date": "12/06/26",
+                "caption": "Quatermass II (1957)"
+            },
+            {
+                "id": "51#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidkjheorz4remytvjlagcwwyqs52yrfhybhdgobenpwtxv3cn22ne",
+                "size": "136KB",
+                "date": "14/06/26",
+                "caption": "The Abominable Snowman (1957)"
             }
         ],
         "Haunted_Houses": [
@@ -5049,6 +5349,14 @@ const database = {
                 "size": "111kb",
                 "date": "16/05/26",
                 "caption": "Ghoulies (1985)"
+            },
+            {
+                "id": "28#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiejc5wbofbguprztvtaw3agmnvpcnuupqlryb6nmu7vrxigphj6li",
+                "size": "118KB",
+                "date": "10/06/26",
+                "caption": "The Legend Of Hell House (1973)"
             }
         ],
         "Hexy_Beasts": [
@@ -5197,6 +5505,14 @@ const database = {
                 "size": "116kb",
                 "date": "26/04/26",
                 "caption": "Laserblast (1978)"
+            },
+            {
+                "id": "30#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiacokuqa3d2rjfgr3ic4qbe5yuftd27rtqpfjisykdike2y3dwom4",
+                "size": "81KB",
+                "date": "10/06/26",
+                "caption": "Liquid Sky (1982)"
             }
         ],
         "Kickass_Karate!": [
@@ -5288,7 +5604,15 @@ const database = {
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigrraknq7al4silqvlamzldbytxcsfiybymynjwhfz3gxj7pxmbqm",
                 "size": "108KB",
                 "date": "29/05/26",
-                "caption": "Edwige Fenech As 'Jennifer Langsbury'"
+                "caption": "Edwige Fenech As 'Jennifer Langsbury' (1972)"
+            },
+            {
+                "id": "31#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifaqjbqwc27r77dykihvw2darl26cxecd4kr6u4jgqidz2plnc4xi",
+                "size": "115KB",
+                "date": "11/06/26",
+                "caption": "Jamie Lee Curtis as 'Laurie Strode' (1978)"
             }
         ],
         "Kult_Kaiju": [
@@ -5331,6 +5655,14 @@ const database = {
                 "size": "141kb",
                 "date": "28/04/26",
                 "caption": "Varan The Unbelievable (1958)"
+            },
+            {
+                "id": "32#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreig5kiql7qucqovukbpkloli6amsyb67o7cvmbv4s2nrju36dd73ry",
+                "size": "137KB",
+                "date": "09/06/26",
+                "caption": "The Three Treasures (1959)"
             }
         ],
         "Mario_Bava_Series": [
@@ -5571,6 +5903,14 @@ const database = {
                 "caption": "Runaway (1984)"
             },
             {
+                "id": "38#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidxtvawqiwrnrgp4vj3vwg3teoymqdb2ca5ljtszfl2ffhzwngdsq",
+                "size": "95KB",
+                "date": "15/06/26",
+                "caption": "Virus (1999)"
+            },
+            {
                 "id": "38#FC",
                 "title": "#FC",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigv3uuwusewrsxuzasssc3qrlsqr5dush7ohfqwhqkq3edhgihmly",
@@ -5623,6 +5963,14 @@ const database = {
                 "caption": "Patrick (1978)"
             },
             {
+                "id": "39#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigja3pvwdiarezelxzi4ofukf63fo2s64j7el64qx3mpx3mnuyim4",
+                "size": "105KB",
+                "date": "09/06/26",
+                "caption": "Nightmares (1980)"
+            },
+            {
                 "id": "39#FC",
                 "title": "#FC",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihjqg7dcdldyu3fw6umzwqbyfpxorruc2sb52zht54pwcrdsjh53i",
@@ -5649,184 +5997,6 @@ const database = {
                 "caption": "The NeverEnding Story (1984)"
             }
         ],
-        "Pseudo_Cluedo": [
-            {
-                "id": "41#01",
-                "title": "#01",
-                "file": "https://i.postimg.cc/vHxpjQZs/1.png",
-                "size": "3kb",
-                "date": "04/01/25",
-                "caption": "Humanoids From The Deep (1980)"
-            },
-            {
-                "id": "41#02",
-                "title": "#02",
-                "file": "https://i.postimg.cc/RVJj8MZQ/2.png",
-                "size": "3kb",
-                "date": "04/01/25",
-                "caption": "Tenebre (1982) "
-            },
-            {
-                "id": "41#03",
-                "title": "#03",
-                "file": "https://i.postimg.cc/XYMT6TrG/3.png",
-                "size": "3kb",
-                "date": "18/01/25",
-                "caption": "The Ghoul (1975)"
-            },
-            {
-                "id": "41#04",
-                "title": "#04",
-                "file": "https://i.postimg.cc/vZRpwp41/4.png",
-                "size": "3kb",
-                "date": "18/01/25",
-                "caption": "Death Race 2000 (1975)"
-            },
-            {
-                "id": "41#05",
-                "title": "#05",
-                "file": "https://i.postimg.cc/K8Xdhd1g/5.png",
-                "size": "3kb",
-                "date": "01/02/25",
-                "caption": "Evil Dead 2: Dead By Dawn (1987)"
-            },
-            {
-                "id": "41#06",
-                "title": "#06",
-                "file": "https://i.postimg.cc/x1rWVWXF/6.png",
-                "size": "3kb",
-                "date": "01/02/25",
-                "caption": "Master Killer (1978)"
-            },
-            {
-                "id": "41#07",
-                "title": "#07",
-                "file": "https://i.postimg.cc/8zhxptvY/7.png",
-                "size": "3kb",
-                "date": "27/02/25",
-                "caption": "The Wicker Man (1973)"
-            },
-            {
-                "id": "41#08",
-                "title": "#08",
-                "file": "https://i.postimg.cc/T3rBdCbF/8.png",
-                "size": "3kb",
-                "date": "27/02/25",
-                "caption": "Kill List (2011)"
-            },
-            {
-                "id": "41#09",
-                "title": "#09",
-                "file": "https://i.postimg.cc/6pdFWYRx/9.png",
-                "size": "3kb",
-                "date": "06/02/26",
-                "caption": "Tormented (1960)"
-            },
-            {
-                "id": "41#10",
-                "title": "#10",
-                "file": "https://i.postimg.cc/kgxLJf8d/10.png",
-                "size": "3kb",
-                "date": "08/02/26",
-                "caption": "Mother Of Flies (2025)"
-            },
-            {
-                "id": "41#11",
-                "title": "#11",
-                "file": "https://i.postimg.cc/52wD4nvN/11.png",
-                "size": "3kb",
-                "date": "12/02/26",
-                "caption": "Curse Of The Queerwolf (1988)"
-            },
-            {
-                "id": "41#12",
-                "title": "#12",
-                "file": "https://i.postimg.cc/mgQKL8MD/12.png",
-                "size": "3kb",
-                "date": "12/02/26",
-                "caption": "The Deceased Won't Desist! (2021)"
-            },
-            {
-                "id": "41#13",
-                "title": "#13",
-                "file": "https://i.postimg.cc/9QGsmJT0/13.png",
-                "size": "3kb",
-                "date": "22/02/26",
-                "caption": "Black Magic (1975)"
-            },
-            {
-                "id": "41#14",
-                "title": "#14",
-                "file": "https://i.postimg.cc/P5m0X2ZN/14.png",
-                "size": "3kb",
-                "date": "22/02/26",
-                "caption": "Black Magic 2 (1976)"
-            },
-            {
-                "id": "41#15",
-                "title": "#15",
-                "file": "https://i.postimg.cc/YSMZhYfk/15.png",
-                "size": "3kb",
-                "date": "28/02/26",
-                "caption": "Squirm (1976)"
-            },
-            {
-                "id": "41#16",
-                "title": "#16",
-                "file": "https://i.postimg.cc/W4TChg6s/16.png",
-                "size": "3kb",
-                "date": "28/02/26",
-                "caption": "Larva (2005)"
-            },
-            {
-                "id": "41#17",
-                "title": "#17",
-                "file": "https://i.postimg.cc/bvpWskHy/17.png",
-                "size": "3kb",
-                "date": "12/03/26",
-                "caption": "Bloody Moon (1981)"
-            },
-            {
-                "id": "41#18",
-                "title": "#18",
-                "file": "https://i.postimg.cc/YSMZhYf2/18.png",
-                "size": "3kb",
-                "date": "12/03/26",
-                "caption": "Nightmare Vacation (2017)"
-            },
-            {
-                "id": "41#19",
-                "title": "#19",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreideriko2vulr2oikgvouk6wqc7d3ueaxdp7zx5lu2agvdn4gpfnau",
-                "size": "115kb",
-                "date": "15/05/26",
-                "caption": "Bugonia (2025)"
-            },
-            {
-                "id": "41#20",
-                "title": "#20",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidfvvjech76q6pg3jlo7kvep4s2bbkk4gcceygw4gkpkemphnvbke",
-                "size": "91kb",
-                "date": "15/05/26",
-                "caption": "House Red (2022)"
-            },
-            {
-                "id": "41#21",
-                "title": "#21",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaugr2zcfv43w3c3qfqwuc3xlo4zwbwlyges62e3gs27jukb6pkzy",
-                "size": "82KB",
-                "date": "23/05/26",
-                "caption": "Starry Eyes (2014)"
-            },
-            {
-                "id": "41#22",
-                "title": "#22",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifgn53txkijvu7sw3jv3keeh22bvng2r6z5lfdrz35tmxj7nz2ykm",
-                "size": "83KB",
-                "date": "23/05/26",
-                "caption": "The Drone (2019)"
-            }
-        ],
         "Rip-Offs": [
             {
                 "id": "42#01",
@@ -5843,6 +6013,14 @@ const database = {
                 "size": "181KB",
                 "date": "30/05/26",
                 "caption": "Galaxy Of Terror (1981)"
+            },
+            {
+                "id": "42#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieoohjlxtgcuciuf6sefk4hsy4z3a72tmqg7rm5nvmyorfvi3l5sy",
+                "size": "170KB",
+                "date": "14/06/26",
+                "caption": "Orca (1977)"
             },
             {
                 "id": "42#M4",
@@ -5927,6 +6105,70 @@ const database = {
                 "size": "167KB",
                 "date": "06/06/26",
                 "caption": "Porvenir, A Squalid Oil Town"
+            },
+            {
+                "id": "47#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicfvib6naiaiqcmvlxvpwmpgsyafcdh27wye2jtuyk7hwrqvpuppi",
+                "size": "133KB",
+                "date": "07/06/26",
+                "caption": "Corepet, A Predatory Oil Firm"
+            },
+            {
+                "id": "47#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiawam426x4bkbrmyrt6vmazljqew6xwuvsmfmysdp2d7dmfmbp2xm",
+                "size": "162KB",
+                "date": "08/06/26",
+                "caption": "Serrano, Spies A New Arrival"
+            },
+            {
+                "id": "47#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidqmkqybhdichhshngygfforgjyvgilizkoumhp63z7u476ohmpby",
+                "size": "187KB",
+                "date": "09/06/26",
+                "caption": "Corepet, An oil well explodes"
+            },
+            {
+                "id": "47#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieo7ygx6gin75texaeidd3hzhhmv6l6dz5ahdse5ffwh5kff4ozoe",
+                "size": "173KB",
+                "date": "11/06/26",
+                "caption": "Porvenir, The village revolts"
+            },
+            {
+                "id": "47#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibilg7qhfcc2revnlbxakstphnb2lg6wsnzc4vlcdcj2bknvsfcku",
+                "size": "159KB",
+                "date": "12/06/26",
+                "caption": "Corepet, Unstable Dynamite"
+            },
+            {
+                "id": "47#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiceqf5ee73jbnnocz3faktoukwqeat72umrcc2uppq4436wftd2zq",
+                "size": "161KB",
+                "date": "13/06/26",
+                "caption": "Peligro, The truck is ready"
+            },
+            {
+                "id": "47#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibhbxh26otrlqb3pzdnjiyfvf7dxo6ehcmcjk5giak7qidzeerib4",
+                "size": "159KB",
+                "date": "14/06/26",
+                "caption": "Nilo, assassinates Marquez"
+            },
+            {
+                "id": "47#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiebmx6rrvtbbvazt24c2j6emequ4awoutw24hjbaqwjzobxmpgmiy",
+                "size": "173KB",
+                "date": "14/06/26",
+                "caption": "Pazuzu, Chalked on Sorcier"
             }
         ],
         "Sticker Shots": [
@@ -6051,6 +6293,72 @@ const database = {
                 "size": "131kb",
                 "date": "05/05/26",
                 "caption": "Watership Down (1978)"
+            }
+        ],
+        "World_Cult_Series": [
+            {
+                "id": "52#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidpnxjp26nq25iozv3arfeiphhp3i4abea25lqqen6ykrc2frfzqm",
+                "size": "177KB",
+                "date": "11/06/26",
+                "caption": "Mexico: Cronos (1992)"
+            },
+            {
+                "id": "52#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigm3rtihc5nwmod5ycarlkc6kj76brqtdvv7y6cr6jq7cetlxkv2i",
+                "size": "140KB",
+                "date": "11/06/26",
+                "caption": "South Africa: District 9 (2009)"
+            },
+            {
+                "id": "52#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiehpiqgyr5ihur6nbitgn2s3n37se6vq6uz6fvhema5pdpej5q7jy",
+                "size": "161KB",
+                "date": "12/06/26",
+                "caption": "South Korea: Oldboy (2003)"
+            },
+            {
+                "id": "52#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiblbwxeu7cpys7ui3bg7qxal6hsynzfr7xsokocbwuyyhpnszp5fm",
+                "size": "138KB",
+                "date": "12/06/26",
+                "caption": "Czech Republic: Ikarie XB-1 (1963)"
+            },
+            {
+                "id": "52#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreig77bvsovxajpgcxy6yl2yuph5vx6d47dtocttttyni5dpojxvbgq",
+                "size": "169KB",
+                "date": "12/06/26",
+                "caption": "Canada: Scanners (1981)"
+            },
+            {
+                "id": "52#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiew44eciijcstzwwg7xir2tnalokyljzxgjkj4zjisoxrgbeachwu",
+                "size": "151KB",
+                "date": "13/06/26",
+                "caption": "Bosnia & Herzegovina: Variola Vera (1982)"
+            },
+            {
+                "id": "52#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaa26cgyfbp4x6wi4hns5odtw7ivghsnhfbpm66nfb5mr663jtngy",
+                "size": "145KB",
+                "date": "14/06/26",
+                "caption": "United States of America: The Warriors (1979)"
+            },
+            {
+                "id": "52#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaeactitqkuofv7zzpheaenkyaeneyujckjuimtjkdyj3zeh7mkya",
+                "size": "181KB",
+                "date": "15/06/26",
+                "caption": "Paraguay: 7 Cajas (2012)"
             }
         ],
         "Zombie_Nation": [
