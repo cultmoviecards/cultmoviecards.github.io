@@ -3101,6 +3101,264 @@ const database = {
                 "caption": "Alex Cox, Director 'Repo Man'"
             }
         ],
+        "Sorcerer": [
+            {
+                "id": "47#WW",
+                "title": "#WW",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidda27hxeb3mjtqp45gcqn7rqh6q4f5z667phov2vpvhdje6t5zei",
+                "size": "228KB",
+                "date": "31/05/26",
+                "caption": "Wax Wrapper, 'Sorcerer'"
+            },
+            {
+                "id": "47#T1",
+                "title": "#T1",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieikigcybqaxd3dukv3urhelhlkxt3a6kqlf2jrxnslez3s4xq6ei",
+                "size": "153KB",
+                "date": "01/06/26",
+                "caption": "Title Card, 'Sorcerer'"
+            },
+            {
+                "id": "47#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreig6sbrrp5tlnawwn3tgcg63hnb3vdnj64pngk3mcx5d4v2cvwlbmq",
+                "size": "171KB",
+                "date": "01/06/26",
+                "caption": "Nilo, The Contract Killer"
+            },
+            {
+                "id": "47#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreien2kgu62ik322jiqndvbyqb53yxggk5otk6hvhrfbdvjy3rbyaoe",
+                "size": "164KB",
+                "date": "02/06/26",
+                "caption": "Martinez, The Militant"
+            },
+            {
+                "id": "47#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifj2oigfjjquof4ycu7fgoowde6e3qymujfxnvcnugf6qo5jrnbia",
+                "size": "162KB",
+                "date": "03/06/26",
+                "caption": "Serrano, The Fraudster"
+            },
+            {
+                "id": "47#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreic45ek5jagwfkzaqscpwuz4qf6rirgztrnhwxlfweie4sbvz4vnte",
+                "size": "162KB",
+                "date": "04/06/26",
+                "caption": "Dominguez, The Getaway Driver"
+            },
+            {
+                "id": "47#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih7wnq7woim7i24l2jt22hxbndwitin2ijfclux4nijmgsr43vvdu",
+                "size": "174KB",
+                "date": "05/06/26",
+                "caption": "Pazuzu, The Wind Demon"
+            },
+            {
+                "id": "47#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreic7pvbvcyc4e65jtugej5jdycv2jmabfzh7m4wzmdv6dypbnbpwg4",
+                "size": "167KB",
+                "date": "06/06/26",
+                "caption": "Porvenir, A Squalid Oil Town"
+            },
+            {
+                "id": "47#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicfvib6naiaiqcmvlxvpwmpgsyafcdh27wye2jtuyk7hwrqvpuppi",
+                "size": "133KB",
+                "date": "07/06/26",
+                "caption": "Corepet, A Predatory Oil Firm"
+            },
+            {
+                "id": "47#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiawam426x4bkbrmyrt6vmazljqew6xwuvsmfmysdp2d7dmfmbp2xm",
+                "size": "162KB",
+                "date": "08/06/26",
+                "caption": "Serrano, Spies A New Arrival"
+            },
+            {
+                "id": "47#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidqmkqybhdichhshngygfforgjyvgilizkoumhp63z7u476ohmpby",
+                "size": "187KB",
+                "date": "09/06/26",
+                "caption": "Corepet, An Oil Well Explodes"
+            },
+            {
+                "id": "47#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieo7ygx6gin75texaeidd3hzhhmv6l6dz5ahdse5ffwh5kff4ozoe",
+                "size": "173KB",
+                "date": "11/06/26",
+                "caption": "Porvenir, The Village Revolts"
+            },
+            {
+                "id": "47#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibilg7qhfcc2revnlbxakstphnb2lg6wsnzc4vlcdcj2bknvsfcku",
+                "size": "159KB",
+                "date": "12/06/26",
+                "caption": "Corepet, Unstable Dynamite"
+            },
+            {
+                "id": "47#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiceqf5ee73jbnnocz3faktoukwqeat72umrcc2uppq4436wftd2zq",
+                "size": "161KB",
+                "date": "13/06/26",
+                "caption": "Peligro, The Truck Is Ready"
+            },
+            {
+                "id": "47#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibhbxh26otrlqb3pzdnjiyfvf7dxo6ehcmcjk5giak7qidzeerib4",
+                "size": "159KB",
+                "date": "14/06/26",
+                "caption": "Nilo, Assassinates Marquez"
+            },
+            {
+                "id": "47#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiebmx6rrvtbbvazt24c2j6emequ4awoutw24hjbaqwjzobxmpgmiy",
+                "size": "173KB",
+                "date": "14/06/26",
+                "caption": "Pazuzu, Chalked On Sorcier"
+            },
+            {
+                "id": "47#15",
+                "title": "#15",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihfoqwxx3m257sgrzj3wafxprkrfgcin4pekaxo7kfvu4ixa4c5ci",
+                "size": "175KB",
+                "date": "17/06/26",
+                "caption": "Dominguez, Climbs The Mountain"
+            },
+            {
+                "id": "47#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreielpn2b77iqw5c4m2utoev7qkuajwzgvig7fx5mhvsfaqrcanfbiy",
+                "size": "185KB",
+                "date": "17/06/26",
+                "caption": "Martinez, On The Wooden Bridge"
+            },
+            {
+                "id": "47#17",
+                "title": "#17",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibttlljca3mwmtvb6vvqkmz4ol5jhxo4zhah4bbd6gde6hzm6m5se",
+                "size": "176KB",
+                "date": "17/06/26",
+                "caption": "Nilo, Ponders His Fate"
+            },
+            {
+                "id": "47#18",
+                "title": "#18",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigpobt64pmhocz4kgjhuxsagv52uezx7lujoj25e7zogur7okhnti",
+                "size": "172KB",
+                "date": "18/06/26",
+                "caption": "Dominguez, Rides The Rope Bridge"
+            },
+            {
+                "id": "47#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifgy6f7k43rwb62bxdorcuforob2ku5zudvqykzxrgbfrkv6lqskm",
+                "size": "183KB",
+                "date": "19/06/26",
+                "caption": "Martinez, Examines The Barrier"
+            },
+            {
+                "id": "47#20",
+                "title": "#20",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifoffa34cg5qhyc7rsvspckkufgfkv5gmki4hvtovl24teg7w46lq",
+                "size": "199KB",
+                "date": "20/06/26",
+                "caption": "Martinez, Explodes The Barrier"
+            },
+            {
+                "id": "47#21",
+                "title": "#21",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiar7qhjorekyfsufnx3bxqfibtdcdycinhunmrfjndnmnlo32feha",
+                "size": "164KB",
+                "date": "22/06/26",
+                "caption": "Nilo, Dies On The Truck"
+            },
+            {
+                "id": "47#22",
+                "title": "#22",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif4iausgikqatyjjdrlyvzjdim3cwcxt5orbifmkfqtjsm3dyedsm",
+                "size": "152KB",
+                "date": "22/06/26",
+                "caption": "Dominguez, Runs Out Of Fuel"
+            },
+            {
+                "id": "47#23",
+                "title": "#23",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiempxbq2epy44kgfrksexznark7w3oevnogzvomexvq7hryxyojfm",
+                "size": "133KB",
+                "date": "23/06/26",
+                "caption": "Dominguez, Delivers The Dynamite"
+            },
+            {
+                "id": "47#24",
+                "title": "#24",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiafsvjlcmot3ibe4gqe4ci3v5477eoflopog2iza67hrz7iar4eri",
+                "size": "165KB",
+                "date": "24/06/26",
+                "caption": "Porvenir, The Mafia Arrives"
+            },
+            {
+                "id": "47#S1",
+                "title": "#S1",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiakhwdzcm7s63ntjk5trfy6b5625jhq7vkiegmowggdjicygiyoeq",
+                "size": "177KB",
+                "date": "26/06/26",
+                "caption": "Friedkin, Promotional Still"
+            },
+            {
+                "id": "47#S2",
+                "title": "#S2",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigxljz6sktyljrap3q2fi3hr2h44jmon6zeoxrpudijkemhntbduy",
+                "size": "155KB",
+                "date": "27/06/26",
+                "caption": "Scheider, As 'Jackie Scanlon'"
+            },
+            {
+                "id": "47#S3",
+                "title": "#S3",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieg5sgsq2gh42ktb7peqnhzx7zgirv3eoao5wj242a3i3zyjwg3ry",
+                "size": "170KB",
+                "date": "27/06/26",
+                "caption": "Poster, 'Wages Of Fear' Quad"
+            },
+            {
+                "id": "47#S4",
+                "title": "#S4",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicb7zi23qmymzme4a7x7lkbxbrdl4htrslakhjoufu6nctzcsmj74",
+                "size": "175KB",
+                "date": "29/06/26",
+                "caption": "Purgatory, A Drive Through Hell"
+            },
+            {
+                "id": "47#S5",
+                "title": "#S5",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiasoz25gz2mdfzjjvmozd77udqsft2fcpjnby7le3kaouscmkbr2m",
+                "size": "183KB",
+                "date": "29/06/26",
+                "caption": "Destiny, Manzon's Watch"
+            },
+            {
+                "id": "47#S6",
+                "title": "#S6",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib6pcjpxu3pyxs3qkjvonq2jwu4zkg2gcjiugez5ivexfgrnmrdc4",
+                "size": "189KB",
+                "date": "30/06/26",
+                "caption": "Bob Dylan, 'One Too Many'"
+            }
+        ],
         "The_Ninth_Configuration": [
             {
                 "id": "02#T1",
@@ -4430,6 +4688,392 @@ const database = {
                 "date": "30/03/25",
                 "caption": "Ted Kotcheff, Director 'Wake In Fright'"
             }
+        ],
+        "World_Cult_Series": [
+            {
+                "id": "52#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidpnxjp26nq25iozv3arfeiphhp3i4abea25lqqen6ykrc2frfzqm",
+                "size": "177KB",
+                "date": "11/06/26",
+                "caption": "Mexico: Cronos (1992)"
+            },
+            {
+                "id": "52#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigm3rtihc5nwmod5ycarlkc6kj76brqtdvv7y6cr6jq7cetlxkv2i",
+                "size": "140KB",
+                "date": "11/06/26",
+                "caption": "South Africa: District 9 (2009)"
+            },
+            {
+                "id": "52#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiehpiqgyr5ihur6nbitgn2s3n37se6vq6uz6fvhema5pdpej5q7jy",
+                "size": "161KB",
+                "date": "12/06/26",
+                "caption": "South Korea: Oldboy (2003)"
+            },
+            {
+                "id": "52#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiblbwxeu7cpys7ui3bg7qxal6hsynzfr7xsokocbwuyyhpnszp5fm",
+                "size": "138KB",
+                "date": "12/06/26",
+                "caption": "Czech Republic: Ikarie XB-1 (1963)"
+            },
+            {
+                "id": "52#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreig77bvsovxajpgcxy6yl2yuph5vx6d47dtocttttyni5dpojxvbgq",
+                "size": "169KB",
+                "date": "12/06/26",
+                "caption": "Canada: Scanners (1981)"
+            },
+            {
+                "id": "52#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiew44eciijcstzwwg7xir2tnalokyljzxgjkj4zjisoxrgbeachwu",
+                "size": "151KB",
+                "date": "13/06/26",
+                "caption": "Bosnia & Herzegovina: Variola Vera (1982)"
+            },
+            {
+                "id": "52#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaa26cgyfbp4x6wi4hns5odtw7ivghsnhfbpm66nfb5mr663jtngy",
+                "size": "145KB",
+                "date": "14/06/26",
+                "caption": "United States of America: The Warriors (1979)"
+            },
+            {
+                "id": "52#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaeactitqkuofv7zzpheaenkyaeneyujckjuimtjkdyj3zeh7mkya",
+                "size": "181KB",
+                "date": "15/06/26",
+                "caption": "Paraguay: 7 Cajas (2012)"
+            },
+            {
+                "id": "52#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidbjyfq7m362e3wo75h2n3d36ya7immps4cfkumb4n4tqpkavu3t4",
+                "size": "163KB",
+                "date": "17/06/26",
+                "caption": "Qatar: Al Tabbab (2020)"
+            },
+            {
+                "id": "52#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreianklpptv4i2td3tmvi2yfh5rrpzh6bvms54pqydrzxfltgkkhexa",
+                "size": "158KB",
+                "date": "21/06/26",
+                "caption": "Switzerland: Mad Heidi (2022)"
+            },
+            {
+                "id": "52#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid6cmibmdbuljyze7t3bwomd5k5lfqslsbhjmv5ya5utnpfu36fse",
+                "size": "137KB",
+                "date": "21/06/26",
+                "caption": "Brazil: At Midnight I'll Take Your Soul (1964)"
+            },
+            {
+                "id": "52#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifjtg57ue7u37tdbfha5m6z67lmv5y5eyr7cxqrffeqgpzz3s3azi",
+                "size": "145KB",
+                "date": "21/06/26",
+                "caption": "Morocco: Kandisha (2008)"
+            },
+            {
+                "id": "52#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibmqqeazfmx32kufn46jqnhmq4qspahuoosfcgsl6d7d2fh3sz5vq",
+                "size": "163KB",
+                "date": "21/06/26",
+                "caption": "Scotland: Dog Soldiers (2002)"
+            },
+            {
+                "id": "52#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihpwvfx3iyabo6vmsymqr4zybznkyqewna32dvb72grneqmvytbeq",
+                "size": "196KB",
+                "date": "22/06/26",
+                "caption": "Haiti: The Serpent & The Rainbow (1988)"
+            },
+            {
+                "id": "52#15",
+                "title": "#15",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiefwvcliilf2wr64epfe2t3hqq7ufqd7ihtofmghlzxigex2n5nmq",
+                "size": "163KB",
+                "date": "23/06/26",
+                "caption": "Australia: Wake In Fright (1971)"
+            },
+            {
+                "id": "52#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiej4xpc3s645ux7znew4xgiexhbhlehu5tzitibshlth2fv2twvpi",
+                "size": "168KB",
+                "date": "23/06/26",
+                "caption": "Turkey: Turkish Star Wars (1982)"
+            },
+            {
+                "id": "52#17",
+                "title": "#17",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreichy6l2vguetrsrj24u3hccfvs7sykkpyc627bcahvj3yyz5bc2pa",
+                "size": "129KB",
+                "date": "24/06/26",
+                "caption": "Germany: Run Lola Run (1998)"
+            },
+            {
+                "id": "52#18",
+                "title": "#18",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihru3gqgrh4mxsa44gfkdj4vvipxt5hc3k57lofzgq4lc6vi7dlre",
+                "size": "130KB",
+                "date": "24/06/26",
+                "caption": "Ivory Coast: Les Bronzés (1978)"
+            },
+            {
+                "id": "52#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid7hychm5rdaz274e2or5hbyzoiltekz7uog2zvmlcvqpgl6lj23i",
+                "size": "158KB",
+                "date": "25/05/26",
+                "caption": "Ecuador: Chuzalongo (2024)"
+            },
+            {
+                "id": "52#20",
+                "title": "#20",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihtawekwjllfgcc4xpm2q5n5t7rnqqhhjhz5ryd6fmcrmg2j6v5de",
+                "size": "158KB",
+                "date": "25/06/26",
+                "caption": "Curaçao: Buladó (2020)"
+            },
+            {
+                "id": "52#21",
+                "title": "#21",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihe7mrn2fdyqfnmzmd73tzqm5w6uhrhikd2b4np5cbeoabmlm7sxe",
+                "size": "149KB",
+                "date": "26/06/26",
+                "caption": "Netherlands: The Lift (1983)"
+            },
+            {
+                "id": "52#22",
+                "title": "#22",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidozpitkt5fu75b42pb2g2lct7pgneaxsorrczwqble63bk7llhle",
+                "size": "177KB",
+                "date": "26/06/26",
+                "caption": "Japan: Tetsuo, The Iron Man"
+            },
+            {
+                "id": "52#23",
+                "title": "#23",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidxcf3wofzmrdaw5tac4zli2dza4azl4hv54dlwlbt5ds4wy7ebte",
+                "size": "139KB",
+                "date": "26/06/26",
+                "caption": "Sweden: Kung Fury (2015)"
+            },
+            {
+                "id": "52#24",
+                "title": "#24",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihzp6zm7ezlturpxspwvndcbh6erwzg65qxslpje4ktrv6xv7xpsq",
+                "size": "139KB",
+                "date": "26/06/26",
+                "caption": "Tunisia: Star Wars (1977)"
+            },
+            {
+                "id": "52#25",
+                "title": "#25",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibzy747eg5r23t7ogqt7p74urgwl6es3rwc2iteiphd2jtnm46oy4",
+                "size": "141KB",
+                "date": "27/06/26",
+                "caption": "Belgium: Man Bites Dog (1992)"
+            },
+            {
+                "id": "52#26",
+                "title": "#26",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib5t3vfyvwl2dzzsmeytbpzeyd3kzxhyzonisgtc2t3er2toijndu",
+                "size": "177KB",
+                "date": "27/06/26",
+                "caption": "Egypt: The Pyramid (2014)"
+            },
+            {
+                "id": "52#27",
+                "title": "#27",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihoaazcbhou6cuolq6jczyf7sxayqxvq6m6kwomxcao3gbkho6gse",
+                "size": "139KB",
+                "date": "27/06/26",
+                "caption": "Iran: A Girl Walks Home Alone At Night (2014)"
+            },
+            {
+                "id": "52#28",
+                "title": "#28",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiafjsgkrij7bfzzjlprcwvenft24yhyyn7ornan3taaxam5lblig4",
+                "size": "160KB",
+                "date": "27/06/26",
+                "caption": "New Zealand: Braindead (1992)"
+            },
+            {
+                "id": "52#29",
+                "title": "#29",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif547sydjdgz5hmrfayq2p4lk3faahrc4gtf64ogausalz3furaky",
+                "size": "148KB",
+                "date": "28/06/26",
+                "caption": "Spain: La Cabina (1972)"
+            },
+            {
+                "id": "52#30",
+                "title": "#30",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifvvraqlokxk44jhsdsxx5x7vqby767fdldb5zy3quorq7aqnrt6u",
+                "size": "123KB",
+                "date": "28/06/26",
+                "caption": "Cape Verde: Maresia (2026)"
+            },
+            {
+                "id": "52#31",
+                "title": "#31",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiecnkslago5pusajsmlpgr3tlx7pfkejym2r3pvf3louabzrh4coe",
+                "size": "112KB",
+                "date": "29/06/26",
+                "caption": "Uruguay: The Silent House (2010)"
+            },
+            {
+                "id": "52#32",
+                "title": "#32",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigvl7idsipummzofraq3unmqqwqqjr3adq2ubne4x5zmjkk6s7qxq",
+                "size": "141KB",
+                "date": "29/06/26",
+                "caption": "Saudi Arabia: The Cello (2023)"
+            },
+            {
+                "id": "52#33",
+                "title": "#33",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiclvhhnvc75mwitgdvoyzvccdtt264zbuf4iozeejlg6i77f6kxka",
+                "size": "119KB",
+                "date": "01/07/26",
+                "caption": "France: Eyes Without A Face (1960)"
+            },
+            {
+                "id": "52#34",
+                "title": "#34",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibhwj42pr6f7ndeqk5rcagq3sfocj2pm4725uevhinwnbdqe376vq",
+                "size": "108KB",
+                "date": "01/07/26",
+                "caption": "Norway: Trollhunter (2010)"
+            },
+            {
+                "id": "52#35",
+                "title": "#35",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifsxikhrvaqdq4h6rjpftqxig5x2hzwdy5r5kssjuu2r4w2axjbga",
+                "size": "102KB",
+                "date": "01/07/26",
+                "caption": "Senegal: Saloum (2021)"
+            },
+            {
+                "id": "52#36",
+                "title": "#36",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidvoysmbdxw63mjhk4fronpzkq7b4tb7w7eseyx6h3gp7vatw4vja",
+                "size": "138KB",
+                "date": "01/07/26",
+                "caption": "Iraq: The Exorcist (1973)"
+            },
+            {
+                "id": "52#37",
+                "title": "#37",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiertbwxxev4umgdi5s6hcswmdeugthycbpg5n2ptkb66ovbvohdu4",
+                "size": "104KB",
+                "date": "01/07/26",
+                "caption": "England: Shaun Of The Dead (2004)"
+            },
+            {
+                "id": "52#38",
+                "title": "#38",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicuy4flqg3i4pqq4hotmfi66dhe7vnyxrosikup6u7tw5iwp64sty",
+                "size": "170KB",
+                "date": "01/07/26",
+                "caption": "DR Congo: Congo (1995)"
+            },
+            {
+                "id": "52#39",
+                "title": "#39",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreic6x67mmduyj57mcok7ahrrz3d7mfzfpahp6m4qvem75qmgpidjrm",
+                "size": "147KB",
+                "date": "02/07/26",
+                "caption": "Argentina: Irreversible (2002)"
+            },
+            {
+                "id": "52#40",
+                "title": "#40",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigacylbiggsep63sn4v2znrehpqswwobol6s4ry4bse24qwmlxzya",
+                "size": "152KB",
+                "date": "02/07/26",
+                "caption": "Austria: Angst (1983)"
+            },
+            {
+                "id": "52#41",
+                "title": "#41",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreic46k3eksuvm62hch5ayqzkjfu5yenjhgsarkmrsz2pimg2nri35q",
+                "size": "133KB",
+                "date": "02/07/26",
+                "caption": "Algeria: The Battle Of Algiers (1966)"
+            },
+            {
+                "id": "52#42",
+                "title": "#42",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid6ike7ru7sjqpxgof2x6pma7a7pmt5y4pzuap4hd4ejs7j6hczfu",
+                "size": "134KB",
+                "date": "02/07/26",
+                "caption": "Jordan: The Martian (2015)"
+            },
+            {
+                "id": "52#43",
+                "title": "#43",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihz66ymnegsttud4gbbdmzcsc6znoaq3lnicy3hfbvsccmx4ty44a",
+                "size": "132KB",
+                "date": "03/07/26",
+                "caption": "Colombia: Scarface (1983)"
+            },
+            {
+                "id": "52#44",
+                "title": "#44",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidhjyu4e5hxa4szhzge2v7tpzysbjoi3yioxum4ehcivct3za3yii",
+                "size": "164KB",
+                "date": "04/07/26",
+                "caption": "Portugal: On Her Majesty's Secret Service (1969)"
+            },
+            {
+                "id": "52#45",
+                "title": "#45",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihpz7okdiqxas2c4dcu2p7qudzuzbeau6r3nkkvhiskmfdzh6agpi",
+                "size": "145KB",
+                "date": "04/07/26",
+                "caption": "Uzbekistan: The Dark Knight Rises (2012)"
+            },
+            {
+                "id": "52#46",
+                "title": "#46",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifhholtwcnv5a3py5xlcv62gk337piiju7tvtrkfqfie5ws2lu6qi",
+                "size": "149KB",
+                "date": "04/07/26",
+                "caption": "Croatia: Reptiloid (2013)"
+            },
+            {
+                "id": "52#47",
+                "title": "#47",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidn2cpadjgo4dmbygrhsuqirnfyde6wekhzue6ob5tbgnlhntolfe",
+                "size": "134KB",
+                "date": "04/07/26",
+                "caption": "Ghana: The Dead (2010)"
+            },
+            {
+                "id": "52#48",
+                "title": "#48",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiehwnkpea34lv2dlzgb5l6xmvghbtg73ajqlayfjxwod2ig363fim",
+                "size": "157KB",
+                "date": "04/07/26",
+                "caption": "Panama: Diablo Rojo (2019)"
+            }
         ]
     },
     "CURRENT_SETS": {
@@ -4569,6 +5213,14 @@ const database = {
                 "size": "49KB",
                 "date": "31/05/26",
                 "caption": "The Deadly Mantis (1957)"
+            },
+            {
+                "id": "15#18",
+                "title": "#18",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihvres4htyjwl6jcv3gwrn3chur4kxwtyx3ju75taxkljgw6hndte",
+                "size": "51KB",
+                "date": "01/07/26",
+                "caption": "Attack Of The 50ft Woman (1957)"
             }
         ],
         "Banned": [
@@ -4677,6 +5329,14 @@ const database = {
                 "caption": "Cannibal Ferox (1981)"
             },
             {
+                "id": "16#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib4p5gutldoaow5qi4ec3mlpwjvehpzi6vcny7ehsnbisxeienrxq",
+                "size": "120KB",
+                "date": "08/07/26",
+                "caption": "Cannibal Holocaust (1980)"
+            },
+            {
                 "id": "16#19",
                 "title": "#19",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidzct2lsiljrlbwfas5ya3srocyey73ywefbskjkibogqtjctk6ym",
@@ -4717,6 +5377,14 @@ const database = {
                 "size": "128KB",
                 "date": "07/06/26",
                 "caption": "'Xusia The Sorcerer', The Sword & The Sorcerer (1982)"
+            },
+            {
+                "id": "18#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiepprzyq47kbpgl7pxfyhpir23fyk5viibsq3ph6jf3wftucz35dy",
+                "size": "79KB",
+                "date": "01/07/26",
+                "caption": "'Deathstalker', Deathstalker (1983)"
             }
         ],
         "Cops_N_Robbers": [
@@ -4859,6 +5527,14 @@ const database = {
                 "caption": "Death Race 2000 (1975)"
             },
             {
+                "id": "20#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih6lyiyet5rzssriifqh2qhqsuorqkspkdlqsogjsfsqkiywl4eaq",
+                "size": "104KB",
+                "date": "04/07/26",
+                "caption": "Killdozer (1974)"
+            },
+            {
                 "id": "20#2FC",
                 "title": "#2FC",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif5ou5m5sfaczyzodtlzdt2n5x2mecnzq5jwncvhuavj2eardz5pe",
@@ -4947,6 +5623,14 @@ const database = {
                 "size": "200KB",
                 "date": "16/06/26",
                 "caption": "Robert Englund as Willie (1983)"
+            },
+            {
+                "id": "21#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigvqeru2xig7squ7ptaz2kes7bm5ymduro7emm5hqwnix2yhjhdlu",
+                "size": "202KB",
+                "date": "05/07/26",
+                "caption": "Malcolm McDowell As Mick Travis (1973)"
             },
             {
                 "id": "21#F13",
@@ -5053,6 +5737,14 @@ const database = {
                 "size": "148KB",
                 "date": "15/06/26",
                 "caption": "I Am Frankelda (2025)"
+            },
+            {
+                "id": "22#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia6cwracywy3wy5f7mm2pdlvsjeighxkprnzirciktoxsspdrph2q",
+                "size": "105KB",
+                "date": "06/07/26",
+                "caption": "Perfect Blue (1997)"
             }
         ],
         "David_Lynch_Series": [
@@ -5087,6 +5779,14 @@ const database = {
                 "size": "167KB",
                 "date": "19/06/26",
                 "caption": "Blue Velvet (1986)"
+            },
+            {
+                "id": "34#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigzhyuaztdwph3dvtsqdt2hjr4bsmlw5sq2vv3cioxwmpt3mg53u4",
+                "size": "172KB",
+                "date": "07/07/26",
+                "caption": "Wild At Heart (1990)"
             },
             {
                 "id": "34#FC",
@@ -5129,6 +5829,32 @@ const database = {
                 "size": "16MB",
                 "date": "11/06/2026",
                 "caption": "Day Of The Dead (1985)/(FM)"
+            }
+        ],
+        "Fright_Club_Features_V": [
+            {
+                "id": "53#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibmfllmaqwum6dqvwyjunpwwvuquormktaecxaunzqw32dbzkak6q",
+                "size": "132KB",
+                "date": "30/06/26",
+                "caption": "C.H.U.D. (1984)"
+            },
+            {
+                "id": "53#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifie7e3enuakfbxtzbrq4f7cjwpfdpxrnfkxxivwec7fmo75zeiqu",
+                "size": "113KB",
+                "date": "01/07/26",
+                "caption": "Seedpeople (1992)"
+            },
+            {
+                "id": "53#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihrmenlwxxpcwbljjy7rvcqv2jkhre5ybfskb7ume6b6jfeapv6la",
+                "size": "124KB",
+                "date": "02/07/26",
+                "caption": "Peeping Tom (1960)"
             }
         ],
         "Future_Shocks": [
@@ -5387,6 +6113,14 @@ const database = {
                 "size": "35KB",
                 "date": "15/06/26",
                 "caption": "Dracula (1958)"
+            },
+            {
+                "id": "51#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreighxckjk7h4mmxr7oy7zihz2mxd6ypz4er6bvg3z3uhwbjob2wz2a",
+                "size": "102KB",
+                "date": "02/07/26",
+                "caption": "The Revenge Of Frankenstein (1958)"
             }
         ],
         "Haunted_Houses": [
@@ -5971,6 +6705,14 @@ const database = {
                 "size": "98KB",
                 "date": "21/06/26",
                 "caption": "Hellbound: Hellraiser II (1988)"
+            },
+            {
+                "id": "37#06",
+                "title": "#06",
+                "file": "https://i.postimg.cc/6p2mFk15/6-Theatre-Of-Blood.gif",
+                "size": "30MB",
+                "date": "02/07/26",
+                "caption": "Theatre Of Blood (1973)"
             }
         ],
         "Monster_Machines": [
@@ -6165,6 +6907,88 @@ const database = {
                 "caption": "The NeverEnding Story (1984)"
             }
         ],
+        "Re-Animator": [
+            {
+                "id": "54#WW",
+                "title": "#WW",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreie4u4a4mvtusmt2cnwbfpamrtfmnkkxi4yf5vfdhd45gw3ndadsl4",
+                "size": "179KB",
+                "date": "30/06/26",
+                "caption": "Wax Wrapper, 'Re-Animator'"
+            },
+            {
+                "id": "54#T1",
+                "title": "#T1",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigayugnzhcfbqlcektaxrzvc5touwclo4e7m2vsy6c64tr5gptho4",
+                "size": "51KB",
+                "date": "01/07/26",
+                "caption": "Title Card, 'Re-Animator'"
+            },
+            {
+                "id": "54#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiencrjuzss2ia3cooelxrneweltiuojrqee5mndwm33jgejlckzqm",
+                "size": "141KB",
+                "date": "01/07/26",
+                "caption": "One Toke Over The Line!"
+            },
+            {
+                "id": "54#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihed5hlkwxyjhsikcdab54vdzfstxtaznkjeyj6nba5slxzm2punq",
+                "size": "95KB",
+                "date": "02/07/26",
+                "caption": "I Gave Him Life!"
+            },
+            {
+                "id": "54#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia4zbzhhvdnqpqlhbjqtv65tgoddqpu54fllzyp2hfsffofdmigqm",
+                "size": "129KB",
+                "date": "02/07/26",
+                "caption": "Nothing Between The Ears!"
+            },
+            {
+                "id": "54#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibxrvnj6alco2uydil33gq7dfhczygh5gld37peaemmeqsqncfpqi",
+                "size": "101KB",
+                "date": "03/07/26",
+                "caption": "Do We.. Have A Deal?"
+            },
+            {
+                "id": "54#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidwdrtywidldrhuwonjyi4ghjif7osa3mjcsdn42tac5nv5h42vhi",
+                "size": "112KB",
+                "date": "04/07/26",
+                "caption": "Herbert Vs. Doctor Hill!"
+            },
+            {
+                "id": "54#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiewuwnombfz7q5w7abg4mkotl24m6ssufoafrmks2ml3a22qjrkkq",
+                "size": "85KB",
+                "date": "04/07/26",
+                "caption": "Cat Dead, Details Later!"
+            },
+            {
+                "id": "54#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif6s4oamcfl2xjmtqnmc235dywhzmzm7jnpcofga2mpu654mm4vtq",
+                "size": "96KB",
+                "date": "07/07/26",
+                "caption": "West Re-Animates Rufus.."
+            },
+            {
+                "id": "54#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiff24xjcvfvzp27sym7p2tdbfealmascpyptt5l7kvmpmllwhzsay",
+                "size": "86KB",
+                "date": "08/07/26",
+                "caption": "Here's Your Meatball!"
+            }
+        ],
         "Rip-Offs": [
             {
                 "id": "42#01",
@@ -6207,6 +7031,32 @@ const database = {
                 "caption": "Starcrash (1978) "
             }
         ],
+        "Shaw_Brothers_Series": [
+            {
+                "id": "55#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieg4tr5uhyj4j5t42b24x7ft5irqe6boynsy5wpigs2f3kbxo7o2m",
+                "size": "178KB",
+                "date": "03/07/26",
+                "caption": "The 36th Chamber Of Shaolin (1978)"
+            },
+            {
+                "id": "55#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigbnmqr2vg4dadbrq5sefczfxve4k52luk7zjfupfnroth6ikibbu",
+                "size": "166KB",
+                "date": "05/07/26",
+                "caption": "The Five Deadly Venoms (1978)"
+            },
+            {
+                "id": "55#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreighurmodnejhxwnaivmilbhjlkrx4qtkh32ifj7bcwqcw624wzmcu",
+                "size": "163KB",
+                "date": "07/07/26",
+                "caption": "The Legend Of The 7 Golden Vampires (1974)"
+            }
+        ],
         "Single Scoops": [
             {
                 "id": "48#01",
@@ -6223,248 +7073,6 @@ const database = {
                 "size": "127KB",
                 "date": "02/06/26",
                 "caption": "Baskin (2015)"
-            }
-        ],
-        "Sorcerer": [
-            {
-                "id": "47#WW",
-                "title": "#WW",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidda27hxeb3mjtqp45gcqn7rqh6q4f5z667phov2vpvhdje6t5zei",
-                "size": "228KB",
-                "date": "31/05/26",
-                "caption": "Wax Wrapper, 'Sorcerer'"
-            },
-            {
-                "id": "47#T1",
-                "title": "#T1",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieikigcybqaxd3dukv3urhelhlkxt3a6kqlf2jrxnslez3s4xq6ei",
-                "size": "153KB",
-                "date": "01/06/26",
-                "caption": "Title Card, 'Sorcerer'"
-            },
-            {
-                "id": "47#01",
-                "title": "#01",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreig6sbrrp5tlnawwn3tgcg63hnb3vdnj64pngk3mcx5d4v2cvwlbmq",
-                "size": "171KB",
-                "date": "01/06/26",
-                "caption": "Nilo, The Contract Killer"
-            },
-            {
-                "id": "47#02",
-                "title": "#02",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreien2kgu62ik322jiqndvbyqb53yxggk5otk6hvhrfbdvjy3rbyaoe",
-                "size": "164KB",
-                "date": "02/06/26",
-                "caption": "Martinez, The Militant"
-            },
-            {
-                "id": "47#03",
-                "title": "#03",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifj2oigfjjquof4ycu7fgoowde6e3qymujfxnvcnugf6qo5jrnbia",
-                "size": "162KB",
-                "date": "03/06/26",
-                "caption": "Serrano, The Fraudster"
-            },
-            {
-                "id": "47#04",
-                "title": "#04",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreic45ek5jagwfkzaqscpwuz4qf6rirgztrnhwxlfweie4sbvz4vnte",
-                "size": "162KB",
-                "date": "04/06/26",
-                "caption": "Dominguez, The Getaway Driver"
-            },
-            {
-                "id": "47#05",
-                "title": "#05",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih7wnq7woim7i24l2jt22hxbndwitin2ijfclux4nijmgsr43vvdu",
-                "size": "174KB",
-                "date": "05/06/26",
-                "caption": "Pazuzu, The Wind Demon"
-            },
-            {
-                "id": "47#06",
-                "title": "#06",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreic7pvbvcyc4e65jtugej5jdycv2jmabfzh7m4wzmdv6dypbnbpwg4",
-                "size": "167KB",
-                "date": "06/06/26",
-                "caption": "Porvenir, A Squalid Oil Town"
-            },
-            {
-                "id": "47#07",
-                "title": "#07",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicfvib6naiaiqcmvlxvpwmpgsyafcdh27wye2jtuyk7hwrqvpuppi",
-                "size": "133KB",
-                "date": "07/06/26",
-                "caption": "Corepet, A Predatory Oil Firm"
-            },
-            {
-                "id": "47#08",
-                "title": "#08",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiawam426x4bkbrmyrt6vmazljqew6xwuvsmfmysdp2d7dmfmbp2xm",
-                "size": "162KB",
-                "date": "08/06/26",
-                "caption": "Serrano, Spies A New Arrival"
-            },
-            {
-                "id": "47#09",
-                "title": "#09",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidqmkqybhdichhshngygfforgjyvgilizkoumhp63z7u476ohmpby",
-                "size": "187KB",
-                "date": "09/06/26",
-                "caption": "Corepet, An Oil Well Explodes"
-            },
-            {
-                "id": "47#10",
-                "title": "#10",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieo7ygx6gin75texaeidd3hzhhmv6l6dz5ahdse5ffwh5kff4ozoe",
-                "size": "173KB",
-                "date": "11/06/26",
-                "caption": "Porvenir, The Village Revolts"
-            },
-            {
-                "id": "47#11",
-                "title": "#11",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibilg7qhfcc2revnlbxakstphnb2lg6wsnzc4vlcdcj2bknvsfcku",
-                "size": "159KB",
-                "date": "12/06/26",
-                "caption": "Corepet, Unstable Dynamite"
-            },
-            {
-                "id": "47#12",
-                "title": "#12",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiceqf5ee73jbnnocz3faktoukwqeat72umrcc2uppq4436wftd2zq",
-                "size": "161KB",
-                "date": "13/06/26",
-                "caption": "Peligro, The Truck Is Ready"
-            },
-            {
-                "id": "47#13",
-                "title": "#13",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibhbxh26otrlqb3pzdnjiyfvf7dxo6ehcmcjk5giak7qidzeerib4",
-                "size": "159KB",
-                "date": "14/06/26",
-                "caption": "Nilo, Assassinates Marquez"
-            },
-            {
-                "id": "47#14",
-                "title": "#14",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiebmx6rrvtbbvazt24c2j6emequ4awoutw24hjbaqwjzobxmpgmiy",
-                "size": "173KB",
-                "date": "14/06/26",
-                "caption": "Pazuzu, Chalked On Sorcier"
-            },
-            {
-                "id": "47#15",
-                "title": "#15",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihfoqwxx3m257sgrzj3wafxprkrfgcin4pekaxo7kfvu4ixa4c5ci",
-                "size": "175KB",
-                "date": "17/06/26",
-                "caption": "Dominguez, Climbs The Mountain"
-            },
-            {
-                "id": "47#16",
-                "title": "#16",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreielpn2b77iqw5c4m2utoev7qkuajwzgvig7fx5mhvsfaqrcanfbiy",
-                "size": "185KB",
-                "date": "17/06/26",
-                "caption": "Martinez, On The Wooden Bridge"
-            },
-            {
-                "id": "47#17",
-                "title": "#17",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibttlljca3mwmtvb6vvqkmz4ol5jhxo4zhah4bbd6gde6hzm6m5se",
-                "size": "176KB",
-                "date": "17/06/26",
-                "caption": "Nilo, Ponders His Fate"
-            },
-            {
-                "id": "47#18",
-                "title": "#18",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigpobt64pmhocz4kgjhuxsagv52uezx7lujoj25e7zogur7okhnti",
-                "size": "172KB",
-                "date": "18/06/26",
-                "caption": "Dominguez, Rides The Rope Bridge"
-            },
-            {
-                "id": "47#19",
-                "title": "#19",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifgy6f7k43rwb62bxdorcuforob2ku5zudvqykzxrgbfrkv6lqskm",
-                "size": "183KB",
-                "date": "19/06/26",
-                "caption": "Martinez, Examines The Barrier"
-            },
-            {
-                "id": "47#20",
-                "title": "#20",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifoffa34cg5qhyc7rsvspckkufgfkv5gmki4hvtovl24teg7w46lq",
-                "size": "199KB",
-                "date": "20/06/26",
-                "caption": "Martinez, Explodes The Barrier"
-            },
-            {
-                "id": "47#21",
-                "title": "#21",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiar7qhjorekyfsufnx3bxqfibtdcdycinhunmrfjndnmnlo32feha",
-                "size": "164KB",
-                "date": "22/06/26",
-                "caption": "Nilo, Dies On The Truck"
-            },
-            {
-                "id": "47#22",
-                "title": "#22",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif4iausgikqatyjjdrlyvzjdim3cwcxt5orbifmkfqtjsm3dyedsm",
-                "size": "152KB",
-                "date": "22/06/26",
-                "caption": "Dominguez, Runs Out Of Fuel"
-            },
-            {
-                "id": "47#23",
-                "title": "#23",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiempxbq2epy44kgfrksexznark7w3oevnogzvomexvq7hryxyojfm",
-                "size": "133KB",
-                "date": "23/06/26",
-                "caption": "Dominguez, Delivers The Dynamite"
-            },
-            {
-                "id": "47#24",
-                "title": "#24",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiafsvjlcmot3ibe4gqe4ci3v5477eoflopog2iza67hrz7iar4eri",
-                "size": "165KB",
-                "date": "24/06/26",
-                "caption": "Porvenir, The Mafia Arrives"
-            },
-            {
-                "id": "47#S1",
-                "title": "#S1",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiakhwdzcm7s63ntjk5trfy6b5625jhq7vkiegmowggdjicygiyoeq",
-                "size": "177KB",
-                "date": "26/06/26",
-                "caption": "Friedkin, Promotional Still"
-            },
-            {
-                "id": "47#S2",
-                "title": "#S2",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigxljz6sktyljrap3q2fi3hr2h44jmon6zeoxrpudijkemhntbduy",
-                "size": "155KB",
-                "date": "27/06/26",
-                "caption": "Scheider, As 'Jackie Scanlon'"
-            },
-            {
-                "id": "47#S3",
-                "title": "#S3",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieg5sgsq2gh42ktb7peqnhzx7zgirv3eoao5wj242a3i3zyjwg3ry",
-                "size": "170KB",
-                "date": "27/06/26",
-                "caption": "Poster, 'Wages Of Fear' Quad"
-            },
-            {
-                "id": "47#S4",
-                "title": "#S4",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicb7zi23qmymzme4a7x7lkbxbrdl4htrslakhjoufu6nctzcsmj74",
-                "size": "175KB",
-                "date": "29/06/26",
-                "caption": "Purgatory, A Drive Through Hell"
             }
         ],
         "Sticker Shots": [
@@ -6615,248 +7223,6 @@ const database = {
                 "caption": "Watership Down (1978)"
             }
         ],
-        "World_Cult_Series": [
-            {
-                "id": "52#01",
-                "title": "#01",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidpnxjp26nq25iozv3arfeiphhp3i4abea25lqqen6ykrc2frfzqm",
-                "size": "177KB",
-                "date": "11/06/26",
-                "caption": "Mexico: Cronos (1992)"
-            },
-            {
-                "id": "52#02",
-                "title": "#02",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigm3rtihc5nwmod5ycarlkc6kj76brqtdvv7y6cr6jq7cetlxkv2i",
-                "size": "140KB",
-                "date": "11/06/26",
-                "caption": "South Africa: District 9 (2009)"
-            },
-            {
-                "id": "52#03",
-                "title": "#03",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiehpiqgyr5ihur6nbitgn2s3n37se6vq6uz6fvhema5pdpej5q7jy",
-                "size": "161KB",
-                "date": "12/06/26",
-                "caption": "South Korea: Oldboy (2003)"
-            },
-            {
-                "id": "52#04",
-                "title": "#04",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiblbwxeu7cpys7ui3bg7qxal6hsynzfr7xsokocbwuyyhpnszp5fm",
-                "size": "138KB",
-                "date": "12/06/26",
-                "caption": "Czech Republic: Ikarie XB-1 (1963)"
-            },
-            {
-                "id": "52#05",
-                "title": "#05",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreig77bvsovxajpgcxy6yl2yuph5vx6d47dtocttttyni5dpojxvbgq",
-                "size": "169KB",
-                "date": "12/06/26",
-                "caption": "Canada: Scanners (1981)"
-            },
-            {
-                "id": "52#06",
-                "title": "#06",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiew44eciijcstzwwg7xir2tnalokyljzxgjkj4zjisoxrgbeachwu",
-                "size": "151KB",
-                "date": "13/06/26",
-                "caption": "Bosnia & Herzegovina: Variola Vera (1982)"
-            },
-            {
-                "id": "52#07",
-                "title": "#07",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaa26cgyfbp4x6wi4hns5odtw7ivghsnhfbpm66nfb5mr663jtngy",
-                "size": "145KB",
-                "date": "14/06/26",
-                "caption": "United States of America: The Warriors (1979)"
-            },
-            {
-                "id": "52#08",
-                "title": "#08",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaeactitqkuofv7zzpheaenkyaeneyujckjuimtjkdyj3zeh7mkya",
-                "size": "181KB",
-                "date": "15/06/26",
-                "caption": "Paraguay: 7 Cajas (2012)"
-            },
-            {
-                "id": "52#09",
-                "title": "#09",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidbjyfq7m362e3wo75h2n3d36ya7immps4cfkumb4n4tqpkavu3t4",
-                "size": "163KB",
-                "date": "17/06/26",
-                "caption": "Qatar: Al Tabbab (2020)"
-            },
-            {
-                "id": "52#10",
-                "title": "#10",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreianklpptv4i2td3tmvi2yfh5rrpzh6bvms54pqydrzxfltgkkhexa",
-                "size": "158KB",
-                "date": "21/06/26",
-                "caption": "Switzerland: Mad Heidi (2022)"
-            },
-            {
-                "id": "52#11",
-                "title": "#11",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid6cmibmdbuljyze7t3bwomd5k5lfqslsbhjmv5ya5utnpfu36fse",
-                "size": "137KB",
-                "date": "21/06/26",
-                "caption": "Brazil: At Midnight I'll Take Your Soul (1964)"
-            },
-            {
-                "id": "52#12",
-                "title": "#12",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifjtg57ue7u37tdbfha5m6z67lmv5y5eyr7cxqrffeqgpzz3s3azi",
-                "size": "145KB",
-                "date": "21/06/26",
-                "caption": "Morocco: Kandisha (2008)"
-            },
-            {
-                "id": "52#13",
-                "title": "#13",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibmqqeazfmx32kufn46jqnhmq4qspahuoosfcgsl6d7d2fh3sz5vq",
-                "size": "163KB",
-                "date": "21/06/26",
-                "caption": "Scotland: Dog Soldiers (2002)"
-            },
-            {
-                "id": "52#14",
-                "title": "#14",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihpwvfx3iyabo6vmsymqr4zybznkyqewna32dvb72grneqmvytbeq",
-                "size": "196KB",
-                "date": "22/06/26",
-                "caption": "Haiti: The Serpent & The Rainbow (1988)"
-            },
-            {
-                "id": "52#15",
-                "title": "#15",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiefwvcliilf2wr64epfe2t3hqq7ufqd7ihtofmghlzxigex2n5nmq",
-                "size": "163KB",
-                "date": "23/06/26",
-                "caption": "Australia: Wake In Fright (1971)"
-            },
-            {
-                "id": "52#16",
-                "title": "#16",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiej4xpc3s645ux7znew4xgiexhbhlehu5tzitibshlth2fv2twvpi",
-                "size": "168KB",
-                "date": "23/06/26",
-                "caption": "Turkey: Turkish Star Wars (1982)"
-            },
-            {
-                "id": "52#17",
-                "title": "#17",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreichy6l2vguetrsrj24u3hccfvs7sykkpyc627bcahvj3yyz5bc2pa",
-                "size": "129KB",
-                "date": "24/06/26",
-                "caption": "Germany: Run Lola Run (1998)"
-            },
-            {
-                "id": "52#18",
-                "title": "#18",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihru3gqgrh4mxsa44gfkdj4vvipxt5hc3k57lofzgq4lc6vi7dlre",
-                "size": "130KB",
-                "date": "24/06/26",
-                "caption": "Ivory Coast: Les Bronzés (1978)"
-            },
-            {
-                "id": "52#19",
-                "title": "#19",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid7hychm5rdaz274e2or5hbyzoiltekz7uog2zvmlcvqpgl6lj23i",
-                "size": "158KB",
-                "date": "25/05/26",
-                "caption": "Ecuador: Chuzalongo (2024)"
-            },
-            {
-                "id": "52#20",
-                "title": "#20",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihtawekwjllfgcc4xpm2q5n5t7rnqqhhjhz5ryd6fmcrmg2j6v5de",
-                "size": "158KB",
-                "date": "25/06/26",
-                "caption": "Curaçao: Buladó (2020)"
-            },
-            {
-                "id": "52#21",
-                "title": "#21",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihe7mrn2fdyqfnmzmd73tzqm5w6uhrhikd2b4np5cbeoabmlm7sxe",
-                "size": "149KB",
-                "date": "26/06/26",
-                "caption": "Netherlands: The Lift (1983)"
-            },
-            {
-                "id": "52#22",
-                "title": "#22",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidozpitkt5fu75b42pb2g2lct7pgneaxsorrczwqble63bk7llhle",
-                "size": "177KB",
-                "date": "26/06/26",
-                "caption": "Japan: Tetsuo, The Iron Man"
-            },
-            {
-                "id": "52#23",
-                "title": "#23",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidxcf3wofzmrdaw5tac4zli2dza4azl4hv54dlwlbt5ds4wy7ebte",
-                "size": "139KB",
-                "date": "26/06/26",
-                "caption": "Sweden: Kung Fury (2015)"
-            },
-            {
-                "id": "52#24",
-                "title": "#24",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihzp6zm7ezlturpxspwvndcbh6erwzg65qxslpje4ktrv6xv7xpsq",
-                "size": "139KB",
-                "date": "26/06/26",
-                "caption": "Tunisia: Star Wars (1977)"
-            },
-            {
-                "id": "52#25",
-                "title": "#25",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibzy747eg5r23t7ogqt7p74urgwl6es3rwc2iteiphd2jtnm46oy4",
-                "size": "141KB",
-                "date": "27/06/26",
-                "caption": "Belgium: Man Bites Dog (1992)"
-            },
-            {
-                "id": "52#26",
-                "title": "#26",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib5t3vfyvwl2dzzsmeytbpzeyd3kzxhyzonisgtc2t3er2toijndu",
-                "size": "177KB",
-                "date": "27/06/26",
-                "caption": "Egypt: The Pyramid (2014)"
-            },
-            {
-                "id": "52#27",
-                "title": "#27",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihoaazcbhou6cuolq6jczyf7sxayqxvq6m6kwomxcao3gbkho6gse",
-                "size": "139KB",
-                "date": "27/06/26",
-                "caption": "Iran: A Girl Walks Home Alone At Night (2014)"
-            },
-            {
-                "id": "52#28",
-                "title": "#28",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiafjsgkrij7bfzzjlprcwvenft24yhyyn7ornan3taaxam5lblig4",
-                "size": "160KB",
-                "date": "27/06/26",
-                "caption": "New Zealand: Braindead (1992)"
-            },
-            {
-                "id": "52#29",
-                "title": "#29",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif547sydjdgz5hmrfayq2p4lk3faahrc4gtf64ogausalz3furaky",
-                "size": "148KB",
-                "date": "28/06/26",
-                "caption": "Spain: La Cabina (1972)"
-            },
-            {
-                "id": "52#30",
-                "title": "#30",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifvvraqlokxk44jhsdsxx5x7vqby767fdldb5zy3quorq7aqnrt6u",
-                "size": "123KB",
-                "date": "28/06/26",
-                "caption": "Cape Verde: Maresia (2026)"
-            }
-        ],
         "Zombie_Nation": [
             {
                 "id": "44#01",
@@ -6897,6 +7263,14 @@ const database = {
                 "size": "127KB",
                 "date": "01/06/26",
                 "caption": "The Return Of The Living Dead (1985)"
+            },
+            {
+                "id": "44#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihfaomm7ovznt7vxeairsj74vquphyckxa54ccr2lgkoa7szdwpxy",
+                "size": "110KB",
+                "date": "01/07/26",
+                "caption": "Night Of The Comet (1984)"
             }
         ]
     },
@@ -7255,6 +7629,22 @@ const database = {
                 "size": "104KB",
                 "date": "23/06/26",
                 "caption": "Blue Thunder (1983)"
+            },
+            {
+                "id": "106#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:pljte7rmgtrxrgcgoywjwbdf/bafkreib4t6hjl7ft7pqkwp5pmzjmco64ex5irbozwgvc6nuanwp5sigxhm",
+                "size": "104KB",
+                "date": "01/07/26",
+                "caption": "Broken Arrow (1997)"
+            },
+            {
+                "id": "106#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:pljte7rmgtrxrgcgoywjwbdf/bafkreifvz3qp6zn5zpzm6c2bgdzpqruo52su7rrmun42j4eeznh6sfapfa",
+                "size": "88KB",
+                "date": "07/07/26",
+                "caption": "True Lies (1994)"
             }
         ],
         "Rollerball_Stickers_&_Rub-Offs": [
