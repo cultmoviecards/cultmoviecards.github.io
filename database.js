@@ -5829,6 +5829,14 @@ const database = {
                 "size": "16MB",
                 "date": "11/06/2026",
                 "caption": "Day Of The Dead (1985)/(FM)"
+            },
+            {
+                "id": "23#05",
+                "title": "#05",
+                "file": "https://i.postimg.cc/13n7sJb7/5-Friday-The-13th.gif",
+                "size": "28MB",
+                "date": "09/07/2026",
+                "caption": "Friday The 13th (1980)/(FM)"
             }
         ],
         "Fright_Club_Features_V": [
@@ -5855,6 +5863,14 @@ const database = {
                 "size": "124KB",
                 "date": "02/07/26",
                 "caption": "Peeping Tom (1960)"
+            },
+            {
+                "id": "53#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihdtf7x4b4zwmcrc7tkswno2zxquzaknfxgrw6s3sdqjv5f2qg5sq",
+                "size": "142KB",
+                "date": "09/07/26",
+                "caption": "Ghost Shark (2013)"
             }
         ],
         "Future_Shocks": [
