@@ -5663,6 +5663,14 @@ const database = {
                 "size": "214kb",
                 "date": "20/05/26",
                 "caption": "George Eastman as Vood (1983)"
+            },
+            {
+                "id": "21#RIP3",
+                "title": "#RIP3",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidbpmqrq4l627wtkkhval5ovaxlszewkllrzoc7qek7pcrkspee3u",
+                "size": "221KB",
+                "date": "13/07/26",
+                "caption": "Sam Neill as Dr. Alan Grant (1993)"
             }
         ],
         "Cultoons": [
@@ -5871,6 +5879,14 @@ const database = {
                 "size": "142KB",
                 "date": "09/07/26",
                 "caption": "Ghost Shark (2013)"
+            },
+            {
+                "id": "53#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiamqeis6zn3henhgywtcwy5tlvmixj72qmk26q6q5kcdej3b3lmyu",
+                "size": "126KB",
+                "date": "15/07/26",
+                "caption": "Demons 2 (1986)"
             }
         ],
         "Future_Shocks": [
@@ -5939,6 +5955,14 @@ const database = {
                 "caption": "The 10th Victim (1965)"
             },
             {
+                "id": "26#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidqpgf3rgbiyvsl76vinnbdecpeu4n2lroald4dpylnl7hoappvdu",
+                "size": "131KB",
+                "date": "10/07/26",
+                "caption": "The Salute Of The Jugger (1989)"
+            },
+            {
                 "id": "26#FC",
                 "title": "#FC",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib7gm4xtonri6ghda6lqnvsb4ydipth4j7u26nmlyjzcgskbng46a",
@@ -6003,6 +6027,14 @@ const database = {
                 "size": "169KB",
                 "date": "02/06/26",
                 "caption": "Deep Red (1975)"
+            },
+            {
+                "id": "27#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif3tsurvar3ged2cejqg3abco2do5audbhuv4ptfk43mzx4qhffiy",
+                "size": "82KB",
+                "date": "11/07/26",
+                "caption": "Blood And Black Lace (1964)"
             }
         ],
         "Gothik_Ghouls": [
@@ -6021,6 +6053,14 @@ const database = {
                 "size": "112KB",
                 "date": "15/06/26",
                 "caption": "Vampyros Lesbos (1971)"
+            },
+            {
+                "id": "46#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihvt75d2q64w5uv2abfin7m4e7aivq2odaou4sv2oqqsdmecinaai",
+                "size": "84KB",
+                "date": "12/07/26",
+                "caption": "The Velvet Vampire (1971)"
             }
         ],
         "H_P_Lovecraft_Series": [
@@ -6079,6 +6119,14 @@ const database = {
                 "size": "160KB",
                 "date": "11/06/26",
                 "caption": "Dagon (2001)"
+            },
+            {
+                "id": "33#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreig45nrwdmhqnxejtouwt5pn43pn7eze3afj2hypze4zrzrazifmfe",
+                "size": "158KB",
+                "date": "13/07/26",
+                "caption": "In The Mouth Of Madness (1994)"
             }
         ],
         "Hammer_Series": [
@@ -6137,6 +6185,14 @@ const database = {
                 "size": "102KB",
                 "date": "02/07/26",
                 "caption": "The Revenge Of Frankenstein (1958)"
+            },
+            {
+                "id": "51#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiddpvgwumtsb336l22qiampl36zoia73l7bqq5sgzbo57jrbu5b7u",
+                "size": "137KB",
+                "date": "14/07/26",
+                "caption": "The Hound Of The Baskervilles (1959)"
             }
         ],
         "Haunted_Houses": [
@@ -6195,6 +6251,14 @@ const database = {
                 "size": "118KB",
                 "date": "10/06/26",
                 "caption": "The Legend Of Hell House (1973)"
+            },
+            {
+                "id": "28#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifouxmig2qxurxfabknnjrf2hc2twefhmjgeqeudy7hcswn5wcpiu",
+                "size": "113KB",
+                "date": "15/07/26",
+                "caption": "House (1985)"
             }
         ],
         "Hexy_Beasts": [
@@ -6277,6 +6341,14 @@ const database = {
                 "size": "63KB",
                 "date": "18/06/26",
                 "caption": "Eye Of The Devil (1966)"
+            },
+            {
+                "id": "29#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreickcvd6nnkhw7qwckp7ayejczyqv2fg6jkwoyvyj5giqnioioukla",
+                "size": "53KB",
+                "date": "16/07/26",
+                "caption": "Penda's Fen (1974)"
             }
         ],
         "Invaders!": [
@@ -6367,6 +6439,14 @@ const database = {
                 "size": "75KB",
                 "date": "23/06/26",
                 "caption": "Strange Invaders (1983)"
+            },
+            {
+                "id": "30#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidwia7rijsbotwwg5ngo3k7zqz2dt4htr65q54qcojtbpgqxoknbq",
+                "size": "114KB",
+                "date": "17/07/26",
+                "caption": "Lifeforce (1985)"
             },
             {
                 "id": "30#FC",
@@ -6837,6 +6917,24 @@ const database = {
                 "caption": "The Stepford Wives (1975)"
             }
         ],
+        "Musical_Madness": [
+            {
+                "id": "56#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih3p2zeshzskthbhf7jzv7g4wlqhdzfod5a3ooiew4hayjdubmnra",
+                "size": "179KB",
+                "date": "16/07/26",
+                "caption": "The Acid Queen, Tommy (1975)"
+            },
+            {
+                "id": "56#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib2zgsi4kc4cv76t7zkdgyh67bpuznpcdkmkyo3pv2ubxnd4r5wlq",
+                "size": "158KB",
+                "date": "17/07/26",
+                "caption": "Hedwig Robinson, Hedwig & The Angry Itch (2001)"
+            }
+        ],
         "Mytho-Litho": [
             {
                 "id": "50#01",
@@ -7011,6 +7109,62 @@ const database = {
                 "size": "90KB",
                 "date": "09/07/26",
                 "caption": "Dean Halsey Meets Melvin!"
+            },
+            {
+                "id": "54#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaugxnjt5zdtulnr2fxduc66zy7ckdwuwevux6pxcgjifzvu2llle",
+                "size": "123KB",
+                "date": "10/07/26",
+                "caption": "Melvin Eats Dean Halsey!"
+            },
+            {
+                "id": "54#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih772unjnjdlhm33uusws3cm5mun3xrzmh75wnkauf2wwmbwsjawe",
+                "size": "111KB",
+                "date": "12/07/26",
+                "caption": "Melvin Is De-Animated!"
+            },
+            {
+                "id": "54#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieha3csgiwf7ressgj7whdkeolivooyretvknsnabxtvqclhnkd3a",
+                "size": "97KB",
+                "date": "13/07/26",
+                "caption": "Welcome Back To Life!"
+            },
+            {
+                "id": "54#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidh44ffju2pwy4bfw64b2vrvlox4cgsex2wduk2oeexzqdydw6p2y",
+                "size": "76KB",
+                "date": "15/07/26",
+                "caption": "I Need It!"
+            },
+            {
+                "id": "54#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigu4h7thmvcy44eu7lzjora2ir3h6rbipilfvuvvanynons6hln54",
+                "size": "90KB",
+                "date": "15/07/26",
+                "caption": "Dr. Hill Experiments.."
+            },
+            {
+                "id": "54#15",
+                "title": "#15",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigxa7b2ymhptnkzztjdg3gux7msuh74bukiobjinqwolwctcy6my4",
+                "size": "88KB",
+                "date": "16/07/26",
+                "caption": "I Want To See Your Notes.."
+            },
+            {
+                "id": "54#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreickf3r43kkmu6xpkn5fddzypcdud5lbanrcgevrddsxqn47gj4v6q",
+                "size": "86KB",
+                "date": "16/07/26",
+                "caption": "Plagiarist!!"
             }
         ],
         "Rip-Offs": [
@@ -7669,6 +7823,14 @@ const database = {
                 "size": "88KB",
                 "date": "07/07/26",
                 "caption": "True Lies (1994)"
+            },
+            {
+                "id": "106#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:pljte7rmgtrxrgcgoywjwbdf/bafkreic3pnugneuwqmnteti5gjc3f7zjxs2qnmtxzwk7pyyz735so5u6bm",
+                "size": "125KB",
+                "date": "15/07/26",
+                "caption": "Mission: Impossible (1996)"
             }
         ],
         "Rollerball_Stickers_&_Rub-Offs": [
