@@ -5683,6 +5683,14 @@ const database = {
                 "size": "79KB",
                 "date": "01/07/26",
                 "caption": "'Deathstalker', Deathstalker (1983)"
+            },
+            {
+                "id": "18#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiesww7eqgklfiw7dl3gphqcmkom5p36u7mougcagaih3nqteu54im",
+                "size": "60KB",
+                "date": "02/08/26",
+                "caption": "'Lord Of Darkness', Legend (1985)"
             }
         ],
         "Cops_N_Robbers": [
@@ -7696,6 +7704,14 @@ const database = {
             }
         ],
         "Ultimate_Series": [
+            {
+                "id": "62#98",
+                "title": "#98",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreie4fhtwqpimdx2edcrz6rfjbcswndwinjwbazzmydla5q4ywsvm5m",
+                "size": "89KB",
+                "date": "02/08/26",
+                "caption": "Serial Mom (1994)"
+            },
             {
                 "id": "62#99",
                 "title": "#99",
