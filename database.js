@@ -5725,6 +5725,14 @@ const database = {
                 "size": "115KB",
                 "date": "11/06/26",
                 "caption": "To Live And Die In L.A. (1985)"
+            },
+            {
+                "id": "19#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibbfn3zzbtdmb6ijx2pjgwloh62zjjfkzuy45gaek6s54ys6yzeni",
+                "size": "72KB",
+                "date": "03/08/26",
+                "caption": "Cobra (1986)"
             }
         ],
         "Creepshow": [
@@ -5759,6 +5767,22 @@ const database = {
                 "size": "158KB",
                 "date": "02/08/26",
                 "caption": "The Creep, Horrid Host"
+            },
+            {
+                "id": "61#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicmxwd457bpsxq27fm7ab6rlm6ty74wkchgkwq7j5sgehamrkdsk4",
+                "size": "162KB",
+                "date": "03/08/26",
+                "caption": "Bedelia Grantham, Ashtray Avenger"
+            },
+            {
+                "id": "61#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiciprnioaqpsqt23gotqnrdllt76ott2uqpix4kzwb5bz7ya4nryy",
+                "size": "160KB",
+                "date": "04/08/26",
+                "caption": "Hank Blaine, Graveyard Shift"
             }
         ],
         "Cult_Carnage": [
@@ -5873,6 +5897,14 @@ const database = {
                 "size": "104KB",
                 "date": "04/07/26",
                 "caption": "Killdozer (1974)"
+            },
+            {
+                "id": "20#15",
+                "title": "#15",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidzpslrd47zsfymadz3zktksqzfukgscvkpucg443ma77cz7koevu",
+                "size": "105KB",
+                "date": "04/08/26",
+                "caption": "Phantasm: Ravager (2016)"
             },
             {
                 "id": "20#2FC",
@@ -6299,6 +6331,14 @@ const database = {
                 "size": "111KB",
                 "date": "31/07/26",
                 "caption": "The Evil Dead (1981)"
+            },
+            {
+                "id": "53#15",
+                "title": "#15",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidakfkqvpti7lcjahuzb2mojohy6o62ieylbknxvipetxrehyqr4u",
+                "size": "103KB",
+                "date": "03/08/26",
+                "caption": "Blood Surf (2000)"
             }
         ],
         "Future_Shocks": [
@@ -7615,6 +7655,14 @@ const database = {
                 "size": "105KB",
                 "date": "31/07/26",
                 "caption": "A Nightmare On Elm Street (1984)"
+            },
+            {
+                "id": "60#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidrieou5ilijdnhcoeiawe2c4s6qrsi5ozwb7hzeve7wtwhkolmoa",
+                "size": "84KB",
+                "date": "04/08/26",
+                "caption": "The Texas Chainsaw Massacre (1974)"
             }
         ],
         "Sports_Legends": [
@@ -7727,6 +7775,24 @@ const database = {
                 "size": "95KB",
                 "date": "01/08/26",
                 "caption": "Night Moves (1975)"
+            }
+        ],
+        "Vincent_Price_Series": [
+            {
+                "id": "63#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreig5adatmn5n3xfzlbvsx2nr3tysqzkrsq4s62wdjghqsj6dwq2igm",
+                "size": "86KB",
+                "date": "03/08/26",
+                "caption": "House Of Usher (1960)"
+            },
+            {
+                "id": "63#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibq5xdr5marowysvycosobbaoirczhaerhj4mx7ruornyxiyvvmd4",
+                "size": "115KB",
+                "date": "04/08/26",
+                "caption": "Tower Of London (1939)"
             }
         ],
         "Void_Wars": [
