@@ -5783,6 +5783,30 @@ const database = {
                 "size": "160KB",
                 "date": "04/08/26",
                 "caption": "Hank Blaine, Graveyard Shift"
+            },
+            {
+                "id": "61#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieniftjixs6ehnridh2jm7tadks3r6ef3dhqt5awkxbp77tb7bt7i",
+                "size": "186KB",
+                "date": "05/08/26",
+                "caption": "Nathan Grantham, Fussy Eater"
+            },
+            {
+                "id": "61#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidfbb6i6ueyye4wmgbgmym24tz66uobyezla6jajdqw6ubahlt56a",
+                "size": "160KB",
+                "date": "06/08/26",
+                "caption": "Sylvia Grantham, Proud Father"
+            },
+            {
+                "id": "61#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiewki6xlpxr5hlloussc7k6fn5ed6orgd3hjpvl4xsvbaqg3ezwca",
+                "size": "143KB",
+                "date": "07/08/26",
+                "caption": "Jordy Verrill, Lunkhead Deluxe"
             }
         ],
         "Cult_Carnage": [
@@ -6005,6 +6029,14 @@ const database = {
                 "caption": "Malcolm McDowell As Mick Travis (1973)"
             },
             {
+                "id": "21#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiczun7swzm7ao6s5pbgf2yo2jhzwpp4t6k7rvvj72daitzefh3txe",
+                "size": "190KB",
+                "date": "05/08/26",
+                "caption": "Tony Todd as Candyman"
+            },
+            {
                 "id": "21#F13",
                 "title": "#F13",
                 "file": "https://i.postimg.cc/Zn7jYQNk/F13-Kane-Hodder.png",
@@ -6125,6 +6157,14 @@ const database = {
                 "size": "105KB",
                 "date": "06/07/26",
                 "caption": "Perfect Blue (1997)"
+            },
+            {
+                "id": "22#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihcfddckpnfxepdcu5zc7s4lkrm37dypkqoyn6freorvwagyft7ay",
+                "size": "106KB",
+                "date": "06/08/26",
+                "caption": "Son Of The White Mare (1981)"
             }
         ],
         "David_Lynch_Series": [
@@ -6167,6 +6207,14 @@ const database = {
                 "size": "172KB",
                 "date": "07/07/26",
                 "caption": "Wild At Heart (1990)"
+            },
+            {
+                "id": "34#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid6u7f6capmubllglx3gl24nwhyy5j6ovaz5bow7334kpldd4dw7e",
+                "size": "171KB",
+                "date": "07/08/26",
+                "caption": "Twin Peaks: Fire Walk With Me (1992)"
             },
             {
                 "id": "34#FC",
@@ -6217,6 +6265,14 @@ const database = {
                 "size": "28MB",
                 "date": "09/07/2026",
                 "caption": "Friday The 13th (1980)/(FM)"
+            },
+            {
+                "id": "23#06",
+                "title": "#06",
+                "file": "https://i.postimg.cc/Znb7pbH8/6-An-American-Werewolf-In-London.gif",
+                "size": "14MB",
+                "date": "08/08/2026",
+                "caption": "An American Werewolf In London (1981)"
             }
         ],
         "Fright_Club_Features_V": [
@@ -6339,6 +6395,14 @@ const database = {
                 "size": "103KB",
                 "date": "03/08/26",
                 "caption": "Blood Surf (2000)"
+            },
+            {
+                "id": "53#16",
+                "title": "#16",
+                "file": "https://i.postimg.cc/BnrKRmdV/16-The-Amityville-Horror.gif",
+                "size": "20MB",
+                "date": "05/08/2026",
+                "caption": "The Amityville Horror (1979)"
             }
         ],
         "Future_Shocks": [
@@ -7751,7 +7815,41 @@ const database = {
                 "caption": "Flash Gordon (1980)"
             }
         ],
+        "Tales_From_The_Crypt": [
+            {
+                "id": "64#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigmn7cyn35u2gcn2o3f7l7dzkjy3uxnnhxa76jzmo34oodivzexgu",
+                "size": "132KB",
+                "date": "06/08/26",
+                "caption": "Niles Talbot, Voltage Vigilante"
+            },
+            {
+                "id": "64#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigxvmyw4es66k2xdslcpsal3hzfbyex5z2meknsjcs4p5d74xoi3m",
+                "size": "149KB",
+                "date": "06/08/26",
+                "caption": "Killer Santa, Lapland's Finest"
+            },
+            {
+                "id": "64#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigjiznprrwuqqdydafmvztnsvz5matyyfe5jtviz2r6j6yhfocwyu",
+                "size": "130KB",
+                "date": "06/08/26",
+                "caption": "Ulric The Undying, 8 Lives Of A Cat"
+            }
+        ],
         "Ultimate_Series": [
+            {
+                "id": "62#97",
+                "title": "#97",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieuigqjmlhzypoyuft4h26gdpoddcw5bvummfxbq2fytepdpjcvhu",
+                "size": "85KB",
+                "date": "07/08/26",
+                "caption": "A Scanner Darkly (2006)"
+            },
             {
                 "id": "62#98",
                 "title": "#98",
