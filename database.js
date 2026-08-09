@@ -5807,6 +5807,22 @@ const database = {
                 "size": "143KB",
                 "date": "07/08/26",
                 "caption": "Jordy Verrill, Lunkhead Deluxe"
+            },
+            {
+                "id": "61#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigsmna5xy2am7bwesly3k2kwuxz5jatydjqhnaofbz27c4g6pqmym",
+                "size": "184KB",
+                "date": "08/08/26",
+                "caption": "The Doctor, Sadistic Surgeon"
+            },
+            {
+                "id": "61#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicnd52apqco43h7sjsbyldnbwfqxlevirew6q5jj6kkk4izvi6xbe",
+                "size": "178KB",
+                "date": "09/08/26",
+                "caption": "Jordy Verrill, Human Houseplant"
             }
         ],
         "Cult_Carnage": [
@@ -6229,25 +6245,25 @@ const database = {
             {
                 "id": "23#01",
                 "title": "#01",
-                "file": "https://drive.proton.me/urls/M5XHN4RGNG#rMO7hHgksZLK",
-                "size": "3KB",
-                "date": "30/07/2026",
+                "file": "https://i.postimg.cc/mgsBW9hL/1-Big-Trouble-In-Little-China.gif",
+                "size": "41MB",
+                "date": "10/05/2026",
                 "caption": "Big Trouble In Little China (1986)/(FM)"
             },
             {
                 "id": "23#02",
                 "title": "#02",
                 "file": "https://i.postimg.cc/CLwcyLS0/2-From-Dusk-Til-Dawn.gif",
-                "size": "15227kb",
-                "date": "26/04/26",
+                "size": "15MB",
+                "date": "10/05/2026",
                 "caption": "From Dusk Till Dawn (1996)/(FM)"
             },
             {
                 "id": "23#03",
                 "title": "#03",
                 "file": "https://i.postimg.cc/FRcLzcbn/3-Beetlejuice.gif",
-                "size": "20964kb",
-                "date": "28/04/26",
+                "size": "20MB",
+                "date": "10/05/2026",
                 "caption": "Beetlejuice (1988)/(FM)"
             },
             {
@@ -6272,7 +6288,7 @@ const database = {
                 "file": "https://i.postimg.cc/Znb7pbH8/6-An-American-Werewolf-In-London.gif",
                 "size": "14MB",
                 "date": "08/08/2026",
-                "caption": "An American Werewolf In London (1981)"
+                "caption": "An American Werewolf In London (1981)(FM)"
             }
         ],
         "Fright_Club_Features_V": [
@@ -6403,6 +6419,14 @@ const database = {
                 "size": "20MB",
                 "date": "05/08/2026",
                 "caption": "The Amityville Horror (1979)"
+            },
+            {
+                "id": "53#17",
+                "title": "#17",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibqdirib3k7zstznvqpava4neadmkfuy7z2qqq2meg57nayqn4yru",
+                "size": "130KB",
+                "date": "09/08/26",
+                "caption": "Eaten Alive (1976)"
             }
         ],
         "Future_Shocks": [
@@ -7013,6 +7037,14 @@ const database = {
                 "size": "220KB",
                 "date": "17/07/26",
                 "caption": "New York Ninja (1984/2021)"
+            },
+            {
+                "id": "45#RO",
+                "title": "#RO",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibbekswxfzi4ldi5umb7npboabtl46aaynfu4fs7flqwrt5y4i2vi",
+                "size": "179KB",
+                "date": "08/08/26",
+                "caption": "Ninja Terminator (1985)"
             }
         ],
         "Killer_Queens": [
@@ -7813,6 +7845,14 @@ const database = {
                 "size": "133KB",
                 "date": "25/07/26",
                 "caption": "Flash Gordon (1980)"
+            },
+            {
+                "id": "58#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiekkw37asbzilbaqfucxeef5tohma3zbmjhlg3wyphb2kgkoj6tyi",
+                "size": "147KB",
+                "date": "09/08/26",
+                "caption": "The Princess Bride (1987)"
             }
         ],
         "Tales_From_The_Crypt": [
@@ -7842,6 +7882,14 @@ const database = {
             }
         ],
         "Ultimate_Series": [
+            {
+                "id": "62#96",
+                "title": "#96",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreickqmm7p5tetdh7ijzas3mzg6beuq7wyyxzt2lxuqj4ndxpl4wetq",
+                "size": "70KB",
+                "date": "08/08/26",
+                "caption": "The Quick & The Dead (1995)"
+            },
             {
                 "id": "62#97",
                 "title": "#97",
@@ -7891,6 +7939,14 @@ const database = {
                 "size": "115KB",
                 "date": "04/08/26",
                 "caption": "Tower Of London (1939)"
+            },
+            {
+                "id": "63#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieeiz2fjn43k4ba4imsxtm7d3hyn5g3ddz56mc5aiqu23qbm5axeu",
+                "size": "73KB",
+                "date": "09/08/26",
+                "caption": "House Of Wax (1953)"
             }
         ],
         "Void_Wars": [
@@ -8495,6 +8551,14 @@ const database = {
                 "size": "127KB",
                 "date": "30/07/26",
                 "caption": "Stone Cold (1991)"
+            },
+            {
+                "id": "106#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:pljte7rmgtrxrgcgoywjwbdf/bafkreib4mfsnjjcdxroh5tlvenucj6pdbx4gjo664cs72b735reaio4hoy",
+                "size": "167KB",
+                "date": "09/08/26",
+                "caption": "Alien: Rubicon (2024)"
             }
         ],
         "Rollerball_Stickers_&_Rub-Offs": [
