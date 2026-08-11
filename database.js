@@ -5823,6 +5823,14 @@ const database = {
                 "size": "178KB",
                 "date": "09/08/26",
                 "caption": "Jordy Verrill, Human Houseplant"
+            },
+            {
+                "id": "61#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiempuq4wjcjg6wbeutf6rpfan5ygv7obfaqavkohjoixizvlq4kte",
+                "size": "174KB",
+                "date": "10/08/26",
+                "caption": "Jordy Verrill, Cereal Killer"
             }
         ],
         "Cult_Carnage": [
@@ -6091,6 +6099,14 @@ const database = {
                 "size": "221KB",
                 "date": "13/07/26",
                 "caption": "Sam Neill as Dr. Alan Grant (1993)"
+            },
+            {
+                "id": "21#RIP4",
+                "title": "#RIP4",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreier6gtiqfaxidixpfwvx3l3o7b74kl2ja2mvp6gki7yxmfziomo5q",
+                "size": "187KB",
+                "date": "11/08/26",
+                "caption": "Reggie Bannister as Reggie (1979)"
             }
         ],
         "Cultoons": [
@@ -6418,7 +6434,7 @@ const database = {
                 "file": "https://i.postimg.cc/BnrKRmdV/16-The-Amityville-Horror.gif",
                 "size": "20MB",
                 "date": "05/08/2026",
-                "caption": "The Amityville Horror (1979)"
+                "caption": "The Amityville Horror (1979)(FM)"
             },
             {
                 "id": "53#17",
@@ -6427,6 +6443,14 @@ const database = {
                 "size": "130KB",
                 "date": "09/08/26",
                 "caption": "Eaten Alive (1976)"
+            },
+            {
+                "id": "53#18",
+                "title": "#18",
+                "file": "https://i.postimg.cc/fLWZq7Hk/18-The-Company-Of-Wolves-comp.gif",
+                "size": "12MB",
+                "date": "10/08/26",
+                "caption": "The Company Of Wolves (1984)"
             }
         ],
         "Future_Shocks": [
@@ -6503,6 +6527,14 @@ const database = {
                 "caption": "The Salute Of The Jugger (1989)"
             },
             {
+                "id": "26#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigukzgny4yp4ksduvyazivjvtqb773ies2ak7grfuojb7qljujjs4",
+                "size": "135KB",
+                "date": "10/08/26",
+                "caption": "Johnny Mnemonic (1995)"
+            },
+            {
                 "id": "26#FC",
                 "title": "#FC",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib7gm4xtonri6ghda6lqnvsb4ydipth4j7u26nmlyjzcgskbng46a",
@@ -6575,6 +6607,14 @@ const database = {
                 "size": "82KB",
                 "date": "11/07/26",
                 "caption": "Blood And Black Lace (1964)"
+            },
+            {
+                "id": "27#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihg7jvnnpx7hvetan5diblxrqf2emheljayud3alsndpbkwn2dnee",
+                "size": "138KB",
+                "date": "11/08/26",
+                "caption": "Stage Fright (1987)"
             }
         ],
         "Gothik_Ghouls": [
