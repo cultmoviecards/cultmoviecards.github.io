@@ -5831,6 +5831,14 @@ const database = {
                 "size": "174KB",
                 "date": "10/08/26",
                 "caption": "Jordy Verrill, Cereal Killer"
+            },
+            {
+                "id": "61#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihiojnvaha3xu6fja7pioargdlip4p5rg4pesymksvjbqgpniodpm",
+                "size": "179KB",
+                "date": "11/08/26",
+                "caption": "Harry Wentworth, In A Pinch"
             }
         ],
         "Cult_Carnage": [
@@ -6641,6 +6649,14 @@ const database = {
                 "size": "84KB",
                 "date": "12/07/26",
                 "caption": "The Velvet Vampire (1971)"
+            },
+            {
+                "id": "46#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihhmcvf5bgzukxovtxamd7miwgferd5q44trhshqm4cxc54bgdsz4",
+                "size": "62KB",
+                "date": "12/08/26",
+                "caption": "Lips Of Blood (1975)"
             }
         ],
         "H_P_Lovecraft_Series": [
@@ -7922,6 +7938,14 @@ const database = {
             }
         ],
         "Ultimate_Series": [
+            {
+                "id": "62#95",
+                "title": "#95",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibdlwz7ku6ud7z4stx3hbnqnvnaks3wd5ky77dc4pwwjhi3hxiknq",
+                "size": "82KB",
+                "date": "11/08/26",
+                "caption": "Valerie And Her Week Of Wonders (1970)"
+            },
             {
                 "id": "62#96",
                 "title": "#96",
