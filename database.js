@@ -5839,6 +5839,38 @@ const database = {
                 "size": "179KB",
                 "date": "11/08/26",
                 "caption": "Harry Wentworth, In A Pinch"
+            },
+            {
+                "id": "61#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiftcpi7gjj2guiagtl3abdsqj3mytzrxpsgbdfrkjlaev4uvqmsnu",
+                "size": "143KB",
+                "date": "12/08/26",
+                "caption": "Harry Wentworth, Freediving Novice"
+            },
+            {
+                "id": "61#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihjfmmqs664vc7icz2lnwj3h5yzydvtcebn7ygszuebxnn6qyy4f4",
+                "size": "157KB",
+                "date": "13/08/26",
+                "caption": "Harry & Rebecca, Blub-Blub-Blub"
+            },
+            {
+                "id": "61#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif365zrlnufgjeim36l6cjxdlgj37cb7glf26adfuu6rpbox2sdxq",
+                "size": "164KB",
+                "date": "14/08/26",
+                "caption": "Richard Vickers, Beach Buoy"
+            },
+            {
+                "id": "61#15",
+                "title": "#15",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieokn6fcdvoczmr3m4vzca427bci2h2jt3jqgsv5iuulq5czjfyyy",
+                "size": "143KB",
+                "date": "15/08/26",
+                "caption": "Mike Latimer, Aperitif"
             }
         ],
         "Cult_Carnage": [
@@ -6459,6 +6491,22 @@ const database = {
                 "size": "12MB",
                 "date": "10/08/26",
                 "caption": "The Company Of Wolves (1984)"
+            },
+            {
+                "id": "53#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiex47hpafnevyn33dxk6xdgtsfossnynjopgebdxy4rx7wjtwgwmi",
+                "size": "110KB",
+                "date": "12/08/26",
+                "caption": "Amityville II: The Possession (1982)"
+            },
+            {
+                "id": "53#20",
+                "title": "#20",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid3kxjuzz6z3ctjqgob6x3kfzxx4nx47l4dthqmvlqj5bn6h3xzci",
+                "size": "116KB",
+                "date": "14/08/26",
+                "caption": "Butcher, Baker, Nightmare Maker (1981)"
             }
         ],
         "Future_Shocks": [
@@ -6731,6 +6779,14 @@ const database = {
                 "size": "163KB",
                 "date": "01/08/26",
                 "caption": "From Beyond (1986)"
+            },
+            {
+                "id": "33#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieqtlohhalxcxfzjnpbtucejbeh5hwjbnahefr4s5ss7rx2v5exuy",
+                "size": "158KB",
+                "date": "13/08/26",
+                "caption": "Die, Monster, Die! (1965)"
             }
         ],
         "Hammer_Series": [
@@ -6797,6 +6853,14 @@ const database = {
                 "size": "137KB",
                 "date": "14/07/26",
                 "caption": "The Hound Of The Baskervilles (1959)"
+            },
+            {
+                "id": "51#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih6a46qf6zt4olbcm4ipszd7dao2r47hpra3h44egvf5smrw3ktba",
+                "size": "106KB",
+                "date": "14/08/26",
+                "caption": "The Man Who Could Cheat Death (1959)"
             }
         ],
         "Haunted_Houses": [
@@ -6863,6 +6927,14 @@ const database = {
                 "size": "113KB",
                 "date": "15/07/26",
                 "caption": "House (1985)"
+            },
+            {
+                "id": "28#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreievi5uukigglkfcx5sewgffnxudorcwzk3pon4c7br45akscrvhj4",
+                "size": "111KB",
+                "date": "15/08/26",
+                "caption": "Waxwork (1988)"
             }
         ],
         "Hexy_Beasts": [
@@ -6953,6 +7025,14 @@ const database = {
                 "size": "53KB",
                 "date": "16/07/26",
                 "caption": "Penda's Fen (1974)"
+            },
+            {
+                "id": "29#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihk5xfgqom7alb6o7xjwrjwmfd4dfhbqm324ujw7c5a35l2ilypnq",
+                "size": "70KB",
+                "date": "16/08/26",
+                "caption": "To The Devil A Daughter (1976)"
             }
         ],
         "Invaders!": [
@@ -7815,6 +7895,24 @@ const database = {
                 "size": "84KB",
                 "date": "04/08/26",
                 "caption": "The Texas Chainsaw Massacre (1974)"
+            },
+            {
+                "id": "60#RO",
+                "title": "#RO",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiayjtmdaz5yfkdqd52bqrqiyjjx46cbdkyn7lmpordr5vws7chbtu",
+                "size": "81KB",
+                "date": "15/08/26",
+                "caption": "The Slumber Party Massacre (1982)"
+            }
+        ],
+        "Spektralized": [
+            {
+                "id": "65#01",
+                "title": "#01",
+                "file": "https://i.postimg.cc/FFPtfCG1/1-Existenz.gif",
+                "size": "3MB",
+                "date": "12/08/26",
+                "caption": "Existenz (1999)"
             }
         ],
         "Sports_Legends": [
@@ -7935,9 +8033,41 @@ const database = {
                 "size": "130KB",
                 "date": "06/08/26",
                 "caption": "Ulric The Undying, 8 Lives Of A Cat"
+            },
+            {
+                "id": "64#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigisxvbq3npjqruvrds6me5vkhxfr7yovxqu5npyjsfghezk7tq3u",
+                "size": "127KB",
+                "date": "13/08/26",
+                "caption": "Sylvia Vane, Soured Socialite"
+            },
+            {
+                "id": "64#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreian2ucmiuj252gcfjdrmv74polescoou454lb5svf2nbjfcvgl7fe",
+                "size": "138KB",
+                "date": "13/08/26",
+                "caption": "Peggy Anderson, Black Widow"
+            },
+            {
+                "id": "64#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicxavrpe4oetdncx67lniu6oacmibb56k3cbzww7b6jyxfpgwqa7i",
+                "size": "150KB",
+                "date": "13/08/26",
+                "caption": "Jonas Tillman, Doting Husband"
             }
         ],
         "Ultimate_Series": [
+            {
+                "id": "62#94",
+                "title": "#94",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibdmttw667krc3wbts4j7pwoymh56sz7etlny7jfuo4rpkvwkzlh4",
+                "size": "72KB",
+                "date": "14/08/26",
+                "caption": "Vanishing Point (1971)"
+            },
             {
                 "id": "62#95",
                 "title": "#95",
@@ -8623,6 +8753,14 @@ const database = {
                 "size": "167KB",
                 "date": "09/08/26",
                 "caption": "Alien: Rubicon (2024)"
+            },
+            {
+                "id": "106#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:pljte7rmgtrxrgcgoywjwbdf/bafkreidvhkg23oxyp7knpvun7iwal2xhk7egt7j7hsd55pf5t57ogqpc3i",
+                "size": "102KB",
+                "date": "15/08/26",
+                "caption": "The Other Guys (2010)"
             }
         ],
         "Rollerball_Stickers_&_Rub-Offs": [
