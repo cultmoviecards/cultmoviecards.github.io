@@ -5871,6 +5871,46 @@ const database = {
                 "size": "143KB",
                 "date": "15/08/26",
                 "caption": "Mike Latimer, Aperitif"
+            },
+            {
+                "id": "61#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreig76l42v3fvs2geu4pqrwrekt57u55oy4sz5vjenmia4nktycg66a",
+                "size": "138KB",
+                "date": "16/08/26",
+                "caption": "Charlie Gereson, Appetizer"
+            },
+            {
+                "id": "61#17",
+                "title": "#17",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicur36yirowmz7yn5if7aqgyodxnsak2i6zfiggqu7caqxcs5d6qu",
+                "size": "145KB",
+                "date": "17/08/26",
+                "caption": "Fluffy, No Table Manners"
+            },
+            {
+                "id": "61#18",
+                "title": "#18",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibxeg6sfeq466k7fukag3tltslx7k2aoyvy3tkwr7irls7wsyaa7e",
+                "size": "157KB",
+                "date": "18/08/26",
+                "caption": "Wilma Northrup, The Main Course"
+            },
+            {
+                "id": "61#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigbni4u2hzsx6lmmufyhcmttftcdllad2oh4k3itacg62pwn5z65u",
+                "size": "143KB",
+                "date": "19/08/26",
+                "caption": "Upson Pratt, Demi-God Of OCD"
+            },
+            {
+                "id": "61#20",
+                "title": "#20",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiahelmjl64wfx6tjv2hrt7ky4hz3ot3c53q3gifycjogyh33dzwlq",
+                "size": "159KB",
+                "date": "20/08/26",
+                "caption": "Upson Pratt, Bug Wrangler"
             }
         ],
         "Cult_Carnage": [
@@ -6507,6 +6547,22 @@ const database = {
                 "size": "116KB",
                 "date": "14/08/26",
                 "caption": "Butcher, Baker, Nightmare Maker (1981)"
+            },
+            {
+                "id": "53#21",
+                "title": "#21",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigzeftulprlrdesakdovem2cwb4uwnknzdsitaa3azjxqrhyxz3da",
+                "size": "128KB",
+                "date": "17/08/26",
+                "caption": "Altered States (1980)"
+            },
+            {
+                "id": "53#22",
+                "title": "#22",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihxry3jpnip23egxmzmkcfskig2linoosrmcsm6hjggsb2uv66zni",
+                "size": "103KB",
+                "date": "18/08/26",
+                "caption": "Amityville 3-D (1983)"
             }
         ],
         "Future_Shocks": [
@@ -7133,6 +7189,14 @@ const database = {
                 "caption": "Lifeforce (1985)"
             },
             {
+                "id": "30#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreighthzgjnxgkfdfhh5celbsuyl5nw4achu27utbgzdbhaxabxo5ty",
+                "size": "71KB",
+                "date": "16/08/26",
+                "caption": "Phantasm (1979)"
+            },
+            {
                 "id": "30#FC",
                 "title": "#FC",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiefedpysgi5bterrfsfbktquwhwefxo3fnnygchpcbj7m5nevr5la",
@@ -7173,6 +7237,14 @@ const database = {
                 "size": "220KB",
                 "date": "17/07/26",
                 "caption": "New York Ninja (1984/2021)"
+            },
+            {
+                "id": "45#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigtrgyhxkz2weqihnnhocrct66decc2ntjcq6sqmwhrzzf2en7v7m",
+                "size": "189KB",
+                "date": "18/08/26",
+                "caption": "Samurai Cop (1991)"
             },
             {
                 "id": "45#RO",
@@ -7271,6 +7343,14 @@ const database = {
                 "size": "123KB",
                 "date": "18/07/26",
                 "caption": "Adrienne Barbeau as 'Stevie Wayne' (1980)"
+            },
+            {
+                "id": "31#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiax6mht5iightg4zb3drxidicfny246cwercczkpmfdz2swii7pwm",
+                "size": "145KB",
+                "date": "19/08/26",
+                "caption": "Caroline Munro as 'Stella Star' (1978)"
             }
         ],
         "Kult_Kaiju": [
@@ -7337,6 +7417,14 @@ const database = {
                 "size": "173KB",
                 "date": "19/07/26",
                 "caption": "Gorath (1962)(EC)"
+            },
+            {
+                "id": "32#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaat3le3m62gihubv7ashyuc4k5js5czqat4ubmpihviqod2jxxle",
+                "size": "142KB",
+                "date": "20/08/26",
+                "caption": "King Kong Vs. Godzilla (1962)"
             }
         ],
         "Mario_Bava_Series": [
@@ -7913,6 +8001,14 @@ const database = {
                 "size": "3MB",
                 "date": "12/08/26",
                 "caption": "Existenz (1999)"
+            },
+            {
+                "id": "65#02",
+                "title": "#02",
+                "file": "https://i.postimg.cc/KYnt6V8r/2-The-Terminator.gif",
+                "size": "3MB",
+                "date": "15/08/2026",
+                "caption": "The Terminator (1984)"
             }
         ],
         "Sports_Legends": [
@@ -8057,9 +8153,41 @@ const database = {
                 "size": "150KB",
                 "date": "13/08/26",
                 "caption": "Jonas Tillman, Doting Husband"
+            },
+            {
+                "id": "64#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidililpl3ye3ctinqzgjunyd2mk7anhpkno47mqoyzr67mqfo5yca",
+                "size": "138KB",
+                "date": "20/08/26",
+                "caption": "Cathy Marno, Lucky Winner"
+            },
+            {
+                "id": "64#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibhnmnzzaepw3qgaappvuzf5riv645lbexffch46dj2tmgehfvzb4",
+                "size": "144KB",
+                "date": "20/08/26",
+                "caption": "The Doctor, Bratislava's Best"
+            },
+            {
+                "id": "64#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicbpltoq3kh2abyfcslfkmdr3wl6svqyvu7ib54p4qq3v6ykusr2e",
+                "size": "137KB",
+                "date": "20/08/26",
+                "caption": "Reno Crevice, Mr. 50/50"
             }
         ],
         "Ultimate_Series": [
+            {
+                "id": "62#93",
+                "title": "#93",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifms44bg34l2dmjv53ojusorwttq3r7cry72zr7uulz5rouwti4be",
+                "size": "60KB",
+                "date": "20/08/26",
+                "caption": "Blow Out (1981)"
+            },
             {
                 "id": "62#94",
                 "title": "#94",
