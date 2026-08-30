@@ -1009,6 +1009,264 @@ const database = {
                 "caption": "Jim Wynorski, Director 'Chopping Mall'"
             }
         ],
+        "Creepshow": [
+            {
+                "id": "61#WW",
+                "title": "#WW",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifunrvwqtboiuls2ihq2ilypxumj45gu5jvrs5i7hgxv3i7p3h5nm",
+                "size": "177KB",
+                "date": "31/07/26",
+                "caption": "Wax Wrapper, 'Creepshow'"
+            },
+            {
+                "id": "61#T1",
+                "title": "#T1",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiczmiy7oijbzixjmqvjwkn5zdsjh2ghkikox326ewpynyhdzduypq",
+                "size": "164KB",
+                "date": "01/08/26",
+                "caption": "Title Card, 'Creepshow'"
+            },
+            {
+                "id": "61#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigvcgi6fcosu52uuyv26osghej3if6g63qc6cu5kvjjbutrqbnbsy",
+                "size": "190KB",
+                "date": "01/08/26",
+                "caption": "Stan Hopkins, Faux Pa-Pa"
+            },
+            {
+                "id": "61#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidzqvujhhdbp3b62p7sp7frqxm6cmgzh6hvrbi6ay3bqko42ss5ju",
+                "size": "158KB",
+                "date": "02/08/26",
+                "caption": "The Creep, Horrid Host"
+            },
+            {
+                "id": "61#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicmxwd457bpsxq27fm7ab6rlm6ty74wkchgkwq7j5sgehamrkdsk4",
+                "size": "162KB",
+                "date": "03/08/26",
+                "caption": "Bedelia Grantham, Ashtray Avenger"
+            },
+            {
+                "id": "61#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiciprnioaqpsqt23gotqnrdllt76ott2uqpix4kzwb5bz7ya4nryy",
+                "size": "160KB",
+                "date": "04/08/26",
+                "caption": "Hank Blaine, Graveyard Shift"
+            },
+            {
+                "id": "61#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieniftjixs6ehnridh2jm7tadks3r6ef3dhqt5awkxbp77tb7bt7i",
+                "size": "186KB",
+                "date": "05/08/26",
+                "caption": "Nathan Grantham, Fussy Eater"
+            },
+            {
+                "id": "61#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidfbb6i6ueyye4wmgbgmym24tz66uobyezla6jajdqw6ubahlt56a",
+                "size": "160KB",
+                "date": "06/08/26",
+                "caption": "Sylvia Grantham, Proud Father"
+            },
+            {
+                "id": "61#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiewki6xlpxr5hlloussc7k6fn5ed6orgd3hjpvl4xsvbaqg3ezwca",
+                "size": "143KB",
+                "date": "07/08/26",
+                "caption": "Jordy Verrill, Lunkhead Deluxe"
+            },
+            {
+                "id": "61#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigsmna5xy2am7bwesly3k2kwuxz5jatydjqhnaofbz27c4g6pqmym",
+                "size": "184KB",
+                "date": "08/08/26",
+                "caption": "The Doctor, Sadistic Surgeon"
+            },
+            {
+                "id": "61#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicnd52apqco43h7sjsbyldnbwfqxlevirew6q5jj6kkk4izvi6xbe",
+                "size": "178KB",
+                "date": "09/08/26",
+                "caption": "Jordy Verrill, Human Houseplant"
+            },
+            {
+                "id": "61#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiempuq4wjcjg6wbeutf6rpfan5ygv7obfaqavkohjoixizvlq4kte",
+                "size": "174KB",
+                "date": "10/08/26",
+                "caption": "Jordy Verrill, Cereal Killer"
+            },
+            {
+                "id": "61#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihiojnvaha3xu6fja7pioargdlip4p5rg4pesymksvjbqgpniodpm",
+                "size": "179KB",
+                "date": "11/08/26",
+                "caption": "Harry Wentworth, In A Pinch"
+            },
+            {
+                "id": "61#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiftcpi7gjj2guiagtl3abdsqj3mytzrxpsgbdfrkjlaev4uvqmsnu",
+                "size": "143KB",
+                "date": "12/08/26",
+                "caption": "Harry Wentworth, Freediving Novice"
+            },
+            {
+                "id": "61#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihjfmmqs664vc7icz2lnwj3h5yzydvtcebn7ygszuebxnn6qyy4f4",
+                "size": "157KB",
+                "date": "13/08/26",
+                "caption": "Harry & Rebecca, Blub-Blub-Blub"
+            },
+            {
+                "id": "61#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif365zrlnufgjeim36l6cjxdlgj37cb7glf26adfuu6rpbox2sdxq",
+                "size": "164KB",
+                "date": "14/08/26",
+                "caption": "Richard Vickers, Beach Buoy"
+            },
+            {
+                "id": "61#15",
+                "title": "#15",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieokn6fcdvoczmr3m4vzca427bci2h2jt3jqgsv5iuulq5czjfyyy",
+                "size": "143KB",
+                "date": "15/08/26",
+                "caption": "Mike Latimer, Aperitif"
+            },
+            {
+                "id": "61#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreig76l42v3fvs2geu4pqrwrekt57u55oy4sz5vjenmia4nktycg66a",
+                "size": "138KB",
+                "date": "16/08/26",
+                "caption": "Charlie Gereson, Appetizer"
+            },
+            {
+                "id": "61#17",
+                "title": "#17",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicur36yirowmz7yn5if7aqgyodxnsak2i6zfiggqu7caqxcs5d6qu",
+                "size": "145KB",
+                "date": "17/08/26",
+                "caption": "Fluffy, No Table Manners"
+            },
+            {
+                "id": "61#18",
+                "title": "#18",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibxeg6sfeq466k7fukag3tltslx7k2aoyvy3tkwr7irls7wsyaa7e",
+                "size": "157KB",
+                "date": "18/08/26",
+                "caption": "Wilma Northrup, The Main Course"
+            },
+            {
+                "id": "61#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigbni4u2hzsx6lmmufyhcmttftcdllad2oh4k3itacg62pwn5z65u",
+                "size": "143KB",
+                "date": "19/08/26",
+                "caption": "Upson Pratt, Demi-God Of OCD"
+            },
+            {
+                "id": "61#20",
+                "title": "#20",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiahelmjl64wfx6tjv2hrt7ky4hz3ot3c53q3gifycjogyh33dzwlq",
+                "size": "159KB",
+                "date": "20/08/26",
+                "caption": "Upson Pratt, Bug Wrangler"
+            },
+            {
+                "id": "61#21",
+                "title": "#21",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieotphjoqyxi2jzg6mphlxlbw6imxo7jafhj6sz46ueguvr63qf2u",
+                "size": "170KB",
+                "date": "21/08/26",
+                "caption": "Upson Pratt, A Case Of Bedbugs"
+            },
+            {
+                "id": "61#22",
+                "title": "#22",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibsfbd47ydq36vp25ac6rfo4wtmvebdfxqxzo4o566xaum3tqbt74",
+                "size": "179KB",
+                "date": "22/08/26",
+                "caption": "Upson Pratt, Tongue-Tied"
+            },
+            {
+                "id": "61#23",
+                "title": "#23",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigzehxu4lio2rf5fbei6hpjsg5arrm2xf54a7hmmghjokjozhh6fm",
+                "size": "158KB",
+                "date": "23/08/26",
+                "caption": "Billy Hopkins, Voodoo Child"
+            },
+            {
+                "id": "61#24",
+                "title": "#24",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiahf5si6ofcmk47cwctm7kfjtvyutshbbmlax6rleyfdz26mnwd4e",
+                "size": "139KB",
+                "date": "24/08/26",
+                "caption": "Stan Hopkins, Pain In The Neck"
+            },
+            {
+                "id": "61#S1",
+                "title": "#S1",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicbpdcoymmg6vynkq5o4wxv5vrfd7u4yyoj5kv3th6lhw6uxgoxh4",
+                "size": "138KB",
+                "date": "25/08/26",
+                "caption": "Tom Savini, SFX Artist"
+            },
+            {
+                "id": "61#S2",
+                "title": "#S2",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiab6hvo5id7q5n3iormmqkoc6uqpbm6oq4tupggkiqlq32qrpsvpm",
+                "size": "190KB",
+                "date": "26/08/26",
+                "caption": "George A. Romero, Director"
+            },
+            {
+                "id": "61#S3",
+                "title": "#S3",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihcaatowhe6dq34gsvl4df343f7ohg32vwyidftp2qcvlvwbf7p3e",
+                "size": "166KB",
+                "date": "28/08/26",
+                "caption": "Stephen King, Screenwriter"
+            },
+            {
+                "id": "61#S4",
+                "title": "#S4",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibnx2sv2jebp2jpwdim63samxyfx3rodhcyayri5ak65vyrt2sysu",
+                "size": "141KB",
+                "date": "28/08/26",
+                "caption": "The Creep, In-Animated Ghoul"
+            },
+            {
+                "id": "61#S5",
+                "title": "#S5",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibkh7mhurvd3mrj5dvuvr4l4senakzv6lheao2p6sz55lwwjl6xjq",
+                "size": "192KB",
+                "date": "29/08/26",
+                "caption": "Graphic Novel, The Crate"
+            },
+            {
+                "id": "61#S6",
+                "title": "#S6",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihujg2hciix6k4eazvsgotruj2l27h5yhz7erfl2kfdwcuqgs2wsi",
+                "size": "207KB",
+                "date": "30/08/26",
+                "caption": "Quad Poster, Creepshow"
+            }
+        ],
         "Daughters_Of_Darkness": [
             {
                 "id": "08#WW",
@@ -2849,6 +3107,22 @@ const database = {
                 "size": "142KB",
                 "date": "13/06/26",
                 "caption": "Beware! The Blob (1972)"
+            },
+            {
+                "id": "42#FC1",
+                "title": "#FC1",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicp3gyjiplocfo7n7rqut3l7tvhigoqohgkmn3qxs2jkeaalq36gm",
+                "size": "104KB",
+                "date": "28/08/26",
+                "caption": "Clue (1985)"
+            },
+            {
+                "id": "42#FC2",
+                "title": "#FC2",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreie263df63ipqgy7hxocwcdjqpbsb34fbrjdiumnknlefcjpkflezm",
+                "size": "86KB",
+                "date": "28/08/26",
+                "caption": "What About Dick? (2012)"
             }
         ],
         "Re-Animator": [
@@ -5735,184 +6009,6 @@ const database = {
                 "caption": "Cobra (1986)"
             }
         ],
-        "Creepshow": [
-            {
-                "id": "61#WW",
-                "title": "#WW",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifunrvwqtboiuls2ihq2ilypxumj45gu5jvrs5i7hgxv3i7p3h5nm",
-                "size": "177KB",
-                "date": "31/07/26",
-                "caption": "Wax Wrapper, 'Creepshow'"
-            },
-            {
-                "id": "61#T1",
-                "title": "#T1",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiczmiy7oijbzixjmqvjwkn5zdsjh2ghkikox326ewpynyhdzduypq",
-                "size": "164KB",
-                "date": "01/08/26",
-                "caption": "Title Card, 'Creepshow'"
-            },
-            {
-                "id": "61#01",
-                "title": "#01",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigvcgi6fcosu52uuyv26osghej3if6g63qc6cu5kvjjbutrqbnbsy",
-                "size": "190KB",
-                "date": "01/08/26",
-                "caption": "Stan Hopkins, Faux Pa-Pa"
-            },
-            {
-                "id": "61#02",
-                "title": "#02",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidzqvujhhdbp3b62p7sp7frqxm6cmgzh6hvrbi6ay3bqko42ss5ju",
-                "size": "158KB",
-                "date": "02/08/26",
-                "caption": "The Creep, Horrid Host"
-            },
-            {
-                "id": "61#03",
-                "title": "#03",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicmxwd457bpsxq27fm7ab6rlm6ty74wkchgkwq7j5sgehamrkdsk4",
-                "size": "162KB",
-                "date": "03/08/26",
-                "caption": "Bedelia Grantham, Ashtray Avenger"
-            },
-            {
-                "id": "61#04",
-                "title": "#04",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiciprnioaqpsqt23gotqnrdllt76ott2uqpix4kzwb5bz7ya4nryy",
-                "size": "160KB",
-                "date": "04/08/26",
-                "caption": "Hank Blaine, Graveyard Shift"
-            },
-            {
-                "id": "61#05",
-                "title": "#05",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieniftjixs6ehnridh2jm7tadks3r6ef3dhqt5awkxbp77tb7bt7i",
-                "size": "186KB",
-                "date": "05/08/26",
-                "caption": "Nathan Grantham, Fussy Eater"
-            },
-            {
-                "id": "61#06",
-                "title": "#06",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidfbb6i6ueyye4wmgbgmym24tz66uobyezla6jajdqw6ubahlt56a",
-                "size": "160KB",
-                "date": "06/08/26",
-                "caption": "Sylvia Grantham, Proud Father"
-            },
-            {
-                "id": "61#07",
-                "title": "#07",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiewki6xlpxr5hlloussc7k6fn5ed6orgd3hjpvl4xsvbaqg3ezwca",
-                "size": "143KB",
-                "date": "07/08/26",
-                "caption": "Jordy Verrill, Lunkhead Deluxe"
-            },
-            {
-                "id": "61#08",
-                "title": "#08",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigsmna5xy2am7bwesly3k2kwuxz5jatydjqhnaofbz27c4g6pqmym",
-                "size": "184KB",
-                "date": "08/08/26",
-                "caption": "The Doctor, Sadistic Surgeon"
-            },
-            {
-                "id": "61#09",
-                "title": "#09",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicnd52apqco43h7sjsbyldnbwfqxlevirew6q5jj6kkk4izvi6xbe",
-                "size": "178KB",
-                "date": "09/08/26",
-                "caption": "Jordy Verrill, Human Houseplant"
-            },
-            {
-                "id": "61#10",
-                "title": "#10",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiempuq4wjcjg6wbeutf6rpfan5ygv7obfaqavkohjoixizvlq4kte",
-                "size": "174KB",
-                "date": "10/08/26",
-                "caption": "Jordy Verrill, Cereal Killer"
-            },
-            {
-                "id": "61#11",
-                "title": "#11",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihiojnvaha3xu6fja7pioargdlip4p5rg4pesymksvjbqgpniodpm",
-                "size": "179KB",
-                "date": "11/08/26",
-                "caption": "Harry Wentworth, In A Pinch"
-            },
-            {
-                "id": "61#12",
-                "title": "#12",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiftcpi7gjj2guiagtl3abdsqj3mytzrxpsgbdfrkjlaev4uvqmsnu",
-                "size": "143KB",
-                "date": "12/08/26",
-                "caption": "Harry Wentworth, Freediving Novice"
-            },
-            {
-                "id": "61#13",
-                "title": "#13",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihjfmmqs664vc7icz2lnwj3h5yzydvtcebn7ygszuebxnn6qyy4f4",
-                "size": "157KB",
-                "date": "13/08/26",
-                "caption": "Harry & Rebecca, Blub-Blub-Blub"
-            },
-            {
-                "id": "61#14",
-                "title": "#14",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif365zrlnufgjeim36l6cjxdlgj37cb7glf26adfuu6rpbox2sdxq",
-                "size": "164KB",
-                "date": "14/08/26",
-                "caption": "Richard Vickers, Beach Buoy"
-            },
-            {
-                "id": "61#15",
-                "title": "#15",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieokn6fcdvoczmr3m4vzca427bci2h2jt3jqgsv5iuulq5czjfyyy",
-                "size": "143KB",
-                "date": "15/08/26",
-                "caption": "Mike Latimer, Aperitif"
-            },
-            {
-                "id": "61#16",
-                "title": "#16",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreig76l42v3fvs2geu4pqrwrekt57u55oy4sz5vjenmia4nktycg66a",
-                "size": "138KB",
-                "date": "16/08/26",
-                "caption": "Charlie Gereson, Appetizer"
-            },
-            {
-                "id": "61#17",
-                "title": "#17",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicur36yirowmz7yn5if7aqgyodxnsak2i6zfiggqu7caqxcs5d6qu",
-                "size": "145KB",
-                "date": "17/08/26",
-                "caption": "Fluffy, No Table Manners"
-            },
-            {
-                "id": "61#18",
-                "title": "#18",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibxeg6sfeq466k7fukag3tltslx7k2aoyvy3tkwr7irls7wsyaa7e",
-                "size": "157KB",
-                "date": "18/08/26",
-                "caption": "Wilma Northrup, The Main Course"
-            },
-            {
-                "id": "61#19",
-                "title": "#19",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigbni4u2hzsx6lmmufyhcmttftcdllad2oh4k3itacg62pwn5z65u",
-                "size": "143KB",
-                "date": "19/08/26",
-                "caption": "Upson Pratt, Demi-God Of OCD"
-            },
-            {
-                "id": "61#20",
-                "title": "#20",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiahelmjl64wfx6tjv2hrt7ky4hz3ot3c53q3gifycjogyh33dzwlq",
-                "size": "159KB",
-                "date": "20/08/26",
-                "caption": "Upson Pratt, Bug Wrangler"
-            }
-        ],
         "Cult_Carnage": [
             {
                 "id": "20#01",
@@ -6187,6 +6283,14 @@ const database = {
                 "size": "187KB",
                 "date": "11/08/26",
                 "caption": "Reggie Bannister as Reggie (1979)"
+            },
+            {
+                "id": "21#RIP5",
+                "title": "#RIP5",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib56uegrsahzzsf7h6mry23lwouseoloiqjoiek6mzllyh5augxpe",
+                "size": "209KB",
+                "date": "26/08/26",
+                "caption": "Tim Curry as The Lord Of Darkness (1985)"
             }
         ],
         "Cultoons": [
@@ -6563,6 +6667,14 @@ const database = {
                 "size": "103KB",
                 "date": "18/08/26",
                 "caption": "Amityville 3-D (1983)"
+            },
+            {
+                "id": "53#23",
+                "title": "#23",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia7drzxs4itjsaymi5ofkzdms7igctz7pzbsqs6i6qbopke54b3yu",
+                "size": "125KB",
+                "date": "23/08/26",
+                "caption": "The Island Of Dr. Moreau (1996)"
             }
         ],
         "Future_Shocks": [
@@ -7571,6 +7683,14 @@ const database = {
                 "size": "117KB",
                 "date": "20/07/26",
                 "caption": "A Bay Of Blood (1971)"
+            },
+            {
+                "id": "17#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia4rdlu6oy54rjaxjr4qshyxd2eq7z3a5kcwqeazsw7yfewmipa5y",
+                "size": "112KB",
+                "date": "21/08/26",
+                "caption": "Baron Blood (1972)"
             }
         ],
         "Midnight_Cult_Series_IV": [
@@ -7629,6 +7749,14 @@ const database = {
                 "size": "95KB",
                 "date": "21/07/26",
                 "caption": "Creepshow (1982)"
+            },
+            {
+                "id": "37#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiej6da55262jomlr3bm4p5cerzw47xeq5dmeb35t4apsx453x2mii",
+                "size": "83KB",
+                "date": "22/08/26",
+                "caption": "Prince Of Darkness (1987)"
             }
         ],
         "Monster_Machines": [
@@ -7737,6 +7865,14 @@ const database = {
                 "caption": "The Lawnmower Man (1992)"
             },
             {
+                "id": "38#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihgfadh2kaqhucwoozouobjpzlsanpnint6obevqmxhmwtxdsi32q",
+                "size": "87KB",
+                "date": "23/08/26",
+                "caption": "Class Of 1999 (1990)"
+            },
+            {
                 "id": "38#FC",
                 "title": "#FC",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigv3uuwusewrsxuzasssc3qrlsqr5dush7ohfqwhqkq3edhgihmly",
@@ -7769,6 +7905,14 @@ const database = {
                 "size": "151KB",
                 "date": "27/07/26",
                 "caption": "Winslow Leach, Phantom Of The Paradise (1974)"
+            },
+            {
+                "id": "56#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiawoceh5vjhoxli2xy4elgmg66xx4pvzxkcc75rbmwv426rfaofxy",
+                "size": "186KB",
+                "date": "27/08/26",
+                "caption": "Frank-N-Furter, The Rocky Horror Picture Show (1975)"
             }
         ],
         "Mytho-Litho": [
@@ -7787,6 +7931,16 @@ const database = {
                 "size": "147KB",
                 "date": "06/06/26",
                 "caption": "'Jack Hanson', Slap Shot (1977)"
+            }
+        ],
+        "Neon_Nightmares": [
+            {
+                "id": "66#RO",
+                "title": "#RO",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreie5egp6kua2gixu2oure27ymew4f4kft2fqgakpt5yvf7gdm6dgku",
+                "size": "71KB",
+                "date": "29/08/26",
+                "caption": "Vamp (1986)"
             }
         ],
         "Ozploitations": [
@@ -7837,6 +7991,14 @@ const database = {
                 "size": "103KB",
                 "date": "24/07/26",
                 "caption": "Long Weekend (1978)"
+            },
+            {
+                "id": "39#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreici3xyseefalldsnveihu7cfrargfsyhcak6aizetrszf3cjh4c2e",
+                "size": "124KB",
+                "date": "25/08/26",
+                "caption": "Dead End Drive-In (1986)"
             },
             {
                 "id": "39#FC",
@@ -7907,12 +8069,28 @@ const database = {
                 "caption": "Nosferatu (1922)"
             },
             {
+                "id": "42#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidqsjkr4xxxz3logqjj7sizblr5aukjfaahho363zmkgu3knbmasy",
+                "size": "138KB",
+                "date": "25/08/26",
+                "caption": "Critters (1986)"
+            },
+            {
                 "id": "42#M4",
                 "title": "#M4",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibnyymbhua2rf4xkkgg62tquleotcx7kytn7sr6xv57y4mqhb5y7q",
                 "size": "182kb",
                 "date": "04/05/26",
                 "caption": "Starcrash (1978) "
+            },
+            {
+                "id": "42#RO",
+                "title": "#RO",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidzfhgl4s5jlwngn4joc4m37nsfvqpvwek3f4zpdiqcdumt7tb5fi",
+                "size": "157KB",
+                "date": "22/08/26",
+                "caption": "Treasure Of The Four Crowns (1983)"
             }
         ],
         "Shaw_Brothers_Series": [
@@ -7947,6 +8125,14 @@ const database = {
                 "size": "132KB",
                 "date": "29/07/26",
                 "caption": "The One-Armed Swordsman (1967)"
+            },
+            {
+                "id": "55#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib7u7wtfw2u6jrfw74npouzgq6dzp2uig5625nshtncuckvzsykgi",
+                "size": "159KB",
+                "date": "29/08/26",
+                "caption": "Five Fingers Of Death (1972)"
             }
         ],
         "Single Scoops": [
@@ -8027,6 +8213,14 @@ const database = {
                 "size": "155KB",
                 "date": "24/07/26",
                 "caption": "Paul Crewe, The Longest Yard (1974)"
+            },
+            {
+                "id": "59#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidte6wq56nokufqsmzdttt376inqrcshcwfmaixzustpickvmkxby",
+                "size": "121KB",
+                "date": "30/08/26",
+                "caption": "Empty Hand, Shaolin Soccer (2001)"
             }
         ],
         "Sticker Shots": [
@@ -8061,6 +8255,14 @@ const database = {
                 "size": "78KB",
                 "date": "28/07/26",
                 "caption": "The Crow (1994)"
+            },
+            {
+                "id": "49#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifezlto7ohuo7jh6e6tzxxmcln5yrq4sephtndlr234lhprgo5m74",
+                "size": "159KB",
+                "date": "28/08/26",
+                "caption": "Evil Dead III: Army Of Darkness (1992)"
             },
             {
                 "id": "49#MB",
@@ -8177,6 +8379,22 @@ const database = {
                 "size": "137KB",
                 "date": "20/08/26",
                 "caption": "Reno Crevice, Mr. 50/50"
+            },
+            {
+                "id": "64#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifw2ac56x3q5jeophb52k24vkp26skfb3o766stwr5v5izlsamxpi",
+                "size": "155KB",
+                "date": "27/08/26",
+                "caption": "Marge Richardson, Undead Obsession"
+            },
+            {
+                "id": "64#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiex7rcuz6qmxv2rafh5wuhalyofaak7p2xltv5ljunlm3haxaiaf4",
+                "size": "134KB",
+                "date": "27/08/26",
+                "caption": "Richard, Party Pooper"
             }
         ],
         "Ultimate_Series": [
@@ -8269,6 +8487,14 @@ const database = {
                 "size": "73KB",
                 "date": "09/08/26",
                 "caption": "House Of Wax (1953)"
+            },
+            {
+                "id": "63#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidaufyy5yoyywpbjcbo3vk2dfvjvdnrn436ii2iitlqetxlizql4a",
+                "size": "88KB",
+                "date": "26/08/26",
+                "caption": "The Mad Magician (1954)"
             }
         ],
         "Void_Wars": [
@@ -8411,12 +8637,28 @@ const database = {
                 "caption": "Prophecy (1979)"
             },
             {
+                "id": "43#15",
+                "title": "#15",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib35vaot7fsyvjtcje6tvmls5kzkly7q2wb2hnnrf4kuszeghf2ky",
+                "size": "123KB",
+                "date": "26/08/26",
+                "caption": "Kingdom Of The Spiders (1977)"
+            },
+            {
                 "id": "43#ESE",
                 "title": "#ESE",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidiyd7mzenojgrrgyb2lwidpi75uhoqawarqgnvv6ianmrd42i7o4",
                 "size": "131kb",
                 "date": "05/05/26",
                 "caption": "Watership Down (1978)"
+            },
+            {
+                "id": "43#FC",
+                "title": "#FC",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibcy7jfhurrgwosynbelm36deuwjsfl4i7abxobtsuh56idtcsfum",
+                "size": "124KB",
+                "date": "21/08/26",
+                "caption": "Shakma (1990)"
             }
         ],
         "Zombie_Nation": [
@@ -8889,6 +9131,14 @@ const database = {
                 "size": "102KB",
                 "date": "15/08/26",
                 "caption": "The Other Guys (2010)"
+            },
+            {
+                "id": "106#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:pljte7rmgtrxrgcgoywjwbdf/bafkreidkcimmiz3fgz5mpzv2nt6zid5c42p3vnatnxvqfaujikmkazjfoa",
+                "size": "110KB",
+                "date": "25/08/26",
+                "caption": "The Delta Force (1986)"
             }
         ],
         "Rollerball_Stickers_&_Rub-Offs": [
