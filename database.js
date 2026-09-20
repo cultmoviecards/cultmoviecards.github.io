@@ -5785,6 +5785,14 @@ const database = {
                 "size": "52KB",
                 "date": "31/07/26",
                 "caption": "This Island Earth (1955)"
+            },
+            {
+                "id": "15#20",
+                "title": "#20",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigl5rwixcw2uakojn4vkylqn6lfoqjseg6q4sua3gs4ya7kqaeace",
+                "size": "47KB",
+                "date": "31/08/26",
+                "caption": "When Worlds Collide (1951)"
             }
         ],
         "Banned": [
@@ -5909,6 +5917,14 @@ const database = {
                 "caption": "The Cannibal Man (1972/2003)"
             },
             {
+                "id": "16#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia324nu6gvxvv6jmcbzhqk5l2hrdku3te7xolq2hp2mepjix4i2wu",
+                "size": "102KB",
+                "date": "01/09/26",
+                "caption": "Devil Hunter (1978)"
+            },
+            {
                 "id": "16#19",
                 "title": "#19",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidzct2lsiljrlbwfas5ya3srocyey73ywefbskjkibogqtjctk6ym",
@@ -5965,6 +5981,14 @@ const database = {
                 "size": "60KB",
                 "date": "02/08/26",
                 "caption": "'Lord Of Darkness', Legend (1985)"
+            },
+            {
+                "id": "18#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifqtom2rwq7fkpixqc3ispizugycbye6ltz6wjq7o2grryy62rwei",
+                "size": "65KB",
+                "date": "02/09/26",
+                "caption": "'Voltan The Dark One', Hawk The Slayer (1980)"
             }
         ],
         "Cops_N_Robbers": [
@@ -6007,6 +6031,14 @@ const database = {
                 "size": "72KB",
                 "date": "03/08/26",
                 "caption": "Cobra (1986)"
+            },
+            {
+                "id": "19#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigvnz2pwgfktbpkmzyia64mzk4kqxne5i64dwmic632mf4f4hwqhu",
+                "size": "54KB",
+                "date": "03/09/26",
+                "caption": "Ms. 45 (1981)"
             }
         ],
         "Cult_Carnage": [
@@ -6131,6 +6163,14 @@ const database = {
                 "caption": "Phantasm: Ravager (2016)"
             },
             {
+                "id": "20#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieswmio3qjeck6wrp5m5wxz5yddmtwxcqn5vwspjqhulxp72raog4",
+                "size": "117KB",
+                "date": "04/09/26",
+                "caption": "Thunder Road (1958)"
+            },
+            {
                 "id": "20#2FC",
                 "title": "#2FC",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif5ou5m5sfaczyzodtlzdt2n5x2mecnzq5jwncvhuavj2eardz5pe",
@@ -6234,7 +6274,15 @@ const database = {
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiczun7swzm7ao6s5pbgf2yo2jhzwpp4t6k7rvvj72daitzefh3txe",
                 "size": "190KB",
                 "date": "05/08/26",
-                "caption": "Tony Todd as Candyman"
+                "caption": "Tony Todd as Candyman (1992)"
+            },
+            {
+                "id": "21#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihreei6kkccshrtj2ykpekmclch6g63yndi6ne32ewnhhknmmntia",
+                "size": "194KB",
+                "date": "05/09/26",
+                "caption": "Harry Dean Stanton as Brett (1979)"
             },
             {
                 "id": "21#F13",
@@ -6381,6 +6429,14 @@ const database = {
                 "size": "106KB",
                 "date": "06/08/26",
                 "caption": "Son Of The White Mare (1981)"
+            },
+            {
+                "id": "22#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiakhijxwkhcpufg4m2hcozzj2aylbppb3eckcs7vpcufwigreiobi",
+                "size": "104KB",
+                "date": "06/09/26",
+                "caption": "Vampire Hunter D: Bloodlust (2000)"
             }
         ],
         "David_Lynch_Series": [
@@ -6431,6 +6487,14 @@ const database = {
                 "size": "171KB",
                 "date": "07/08/26",
                 "caption": "Twin Peaks: Fire Walk With Me (1992)"
+            },
+            {
+                "id": "34#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicji565xz3ejacpxvhjqug2qn3pv34zrqob4vkrfjbujzqk6fhy6e",
+                "size": "108KB",
+                "date": "07/09/26",
+                "caption": "Lost Highway (1997)"
             },
             {
                 "id": "34#FC",
@@ -6675,6 +6739,40 @@ const database = {
                 "size": "125KB",
                 "date": "23/08/26",
                 "caption": "The Island Of Dr. Moreau (1996)"
+            },
+            {
+                "id": "53#24",
+                "title": "#24",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib2bngrqtmzggth3and4dnuwuvu6is6axgyxtq3usr7sxbzbhehae",
+                "size": "128KB",
+                "date": "31/08/26",
+                "caption": "The Crazies (1973)"
+            },
+            {
+                "id": "53#25",
+                "title": "#25",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid3ohfc3zs3s2uoiijcdg75vewts7a3baikdiimoixxat5obbiona",
+                "size": "136KB",
+                "date": "15/09/26",
+                "caption": "Uninvited (1987)"
+            }
+        ],
+        "Fright_Club_Features_VI": [
+            {
+                "id": "68#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigimqtowbukjo4vvcbvaqft7ef7iim4bdfio7bi32wrtf6elkxd3e",
+                "size": "71KB",
+                "date": "19/09/26",
+                "caption": "Touch Me (2025)"
+            },
+            {
+                "id": "68#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidsvg35m6hmx47kclobwt5k22bzqvv657qakmo4cmjpfdmgh3uz7q",
+                "size": "87KB",
+                "date": "19/09/26",
+                "caption": "Mars Attacks! (1996)"
             }
         ],
         "Future_Shocks": [
@@ -6759,6 +6857,14 @@ const database = {
                 "caption": "Johnny Mnemonic (1995)"
             },
             {
+                "id": "26#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicuivvvfqivfckc33zbpqazxaq7ivuey7676pkl5pw7q5byvdw2nu",
+                "size": "110KB",
+                "date": "10/09/26",
+                "caption": "Brazil (1985)"
+            },
+            {
                 "id": "26#FC",
                 "title": "#FC",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib7gm4xtonri6ghda6lqnvsb4ydipth4j7u26nmlyjzcgskbng46a",
@@ -6839,6 +6945,14 @@ const database = {
                 "size": "138KB",
                 "date": "11/08/26",
                 "caption": "Stage Fright (1987)"
+            },
+            {
+                "id": "27#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibiy3yzl3yt5lemdv5alynwzic2vsoaturtkb5zncx6laf3vwhbme",
+                "size": "72KB",
+                "date": "11/09/26",
+                "caption": "Torso (1973)"
             }
         ],
         "Gothik_Ghouls": [
@@ -6873,6 +6987,14 @@ const database = {
                 "size": "62KB",
                 "date": "12/08/26",
                 "caption": "Lips Of Blood (1975)"
+            },
+            {
+                "id": "46#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiftdi5xkq45ns62mvmj2qaytoykh4dh7zlf3o64s64anqrecrsauu",
+                "size": "61KB",
+                "date": "12/09/26",
+                "caption": "Female Vampire (1975)"
             }
         ],
         "H_P_Lovecraft_Series": [
@@ -6955,6 +7077,14 @@ const database = {
                 "size": "158KB",
                 "date": "13/08/26",
                 "caption": "Die, Monster, Die! (1965)"
+            },
+            {
+                "id": "33#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigyhrd6d6yrwu6qu6jgfwr7jpu4lfcgaplch4fb76wqksdefkjxha",
+                "size": "171KB",
+                "date": "13/09/26",
+                "caption": "Castle Freak (1995)"
             }
         ],
         "Hammer_Series": [
@@ -7029,6 +7159,14 @@ const database = {
                 "size": "106KB",
                 "date": "14/08/26",
                 "caption": "The Man Who Could Cheat Death (1959)"
+            },
+            {
+                "id": "51#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidpxw4afkp7qpudcyyrjxla3i5cujg7yda763cmvd3whxasu6dofu",
+                "size": "126KB",
+                "date": "14/09/26",
+                "caption": "The Mummy (1959)"
             }
         ],
         "Haunted_Houses": [
@@ -7103,6 +7241,14 @@ const database = {
                 "size": "111KB",
                 "date": "15/08/26",
                 "caption": "Waxwork (1988)"
+            },
+            {
+                "id": "28#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieneonlwoeo633bokqxe5z3cnfiujzsz22fgz3c5736hto73seycm",
+                "size": "117KB",
+                "date": "15/09/26",
+                "caption": "The House By The Cemetery (1981)"
             }
         ],
         "Hexy_Beasts": [
@@ -7201,6 +7347,14 @@ const database = {
                 "size": "70KB",
                 "date": "16/08/26",
                 "caption": "To The Devil A Daughter (1976)"
+            },
+            {
+                "id": "29#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaxbcqbyzmzhuqqlekyelzx4l4abdkf4xegh5jrvrbxcmno6324au",
+                "size": "63KB",
+                "date": "16/09/26",
+                "caption": "Cry Of The Banshee (1970)"
             }
         ],
         "Invaders!": [
@@ -7309,6 +7463,14 @@ const database = {
                 "caption": "Phantasm (1979)"
             },
             {
+                "id": "30#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidogxxu4dmolzidl24mkvmqp6udd2jpqzi6rpyaa5cp3km5zieeve",
+                "size": "94KB",
+                "date": "17/09/26",
+                "caption": "Spaced Invaders (1990)"
+            },
+            {
                 "id": "30#FC",
                 "title": "#FC",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiefedpysgi5bterrfsfbktquwhwefxo3fnnygchpcbj7m5nevr5la",
@@ -7357,6 +7519,14 @@ const database = {
                 "size": "189KB",
                 "date": "18/08/26",
                 "caption": "Samurai Cop (1991)"
+            },
+            {
+                "id": "45#06#",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigsvea6eqpz7n746qqii2jnksa5uzcatsfok4z3isptbkx6okqz74",
+                "size": "205KB",
+                "date": "18/09/26",
+                "caption": "Riki-Oh, The Story Of Ricky (1991)"
             },
             {
                 "id": "45#RO",
@@ -7941,6 +8111,14 @@ const database = {
                 "size": "71KB",
                 "date": "29/08/26",
                 "caption": "Vamp (1986)"
+            },
+            {
+                "id": "66#RO2",
+                "title": "#RO2",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidyvet7w35pfcceevghuq2q5qy35nseyzauvyetreywr2vzbr3f44",
+                "size": "77KB",
+                "date": "19/09/26",
+                "caption": "Kolchak: The Night Stalker (1972)"
             }
         ],
         "Ozploitations": [
@@ -8171,6 +8349,14 @@ const database = {
                 "caption": "The Texas Chainsaw Massacre (1974)"
             },
             {
+                "id": "60#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihu3w6dkq5kvobhi3sqhvt345shkj3ew7ughiwstygjvb4rt357yi",
+                "size": "82KB",
+                "date": "02/09/26",
+                "caption": "The Burning (1981)"
+            },
+            {
                 "id": "60#RO",
                 "title": "#RO",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiayjtmdaz5yfkdqd52bqrqiyjjx46cbdkyn7lmpordr5vws7chbtu",
@@ -8305,6 +8491,14 @@ const database = {
                 "size": "147KB",
                 "date": "09/08/26",
                 "caption": "The Princess Bride (1987)"
+            },
+            {
+                "id": "58#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieurm7gn55wtxzgqvkues37ota3qj3ti46td7e6qmhdomwzub2c2a",
+                "size": "146KB",
+                "date": "09/09/26",
+                "caption": "Big Trouble In Little China (1986)"
             }
         ],
         "Tales_From_The_Crypt": [
@@ -8395,6 +8589,240 @@ const database = {
                 "size": "134KB",
                 "date": "27/08/26",
                 "caption": "Richard, Party Pooper"
+            },
+            {
+                "id": "64#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreickwpv5nfon4qvkuktlkzeqxfr4cycj3qhtqht5lju7od65eo2j24",
+                "size": "147KB",
+                "date": "03/09/26",
+                "caption": "Devlin Cates, Daddy's Home"
+            },
+            {
+                "id": "64#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibwyephxpeypmes25rk27spd4mfk3jkt22y2ygtfp4qjgvuljon7e",
+                "size": "149KB",
+                "date": "03/09/26",
+                "caption": "Gloria Fielding, Cash And Burn"
+            },
+            {
+                "id": "64#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiesuiht3nj3uq2uzp2osisfyqeogwrdnmo3rwue7yd74ert4uqrmu",
+                "size": "145KB",
+                "date": "03/09/26",
+                "caption": "Marty Slash, Glue Ear"
+            },
+            {
+                "id": "64#15",
+                "title": "#15",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiavr3jvfj3zeqqa5p76gkivtlyu6eqsi3l6hisupg57yclfldtpje",
+                "size": "155KB",
+                "date": "13/09/26",
+                "caption": "Scarecrow, The Odd Couple"
+            },
+            {
+                "id": "64#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigko3nqk3v2jdzixpdxfuxgjprbt2cmuwsscolrinhj7ui2f5g2xa",
+                "size": "135KB",
+                "date": "14/09/26",
+                "caption": "Mr. Ingels, Give 'Em A Hand"
+            },
+            {
+                "id": "64#17",
+                "title": "#17",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicwzd2zbstcojwudf7cu74dvi3rhszl6iixhrrqcidaw4e2hcdchm",
+                "size": "152KB",
+                "date": "14/09/26",
+                "caption": "Witch, Body Snatcher"
+            },
+            {
+                "id": "64#18",
+                "title": "#18",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihvzav5c4ww4yphhj5yerw73oshmpfmaebbwiymks3qfirz7d5lza",
+                "size": "163KB",
+                "date": "17/09/26",
+                "caption": "Bobby's Feet, Ankle Breaker"
+            },
+            {
+                "id": "64#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihooaes6mcugiiawcjkck2ftfnx2y5xsei7ldj45se5lppo5bjec4",
+                "size": "174KB",
+                "date": "18/09/26",
+                "caption": "Jim's Creation, Soap Thing"
+            },
+            {
+                "id": "64#20",
+                "title": "#20",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiahvlwvek5v3rzuumgzxgxjczcp7gllvypqwaxe4eovudiat6pyw4",
+                "size": "188KB",
+                "date": "18/09/26",
+                "caption": "Enoch, Mummy Issues"
+            }
+        ],
+        "The_Hunger": [
+            {
+                "id": "67#WW",
+                "title": "#WW",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih2dsvcm4nekhsdorvwhh4hi2gageozzfwup2lbpqxgebfbbkt43y",
+                "size": "154KB",
+                "date": "31/08/26",
+                "caption": "Wax Wrapper, 'The Hunger'"
+            },
+            {
+                "id": "67#T1",
+                "title": "#T1",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidofuu5j74hxokjhliq5otau6jbp6mk6m4pu56qsmm2k34wz3ij3a",
+                "size": "35KB",
+                "date": "01/09/26",
+                "caption": "Title Card, 'The Hunger'"
+            },
+            {
+                "id": "67#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia3iz4vqsg5uxmuopot3v3ayi6k6rtzhnwzgyvo4nobiw546g6tp4",
+                "size": "70KB",
+                "date": "01/09/26",
+                "caption": "'Bela Lugosi's Dead..'"
+            },
+            {
+                "id": "67#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigpxpu4s27ihjvmuvkbqf6vefsao5ocpu7cmctkdsdi6diwrzdrcm",
+                "size": "36KB",
+                "date": "02/09/26",
+                "caption": "Miriam Captures The Prey.."
+            },
+            {
+                "id": "67#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiadjdv243mtuvy5zcfsa32ulnlfkpubierf5nu6evrrnb7geznhaq",
+                "size": "105KB",
+                "date": "03/09/26",
+                "caption": "A Pair Of Bloodied Ankhs"
+            },
+            {
+                "id": "67#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiak7xfdpnpeokm5tv7tvk6oz7vpmkxasve4jubdg6w2y5ibxu4wzu",
+                "size": "76KB",
+                "date": "04/09/26",
+                "caption": "Manhattan Bridge, Dawn"
+            },
+            {
+                "id": "67#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigpefaehon3dq4jqbglh2vxijawinqh6gtkalhdkueyxdzkiwbon4",
+                "size": "43KB",
+                "date": "05/09/26",
+                "caption": "John Burns The Evidence.."
+            },
+            {
+                "id": "67#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigybv5nklssozc7ly55d5vkpyfctcy5ndzncgtifcxjrjxzhzz5ve",
+                "size": "94KB",
+                "date": "06/09/26",
+                "caption": "'Forever And Ever.'"
+            },
+            {
+                "id": "67#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidvqng3lrcktqbsgeqhth2xfycyoulpyqyxwwmt6ikwib7t54pism",
+                "size": "59KB",
+                "date": "07/09/26",
+                "caption": "'What Am I Going To Do?!'"
+            },
+            {
+                "id": "67#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihpd43ezavsx224yrfnheht3pwd4texfn732jqtvo4rfd7b7lybqa",
+                "size": "75KB",
+                "date": "08/09/26",
+                "caption": "'Human Equivalent: 129.'"
+            },
+            {
+                "id": "67#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihj3ndjsvebweanvqxmcclb5pwlsxhrnabyiknsvukhshuc6mbifq",
+                "size": "71KB",
+                "date": "09/09/26",
+                "caption": "A Subway Rollerskater"
+            },
+            {
+                "id": "67#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigljg7fz4rxok27auoskkn5nczhvjdlt3zduj457rylx5vacc7gl4",
+                "size": "119KB",
+                "date": "10/09/26",
+                "caption": "John Feeds Upon Alice"
+            },
+            {
+                "id": "67#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiessmgicysxkmridpqdak5vrv25z2pugvwdgubpojxvqm2v5tojxi",
+                "size": "71KB",
+                "date": "11/09/26",
+                "caption": "'Think Of Me As I Was.'"
+            },
+            {
+                "id": "67#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihusv6ze2jgif47ua7db2rs5qekgahplu4qxiw5zuxvtdx55oo6im",
+                "size": "68KB",
+                "date": "12/09/26",
+                "caption": "'Release Me..'"
+            },
+            {
+                "id": "67#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifqy2s74ki4wo3h7aua54bhfdrk6t72pkxvnuxvpg6lg7ks45e2k4",
+                "size": "45KB",
+                "date": "13/09/26",
+                "caption": "Miriam Takes John Up To The Attic.."
+            },
+            {
+                "id": "67#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif5qpjjt4euepo55dhzgvn7x2g52a3uklmbdvbpstmzv6kcllmp3y",
+                "size": "52KB",
+                "date": "14/09/26",
+                "caption": "Sarah Dreams Of Miriam.."
+            },
+            {
+                "id": "67#15",
+                "title": "#15",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifgo5eeo2jbq3acwp66g3qphiuree4epujwehyth2iipgysmislhu",
+                "size": "67KB",
+                "date": "15/09/26",
+                "caption": "Miriam Calls To Sarah.."
+            },
+            {
+                "id": "67#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibsui6d3sez7ynf65vzimifmepdin2ejco6wt3hd77a7srms5ekne",
+                "size": "35KB",
+                "date": "16/09/26",
+                "caption": "'I Like Your Pendant.'"
+            },
+            {
+                "id": "67#17",
+                "title": "#17",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidwttcxaj6m4ij6phgnlu3fkrv7s54fcpdbiv2rfuzemtkrbyfjay",
+                "size": "87KB",
+                "date": "17/09/26",
+                "caption": "Miriam Feeds On Sarah.."
+            },
+            {
+                "id": "67#18",
+                "title": "#18",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicdgyp6iw3sjrodmdx3oujeor6ygvgklj2d4prvqv6ydpg6ep5him",
+                "size": "71KB",
+                "date": "18/09/26",
+                "caption": "Sarah Becomes A Vampire"
             }
         ],
         "Ultimate_Series": [
@@ -8717,6 +9145,14 @@ const database = {
                 "size": "98KB",
                 "date": "31/07/26",
                 "caption": "Nightmare City (1981)"
+            },
+            {
+                "id": "44#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaeoxgd6kpvpbdxagnnrwm3k26zrymu6n2rufc26hipgn4oxjkqty",
+                "size": "120KB",
+                "date": "31/08/26",
+                "caption": "Zombie Flesh Eaters (1979)"
             }
         ]
     },
@@ -9139,6 +9575,22 @@ const database = {
                 "size": "110KB",
                 "date": "25/08/26",
                 "caption": "The Delta Force (1986)"
+            },
+            {
+                "id": "106#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:pljte7rmgtrxrgcgoywjwbdf/bafkreiaphcogkaurgpl3jt5myg5ispwrohfd3pkis5xljisvbsisy6baoi",
+                "size": "120KB",
+                "date": "05/09/26",
+                "caption": "X-Men Origins: Wolverine (2009)"
+            },
+            {
+                "id": "106#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:pljte7rmgtrxrgcgoywjwbdf/bafkreigwb7nkhs3bom2efbmbsmgbysinqhi2icdua6twtwfogndhkdbyg4",
+                "size": "128KB",
+                "date": "16/09/26",
+                "caption": "Black Dynamite (2009)"
             }
         ],
         "Rollerball_Stickers_&_Rub-Offs": [
