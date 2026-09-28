@@ -7633,6 +7633,14 @@ const database = {
                 "size": "145KB",
                 "date": "19/08/26",
                 "caption": "Caroline Munro as 'Stella Star' (1978)"
+            },
+            {
+                "id": "31#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihg7juf5w2cwt3c5x4us4h2qdyxxlqy5pomwp7esgv4q5ld3x666q",
+                "size": "120KB",
+                "date": "19/09/26",
+                "caption": "Meiko Kaji as 'Yuki Kashima'"
             }
         ],
         "Kult_Kaiju": [
@@ -7707,6 +7715,14 @@ const database = {
                 "size": "142KB",
                 "date": "20/08/26",
                 "caption": "King Kong Vs. Godzilla (1962)"
+            },
+            {
+                "id": "32#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiclrgyjhpyet6yalpom35l6ublxmgomc63o6n4s4k4tfuh3zzwaya",
+                "size": "119KB",
+                "date": "20/09/26",
+                "caption": "Atragon (1963)"
             }
         ],
         "Mario_Bava_Series": [
@@ -7861,6 +7877,14 @@ const database = {
                 "size": "112KB",
                 "date": "21/08/26",
                 "caption": "Baron Blood (1972)"
+            },
+            {
+                "id": "17#20",
+                "title": "#20",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiff5l7wc2liaqijq275wfxmamtv7vt5yr4ldclrbbqps5igd6bbdi",
+                "size": "105KB",
+                "date": "21/09/26",
+                "caption": "Lisa And The Devil (1974)"
             }
         ],
         "Midnight_Cult_Series_IV": [
@@ -7927,6 +7951,22 @@ const database = {
                 "size": "83KB",
                 "date": "22/08/26",
                 "caption": "Prince Of Darkness (1987)"
+            },
+            {
+                "id": "37#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibvfbri5hplwkxozcjuqq556luw3xx223ar74chigsx6e2bkxoc2u",
+                "size": "90KB",
+                "date": "22/09/26",
+                "caption": "The Abominable Dr. Phibes (1971)"
+            },
+            {
+                "id": "37#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiewo7ydrwp5lislkub6dby7hlfnz4iejyce4xbwpuwk5reywffd3a",
+                "size": "116KB",
+                "date": "26/09/26",
+                "caption": "Tombs Of The Blind Dead (1972)"
             }
         ],
         "Monster_Machines": [
@@ -8043,6 +8083,14 @@ const database = {
                 "caption": "Class Of 1999 (1990)"
             },
             {
+                "id": "38#15",
+                "title": "#15",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiet4ktucll7nf3ryiyt6saubfw4fgkksg265wrwcrioebovgdalqi",
+                "size": "93KB",
+                "date": "23/09/26",
+                "caption": "The Terminator (1984)"
+            },
+            {
                 "id": "38#FC",
                 "title": "#FC",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigv3uuwusewrsxuzasssc3qrlsqr5dush7ohfqwhqkq3edhgihmly",
@@ -8083,6 +8131,14 @@ const database = {
                 "size": "186KB",
                 "date": "27/08/26",
                 "caption": "Frank-N-Furter, The Rocky Horror Picture Show (1975)"
+            },
+            {
+                "id": "56#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid5lsxkvjfyq5w7xnqr7r5xyzldenxpqrvcfjvzdsqlpau337htme",
+                "size": "184KB",
+                "date": "27/09/26",
+                "caption": "Raven Shaddock, Streets Of Fire (1984)"
             }
         ],
         "Mytho-Litho": [
@@ -8179,6 +8235,14 @@ const database = {
                 "caption": "Dead End Drive-In (1986)"
             },
             {
+                "id": "39#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihhmuz4xnfftrpp75n7j3sfcz2l6aohywr6ngutg7jpukmj7oaumm",
+                "size": "99KB",
+                "date": "24/09/26",
+                "caption": "Mad Max (1979)"
+            },
+            {
                 "id": "39#FC",
                 "title": "#FC",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihjqg7dcdldyu3fw6umzwqbyfpxorruc2sb52zht54pwcrdsjh53i",
@@ -8253,6 +8317,14 @@ const database = {
                 "size": "138KB",
                 "date": "25/08/26",
                 "caption": "Critters (1986)"
+            },
+            {
+                "id": "42#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihif2dfitk3c5svhct7pcu3aemadujbn7rzz737i7iokqs4reunoy",
+                "size": "140KB",
+                "date": "25/09/26",
+                "caption": "Reservoir Dogs (1992)"
             },
             {
                 "id": "42#M4",
@@ -8449,6 +8521,14 @@ const database = {
                 "size": "159KB",
                 "date": "28/08/26",
                 "caption": "Evil Dead III: Army Of Darkness (1992)"
+            },
+            {
+                "id": "49#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieouht54gt7udmyruviftqsqj4r45cthqb7lb3swpd2kvb77hb4ha",
+                "size": "71KB",
+                "date": "28/09/26",
+                "caption": "Hellraiser (1987)"
             },
             {
                 "id": "49#MB",
@@ -8661,6 +8741,30 @@ const database = {
                 "size": "188KB",
                 "date": "18/09/26",
                 "caption": "Enoch, Mummy Issues"
+            },
+            {
+                "id": "64#21",
+                "title": "#21",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiax3p4zc3snb4nxioohbqx5hffzzplianfltubyf37geislkl7dvy",
+                "size": "177KB",
+                "date": "24/09/26",
+                "caption": "Suzy, Silent Witness"
+            },
+            {
+                "id": "64#22",
+                "title": "#22",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibl3j6btiir6krtoq7y2molftfug7py6papxni76x5wdgjhl7r3ry",
+                "size": "134KB",
+                "date": "24/09/26",
+                "caption": "Ada Ritter, An Axe To Grind"
+            },
+            {
+                "id": "64#23",
+                "title": "#23",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibrfjksp2mmwn6tzby4zynxz6gtk2saxdeqhwxi3k664xbsat2xxa",
+                "size": "192KB",
+                "date": "24/09/26",
+                "caption": "Frank & Eddie, Cheek-To-Cheek"
             }
         ],
         "The_Hunger": [
@@ -8823,6 +8927,86 @@ const database = {
                 "size": "71KB",
                 "date": "18/09/26",
                 "caption": "Sarah Becomes A Vampire"
+            },
+            {
+                "id": "67#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiff36jgxemhpurcgvnercxmgh5zjm7k7cjuvm6co5rpdswmthkx4y",
+                "size": "44KB",
+                "date": "19/09/26",
+                "caption": "Miriam Invites Sarah To Feed"
+            },
+            {
+                "id": "67#20",
+                "title": "#20",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigipgbcslp4jkcxv4dhn7g2imvkzsylnkoberxih23j2ex4nxiyiu",
+                "size": "78KB",
+                "date": "20/09/26",
+                "caption": "Miriam Remembers.."
+            },
+            {
+                "id": "67#21",
+                "title": "#21",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifb7ojgyr6wxl4sitsamvpspeqbw5mvbvclre3jj2nadb2uszgneq",
+                "size": "70KB",
+                "date": "21/09/26",
+                "caption": "'Sarah.. Stay With Me!'"
+            },
+            {
+                "id": "67#22",
+                "title": "#22",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia75rbvcp5gsav6lneeloijnsmhssevwk4evlpccxop6dyxsjbmvy",
+                "size": "61KB",
+                "date": "22/09/26",
+                "caption": "'I Love You! I Love You All!'"
+            },
+            {
+                "id": "67#23",
+                "title": "#23",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih76wecnttb2ec7a7kwc7lb6uwtwsmxgswplxmd6jgzgnmq4favja",
+                "size": "77KB",
+                "date": "23/09/26",
+                "caption": "Miriam's Lovers Watch Her Fall.."
+            },
+            {
+                "id": "67#24",
+                "title": "#24",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigf5wmrsrjewzvdn4bpvgx6gr4dvajnpuwk4zpwozk3aqqp3chqgm",
+                "size": "93KB",
+                "date": "24/09/26",
+                "caption": "Now Sarah Is Immortal.."
+            },
+            {
+                "id": "67#S1",
+                "title": "#S1",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibv3xsdm4mg4tclgniezop7nuyt2fysyoc7lhz7th2tey4pqseodu",
+                "size": "129KB",
+                "date": "25/09/26",
+                "caption": "John Blaylock"
+            },
+            {
+                "id": "67#S2",
+                "title": "#S2",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicwn6kxl2acwuktrsn7xbsox3jomuxrf4ly4q6faagtad6biq5nf4",
+                "size": "111KB",
+                "date": "26/09/26",
+                "caption": "Miriam Blaylock"
+            },
+            {
+                "id": "67#S3",
+                "title": "#S3",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreic3u7cyl4v5q5cnam63esmmlnjp3rtsb2ytsm7tmh4rruijvjasfe",
+                "size": "120KB",
+                "date": "27/09/26",
+                "caption": "Sarah Roberts"
+            },
+            {
+                "id": "67#S4",
+                "title": "#S4",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihm5z2vokr4s3tb4jhui4kexye2b5ni3fxoumr247xxrtquqon5om",
+                "size": "95KB",
+                "date": "28/09/26",
+                "caption": "UK Quad Poster, 1983"
             }
         ],
         "Ultimate_Series": [
@@ -9071,6 +9255,14 @@ const database = {
                 "size": "123KB",
                 "date": "26/08/26",
                 "caption": "Kingdom Of The Spiders (1977)"
+            },
+            {
+                "id": "43#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidyca2px45ky5wdrk6v5casvxqaxn2iu5wbzl2mfijfhbf5gj2w54",
+                "size": "141KB",
+                "date": "25/09/26",
+                "caption": "Grizzly 2: Revenge (1983)"
             },
             {
                 "id": "43#ESE",
