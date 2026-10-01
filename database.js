@@ -2209,7 +2209,7 @@ const database = {
                 "title": "#13",
                 "file": "https://i.postimg.cc/GpdYpPBf/13-The-Hound-Of-The-Baskervilles.gif",
                 "size": "12MB",
-                "date": "03/06/2026",
+                "date": "03/06/26",
                 "caption": "The Hound Of The Baskervilles (1959)/(FM)"
             },
             {
@@ -4951,7 +4951,7 @@ const database = {
                 "title": "#S4",
                 "file": "https://i.postimg.cc/7Z7HDMfb/S4.gif",
                 "size": "5MB",
-                "date": "28/05/2026",
+                "date": "28/05/26",
                 "caption": "The Organic Betamax 'Flesh' Tape"
             },
             {
@@ -6249,7 +6249,7 @@ const database = {
                 "title": "#08",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihhfza5l2npbssyj77fmrnjtmi5jomcqwvxsxbxd3cxswbic5vi6i",
                 "size": "129KB",
-                "date": "",
+                "date": "21/05/26",
                 "caption": "Tim Curry as Dr. Frank-N-Furter (1975)"
             },
             {
@@ -6511,7 +6511,7 @@ const database = {
                 "title": "#01",
                 "file": "https://i.postimg.cc/mgsBW9hL/1-Big-Trouble-In-Little-China.gif",
                 "size": "41MB",
-                "date": "10/05/2026",
+                "date": "10/05/26",
                 "caption": "Big Trouble In Little China (1986)/(FM)"
             },
             {
@@ -6519,7 +6519,7 @@ const database = {
                 "title": "#02",
                 "file": "https://i.postimg.cc/CLwcyLS0/2-From-Dusk-Til-Dawn.gif",
                 "size": "15MB",
-                "date": "10/05/2026",
+                "date": "10/05/26",
                 "caption": "From Dusk Till Dawn (1996)/(FM)"
             },
             {
@@ -6527,7 +6527,7 @@ const database = {
                 "title": "#03",
                 "file": "https://i.postimg.cc/FRcLzcbn/3-Beetlejuice.gif",
                 "size": "20MB",
-                "date": "10/05/2026",
+                "date": "10/05/26",
                 "caption": "Beetlejuice (1988)/(FM)"
             },
             {
@@ -6535,7 +6535,7 @@ const database = {
                 "title": "#04",
                 "file": "https://i.postimg.cc/SxdXLcS9/4-Day-Of-The-Dead.gif",
                 "size": "16MB",
-                "date": "11/06/2026",
+                "date": "11/06/26",
                 "caption": "Day Of The Dead (1985)/(FM)"
             },
             {
@@ -6543,7 +6543,7 @@ const database = {
                 "title": "#05",
                 "file": "https://i.postimg.cc/13n7sJb7/5-Friday-The-13th.gif",
                 "size": "28MB",
-                "date": "09/07/2026",
+                "date": "09/07/26",
                 "caption": "Friday The 13th (1980)/(FM)"
             },
             {
@@ -6551,7 +6551,7 @@ const database = {
                 "title": "#06",
                 "file": "https://i.postimg.cc/Znb7pbH8/6-An-American-Werewolf-In-London.gif",
                 "size": "14MB",
-                "date": "08/08/2026",
+                "date": "08/08/26",
                 "caption": "An American Werewolf In London (1981)(FM)"
             }
         ],
@@ -6609,7 +6609,7 @@ const database = {
                 "title": "#07",
                 "file": "https://i.postimg.cc/RFD0K9XZ/7-Exit-8.gif",
                 "size": "17MB",
-                "date": "23/07/2026",
+                "date": "23/07/26",
                 "caption": "Exit 8 (2025)(FM)"
             },
             {
@@ -6681,7 +6681,7 @@ const database = {
                 "title": "#16",
                 "file": "https://i.postimg.cc/BnrKRmdV/16-The-Amityville-Horror.gif",
                 "size": "20MB",
-                "date": "05/08/2026",
+                "date": "05/08/26",
                 "caption": "The Amityville Horror (1979)(FM)"
             },
             {
@@ -7917,7 +7917,7 @@ const database = {
                 "title": "#04",
                 "file": "https://i.postimg.cc/50dHX84H/4-Demons.gif",
                 "size": "14MB",
-                "date": "15/06/2026",
+                "date": "15/06/26",
                 "caption": "Demons (1985)"
             },
             {
@@ -8451,7 +8451,7 @@ const database = {
                 "title": "#02",
                 "file": "https://i.postimg.cc/KYnt6V8r/2-The-Terminator.gif",
                 "size": "3MB",
-                "date": "15/08/2026",
+                "date": "15/08/26",
                 "caption": "The Terminator (1984)"
             }
         ],
