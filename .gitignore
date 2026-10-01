@@ -1,0 +1,11 @@
+# The database editor is a local tool, not part of the public site
+dbeditor/
+
+# Secrets and dependencies
+.env
+**/.env
+node_modules/
+
+# Backups and archives
+*.backup-*
+*.zip
