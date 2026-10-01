@@ -1051,6 +1051,9 @@
         }
 
 
+        .logo-wrap { position: relative; display: inline-block; }
+        .version-tag { position: absolute; top: -0.2em; right: 0; font-size: 7pt; letter-spacing: 1px; opacity: 0.75; }
+
         /* --- Recursive ghosting for boot / splash screen --- */
         .recursive-boot-ghost-safe {
             position: fixed;
@@ -2304,6 +2307,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
         escapeInputBuffer = "";
         terminal.innerHTML = `
             <div class="card-view" onclick="bootSystem()">
+                <div class="logo-wrap"><span class="version-tag">${typeof siteVersion !== 'undefined' ? 'v' + siteVersion : ''}</span>
                 <pre class="glitch" style="font-size: 8pt; line-height: 1;">
  ██████╗███╗   ███╗ ██████╗ 
 ██╔════╝████╗ ████║██╔════╝ 
@@ -2311,7 +2315,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 ██║     ██║╚██╔╝██║██║      
 ╚██████╗██║ ╚═╝ ██║╚██████╗ 
  ╚═════╝╚═╝     ╚═╝ ╚═════╝ 
-                </pre>
+                </pre></div>
                 <p>[ SECURE VAULT ACCESS ]</p>
                 <p style="border: 1px solid var(--bright-green); padding: 8px 20px; cursor: pointer;">PRESS ANY KEY TO START</p>
                 <div class="boot-social">
