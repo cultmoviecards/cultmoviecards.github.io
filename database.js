@@ -7521,7 +7521,7 @@ const database = {
                 "caption": "Samurai Cop (1991)"
             },
             {
-                "id": "45#06#",
+                "id": "45#06",
                 "title": "#06",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigsvea6eqpz7n746qqii2jnksa5uzcatsfok4z3isptbkx6okqz74",
                 "size": "205KB",
