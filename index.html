@@ -1689,7 +1689,32 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 		"SAM_CRUISE_AGENCY": "These cards were based on the Topps 'Superman' series and were created for the CMC alt-account 'Sam Cruise Agency'. The account is now pretty much abandoned, but these ZX Spectrum themed cards live on. Over 100 were made in total.",
 		"CULT_VILLAINS": "These cards were intended to mimic the 1938 Hamilton Gum v289 vintage cards. Initial releases of these cards proved unpopular, and the set was ultimately abandoned. Card #5 of this set 'Nurse Ratched' was never released on Bluesky. ",
 		"ROLLERBALL_STICKERS_RUB_OFFS": "Unfathomable amounts of work went into the designs of these cards, a re-work of the Pac-Man Stickers & Rub-offs set from 1980. So much work in fact, that the set was abandoned due to exhaustion. Only 5 were ever made.",
-		"CMC_VAULT_SHELL_COMMANDS_LIST": "Not a movie card series, but a gateway.. this collection documents the commands, secrets and hidden functions that power the system itself."
+		"CMC_VAULT_SHELL_COMMANDS_LIST": "Not a movie card series, but a gateway.. this collection documents the commands, secrets and hidden functions that power the system itself.",
+		"CREEPSHOW": "Five tales of comic-book terror, one grinning Creep. This set gathers the twisted revenge, hungry fungus and cereal-based tragedy of Romero and King's EC Comics love letter.",
+		"RE_ANIMATOR": "Herbert West has a serum, a deadline and absolutely no bedside manner. This set brings back the gooey, gleefully gruesome chaos of Stuart Gordon's Lovecraft-inspired classic.",
+		"SORCERER": "Four desperate men, two trucks and a payload that could go off at any moment. This set follows Friedkin's sweat-soaked journey through the jungle, one unstable bump at a time.",
+		"WORLD_CULT_SERIES": "A trip around the globe, one cult classic at a time. This set picks a film from every corner of the map, proving that weird, wonderful cinema knows no borders.",
+		"CULT_CARNAGE": "Engines roar, tyres scream and something always ends up in flames. This set celebrates killer cars, rogue machines and the high-speed mayhem of the open road.",
+		"FRIGHT_CLUB_FEATURES_V": "The fifth instalment of Fright Club, packed with creature features, cursed locations and deep-cut horror. Expect sewer dwellers, giant birds and a whole lot of rubber.",
+		"FRIGHT_CLUB_FEATURES_VI": "Fright Club returns for a sixth outing. This set is still growing, so check back for more horror and sci-fi favourites.",
+		"GOTHIK_GHOULS": "Candlelight, capes and Euro-horror seduction. This set drapes itself in the lush, sensual and strangely dreamy side of 1970s vampire cinema.",
+		"HAMMER_SERIES": "Technicolor blood, heaving bosoms and gothic castles. This set pays tribute to the legendary studio that gave monsters a fresh coat of crimson.",
+		"MUSICAL_MADNESS": "When speaking just isn't enough. This set belts out the glam, grit and outright weirdness of cult cinema's most unforgettable musical numbers.",
+		"MYTHO_LITHO": "Vintage lithography, faked with love. This set gives the mythic heroes and hard men of cult cinema the look of aged, hand-printed posters from another era.",
+		"NEON_NIGHTMARES": "Glowing signs, wet streets and something lurking in the glare. This set soaks cult cinema's darker side in neon.",
+		"SHAW_BROTHERS_SERIES": "Flying fists, killer venoms and masters of the deadly blade. This set honours the Shaw Brothers studio and the kung-fu classics that shaped a genre.",
+		"SINGLE_SCOOPS": "Some films are so traumatic they can only be endured once. This set collects those unforgettable one-time-only experiences, so you never have to sit through them again.",
+		"SLASHERS_SERIES": "Masks, machetes and teens making terrible decisions. This set lines up the killers, the final girls and the bloody blueprints of the slasher boom.",
+		"SPEKTRALIZED": "Loading... please wait. This set hybridises ZX Spectrum loading screens with movie stills, colour clash, scan lines and all.",
+		"SPORTS_LEGENDS": "Bowling lanes, prison yards and kung-fu football pitches. This set celebrates the unlikely champions and wonderfully strange sporting heroes of cult cinema.",
+		"STICKER_SHOTS": "Peel, stick and unleash. Inspired by classic sticker cards, this set is full of monsters, mayhem and 80s favourites ready to go on your school bag.",
+		"SUPER_SIDEKICKS": "Every hero needs someone watching their back. This set shines a spotlight on cult cinema's finest companions, helpers and the odd monstrous brother in a basket.",
+		"TALES_FROM_THE_CRYPT": "Welcome, boils and ghouls. This set digs up the twisted cast of the EC Comics-inspired horror anthology, where everybody gets exactly what's coming to them.",
+		"THE_HUNGER": "Eternal youth has a price. This set captures the cold, stylish seduction of Tony Scott's vampire tale, from smoky nightclubs to the slow decay of forever.",
+		"ULTIMATE_SERIES": "The definitive list. This set counts down the top 100 cult movies of all time, each one earning its place with an extra helping of attitude.",
+		"VINCENT_PRICE_SERIES": "That voice. That moustache. That menace. This set pays tribute to the one and only Vincent Price, the undisputed king of velvet-voiced horror.",
+		"VOID_WARS": "In space, no one can hear you question your life choices. This set drifts through the bleak, haunted and hostile corners of cult sci-fi.",
+		"EXPLODING_HELICOPTER": "If it's got rotor blades, it's going to go boom. This set is dedicated to the proud and fiery tradition of the exploding helicopter."
     };
 
     function normalizeSetInfoKey(value) {
@@ -3400,12 +3425,6 @@ function openRandomCard() {
         return String(size || "----").toUpperCase().padStart(7, " ");
     }
 
-    function openDir(name, useMemory = false, sub = "") {
-        const path = [name];
-        if (sub) path.push(...String(sub).split("\\").filter(Boolean));
-        openPath(path, useMemory);
-    }
-
     function openPath(path, useMemory = false) {
         const normalized = normalizePath(path);
         viewState = "dir";
@@ -3460,12 +3479,6 @@ function openRandomCard() {
         viewCardByPath(decodePath(encodedPath), idx);
     }
 
-    function viewCard(dir, idx, sub = "") {
-        const path = [dir];
-        if (sub) path.push(...String(sub).split("\\").filter(Boolean));
-        viewCardByPath(path, idx);
-    }
-
     function viewCardByPath(path, idx) {
         const normalized = normalizePath(path);
         viewState = "file";
@@ -3480,7 +3493,6 @@ function openRandomCard() {
 
         const card = files[idx];
         const total = files.length;
-        const safeTitle = escapeHTML(card.title || `CARD_${idx + 1}`);
         const safeCaption = escapeHTML(card.caption || "UNKNOWN");
         const safeId = escapeHTML(card.id || "UNKNOWN");
         const safeDate = escapeHTML(card.date || "UNKNOWN");
@@ -3770,20 +3782,6 @@ function openRandomCard() {
         }
     }
     function reviewMove(){ chess.reviewReady=false; chessSay('SYSTEM: MOVE VERIFIED BY INTERNAL COMMITTEE. NO IRREGULARITIES FOUND.', true); achievement('UNAUTHORIZED EN PASSANT'); renderChess(); }
-
-    function mythicCode() {
-        const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-        const randomIndex = (max) => {
-            if (window.crypto && crypto.getRandomValues) {
-                const values = new Uint32Array(1);
-                crypto.getRandomValues(values);
-                return values[0] % max;
-            }
-            return Math.floor(Math.random() * max);
-        };
-        const part = () => Array.from({ length: 4 }, () => chars[randomIndex(chars.length)]).join("");
-        return `${part()}-${part()}-${part()}-${part()}`;
-    }
 
     function rouletteWindow(slots, centreIndex) {
         const out = [];
