@@ -1,0 +1,8 @@
+# Store text files with LF line endings everywhere, so Windows checkouts don't flip them to CRLF
+* text=auto eol=lf
+
+# Never touch binary files
+*.png binary
+*.ico binary
+*.ttf binary
+*.zip binary
