@@ -7215,12 +7215,28 @@ const database = {
         ],
         "Giant_Retro_Monsters": [
             {
+                "id": "69#WW",
+                "title": "#WW",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia6xm4ufwiykyrbbjttajx7zjf3ym5wxz2hbcoxmdalh6xz5gbrbq",
+                "size": "178KB",
+                "date": "30/09/26",
+                "caption": "Wax Wrapper, Giant Retro Monsters"
+            },
+            {
                 "id": "69#01",
                 "title": "#01",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreig66uejfxg77tujbw2jcankxltholn53hs3vigmp7wvir3jepd4je",
                 "size": "156KB",
                 "date": "01/10/26",
                 "caption": "Rhedosaurus, The Beast From 20,000 Fathoms (1953)"
+            },
+            {
+                "id": "69#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid3shkmxp246itqrx7kimwau6goipvxohuefb7abqqm25jjqfcfn4",
+                "size": "150KB",
+                "date": "02/10/26",
+                "caption": "Nancy Archer '58, Attack Of The 50ft Woman (1958)"
             }
         ],
         "Gothik_Ghouls": [
@@ -9159,6 +9175,14 @@ const database = {
                 "size": "88KB",
                 "date": "26/08/26",
                 "caption": "The Mad Magician (1954)"
+            },
+            {
+                "id": "63#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibpcnkp4nswh6vxq7bicl3ftpxxb4rwtvqcgrc6563bwq7vm2z3km",
+                "size": "101KB",
+                "date": "02/10/26",
+                "caption": "The Invisible Man Returns (1940)"
             }
         ],
         "Void_Wars": [
