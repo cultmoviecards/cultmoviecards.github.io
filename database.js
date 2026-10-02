@@ -7220,7 +7220,7 @@ const database = {
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia6xm4ufwiykyrbbjttajx7zjf3ym5wxz2hbcoxmdalh6xz5gbrbq",
                 "size": "178KB",
                 "date": "30/09/26",
-                "caption": "Wax Wrapper, Giant Retro Monsters"
+                "caption": "Wax Wrapper, 'Giant Retro Monsters'"
             },
             {
                 "id": "69#01",
