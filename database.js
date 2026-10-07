@@ -7031,6 +7031,30 @@ const database = {
                 "size": "87KB",
                 "date": "19/09/26",
                 "caption": "Mars Attacks! (1996)"
+            },
+            {
+                "id": "68#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreic6zor3z4fkbvca5xhihsvhd6v7nop7qtt2astcytqtklfgfdoc54",
+                "size": "74KB",
+                "date": "05/10/26",
+                "caption": "Nightbreed (1990)"
+            },
+            {
+                "id": "68#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicc3it6ryoa74zaeybsbc7a6n7k3k7wowr3m5q4yi73txt2lr4tee",
+                "size": "88KB",
+                "date": "06/10/26",
+                "caption": "The VVitch (2015)"
+            },
+            {
+                "id": "68#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiean4tg7wjbmw3vkmxel3lo2fxuwh3bxhjc4ilc5gslzcuyrmymhq",
+                "size": "54KB",
+                "date": "07/10/26",
+                "caption": "Halloween (1978)"
             }
         ],
         "Future_Shocks": [
@@ -7245,6 +7269,38 @@ const database = {
                 "size": "176KB",
                 "date": "03/10/26",
                 "caption": "Giant Behemoth, The Giant Behemoth (1959)"
+            },
+            {
+                "id": "69#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiawq5paofg6rfvszt3wm5ssqjwjpuugf53lgwgzthbmb34kv54kei",
+                "size": "179KB",
+                "date": "04/10/26",
+                "caption": "La Carcagne, The Giant Claw (1957)"
+            },
+            {
+                "id": "69#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieolvr6mx5w3bdqfctvafwwuxsu3u25xbjscuqjjsxnpwg564k7vq",
+                "size": "153KB",
+                "date": "05/10/26",
+                "caption": "Carroon Creature, The Quatermass Xperiment (1955)"
+            },
+            {
+                "id": "69#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif3fnfdsto3xxyggrwxbqzated4q5hlf6gsui66xokkuvogh5qyvu",
+                "size": "135KB",
+                "date": "06/10/26",
+                "caption": "Alien Parasite, Quatermass 2 (1957)"
+            },
+            {
+                "id": "69#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidevqglvvykmkhchhik4eanigbuzl7bcn7oednuor6neqgvbtbckq",
+                "size": "155KB",
+                "date": "07/10/26",
+                "caption": "Elasmosaurus, Son Of Kong (1933)"
             }
         ],
         "Gothik_Ghouls": [
@@ -7551,6 +7607,14 @@ const database = {
                 "size": "117KB",
                 "date": "15/09/26",
                 "caption": "The House By The Cemetery (1981)"
+            },
+            {
+                "id": "28#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieejugjt46eqf2b5lud73b2cl243vwkakxsmjyanrtvkvyszq7dte",
+                "size": "122KB",
+                "date": "04/10/26",
+                "caption": "Night Of The Demons (1988)"
             }
         ],
         "Hexy_Beasts": [
