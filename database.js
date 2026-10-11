@@ -6183,6 +6183,14 @@ const database = {
                 "caption": "Devil Hunter (1978)"
             },
             {
+                "id": "16#17",
+                "title": "#17",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicat5rzd665kwjcea5jfnqrfhnqjxkq7rzfredzkoiyuepioi3kwm",
+                "size": "94KB",
+                "date": "08/10/26",
+                "caption": "Don't Go In The Woods (1981)"
+            },
+            {
                 "id": "16#19",
                 "title": "#19",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidzct2lsiljrlbwfas5ya3srocyey73ywefbskjkibogqtjctk6ym",
@@ -6247,6 +6255,14 @@ const database = {
                 "size": "65KB",
                 "date": "02/09/26",
                 "caption": "'Voltan The Dark One', Hawk The Slayer (1980)"
+            },
+            {
+                "id": "18#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreied4w2j7cn4bekgxgng23zf7rppst2k4zba36eepc45bbeliaz64i",
+                "size": "77KB",
+                "date": "08/10/26",
+                "caption": "The Dark Crystal (1982)"
             }
         ],
         "Cops_N_Robbers": [
@@ -6297,6 +6313,14 @@ const database = {
                 "size": "54KB",
                 "date": "03/09/26",
                 "caption": "Ms. 45 (1981)"
+            },
+            {
+                "id": "19#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicvxk47il5v5ndukaqa7y4l7tdbgx6ele3d5ivhbtgu4kiakqikqu",
+                "size": "67KB",
+                "date": "10/10/26",
+                "caption": "Manhunter (1986)"
             }
         ],
         "Cult_Carnage": [
@@ -6427,6 +6451,14 @@ const database = {
                 "size": "117KB",
                 "date": "04/09/26",
                 "caption": "Thunder Road (1958)"
+            },
+            {
+                "id": "20#17",
+                "title": "#17",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiandnw5ah5crnrtv3zfbcklojqumwx66modxequ6sjehka6qq2fzu",
+                "size": "81KB",
+                "date": "10/10/26",
+                "caption": "The Junkman (1982)"
             },
             {
                 "id": "20#2FC",
@@ -7147,6 +7179,14 @@ const database = {
                 "caption": "Brazil (1985)"
             },
             {
+                "id": "26#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreickz2p4qj3f2q2lgokzfm3qzyrevyk6g4gpvfnkmdndspkxybghfa",
+                "size": "99KB",
+                "date": "11/10/26",
+                "caption": "Zardoz"
+            },
+            {
                 "id": "26#FC",
                 "title": "#FC",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib7gm4xtonri6ghda6lqnvsb4ydipth4j7u26nmlyjzcgskbng46a",
@@ -7301,6 +7341,38 @@ const database = {
                 "size": "155KB",
                 "date": "07/10/26",
                 "caption": "Elasmosaurus, Son Of Kong (1933)"
+            },
+            {
+                "id": "69#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifrhl5xj7isgr3f3oj56nmeragejztcki5hx64lcqdtygyz4gnoim",
+                "size": "172KB",
+                "date": "08/10/26",
+                "caption": "Gogola, Gogola (1966)"
+            },
+            {
+                "id": "69#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiasfv526n6nl4xkhbnm5rsmfycgft7xbqucd6hubymd7fohcrwsva",
+                "size": "179KB",
+                "date": "09/10/26",
+                "caption": "Moguera, The Mysterians (1957)"
+            },
+            {
+                "id": "69#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreictw6hnx3incpztmkzhgdw5woxnr2imkutazhhminjlgpf4mge63y",
+                "size": "151KB",
+                "date": "10/10/26",
+                "caption": "The Blob '58, The Blob (1957)"
+            },
+            {
+                "id": "69#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia7t3jhpzqhdunpdrtvlt4demehef73tknk5c37avm42hbk6gwtn4",
+                "size": "176KB",
+                "date": "11/10/26",
+                "caption": "Emmy Lou Raven, The 30ft Bride Of Candy Rock (1959)"
             }
         ],
         "Gothik_Ghouls": [
@@ -9155,6 +9227,46 @@ const database = {
                 "size": "192KB",
                 "date": "24/09/26",
                 "caption": "Frank & Eddie, Cheek-To-Cheek"
+            },
+            {
+                "id": "64#24",
+                "title": "#24",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihkt64oxe2aztamzylmb6vcj4eg4nzjqezeb2x4iccjmrjkvm6may",
+                "size": "145KB",
+                "date": "10/10/26",
+                "caption": "Mrs. Colbert, Sweet Lady"
+            },
+            {
+                "id": "64#25",
+                "title": "#25",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihxewqpguqjs4ibsl6p7i2h2vabkytm45m563jtwzecsmesqvtet4",
+                "size": "180KB",
+                "date": "11/10/26",
+                "caption": "Mr. Stronham, The Alchemist"
+            },
+            {
+                "id": "64#27",
+                "title": "#27",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigbv4kb6k44lhlvfbpumd7xh7lmzk3hz4hb3vou3fuu3tvqyh34sy",
+                "size": "184KB",
+                "date": "08/10/26",
+                "caption": "Luigi Paloma, Watt A Shocker"
+            },
+            {
+                "id": "64#28",
+                "title": "#28",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib3b3ichdwdltsfbci4ebkgweszmg3ljnxoi6vvrprgsib5vympvu",
+                "size": "190KB",
+                "date": "08/10/26",
+                "caption": "Martin Fairbanks, Mad Scientist"
+            },
+            {
+                "id": "64#29",
+                "title": "#29",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicdhjre3lmhumvcs6clcgdli64xhuafx6quvuxn4ejqclzo7hiv7m",
+                "size": "175KB",
+                "date": "08/10/26",
+                "caption": "Nelson Halliwell, Alas Poor Yorich"
             }
         ],
         "Ultimate_Series": [
