@@ -6842,7 +6842,23 @@ const database = {
                 "file": "https://i.postimg.cc/Znb7pbH8/6-An-American-Werewolf-In-London.gif",
                 "size": "14MB",
                 "date": "08/08/26",
-                "caption": "An American Werewolf In London (1981)(FM)"
+                "caption": "An American Werewolf In London (1981)/(FM)"
+            },
+            {
+                "id": "23#07",
+                "title": "#07",
+                "file": "https://i.postimg.cc/d3ygh90L/7-The-Thing.gif",
+                "size": "9MB",
+                "date": "11/10/26",
+                "caption": "The Thing (1982)/(FM)"
+            },
+            {
+                "id": "23#08",
+                "title": "#08",
+                "file": "https://i.postimg.cc/5t2GBJtn/8-Carrie.gif",
+                "size": "23MB",
+                "date": "12/10/26",
+                "caption": "Carrie (1976)/(FM)"
             }
         ],
         "Fright_Club_Features_V": [
