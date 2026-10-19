@@ -1,6 +1,7 @@
 // CMC SET INFO: text shown in the Set Info popup. Keys are the set name, upper-cased with non-alphanumerics replaced by "_".
 const setInfo = {
     "50S_CULT_CLASSICS": "A trip back to the golden age of sci-fi and creature features. This set celebrates the imagination, charm and occasional madness of 1950s cult cinema.",
+    "60S_CULT_CHILLERS": "Gothic dread, creeping shadows and slow-burn terror. This set revisits the cult chillers of the 1960s, when ghosts, witches and madness did their work through atmosphere and suggestion.",
     "BANNED": "Too shocking, too controversial or simply too strange. This set brings together films that pushed boundaries and earned their place on the wrong side of approval.",
     "BATTLE_BEYOND_THE_STARS": "Space battles, rogue heroes and intergalactic adventure take centre stage in this sci-fi spectacle packed with action, ambition and classic cult charm.",
     "BD": "BD earned a Mythic Bubblegum card and sat on it for a while, basking in the pinky glow.. then they traded it in for this magnificent bastard of a card!",
