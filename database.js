@@ -6051,6 +6051,14 @@ const database = {
                 "size": "47KB",
                 "date": "31/08/26",
                 "caption": "When Worlds Collide (1951)"
+            },
+            {
+                "id": "15#21",
+                "title": "#21",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibavf4vbzocbnuh5nb5lw4263s65plvposdntmx4pbrnztslxjzra",
+                "size": "51KB",
+                "date": "12/10/26",
+                "caption": "Invaders From Mars (1953)"
             }
         ],
         "Banned": [
@@ -6575,6 +6583,14 @@ const database = {
                 "caption": "Harry Dean Stanton as Brett (1979)"
             },
             {
+                "id": "21#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifhacfg3i6jxlptgzwhttwgnrkalm7laenyuuzkxaew5hwmacndqi",
+                "size": "201KB",
+                "date": "12/10/26",
+                "caption": "Jeffrey Combs as Dr. Herbert West (1979)"
+            },
+            {
                 "id": "21#F13",
                 "title": "#F13",
                 "file": "https://i.postimg.cc/Zn7jYQNk/F13-Kane-Hodder.png",
@@ -6727,6 +6743,14 @@ const database = {
                 "size": "104KB",
                 "date": "06/09/26",
                 "caption": "Vampire Hunter D: Bloodlust (2000)"
+            },
+            {
+                "id": "22#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifoccek7ok2llax5bpadv4n347hxvojgapm2x5cucyo66b367bhx4",
+                "size": "107KB",
+                "date": "12/10/26",
+                "caption": "The Black Cauldron (1985)"
             }
         ],
         "David_Lynch_Series": [
@@ -6785,6 +6809,14 @@ const database = {
                 "size": "108KB",
                 "date": "07/09/26",
                 "caption": "Lost Highway (1997)"
+            },
+            {
+                "id": "34#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiarwxf2unqld7ajedc2hqofgytax3edo6wrclvhm6m47ixbm457iq",
+                "size": "121KB",
+                "date": "12/10/26",
+                "caption": "The Straight Story (1999)"
             },
             {
                 "id": "34#FC",
@@ -7103,6 +7135,22 @@ const database = {
                 "size": "54KB",
                 "date": "07/10/26",
                 "caption": "Halloween (1978)"
+            },
+            {
+                "id": "68#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiekuhoyelk2kdy7dmtdz4zx2lpht4pz7xzgm56tyx2omw24d434my",
+                "size": "66KB",
+                "date": "14/10/26",
+                "caption": "Halloween II (1981)"
+            },
+            {
+                "id": "68#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreianfxiziz4r6chndk5k43czh4ut42vofyomatuhhexdrlgsm2g2km",
+                "size": "110KB",
+                "date": "16/10/26",
+                "caption": "There's Nothing Out There (1991)"
             }
         ],
         "Future_Shocks": [
@@ -7389,6 +7437,62 @@ const database = {
                 "size": "176KB",
                 "date": "11/10/26",
                 "caption": "Emmy Lou Raven, The 30ft Bride Of Candy Rock (1959)"
+            },
+            {
+                "id": "69#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiguvo5z7cudut2v7grfv7vztsscxydtdolewnwscu3cusn6qqtjhe",
+                "size": "170KB",
+                "date": "12/10/26",
+                "caption": "Maleficent Dragon (1959)"
+            },
+            {
+                "id": "69#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieurfjgp24ociv2gtzhp4mtln66rstzo5arkkbrvho5p5umar33ce",
+                "size": "172KB",
+                "date": "13/10/26",
+                "caption": "Giant Ant (1954)"
+            },
+            {
+                "id": "69#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigbtalehdnhdmi5rs5vyteca5w3zb4zmwrsg56bwyzylxrkaw7prm",
+                "size": "172KB",
+                "date": "14/10/26",
+                "caption": "The Deadly Mantis (1957)"
+            },
+            {
+                "id": "69#15",
+                "title": "#15",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid3zdqkpgifvgzfhmryctcqdaqqvmel5k46rdxd5r7tlhs27xzpw4",
+                "size": "155KB",
+                "date": "15/10/26",
+                "caption": "Giant Locust"
+            },
+            {
+                "id": "69#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicxdluftxt3e5ed3d6mrh3sztdx6agm2uptph4j4rf3s4ffq377hi",
+                "size": "174KB",
+                "date": "16/10/26",
+                "caption": "Tarantula (1955)"
+            },
+            {
+                "id": "69#17",
+                "title": "#17",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiguy2vmouebz3oi255j4be3tjkcwf5mxkneprykdfocn62ei6mmju",
+                "size": "171KB",
+                "date": "17/10/26",
+                "caption": "Crawling Eyes"
+            },
+            {
+                "id": "69#18",
+                "title": "#18",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifgvgfnm3zoocjlnue3j6cizyirgvzhuhhbew3mjcxvtkdso44nzy",
+                "size": "172KB",
+                "date": "19/10/26",
+                "caption": "Cyclops '58"
             }
         ],
         "Gothik_Ghouls": [
@@ -7431,6 +7535,14 @@ const database = {
                 "size": "61KB",
                 "date": "12/09/26",
                 "caption": "Female Vampire (1975)"
+            },
+            {
+                "id": "46#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiheh4l3dcbbc7egw3qyi7de645zzaa67gbl6hngsrqow6cvg4h2ei",
+                "size": "71KB",
+                "date": "14/10/26",
+                "caption": "Daughters Of Darkness (1971)"
             }
         ],
         "H_P_Lovecraft_Series": [
@@ -7521,6 +7633,14 @@ const database = {
                 "size": "171KB",
                 "date": "13/09/26",
                 "caption": "Castle Freak (1995)"
+            },
+            {
+                "id": "33#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidvqmbrqqihe72w3uehomblny42abzpq5iwomki3rhayaammjzrry",
+                "size": "158KB",
+                "date": "17/10/26",
+                "caption": "The Resurrected (1991)"
             }
         ],
         "Halloween_III": [
@@ -7613,6 +7733,14 @@ const database = {
                 "size": "126KB",
                 "date": "14/09/26",
                 "caption": "The Mummy (1959)"
+            },
+            {
+                "id": "51#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiftggpnborw5gjw5od7yvdwilsah5glqsjonrsxm2dwmltyjqwsiq",
+                "size": "83KB",
+                "date": "18/10/26",
+                "caption": "The Brides Of Dracula (1960)"
             }
         ],
         "Haunted_Houses": [
@@ -7703,6 +7831,14 @@ const database = {
                 "size": "122KB",
                 "date": "04/10/26",
                 "caption": "Night Of The Demons (1988)"
+            },
+            {
+                "id": "28#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid3pcxviqwpcbxu5axl62efcndswvzn3gd663eoe77ozqcg455zry",
+                "size": "103KB",
+                "date": "18/10/26",
+                "caption": "Poltergeist (1982)"
             }
         ],
         "Hexy_Beasts": [
@@ -7809,6 +7945,14 @@ const database = {
                 "size": "63KB",
                 "date": "16/09/26",
                 "caption": "Cry Of The Banshee (1970)"
+            },
+            {
+                "id": "29#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidqn7txxzljsntlbfblay2sm3ejjy7uwtmzeojoe4l6yf4bn2n5xq",
+                "size": "61KB",
+                "date": "19/10/26",
+                "caption": "Angel Heart (1987)"
             }
         ],
         "Invaders!": [
@@ -9261,6 +9405,14 @@ const database = {
                 "caption": "Mr. Stronham, The Alchemist"
             },
             {
+                "id": "64#26",
+                "title": "#26",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigj3m3cgzak4n4fbmhb4iy23c2at4venrqph2r66vwualvnlb5z7e",
+                "size": "167KB",
+                "date": "12/10/26",
+                "caption": "Earl Diggs, Extra Baggage"
+            },
+            {
                 "id": "64#27",
                 "title": "#27",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigbv4kb6k44lhlvfbpumd7xh7lmzk3hz4hb3vou3fuu3tvqyh34sy",
@@ -9283,6 +9435,30 @@ const database = {
                 "size": "175KB",
                 "date": "08/10/26",
                 "caption": "Nelson Halliwell, Alas Poor Yorich"
+            },
+            {
+                "id": "64#30",
+                "title": "#30",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibhy6hl3ghbrmrelei7ec3rc2pxqotpp3kf4l6327latcmshshy7i",
+                "size": "184KB",
+                "date": "15/10/26",
+                "caption": "Red Buckley, No Surgeon"
+            },
+            {
+                "id": "64#31",
+                "title": "#31",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreianrlliseu2zf23ccn4gws7vsl4ueixiuw5urxwybpztpn6sf3h4a",
+                "size": "158KB",
+                "date": "15/10/26",
+                "caption": "Donald Longtooth, Bank Teller"
+            },
+            {
+                "id": "64#32",
+                "title": "#32",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifabqhj4c6zqxki2apwrkb3dxdcyve4276taojagt3cxfhpu65is4",
+                "size": "179KB",
+                "date": "15/10/26",
+                "caption": "Jack Craig, Art To Die For"
             }
         ],
         "Ultimate_Series": [
