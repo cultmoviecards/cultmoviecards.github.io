@@ -6061,6 +6061,16 @@ const database = {
                 "caption": "Invaders From Mars (1953)"
             }
         ],
+        "60s_Cult_Chillers": [
+            {
+                "id": "71#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiazgbeqvngbdevtvivem2dcnnljmugejhmyc5ybvkyijdzt4t4x7y",
+                "size": "102KB",
+                "date": "17/10/26",
+                "caption": "The Haunting (1963)"
+            }
+        ],
         "Banned": [
             {
                 "id": "16#01",
