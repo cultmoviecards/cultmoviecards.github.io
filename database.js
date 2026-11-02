@@ -6327,6 +6327,14 @@ const database = {
                 "size": "102KB",
                 "date": "17/10/26",
                 "caption": "The Haunting (1963)"
+            },
+            {
+                "id": "71#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib3c4pjgio57z5lgj47ce5uyxdhjw4b3mijaldhcnlzk57lkpwhgi",
+                "size": "78KB",
+                "date": "01/11/26",
+                "caption": "The Innocents (1961)"
             }
         ],
         "Banned": [
@@ -7507,6 +7515,14 @@ const database = {
                 "size": "86KB",
                 "date": "30/10/26",
                 "caption": "Race With The Devil (1975)"
+            },
+            {
+                "id": "68#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif3g6zs3n3dory4n75ym6ffg65ks2uaup6cltxypoafwqc7sbqdni",
+                "size": "55KB",
+                "date": "01/11/26",
+                "caption": "Lifeforce (1985)"
             }
         ],
         "Future_Shocks": [
@@ -9833,6 +9849,22 @@ const database = {
                 "size": "216KB",
                 "date": "31/10/26",
                 "caption": "Wax Wrapper, 'The Lost Boys'"
+            },
+            {
+                "id": "73#T1",
+                "title": "#T1",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreie4t5yhwonyigzdrnpzdrofqkbp7i25vyk4ouno22a4dhizxve4ny",
+                "size": "123KB",
+                "date": "01/11/26",
+                "caption": "Title Card, 'The Lost Boys'"
+            },
+            {
+                "id": "73#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreianmovqer6nwrlssea7rdzylfl2fftwazjdqxpnc6knyj3tsgtyme",
+                "size": "147KB",
+                "date": "01/11/26",
+                "caption": "Okay Boys.. Let's Go."
             }
         ],
         "Ultimate_Series": [
