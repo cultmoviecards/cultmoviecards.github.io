@@ -2301,256 +2301,6 @@ const database = {
                 "caption": "The Wretched (2019)"
             }
         ],
-        "Giant_Retro_Monsters": [
-            {
-                "id": "69#WW",
-                "title": "#WW",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia6xm4ufwiykyrbbjttajx7zjf3ym5wxz2hbcoxmdalh6xz5gbrbq",
-                "size": "178KB",
-                "date": "30/09/26",
-                "caption": "Wax Wrapper, 'Giant Retro Monsters'"
-            },
-            {
-                "id": "69#01",
-                "title": "#01",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreig66uejfxg77tujbw2jcankxltholn53hs3vigmp7wvir3jepd4je",
-                "size": "156KB",
-                "date": "01/10/26",
-                "caption": "Rhedosaurus, The Beast From 20,000 Fathoms (1953)"
-            },
-            {
-                "id": "69#02",
-                "title": "#02",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid3shkmxp246itqrx7kimwau6goipvxohuefb7abqqm25jjqfcfn4",
-                "size": "150KB",
-                "date": "02/10/26",
-                "caption": "Nancy Archer '58, Attack Of The 50ft Woman (1958)"
-            },
-            {
-                "id": "69#03",
-                "title": "#03",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib7b2lwak36ad7cgcqwzxhsn5zvictzyrojfjcrip6u7dzodms2ii",
-                "size": "176KB",
-                "date": "03/10/26",
-                "caption": "Giant Behemoth, The Giant Behemoth (1959)"
-            },
-            {
-                "id": "69#04",
-                "title": "#04",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiawq5paofg6rfvszt3wm5ssqjwjpuugf53lgwgzthbmb34kv54kei",
-                "size": "179KB",
-                "date": "04/10/26",
-                "caption": "La Carcagne, The Giant Claw (1957)"
-            },
-            {
-                "id": "69#05",
-                "title": "#05",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieolvr6mx5w3bdqfctvafwwuxsu3u25xbjscuqjjsxnpwg564k7vq",
-                "size": "153KB",
-                "date": "05/10/26",
-                "caption": "Carroon Creature, The Quatermass Xperiment (1955)"
-            },
-            {
-                "id": "69#06",
-                "title": "#06",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif3fnfdsto3xxyggrwxbqzated4q5hlf6gsui66xokkuvogh5qyvu",
-                "size": "135KB",
-                "date": "06/10/26",
-                "caption": "Alien Parasite, Quatermass 2 (1957)"
-            },
-            {
-                "id": "69#07",
-                "title": "#07",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidevqglvvykmkhchhik4eanigbuzl7bcn7oednuor6neqgvbtbckq",
-                "size": "155KB",
-                "date": "07/10/26",
-                "caption": "Elasmosaurus, Son Of Kong (1933)"
-            },
-            {
-                "id": "69#08",
-                "title": "#08",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifrhl5xj7isgr3f3oj56nmeragejztcki5hx64lcqdtygyz4gnoim",
-                "size": "172KB",
-                "date": "08/10/26",
-                "caption": "Gogola, Gogola (1966)"
-            },
-            {
-                "id": "69#09",
-                "title": "#09",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiasfv526n6nl4xkhbnm5rsmfycgft7xbqucd6hubymd7fohcrwsva",
-                "size": "179KB",
-                "date": "09/10/26",
-                "caption": "Moguera, The Mysterians (1957)"
-            },
-            {
-                "id": "69#10",
-                "title": "#10",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreictw6hnx3incpztmkzhgdw5woxnr2imkutazhhminjlgpf4mge63y",
-                "size": "151KB",
-                "date": "10/10/26",
-                "caption": "The Blob '58, The Blob (1957)"
-            },
-            {
-                "id": "69#11",
-                "title": "#11",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia7t3jhpzqhdunpdrtvlt4demehef73tknk5c37avm42hbk6gwtn4",
-                "size": "176KB",
-                "date": "11/10/26",
-                "caption": "Emmy Lou Raven, The 30ft Bride Of Candy Rock (1959)"
-            },
-            {
-                "id": "69#12",
-                "title": "#12",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiguvo5z7cudut2v7grfv7vztsscxydtdolewnwscu3cusn6qqtjhe",
-                "size": "170KB",
-                "date": "12/10/26",
-                "caption": "Maleficent Dragon, Sleeping Beauty (1959)"
-            },
-            {
-                "id": "69#13",
-                "title": "#13",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieurfjgp24ociv2gtzhp4mtln66rstzo5arkkbrvho5p5umar33ce",
-                "size": "172KB",
-                "date": "13/10/26",
-                "caption": "Giant Ant, Them! (1954)"
-            },
-            {
-                "id": "69#14",
-                "title": "#14",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigbtalehdnhdmi5rs5vyteca5w3zb4zmwrsg56bwyzylxrkaw7prm",
-                "size": "172KB",
-                "date": "14/10/26",
-                "caption": "The Deadly Mantis, The Deadly Mantis (1957)"
-            },
-            {
-                "id": "69#15",
-                "title": "#15",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid3zdqkpgifvgzfhmryctcqdaqqvmel5k46rdxd5r7tlhs27xzpw4",
-                "size": "155KB",
-                "date": "15/10/26",
-                "caption": "Giant Locust, Beginning Of The End (1957)"
-            },
-            {
-                "id": "69#16",
-                "title": "#16",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicxdluftxt3e5ed3d6mrh3sztdx6agm2uptph4j4rf3s4ffq377hi",
-                "size": "174KB",
-                "date": "16/10/26",
-                "caption": "Tarantula, Tarantula (1955)"
-            },
-            {
-                "id": "69#17",
-                "title": "#17",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiguy2vmouebz3oi255j4be3tjkcwf5mxkneprykdfocn62ei6mmju",
-                "size": "171KB",
-                "date": "17/10/26",
-                "caption": "Crawling Eyes, The Trollenberg Terror (1958)"
-            },
-            {
-                "id": "69#18",
-                "title": "#18",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifgvgfnm3zoocjlnue3j6cizyirgvzhuhhbew3mjcxvtkdso44nzy",
-                "size": "172KB",
-                "date": "19/10/26",
-                "caption": "Cyclops '58, The 7th Voyage Of Sinbad (1958)"
-            },
-            {
-                "id": "69#19",
-                "title": "#19",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiarc7kcwofsx54vfef4vgjmn46pgwrziwkav2k452fn4wkk7g4mhi",
-                "size": "173KB",
-                "date": "20/10/26",
-                "caption": "Telepathic Alien, The Atomic Submarine (1959)"
-            },
-            {
-                "id": "69#20",
-                "title": "#20",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigmomoaxo2vaqaatnc4blrhyaflbd66w7di3zbpyrqqytyjzxbflq",
-                "size": "141KB",
-                "date": "21/10/26",
-                "caption": "X, X The Unknown (1956)"
-            },
-            {
-                "id": "69#21",
-                "title": "#21",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih3zz42mxk2bps55764nikfeecvnjbcstrigusfz6uyjmn4kgk2im",
-                "size": "156KB",
-                "date": "22/10/26",
-                "caption": "King Kong, King Kong (1933)"
-            },
-            {
-                "id": "69#22",
-                "title": "#22",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidb46cvaqt6rha26iqabfuyoduwl3j22q4g3ocgvqfwocnimeclpm",
-                "size": "182KB",
-                "date": "23/10/26",
-                "caption": "Brontosaurus, The Lost World (1925)"
-            },
-            {
-                "id": "69#23",
-                "title": "#23",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicq2cnnpkmglmxegpdo64pttni3pgvhttvxz3lu2hmqtyfd4pkk2y",
-                "size": "185KB",
-                "date": "24/10/26",
-                "caption": "King Caesar, Godzilla Vs. Mechagodzilla (1974)"
-            },
-            {
-                "id": "69#24",
-                "title": "#24",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib52k7l7cfmbfsitmjrksawpcfohztb5cgn2m5yjqomau3p32enzy",
-                "size": "178KB",
-                "date": "24/10/26",
-                "caption": "Gorgo, Gorgo (1960)"
-            },
-            {
-                "id": "69#A1",
-                "title": "#A1",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih43khyjiwebrm6xkf2xzrvtzwlh7savhqirkrir3tsojc5vjszuq",
-                "size": "183KB",
-                "date": "25/10/26",
-                "caption": "Stay-Puft Marshmallow Man, Ghostbusters (1984)"
-            },
-            {
-                "id": "69#A2",
-                "title": "#A2",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibsi6ebpelupovdl77ne2ysgxiz76bqs2tpwi2j35nfokizltxn6m",
-                "size": "165KB",
-                "date": "26/10/26",
-                "caption": "Chewie The Chewitsaurus, 'Chewits' Advert (1976)"
-            },
-            {
-                "id": "69#A3",
-                "title": "#A3",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiappjiiqdyjgorgucjyrixbksnwfuiv6ysp45fuybimm4t6ssv3aq",
-                "size": "151KB",
-                "date": "27/10/26",
-                "caption": "Robo-Carnotaurus, Robocop (1987)"
-            },
-            {
-                "id": "69#A4",
-                "title": "#A4",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiglc6rnga62fzez3cgiw2e3wb2kxynpeycubyi4gnswwz72ajbr5q",
-                "size": "97KB",
-                "date": "29/10/26",
-                "caption": "Lizzie, Rampage 'Arcade' (1986)"
-            },
-            {
-                "id": "69#A5",
-                "title": "#A5",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidoqarromblubw2ku7wnkkwxqe6b24u4y4y4ceyvftwtdviuhussy",
-                "size": "180KB",
-                "date": "30/10/26",
-                "caption": "Rabbit Of Caerbannog, Monty Python & The Holy Grail (1975)"
-            },
-            {
-                "id": "69#A6",
-                "title": "#A6",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicoxpgadmhmbf65yjdkf7cru6hezvz2bvisvsesa34fdatmzuvnzy",
-                "size": "165KB",
-                "date": "31/10/26",
-                "caption": "Pumpkinhead, Pumpkinhead (1988)"
-            }
-        ],
         "Midnight_Cult_Series_I": [
             {
                 "id": "14#01",
@@ -6605,6 +6355,14 @@ const database = {
                 "size": "67KB",
                 "date": "10/10/26",
                 "caption": "Manhunter (1986)"
+            },
+            {
+                "id": "19#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaxynzki757dsfxxzvlebyrapijpakfzj676ekoorsr2z3dnln5ue",
+                "size": "67KB",
+                "date": "03/11/26",
+                "caption": "Robocop (1987)"
             }
         ],
         "Cult_Carnage": [
@@ -6745,6 +6503,14 @@ const database = {
                 "caption": "The Junkman (1982)"
             },
             {
+                "id": "20#18",
+                "title": "#18",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiefex5nmmw5jtydhgmk65bz2orzfywg5jxlj7snqaw32zctt7cpem",
+                "size": "112KB",
+                "date": "04/11/26",
+                "caption": "The Ambulance (1990)"
+            },
+            {
                 "id": "20#2FC",
                 "title": "#2FC",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif5ou5m5sfaczyzodtlzdt2n5x2mecnzq5jwncvhuavj2eardz5pe",
@@ -6865,6 +6631,14 @@ const database = {
                 "size": "201KB",
                 "date": "12/10/26",
                 "caption": "Jeffrey Combs as Dr. Herbert West (1979)"
+            },
+            {
+                "id": "21#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreie757nokskmqjjbv7p3lzs37r6emoaf2bvtvkw2ggfn2slyqp2vzy",
+                "size": "169KB",
+                "date": "05/11/26",
+                "caption": "Donald Pleasence as Dr. Sam Loomis (1981)"
             },
             {
                 "id": "21#F13",
@@ -7043,6 +6817,14 @@ const database = {
                 "size": "107KB",
                 "date": "12/10/26",
                 "caption": "The Black Cauldron (1985)"
+            },
+            {
+                "id": "22#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidlq4ss6mqnqkvdi3fsftmgg2oolymoaguevtw3nfdqrbk57ljfz4",
+                "size": "151KB",
+                "date": "06/11/26",
+                "caption": "Time Masters (1982)"
             }
         ],
         "David_Lynch_Series": [
@@ -7523,6 +7305,14 @@ const database = {
                 "size": "55KB",
                 "date": "01/11/26",
                 "caption": "Lifeforce (1985)"
+            },
+            {
+                "id": "68#17",
+                "title": "#17",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreie5cmhvgrcgiyrde33ee6rtiyn735rrgijckrqcd7wbhnci64wbsy",
+                "size": "78KB",
+                "date": "04/11/26",
+                "caption": "Halloween 5: The Revenge Of Michael Myers (1989)"
             }
         ],
         "Future_Shocks": [
@@ -7711,6 +7501,264 @@ const database = {
                 "size": "72KB",
                 "date": "11/09/26",
                 "caption": "Torso (1973)"
+            }
+        ],
+        "Giant_Retro_Monsters": [
+            {
+                "id": "69#WW",
+                "title": "#WW",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia6xm4ufwiykyrbbjttajx7zjf3ym5wxz2hbcoxmdalh6xz5gbrbq",
+                "size": "178KB",
+                "date": "30/09/26",
+                "caption": "Wax Wrapper, 'Giant Retro Monsters'"
+            },
+            {
+                "id": "69#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreig66uejfxg77tujbw2jcankxltholn53hs3vigmp7wvir3jepd4je",
+                "size": "156KB",
+                "date": "01/10/26",
+                "caption": "Rhedosaurus, The Beast From 20,000 Fathoms (1953)"
+            },
+            {
+                "id": "69#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid3shkmxp246itqrx7kimwau6goipvxohuefb7abqqm25jjqfcfn4",
+                "size": "150KB",
+                "date": "02/10/26",
+                "caption": "Nancy Archer '58, Attack Of The 50ft Woman (1958)"
+            },
+            {
+                "id": "69#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib7b2lwak36ad7cgcqwzxhsn5zvictzyrojfjcrip6u7dzodms2ii",
+                "size": "176KB",
+                "date": "03/10/26",
+                "caption": "Giant Behemoth, The Giant Behemoth (1959)"
+            },
+            {
+                "id": "69#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiawq5paofg6rfvszt3wm5ssqjwjpuugf53lgwgzthbmb34kv54kei",
+                "size": "179KB",
+                "date": "04/10/26",
+                "caption": "La Carcagne, The Giant Claw (1957)"
+            },
+            {
+                "id": "69#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieolvr6mx5w3bdqfctvafwwuxsu3u25xbjscuqjjsxnpwg564k7vq",
+                "size": "153KB",
+                "date": "05/10/26",
+                "caption": "Carroon Creature, The Quatermass Xperiment (1955)"
+            },
+            {
+                "id": "69#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif3fnfdsto3xxyggrwxbqzated4q5hlf6gsui66xokkuvogh5qyvu",
+                "size": "135KB",
+                "date": "06/10/26",
+                "caption": "Alien Parasite, Quatermass 2 (1957)"
+            },
+            {
+                "id": "69#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidevqglvvykmkhchhik4eanigbuzl7bcn7oednuor6neqgvbtbckq",
+                "size": "155KB",
+                "date": "07/10/26",
+                "caption": "Elasmosaurus, Son Of Kong (1933)"
+            },
+            {
+                "id": "69#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifrhl5xj7isgr3f3oj56nmeragejztcki5hx64lcqdtygyz4gnoim",
+                "size": "172KB",
+                "date": "08/10/26",
+                "caption": "Gogola, Gogola (1966)"
+            },
+            {
+                "id": "69#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiasfv526n6nl4xkhbnm5rsmfycgft7xbqucd6hubymd7fohcrwsva",
+                "size": "179KB",
+                "date": "09/10/26",
+                "caption": "Moguera, The Mysterians (1957)"
+            },
+            {
+                "id": "69#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreictw6hnx3incpztmkzhgdw5woxnr2imkutazhhminjlgpf4mge63y",
+                "size": "151KB",
+                "date": "10/10/26",
+                "caption": "The Blob '58, The Blob (1957)"
+            },
+            {
+                "id": "69#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia7t3jhpzqhdunpdrtvlt4demehef73tknk5c37avm42hbk6gwtn4",
+                "size": "176KB",
+                "date": "11/10/26",
+                "caption": "Emmy Lou Raven, The 30ft Bride Of Candy Rock (1959)"
+            },
+            {
+                "id": "69#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiguvo5z7cudut2v7grfv7vztsscxydtdolewnwscu3cusn6qqtjhe",
+                "size": "170KB",
+                "date": "12/10/26",
+                "caption": "Maleficent Dragon, Sleeping Beauty (1959)"
+            },
+            {
+                "id": "69#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreieurfjgp24ociv2gtzhp4mtln66rstzo5arkkbrvho5p5umar33ce",
+                "size": "172KB",
+                "date": "13/10/26",
+                "caption": "Giant Ant, Them! (1954)"
+            },
+            {
+                "id": "69#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigbtalehdnhdmi5rs5vyteca5w3zb4zmwrsg56bwyzylxrkaw7prm",
+                "size": "172KB",
+                "date": "14/10/26",
+                "caption": "The Deadly Mantis, The Deadly Mantis (1957)"
+            },
+            {
+                "id": "69#15",
+                "title": "#15",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid3zdqkpgifvgzfhmryctcqdaqqvmel5k46rdxd5r7tlhs27xzpw4",
+                "size": "155KB",
+                "date": "15/10/26",
+                "caption": "Giant Locust, Beginning Of The End (1957)"
+            },
+            {
+                "id": "69#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicxdluftxt3e5ed3d6mrh3sztdx6agm2uptph4j4rf3s4ffq377hi",
+                "size": "174KB",
+                "date": "16/10/26",
+                "caption": "Tarantula, Tarantula (1955)"
+            },
+            {
+                "id": "69#17",
+                "title": "#17",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiguy2vmouebz3oi255j4be3tjkcwf5mxkneprykdfocn62ei6mmju",
+                "size": "171KB",
+                "date": "17/10/26",
+                "caption": "Crawling Eyes, The Trollenberg Terror (1958)"
+            },
+            {
+                "id": "69#18",
+                "title": "#18",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifgvgfnm3zoocjlnue3j6cizyirgvzhuhhbew3mjcxvtkdso44nzy",
+                "size": "172KB",
+                "date": "19/10/26",
+                "caption": "Cyclops '58, The 7th Voyage Of Sinbad (1958)"
+            },
+            {
+                "id": "69#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiarc7kcwofsx54vfef4vgjmn46pgwrziwkav2k452fn4wkk7g4mhi",
+                "size": "173KB",
+                "date": "20/10/26",
+                "caption": "Telepathic Alien, The Atomic Submarine (1959)"
+            },
+            {
+                "id": "69#20",
+                "title": "#20",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigmomoaxo2vaqaatnc4blrhyaflbd66w7di3zbpyrqqytyjzxbflq",
+                "size": "141KB",
+                "date": "21/10/26",
+                "caption": "X, X The Unknown (1956)"
+            },
+            {
+                "id": "69#21",
+                "title": "#21",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih3zz42mxk2bps55764nikfeecvnjbcstrigusfz6uyjmn4kgk2im",
+                "size": "156KB",
+                "date": "22/10/26",
+                "caption": "King Kong, King Kong (1933)"
+            },
+            {
+                "id": "69#22",
+                "title": "#22",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidb46cvaqt6rha26iqabfuyoduwl3j22q4g3ocgvqfwocnimeclpm",
+                "size": "182KB",
+                "date": "23/10/26",
+                "caption": "Brontosaurus, The Lost World (1925)"
+            },
+            {
+                "id": "69#23",
+                "title": "#23",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicq2cnnpkmglmxegpdo64pttni3pgvhttvxz3lu2hmqtyfd4pkk2y",
+                "size": "185KB",
+                "date": "24/10/26",
+                "caption": "King Caesar, Godzilla Vs. Mechagodzilla (1974)"
+            },
+            {
+                "id": "69#24",
+                "title": "#24",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib52k7l7cfmbfsitmjrksawpcfohztb5cgn2m5yjqomau3p32enzy",
+                "size": "178KB",
+                "date": "24/10/26",
+                "caption": "Gorgo, Gorgo (1960)"
+            },
+            {
+                "id": "69#A1",
+                "title": "#A1",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih43khyjiwebrm6xkf2xzrvtzwlh7savhqirkrir3tsojc5vjszuq",
+                "size": "183KB",
+                "date": "25/10/26",
+                "caption": "Stay-Puft Marshmallow Man, Ghostbusters (1984)"
+            },
+            {
+                "id": "69#A2",
+                "title": "#A2",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibsi6ebpelupovdl77ne2ysgxiz76bqs2tpwi2j35nfokizltxn6m",
+                "size": "165KB",
+                "date": "26/10/26",
+                "caption": "Chewie The Chewitsaurus, 'Chewits' Advert (1976)"
+            },
+            {
+                "id": "69#A3",
+                "title": "#A3",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiappjiiqdyjgorgucjyrixbksnwfuiv6ysp45fuybimm4t6ssv3aq",
+                "size": "151KB",
+                "date": "27/10/26",
+                "caption": "Robo-Carnotaurus, Robocop (1987)"
+            },
+            {
+                "id": "69#A4",
+                "title": "#A4",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiglc6rnga62fzez3cgiw2e3wb2kxynpeycubyi4gnswwz72ajbr5q",
+                "size": "97KB",
+                "date": "29/10/26",
+                "caption": "Lizzie, Rampage 'Arcade' (1986)"
+            },
+            {
+                "id": "69#A5",
+                "title": "#A5",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidoqarromblubw2ku7wnkkwxqe6b24u4y4y4ceyvftwtdviuhussy",
+                "size": "180KB",
+                "date": "30/10/26",
+                "caption": "Rabbit Of Caerbannog, Monty Python & The Holy Grail (1975)"
+            },
+            {
+                "id": "69#A6",
+                "title": "#A6",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicoxpgadmhmbf65yjdkf7cru6hezvz2bvisvsesa34fdatmzuvnzy",
+                "size": "165KB",
+                "date": "31/10/26",
+                "caption": "Pumpkinhead, Pumpkinhead (1988)"
+            },
+            {
+                "id": "69#A7",
+                "title": "#A7",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif2aoap33o4chzx53ptdmqrsu56gxpv7f66cy2i4beluwnb4a54ce",
+                "size": "184KB",
+                "date": "06/11/26",
+                "caption": "King Ghidorah, Ghidorah, The Three-Headed Monster (1964)"
             }
         ],
         "Gothik_Ghouls": [
@@ -9839,6 +9887,54 @@ const database = {
                 "size": "176KB",
                 "date": "22/10/26",
                 "caption": "Steve Dixon, Out On A Limb"
+            },
+            {
+                "id": "64#36",
+                "title": "#36",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaytksedzqp3sqpfqrwjvuwixfjvsv7brah6wuklutths5p7ua3eq",
+                "size": "150KB",
+                "date": "03/11/26",
+                "caption": "Charles McKenzie, Killer Headline"
+            },
+            {
+                "id": "64#37",
+                "title": "#37",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia2tqdjh4qkqvvbjxko7cval2u3ynf3ff55hotv6wheq5imoq775a",
+                "size": "173KB",
+                "date": "04/11/26",
+                "caption": "Janet & Abel, Head Over Heels"
+            },
+            {
+                "id": "64#38",
+                "title": "#38",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihvmsnqpjjmlg4klctesagifozfgzdsl53kmdaz2bhe27e4aqnmmu",
+                "size": "172KB",
+                "date": "05/11/26",
+                "caption": "Martin Kalthrob, Point Blanked"
+            },
+            {
+                "id": "64#39",
+                "title": "#39",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidi5y4urf2bxwmusl3fgtn5wz2pxjthjevqci27z5nqvi7ibdvpi4",
+                "size": "170KB",
+                "date": "05/11/26",
+                "caption": "Howard Prince, Graveyard Gigolo"
+            },
+            {
+                "id": "64#40",
+                "title": "#40",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidjpzkqthxqicnfmikryoilztotvcpcc44ksw445vx5edwk64snza",
+                "size": "127KB",
+                "date": "05/11/26",
+                "caption": "Pack Brightman, Weird Science"
+            },
+            {
+                "id": "64#41",
+                "title": "#41",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigjumbro3edb6jwjy3ez3iv7gb3mmtdzgqhwmncoaxbcl3cogqlz4",
+                "size": "155KB",
+                "date": "05/11/26",
+                "caption": "Danny Darwin, Tattoo Trouble"
             }
         ],
         "The_Lost_Boys": [
@@ -9865,6 +9961,38 @@ const database = {
                 "size": "147KB",
                 "date": "01/11/26",
                 "caption": "Okay Boys.. Let's Go."
+            },
+            {
+                "id": "73#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiasggchlhnrdnxxxucvhdvflk37ctlhxzri7a5gumtyr7wfa2nney",
+                "size": "159KB",
+                "date": "02/11/26",
+                "caption": "Santa Carla Boardwalk"
+            },
+            {
+                "id": "73#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiakswgl5ua3jgj3zsibvm37s2e63vifeemogqyhmdvn3aytt2pdw4",
+                "size": "170KB",
+                "date": "04/11/26",
+                "caption": "The 'Missing' Poster Wall"
+            },
+            {
+                "id": "73#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiffrzlamqhscld2ymbxfmm7qcuawmt6f3zpndowbbjjrd7jp5b5bi",
+                "size": "177KB",
+                "date": "05/11/26",
+                "caption": "Take This.. It Could Save Your Life."
+            },
+            {
+                "id": "73#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib3pv5s42fjhxskdnttvqtoqzrpb7nixdszty433e46kkkdytlls4",
+                "size": "155KB",
+                "date": "06/11/26",
+                "caption": "Michael Goes For A Ride.."
             }
         ],
         "Ultimate_Series": [
@@ -9981,6 +10109,14 @@ const database = {
                 "size": "101KB",
                 "date": "02/10/26",
                 "caption": "The Invisible Man Returns (1940)"
+            },
+            {
+                "id": "63#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicpjgu3mxzio53ot44ohv4nhgsx2aqniefemr2sug6snxk5wfiyle",
+                "size": "135KB",
+                "date": "02/11/26",
+                "caption": "House On Haunted Hill (1958)"
             }
         ],
         "Void_Wars": [
