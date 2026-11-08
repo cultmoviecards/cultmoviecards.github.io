@@ -6527,6 +6527,16 @@ const database = {
                 "caption": "Hard Ticket To Hawaii (1987)"
             }
         ],
+        "Cult_Codex": [
+            {
+                "id": "75#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaypvmsg322kf7yzaqi37js5ffgwljg4g2yo7aaxbz4sersvtehzu",
+                "size": "57KB",
+                "date": "07/11/26",
+                "caption": "Dune (1984)"
+            }
+        ],
         "Cult_Leaders": [
             {
                 "id": "21#01",
@@ -6891,6 +6901,14 @@ const database = {
                 "size": "121KB",
                 "date": "12/10/26",
                 "caption": "The Straight Story (1999)"
+            },
+            {
+                "id": "34#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigr2dx5dq6nny5jl3itteh7fplx3rmekpimoo5ulcnjdgh5qf7bze",
+                "size": "110KB",
+                "date": "07/11/26",
+                "caption": "Mulholland Drive (2001)"
             },
             {
                 "id": "34#FC",
@@ -7313,6 +7331,14 @@ const database = {
                 "size": "78KB",
                 "date": "04/11/26",
                 "caption": "Halloween 5: The Revenge Of Michael Myers (1989)"
+            },
+            {
+                "id": "68#18",
+                "title": "#18",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid6mnnp46f5jjapwmq6gx77tdvax7iz3puowkeumpidtz3wvahyq4",
+                "size": "138KB",
+                "date": "08/11/26",
+                "caption": "Europa Report (2013)"
             }
         ],
         "Future_Shocks": [
@@ -8887,6 +8913,14 @@ const database = {
                 "size": "110KB",
                 "date": "23/10/26",
                 "caption": "Dawn Of The Dead (1978)"
+            },
+            {
+                "id": "37#RO",
+                "title": "#RO",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihmogcq4d3ijsy7guaadwidspe2cb3k6lkqdlk2pqp5xhonqmgz2u",
+                "size": "97KB",
+                "date": "07/11/26",
+                "caption": "Demons (1985)"
             }
         ],
         "Monster_Machines": [
@@ -9993,9 +10027,25 @@ const database = {
                 "size": "155KB",
                 "date": "06/11/26",
                 "caption": "Michael Goes For A Ride.."
+            },
+            {
+                "id": "73#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifj6q2lr4rijnffzuboodqi7mtlf6r3np52f5ftq4f5xe7buvzysm",
+                "size": "171KB",
+                "date": "07/11/26",
+                "caption": "..How Do They Taste?"
             }
         ],
         "Ultimate_Series": [
+            {
+                "id": "62#092",
+                "title": "#092",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiga4ua5f7u4n5evwzl3cufm7a4y36pgh7d7mjiyare3ra5r2gm6s4",
+                "size": "87KB",
+                "date": "08/11/26",
+                "caption": "A Boy And His Dog (1975)"
+            },
             {
                 "id": "62#93",
                 "title": "#93",
