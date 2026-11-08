@@ -15,6 +15,7 @@ const setInfo = {
     "CREEPSHOW": "Five tales of comic-book terror, one grinning Creep. This set gathers the twisted revenge, hungry fungus and cereal-based tragedy of Romero and King's EC Comics love letter.",
     "CULTOONS": "Animation gets weird. This set dives into the stranger side of animated cult classics, where bold visuals and offbeat storytelling take centre stage.",
     "CULT_CARNAGE": "Engines roar, tyres scream and something always ends up in flames. This set celebrates killer cars, rogue machines and the high-speed mayhem of the open road.",
+    "CULT_CODEX": "This original design, 24-card series pays homage to some of the authors and the books behind the best-loved (and loathed) cult movies from across the decades.",
     "CULT_LEADERS": "Charisma, control and dangerous influence. This set focuses on figures who command attention and shape the worlds around them — for better or worse.",
     "CULT_VILLAINS": "These cards were intended to mimic the 1938 Hamilton Gum v289 vintage cards. Initial releases of these cards proved unpopular, and the set was ultimately abandoned. Card #5 of this set 'Nurse Ratched' was never released on Bluesky. ",
     "DAUGHTERS_OF_DARKNESS": "Elegant, eerie and dripping with atmosphere, this set explores seduction, mystery and the darker side of desire in a world where nothing is quite what it seems.",
