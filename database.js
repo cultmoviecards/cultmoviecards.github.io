@@ -6087,6 +6087,24 @@ const database = {
                 "caption": "The Innocents (1961)"
             }
         ],
+        "B-Movie_Bangers": [
+            {
+                "id": "76#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreic7fyturwf4korwj6dcl6liv666dzh4roiufzknggd2cswwpsji54",
+                "size": "121KB",
+                "date": "09/11/26",
+                "caption": "Hercules In New York (1970)"
+            },
+            {
+                "id": "76#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifktvjbyxkxelalaivz4djersaiyzautbfadvxvg3u7dru2iobiti",
+                "size": "111KB",
+                "date": "10/11/26",
+                "caption": "The Big Doll House (1971)"
+            }
+        ],
         "Banned": [
             {
                 "id": "16#01",
@@ -6721,6 +6739,14 @@ const database = {
                 "size": "185KB",
                 "date": "29/10/26",
                 "caption": "Patrick Stewart as Leondegrance (1981)"
+            },
+            {
+                "id": "21#RIP8",
+                "title": "#RIP8",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihajpsnshmrhxb3erz4wegufydtomffhuqwicr4dfap3atposfw4i",
+                "size": "196KB",
+                "date": "11/11/26",
+                "caption": "Stacy Keach as Col. Vincent Kane (1980)"
             }
         ],
         "Cultoons": [
@@ -7339,6 +7365,22 @@ const database = {
                 "size": "138KB",
                 "date": "08/11/26",
                 "caption": "Europa Report (2013)"
+            },
+            {
+                "id": "68#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifl6wvwbovchboqxvxbicdrwsy7on6vkjadtc2ftqzjsyqwy3byjq",
+                "size": "63KB",
+                "date": "10/11/26",
+                "caption": "Dracula (1979)"
+            },
+            {
+                "id": "68#20",
+                "title": "#20",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibrckkeyow6xgdrg5iz35nly35vc7dlgkocugsfeuxnvyi6nowpwy",
+                "size": "59KB",
+                "date": "11/11/26",
+                "caption": "Dark Angel (1990)"
             }
         ],
         "Future_Shocks": [
@@ -7439,6 +7481,14 @@ const database = {
                 "caption": "Zardoz"
             },
             {
+                "id": "26#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreic6i3cfba45wzlilk44qikdars22po2hw5dgmyrm4irnhoxvbpzym",
+                "size": "117KB",
+                "date": "11/11/26",
+                "caption": "Rollerball (1975)"
+            },
+            {
                 "id": "26#FC",
                 "title": "#FC",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib7gm4xtonri6ghda6lqnvsb4ydipth4j7u26nmlyjzcgskbng46a",
@@ -7527,6 +7577,14 @@ const database = {
                 "size": "72KB",
                 "date": "11/09/26",
                 "caption": "Torso (1973)"
+            },
+            {
+                "id": "27#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib4ydp372amp4nohhs4wtu7tu74hzo4bhkk2bylnzk7zn5bitzxhe",
+                "size": "142KB",
+                "date": "11/11/26",
+                "caption": "Tenebrae (1982)"
             }
         ],
         "Giant_Retro_Monsters": [
@@ -7835,6 +7893,14 @@ const database = {
                 "size": "71KB",
                 "date": "14/10/26",
                 "caption": "Daughters Of Darkness (1971)"
+            },
+            {
+                "id": "46#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigf75vsocms74nyoeeln53qqtesy34f52s6rs6gxkwkg6rag36qhm",
+                "size": "61KB",
+                "date": "12/11/26",
+                "caption": "Vampyres (1975)"
             }
         ],
         "H_P_Lovecraft_Series": [
@@ -9639,6 +9705,14 @@ const database = {
                 "size": "151KB",
                 "date": "03/10/26",
                 "caption": "Audrey II, Little Shop Of Horrors (1986)"
+            },
+            {
+                "id": "58#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicip65peskb5a2o72t6h5m5lodf7xofddcyytm44ax5tpil6qutqa",
+                "size": "146KB",
+                "date": "09/11/26",
+                "caption": "Riff-Raff, The Rocky Horror Picture Show (1975)"
             }
         ],
         "Tales_From_The_Crypt": [
@@ -10035,6 +10109,38 @@ const database = {
                 "size": "171KB",
                 "date": "07/11/26",
                 "caption": "..How Do They Taste?"
+            },
+            {
+                "id": "73#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia22bc4pu3gxnwoh36ul4ammm6mr6mcj3jhhfg7ytzlslgpfpajma",
+                "size": "164KB",
+                "date": "09/11/26",
+                "caption": "Michael Drinks The Blood Wine.."
+            },
+            {
+                "id": "73#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif5lnhhh5b54mp4t3ngo6we5tgzv7n5nugqwko62owsmopflxx6xi",
+                "size": "147KB",
+                "date": "11/11/26",
+                "caption": "..A Goddamn Shit-Sucking Vampire!"
+            },
+            {
+                "id": "73#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiayktrq4lvdfqk3cae6cv7vigvuyrhxic3v7ip7yp6s42lbfcdtdm",
+                "size": "146KB",
+                "date": "12/11/26",
+                "caption": "Michael Floats At The Window.."
+            },
+            {
+                "id": "73#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibgxqqzmgpqit3ayvjfl7o2q2ky2psacl53w4zwizhdnlmpg4hwfi",
+                "size": "149KB",
+                "date": "12/11/26",
+                "caption": "Initiation's Over, Michael!"
             }
         ],
         "Ultimate_Series": [

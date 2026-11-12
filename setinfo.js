@@ -7,6 +7,7 @@ const setInfo = {
     "BD": "BD earned a Mythic Bubblegum card and sat on it for a while, basking in the pinky glow.. then they traded it in for this magnificent bastard of a card!",
     "BIG_TROUBLE_IN_LITTLE_CHINA": "Magic, monsters and mayhem collide in this high-energy cult classic. This set brings together martial arts, mysticism and pure chaos in a world where anything can happen.",
     "BLACK_CHRISTMAS": "The calls are coming from inside the house… This set captures the chilling atmosphere and slow-building dread of one of horror’s most influential and unsettling seasonal nightmares.",
+    "B_MOVIE_BANGERS": "You asked.. you got. Our latest addition to the stable is the biggest one yet, comprising of 101 B-movies that made cinema history.. for all the wrong reasons. Please enjoy the CMC 'B-Movie Bangers' card series, which will likely run into 2028 and beyond. We hope it meets your approval.",
     "CATACOMBS_CREATURES": "Deep below the surface, something is waiting. This set explores the dark, the hidden and the monstrous creatures lurking in places best left undisturbed.",
     "CHILDREN_SHOULDNT_PLAY_WITH_DEAD_THINGS": "This set was scheduled for release in June 2025, but was abandoned preceeding a lengthy hiatus. It was never completed, but the 21 cards that were finished are available here to view.",
     "CHOPPING_MALL": "When shopping goes wrong, it goes very wrong. Killer robots, late-night retail and pure chaos combine in this set celebrating one of the most entertainingly absurd cult horrors around.",
