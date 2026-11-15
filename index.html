@@ -1532,6 +1532,22 @@
             fill: currentColor;
         }
 
+
+        /* --- 3D slab view inside the enlarged card viewer (slab.js, loaded on demand) --- */
+        #slab-stage {
+            display: none; position: absolute; z-index: 111;
+            top: 118px; bottom: 34px; left: 150px; right: 150px;
+            cursor: grab;
+        }
+        #modal-slab-controls {
+            display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+            margin-top: 4px; white-space: nowrap;
+        }
+        .modal-slab-btn { cursor: pointer; padding: 0 4px; }
+        .modal-slab-btn:hover { background: var(--bright-green); color: var(--bg-black); }
+        @media (max-width: 720px) {
+            #slab-stage { top: 82px; bottom: 20px; left: 62px; right: 62px; }
+        }
     </style>
 </head>
 <body onkeydown="handleKeyDown(event)">
@@ -1539,7 +1555,16 @@
 <div id="image-modal" onclick="closeModal()">
     <div id="modal-topbar" onclick="event.stopPropagation()">
         <div id="modal-file-info"></div>
-        <div id="modal-close-hint">[ CLICK IMAGE TO CLOSE ]</div>
+        <div id="modal-center">
+            <div id="modal-close-hint">[ CLICK IMAGE TO CLOSE ]</div>
+            <div id="modal-slab-controls">
+                <span id="slab-toggle" class="modal-slab-btn" onclick="toggleSlabMode(event)">[ SLAB VIEW ]</span>
+                <span id="slab-move" class="modal-slab-btn slab-only" style="display:none" onclick="slabAction(event, 'move')">[ MOVE ]</span>
+                <span class="modal-slab-btn slab-only" style="display:none" onclick="slabAction(event, 'flip')">[ FLIP ]</span>
+                <span class="modal-slab-btn slab-only" style="display:none" onclick="slabAction(event, 'colour')">[ COLOUR ]</span>
+                <span class="modal-slab-btn slab-only" style="display:none" onclick="slabAction(event, 'reset')">[ RESET ]</span>
+            </div>
+        </div>
         <div id="modal-user-info"></div>
     </div>
     <button class="modal-nav modal-prev" type="button" onclick="event.stopPropagation(); navigateModalGallery(-1);">
@@ -1547,6 +1572,7 @@
         <span class="modal-label">[ PREV ]</span>
     </button>
     <img id="modal-img" src="" alt="Enlarged View" onclick="closeModal()">
+    <div id="slab-stage"></div>
     <div id="modal-loading"><span class="glitch">>>> RETRIEVING DATA...</span></div>
     <button class="modal-nav modal-next" type="button" onclick="event.stopPropagation(); navigateModalGallery(1);">
         <span class="modal-arrow">→</span>
@@ -2184,6 +2210,7 @@ ZZZzz /,`.-'`'    -.  ;-;;,_
 
         showModalLoading();
         updateModalInfo();
+        if (slabWanted) applySlab(true);
 
         const preload = new Image();
         preload.onload = () => {
@@ -3498,6 +3525,8 @@ function openRandomCard() {
         modal.style.display = 'flex';
         showModalLoading();
         updateModalInfo();
+        slabWanted = slabPreferred();   // the enlarged view opens as a 3D slab by default; FLAT VIEW switches it off and that choice is remembered
+        if (slabWanted) applySlab(true);
 
         const preload = new Image();
         preload.onload = () => {
@@ -3515,9 +3544,112 @@ function openRandomCard() {
         playSound(1500, 'sine', 0.1, 0.05);
     }
 
-    function closeModal() { 
+    // --- 3D slab view in the enlarged card viewer. slab.js (and three.js) only load the first time a slab is shown. ---
+    // slabMode: the slab is showing right now. slabWanted: the viewer wants slabs (so the next card tries one, even after a card that could not have one).
+    let slabMode = false, slabWanted = true, slabToken = 0, slabModule = null, slabNoticeTimer = null;
+    const SLAB_MODULE_URL = './slab.js?v=19';   // bump the number when slab.js changes, so visitors fetch the new copy
+    const SLAB_PREF_KEY = 'cmc-expanded-view';
+    function slabPreferred() { try { return localStorage.getItem(SLAB_PREF_KEY) !== 'flat'; } catch (e) { return true; } }
+    function saveSlabPreference(wantSlab) { try { localStorage.setItem(SLAB_PREF_KEY, wantSlab ? 'slab' : 'flat'); } catch (e) { /* storage blocked: the choice just is not remembered */ } }
+    const slabEligible = info => /^https?:\/\/cdn\.bsky\.app\//i.test(String(info.file || ''));   // only still images on the Bluesky CDN can be shown in 3D
+
+    // The normal pop-up messages sit behind the enlarged view, so a notice goes on the toggle button itself, then the button is restored.
+    function showSlabNotice(text) {
+        const toggle = document.getElementById('slab-toggle');
+        if (!toggle) return;
+        toggle.textContent = text;
+        clearTimeout(slabNoticeTimer);
+        slabNoticeTimer = setTimeout(() => { toggle.textContent = slabMode ? '[ FLAT VIEW ]' : '[ SLAB VIEW ]'; }, 3500);
+    }
+
+    function getModalCardInfo() {
+        const files = getFilesAtPath(currentPath);
+        const card = files && files[currentFileIndex];
+        if (!card || !card.file) return null;
+        return { id: card.id, caption: card.caption, date: card.date, file: card.file, setName: String(currentPath[currentPath.length - 1] || '') };
+    }
+
+    function refreshSlabUI() {
+        const stage = document.getElementById('slab-stage');
+        const img = document.getElementById('modal-img');
+        const hint = document.getElementById('modal-close-hint');
+        const toggle = document.getElementById('slab-toggle');
+        if (stage) stage.style.display = slabMode ? 'block' : 'none';
+        if (img) img.style.visibility = slabMode ? 'hidden' : '';
+        if (hint) hint.textContent = slabMode ? '[ DRAG: TURN  ·  SHIFT+DRAG: MOVE  ·  ESC: CLOSE ]' : '[ CLICK IMAGE TO CLOSE ]';
+        const moveBtn = document.getElementById('slab-move');
+        if (moveBtn) moveBtn.textContent = '[ MOVE ]';   // every visit to slab view starts in turn mode
+        if (toggle) toggle.textContent = slabMode ? '[ FLAT VIEW ]' : '[ SLAB VIEW ]';
+        document.querySelectorAll('#modal-slab-controls .slab-only').forEach(el => { el.style.display = slabMode ? '' : 'none'; });
+        if (!slabMode) {
+            slabToken++;
+            if (slabModule) slabModule.hideSlab();
+        }
+    }
+
+    // auto: the slab was asked for by the default (opening the view, or moving to the next card) rather than by a click on SLAB VIEW.
+    async function applySlab(auto = false) {
+        const stage = document.getElementById('slab-stage');
+        const info = getModalCardInfo();
+        if (!stage || !info) { slabMode = false; refreshSlabUI(); return; }
+        if (!slabEligible(info)) {   // e.g. the animated cards: stay flat, and only say so if the viewer asked for the slab
+            slabMode = false; refreshSlabUI();
+            if (!auto) showSlabNotice('[ NO 3D VIEW FOR THIS CARD ]');
+            return;
+        }
+        if (!stage.dataset.slabListening) {   // keeps the MOVE / TURN button label in step with the slab's drag mode (RESET changes it too)
+            stage.dataset.slabListening = '1';
+            stage.addEventListener('slabmode', e => {
+                const btn = document.getElementById('slab-move');
+                if (btn) btn.textContent = e.detail.moving ? '[ TURN ]' : '[ MOVE ]';
+            });
+        }
+        slabMode = true; refreshSlabUI();
+        const mine = ++slabToken;
+        showModalLoading();
+        try {
+            if (!slabModule) slabModule = await import(SLAB_MODULE_URL);
+            if (mine !== slabToken) return;
+            const res = await slabModule.showSlab(stage, info);
+            if (mine !== slabToken) return;
+            if (!res.ok) throw new Error(res.reason);
+        } catch (err) {
+            if (mine !== slabToken) return;
+            slabMode = false; refreshSlabUI();
+            showSlabNotice('[ NO 3D VIEW FOR THIS CARD ]');
+            hideModalLoading();
+            console.warn('Slab view unavailable:', err && err.message || err);
+        } finally {
+            if (mine === slabToken) hideModalLoading();
+        }
+    }
+
+    function toggleSlabMode(e) {
+        if (e) e.stopPropagation();
+        if (slabMode) {   // back to the flat card, and remember that for next time
+            slabWanted = false; saveSlabPreference(false);
+            slabMode = false; refreshSlabUI();
+        } else {
+            slabWanted = true; saveSlabPreference(true);
+            applySlab(false);
+        }
+        playSound(1500, 'sine', 0.05, 0.04);
+    }
+
+    function slabAction(e, action) {
+        if (e) e.stopPropagation();
+        if (!slabModule) return;
+        if (action === 'move') slabModule.slabMoveToggle();   // what a plain drag does: turn the slab, or move it (the label follows the 'slabmode' event)
+        else if (action === 'flip') slabModule.slabFlip();
+        else if (action === 'colour') slabModule.slabColour();
+        else if (action === 'reset') slabModule.slabReset();
+        playSound(1500, 'sine', 0.05, 0.04);
+    }
+
+    function closeModal() {
         const modal = document.getElementById('image-modal');
         if (modal) {
+            if (slabMode) { slabMode = false; refreshSlabUI(); }
             modal.style.display = 'none';
             modal.classList.remove('loading');
         }

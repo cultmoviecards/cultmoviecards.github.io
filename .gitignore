@@ -1,6 +1,10 @@
 # The database editor is a local tool, not part of the public site
 dbeditor/
 
+# Local working files: the slab prototype and test-server config are not part of the site
+slab-prototype/
+.claude/
+
 # Secrets and dependencies
 .env
 **/.env
