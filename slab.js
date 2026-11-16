@@ -45,6 +45,7 @@ function describe(info) {
 // ---- colours matched to the card -------------------------------------------------------------------------------
 // Finds the strongest colour in the card art (ignoring near-black borders, near-white text and greys) and builds a slab gradient around that hue.
 // Returns null for a card with no real colour (black and white), so the caller can use a preset instead.
+const BORDER_BAND = 0.12, BORDER_WEIGHT = 5;   // the outer 12% of the card counts five times as much
 function matchedPalette(img) {
   try {
     const N = 64, c = document.createElement('canvas'); c.width = c.height = N;
@@ -53,6 +54,10 @@ function matchedPalette(img) {
     const w = new Float64Array(BINS), sn = new Float64Array(BINS), cs = new Float64Array(BINS);
     let total = 0;
     for (let i = 0; i < d.length; i += 4) {
+      const px = (i / 4) % N, py = Math.floor(i / 4 / N);
+      // A coloured frame is the card's signature colour, so pixels in the outer band count extra: a bright shirt or curtain in the photo should not outvote it.
+      // (Black or white borders are skipped by the colour tests below, so cards like that are still judged by their artwork.)
+      const edge = Math.min(px, py, N - 1 - px, N - 1 - py) / N, frame = edge < BORDER_BAND ? BORDER_WEIGHT : 1;
       const r = d[i] / 255, g = d[i + 1] / 255, b = d[i + 2] / 255;
       const mx = Math.max(r, g, b), mn = Math.min(r, g, b), l = (mx + mn) / 2, dl = mx - mn;
       if (dl < 0.05 || l < 0.12 || l > 0.9) continue;                       // grey, near-black or near-white: no colour to speak of
@@ -60,7 +65,7 @@ function matchedPalette(img) {
       if (s < 0.25) continue;
       let h = mx === r ? ((g - b) / dl) % 6 : mx === g ? (b - r) / dl + 2 : (r - g) / dl + 4;
       h = ((h * 60) + 360) % 360;
-      const weight = s * (1 - Math.abs(2 * l - 1)), bin = Math.floor(h / (360 / BINS)) % BINS;   // vivid, mid-tone pixels count most
+      const weight = s * (1 - Math.abs(2 * l - 1)) * frame, bin = Math.floor(h / (360 / BINS)) % BINS;   // vivid, mid-tone pixels count most
       w[bin] += weight; sn[bin] += weight * Math.sin(h * Math.PI / 180); cs[bin] += weight * Math.cos(h * Math.PI / 180); total += weight;
     }
     if (total < N * N * 0.02) return null;
