@@ -3551,11 +3551,11 @@ function openRandomCard() {
     // --- 3D slab view in the enlarged card viewer. slab.js (and three.js) only load the first time a slab is shown. ---
     // slabMode: the slab is showing right now. slabWanted: the viewer wants slabs (so the next card tries one, even after a card that could not have one).
     let slabMode = false, slabWanted = true, slabToken = 0, slabModule = null, slabNoticeTimer = null;
-    const SLAB_MODULE_URL = './slab.js?v=20';   // bump the number when slab.js changes, so visitors fetch the new copy
+    const SLAB_MODULE_URL = './slab.js?v=21';   // bump the number when slab.js changes, so visitors fetch the new copy
     const SLAB_PREF_KEY = 'cmc-expanded-view';
     function slabPreferred() { try { return localStorage.getItem(SLAB_PREF_KEY) !== 'flat'; } catch (e) { return true; } }
     function saveSlabPreference(wantSlab) { try { localStorage.setItem(SLAB_PREF_KEY, wantSlab ? 'slab' : 'flat'); } catch (e) { /* storage blocked: the choice just is not remembered */ } }
-    const slabEligible = info => /^https?:\/\/cdn\.bsky\.app\//i.test(String(info.file || ''));   // only still images on the Bluesky CDN can be shown in 3D
+    const slabEligible = info => /^https?:\/\/cdn\.bsky\.app\/img\//i.test(String(info.file || '')) || /^https?:\/\/i\.postimg\.cc\/.+\.(png|jpe?g|webp)$/i.test(String(info.file || ''));   // still images on the Bluesky CDN or postimg can be shown in 3D (keep in step with slab.js and the Worker)
 
     // The normal pop-up messages sit behind the enlarged view, so a notice goes on the toggle button itself, then the button is restored.
     function showSlabNotice(text) {

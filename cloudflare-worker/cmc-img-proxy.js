@@ -4,13 +4,15 @@
 //   GET https://img.cultmovie.cards/?url=cdn.bsky.app/img/feed_thumbnail/plain/did:plc:.../bafk...@jpeg
 //
 // Served from img.cultmovie.cards (see wrangler.toml). Deploy with: npx wrangler deploy
-// Only still images on the Bluesky CDN are served, so this cannot be used as an open proxy.
+// Only still card images are served (Bluesky CDN images, and PNG/JPEG/WebP files on i.postimg.cc),
+// so this cannot be used as an open proxy.
 //
 // Caching: successful images are stored in Cloudflare's cache for 30 days. Errors are never stored,
 // so a passing hiccup at Bluesky cannot leave a card broken. A failed fetch is retried once.
 
-const ALLOWED_HOST = 'cdn.bsky.app';
-const ALLOWED_PATH = '/img/';
+const isBluesky = t => t.hostname === 'cdn.bsky.app' && t.pathname.startsWith('/img/');
+const isPostimg = t => t.hostname === 'i.postimg.cc' && /\.(png|jpe?g|webp)$/i.test(t.pathname);   // stills only, no GIFs
+const MAX_BYTES = 8 * 1024 * 1024;   // card images are 1-2 MB; refuse anything far bigger
 const CACHE_SECONDS = 60 * 60 * 24 * 30;   // card images never change at a given URL
 const RETRY_DELAY_MS = 300;
 
@@ -49,9 +51,7 @@ export default {
     try { target = new URL('https://' + raw.replace(/^https?:\/\//i, '')); }
     catch { return fail(400, 'Missing or invalid url parameter'); }
 
-    if (target.hostname !== ALLOWED_HOST || !target.pathname.startsWith(ALLOWED_PATH)) {
-      return fail(403, 'Only Bluesky card images are served here');
-    }
+    if (!isBluesky(target) && !isPostimg(target)) return fail(403, 'Only CMC card images are served here');
 
     const cache = caches.default;
     const key = new Request(request.url, { method: 'GET' });
@@ -60,12 +60,13 @@ export default {
 
     // Bluesky ignores this parameter. It gives the upstream request a fresh cache key, so error responses
     // that an earlier version of this Worker cached at Cloudflare (for up to 30 days) are never read back.
-    target.searchParams.set('cmc', '2');
+    if (isBluesky(target)) target.searchParams.set('cmc', '2');
     const upstream = await fetchImage(target.toString());
     if (upstream.failed !== undefined) return fail(502, 'Upstream returned ' + upstream.failed);
 
     const type = upstream.headers.get('Content-Type') || '';
     if (!type.startsWith('image/')) return fail(415, 'Not an image');
+    if (Number(upstream.headers.get('Content-Length') || 0) > MAX_BYTES) { await upstream.body?.cancel(); return fail(413, 'Image too large'); }
 
     const out = new Response(upstream.body, {
       status: 200,

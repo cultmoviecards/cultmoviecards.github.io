@@ -5,7 +5,8 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
 
 // Our own Cloudflare Worker (source: cloudflare-worker/) serves the card art. If it fails twice, the caller falls back to the flat card.
 const PROXY_HOST = 'img.cultmovie.cards';
-const isBlueskyStill = u => /^https?:\/\/cdn\.bsky\.app\//i.test(String(u || ''));   // other hosts (the video cards' GIFs and so on) are not supported
+// Bluesky images and still PNG/JPEG/WebP files on postimg can be shown; GIFs and everything else stay flat. Keep in step with slabEligible in index.html and the Worker.
+const isSlabImage = u => /^https?:\/\/cdn\.bsky\.app\/img\//i.test(String(u || '')) || /^https?:\/\/i\.postimg\.cc\/.+\.(png|jpe?g|webp)$/i.test(String(u || ''));
 const proxied = u => `https://${PROXY_HOST}/?url=` + encodeURIComponent(u.replace(/^https?:\/\//, ''));
 
 const PALETTES = {
@@ -465,7 +466,7 @@ const loadTexture = async file => {
 
 export async function showSlab(container, info) {
   const mine = ++token;
-  if (!isBlueskyStill(info.file)) return { ok: false, reason: '3D view is only for still cards' };
+  if (!isSlabImage(info.file)) return { ok: false, reason: '3D view is only for still cards' };
   try {
     if (!S) {
       const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });

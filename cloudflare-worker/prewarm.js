@@ -24,8 +24,9 @@ const limit = li >= 0 ? Number(args[li + 1]) : Infinity;
 if (li >= 0 && !(limit > 0)) { console.error('--limit needs a number, e.g. --limit 20'); process.exit(1); }
 
 const db = fs.readFileSync(path.join(__dirname, '..', 'database.js'), 'utf8');
-const urls = [...new Set(db.match(/https:\/\/cdn\.bsky\.app\/img\/[^"'\s]+/g) || [])].slice(0, limit);
-console.log(`${urls.length} Bluesky card images${dry ? ' (dry run, nothing requested)' : ''}`);
+const found = [...(db.match(/https:\/\/cdn\.bsky\.app\/img\/[^"'\s]+/g) || []), ...(db.match(/https:\/\/i\.postimg\.cc\/[^"'\s]+\.(?:png|jpe?g|webp)/gi) || [])];
+const urls = [...new Set(found)].slice(0, limit);
+console.log(`${urls.length} card images (Bluesky and postimg stills)${dry ? ' (dry run, nothing requested)' : ''}`);
 if (dry || !urls.length) process.exit(0);
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
