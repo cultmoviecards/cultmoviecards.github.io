@@ -3,7 +3,8 @@
 // The card art is fetched through a CORS-enabled image proxy: the Bluesky CDN does not allow WebGL to use its images directly.
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
 
-const PROXY_HOST = 'wsrv.nl';
+// Our own Cloudflare Worker (source: cloudflare-worker/) serves the card art. If it fails twice, the caller falls back to the flat card.
+const PROXY_HOST = 'img.cultmovie.cards';
 const isBlueskyStill = u => /^https?:\/\/cdn\.bsky\.app\//i.test(String(u || ''));   // other hosts (the video cards' GIFs and so on) are not supported
 const proxied = u => `https://${PROXY_HOST}/?url=` + encodeURIComponent(u.replace(/^https?:\/\//, ''));
 
@@ -456,8 +457,11 @@ function resize() {
 // ---- public API -----------------------------------------------------------------------------------------------------
 const loadTextureOnce = url => new Promise((res, rej) => new THREE.TextureLoader().setCrossOrigin('anonymous').load(url,
   t => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = S ? S.aniso : 1; res(t); }, undefined, () => rej(new Error('image blocked or unavailable'))));
-// the free proxy occasionally answers 503, so give it one more go before giving up
-const loadTexture = async url => { try { return await loadTextureOnce(url); } catch (e) { await new Promise(r => setTimeout(r, 700)); return loadTextureOnce(url); } };
+// two attempts, a moment apart, then give up (the caller shows the flat card instead)
+const loadTexture = async file => {
+  const url = proxied(file);
+  try { return await loadTextureOnce(url); } catch (e) { await new Promise(r => setTimeout(r, 700)); return loadTextureOnce(url); }
+};
 
 export async function showSlab(container, info) {
   const mine = ++token;
@@ -487,7 +491,7 @@ export async function showSlab(container, info) {
       renderer.setAnimationLoop(frame);
     }
     // the card art, through the proxy when it lives on the Bluesky CDN; a failure here is reported so the caller can fall back to the flat card
-    const [art] = await Promise.all([loadTexture(proxied(info.file)), loadLogo()]);
+    const [art] = await Promise.all([loadTexture(info.file), loadLogo()]);
     if (mine !== token || !S) { art.dispose(); return { ok: false, reason: 'cancelled' }; }
     if (S.art) S.art.dispose();
     S.art = art; S.info = info; S.desc = describe(info); S.paletteKey = null; S.matched = matchedPalette(art.image); S.pan.set(0, 0, 0);

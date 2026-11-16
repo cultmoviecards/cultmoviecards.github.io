@@ -1,0 +1,10 @@
+name = "cmc-img"
+main = "cmc-img-proxy.js"
+compatibility_date = "2026-11-01"
+workers_dev = true
+
+# Serve the Worker from its own subdomain. Only this one hostname is proxied by Cloudflare;
+# cultmovie.cards, www and jellyfin keep their existing DNS settings.
+routes = [
+  { pattern = "img.cultmovie.cards", custom_domain = true }
+]
