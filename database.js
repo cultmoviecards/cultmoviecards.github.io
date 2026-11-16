@@ -6529,6 +6529,14 @@ const database = {
                 "caption": "The Ambulance (1990)"
             },
             {
+                "id": "20#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibphf26glj6q75ptego5kp4wspc3cpote3bjlqwpnigo2i6bxhbwy",
+                "size": "80KB",
+                "date": "14/11/26",
+                "caption": "The Car (1977)"
+            },
+            {
                 "id": "20#2FC",
                 "title": "#2FC",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif5ou5m5sfaczyzodtlzdt2n5x2mecnzq5jwncvhuavj2eardz5pe",
@@ -7381,6 +7389,22 @@ const database = {
                 "size": "59KB",
                 "date": "11/11/26",
                 "caption": "Dark Angel (1990)"
+            },
+            {
+                "id": "68#21",
+                "title": "#21",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihxxjmtwt4x2fbb5xqjhf4bid2qrxlky4obraqqa6cozjsoz5dyc4",
+                "size": "98KB",
+                "date": "13/11/26",
+                "caption": "Friday The 13th (1980)"
+            },
+            {
+                "id": "68#22",
+                "title": "#22",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifsgmuvjbeukjkzuzwaz62m43ybutde2ngg7gjwqfmtldqsx5ygk4",
+                "size": "85KB",
+                "date": "13/11/26",
+                "caption": "Friday The 13th, Part 2 (1981)"
             }
         ],
         "Future_Shocks": [
@@ -7789,6 +7813,14 @@ const database = {
                 "caption": "Gorgo, Gorgo (1960)"
             },
             {
+                "id": "69#25",
+                "title": "#25",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif52npsiwabdv3sfjv44merlyohchl3rd7g6shhzefvc5feuvz3iy",
+                "size": "162KB",
+                "date": "15/11/26",
+                "caption": "Godzilla Vs. Gigan (1972)"
+            },
+            {
                 "id": "69#A1",
                 "title": "#A1",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreih43khyjiwebrm6xkf2xzrvtzwlh7savhqirkrir3tsojc5vjszuq",
@@ -8107,6 +8139,14 @@ const database = {
                 "size": "83KB",
                 "date": "18/10/26",
                 "caption": "The Brides Of Dracula (1960)"
+            },
+            {
+                "id": "51#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicgmk3fldslsi5elpnejt2r5s7zgtf7asevs2svbfaxrjigf5b2ji",
+                "size": "91KB",
+                "date": "15/11/26",
+                "caption": "The Two Faces Of Dr. Jekyll (1960)"
             }
         ],
         "Haunted_Houses": [
@@ -8205,6 +8245,14 @@ const database = {
                 "size": "103KB",
                 "date": "18/10/26",
                 "caption": "Poltergeist (1982)"
+            },
+            {
+                "id": "28#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifizich3ncollwjpvewscrxev7qx2qsevr7wwfycfhapsqu5hxn5i",
+                "size": "118KB",
+                "date": "15/11/26",
+                "caption": "The Beyond (1981)"
             }
         ],
         "Hexy_Beasts": [
@@ -9315,6 +9363,14 @@ const database = {
         ],
         "Picture_Perfect": [
             {
+                "id": "74#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicwxd5tarwfuplivjxviqlkjtkgqsszinnymn3mzmvhmo5bdixrfm",
+                "size": "171KB",
+                "date": "14/11/26",
+                "caption": "The Acid Eaters (1968)"
+            },
+            {
                 "id": "74#FC1",
                 "title": "#FC1",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreib6rvylfmwf6ju2du5hgy6teesufxgl3cvmpid7icovrpsfldoile",
@@ -10043,6 +10099,30 @@ const database = {
                 "size": "155KB",
                 "date": "05/11/26",
                 "caption": "Danny Darwin, Tattoo Trouble"
+            },
+            {
+                "id": "64#42",
+                "title": "#42",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigraqo3tlrtyuo4joz2dtlckqpcrbelclbczt4asmkqg2wn6l3sja",
+                "size": "138KB",
+                "date": "12/11/26",
+                "caption": "Prescott Chalmers, Blind Justice"
+            },
+            {
+                "id": "64#43",
+                "title": "#43",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiemuno6cfg73523jyncja7eyxhfsiuzwon5vqyamwortc3y4eglfi",
+                "size": "164KB",
+                "date": "12/11/26",
+                "caption": "Helen Palmer, Grand Opening"
+            },
+            {
+                "id": "64#44",
+                "title": "#44",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicinj4jvuarhemuga2u2dmtsfjtekz6vdje6humhbgzmknsnd5xjy",
+                "size": "153KB",
+                "date": "12/11/26",
+                "caption": "Mae Gaston, Secret Sauce"
             }
         ],
         "The_Lost_Boys": [
@@ -10157,6 +10237,22 @@ const database = {
                 "size": "149KB",
                 "date": "12/11/26",
                 "caption": "Initiation's Over, Michael!"
+            },
+            {
+                "id": "73#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiamzo7m4a2apulrbwfdqvmz6il2orgkz5oxu6xo6xpmo4lw7cm6hi",
+                "size": "152KB",
+                "date": "14/11/26",
+                "caption": "David Bites A Surf Nazi!"
+            },
+            {
+                "id": "73#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidnsyg5p4o44wgksejrafu4h2a7rsj3u3oerryj5aay2xpwipwodm",
+                "size": "162KB",
+                "date": "15/11/26",
+                "caption": "Now You Know What We Are.."
             }
         ],
         "Ultimate_Series": [
@@ -10323,6 +10419,22 @@ const database = {
                 "size": "123KB",
                 "date": "30/09/26",
                 "caption": "They Live (1988)"
+            },
+            {
+                "id": "57#FC1",
+                "title": "#FC1",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiav3l2cnsojkfmswwxqgkv6dkelclfg4mblztvhyarx2x6vai7fkq",
+                "size": "105KB",
+                "date": "14/11/26",
+                "caption": "The Ninth Configuration (1980)"
+            },
+            {
+                "id": "57#FC2",
+                "title": "#FC2",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiajhhnp2rr33b6y7pvwdnngwpfbrlp7eukxvc3fi2uuaaamoy36ma",
+                "size": "130KB",
+                "date": "14/11/26",
+                "caption": "Class Of 1999 (1990)"
             }
         ],
         "Wild_Things": [
