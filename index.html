@@ -7,6 +7,10 @@
     <meta name="description" content="Cult Movie Cards: step inside the secure vault and browse the collection of cult movie cards.">
     <link rel="canonical" href="https://cultmovie.cards/">
 
+    <!-- Open the connection to the card-image Worker early, so the first 3D slab does not wait for the handshake.
+         The crossorigin attribute is needed because the slab fetches its images in CORS mode. -->
+    <link rel="preconnect" href="https://img.cultmovie.cards" crossorigin>
+
     <!-- Link previews (Bluesky, Discord, Facebook and others read these) -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Cult Movie Cards">
