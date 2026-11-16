@@ -4,6 +4,7 @@ dbeditor/
 # Local working files: the slab prototype and test-server config are not part of the site
 slab-prototype/
 .claude/
+.wrangler/
 
 # Secrets and dependencies
 .env
