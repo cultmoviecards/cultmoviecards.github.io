@@ -1,5 +1,7 @@
 # The database editor is a local tool, not part of the public site
 dbeditor/
+# The editor's header logo: the editor reads it from here, the site does not use it
+cmc-logo.png
 
 # Local working files: the slab prototype and test-server config are not part of the site
 slab-prototype/
