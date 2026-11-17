@@ -7405,6 +7405,14 @@ const database = {
                 "size": "85KB",
                 "date": "13/11/26",
                 "caption": "Friday The 13th, Part 2 (1981)"
+            },
+            {
+                "id": "68#23",
+                "title": "#23",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibjyqxnw4yn76ephexsyj576q6iqmlqyue6z556j66qaxkyy4ok5u",
+                "size": "96KB",
+                "date": "16/11/26",
+                "caption": "The Black Sleep (1956)"
             }
         ],
         "Future_Shocks": [
@@ -10269,6 +10277,14 @@ const database = {
                 "size": "183KB",
                 "date": "16/11/26",
                 "caption": "Frog Brothers To The Rescue!"
+            },
+            {
+                "id": "73#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia3xbul7na3wmj5ji4fqc6swxj5wt6llntejh5yzcfjalqiveayxu",
+                "size": "172KB",
+                "date": "17/11/26",
+                "caption": "Holy Shit! Vampire Hotel!"
             }
         ],
         "Ultimate_Series": [
@@ -10435,6 +10451,14 @@ const database = {
                 "size": "123KB",
                 "date": "30/09/26",
                 "caption": "They Live (1988)"
+            },
+            {
+                "id": "57#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigl4ro5riy4q5vw37wtzbrhsdx6l35yvi2seof6ny5bmmtjidebyu",
+                "size": "122KB",
+                "date": "17/11/26",
+                "caption": "Alien (1979)"
             },
             {
                 "id": "57#FC1",
