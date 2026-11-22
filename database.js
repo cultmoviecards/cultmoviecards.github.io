@@ -2301,6 +2301,184 @@ const database = {
                 "caption": "The Wretched (2019)"
             }
         ],
+        "Mario_Bava_Series": [
+            {
+                "id": "17#01",
+                "title": "#01",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifrlkkl6gmltrbzqteo54lrsn4hmwdtlxmf7co6cdhjfgadqisr5q",
+                "size": "122kb",
+                "date": "08/02/26",
+                "caption": "Black Sunday (1960)"
+            },
+            {
+                "id": "17#02",
+                "title": "#02",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreie5zbbutpwl55boizmtbt4cek7o5nyqetr5qkjieedqz6262674wu",
+                "size": "121kb",
+                "date": "09/02/26",
+                "caption": "Hercules In The Haunted World (1961)"
+            },
+            {
+                "id": "17#03",
+                "title": "#03",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidajduivslzpwabezgghhw5u3pohdqebir5yvvbq6a5xoyhkc6vye",
+                "size": "144kb",
+                "date": "11/02/26",
+                "caption": "Erik The Conqueror (1961)"
+            },
+            {
+                "id": "17#04",
+                "title": "#04",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiahi2jii237ybsa64nshcvmzzcoljyekczpb7y4axmva2jlw33ar4",
+                "size": "143kb",
+                "date": "13/02/26",
+                "caption": "The Girl Who Knew Too Much (1963)"
+            },
+            {
+                "id": "17#05",
+                "title": "#05",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibmujbu4snznjflr72xqqvttdcg63wtcvsvtd6xhikwt2ahox4i3u",
+                "size": "105kb",
+                "date": "15/02/26",
+                "caption": "Black Sabbath (1963)"
+            },
+            {
+                "id": "17#06",
+                "title": "#06",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibg3m7m3fpk4mhj7af7pe7uenptfoy4orrrkn7radswwsuumk63ra",
+                "size": "90kb",
+                "date": "21/02/26",
+                "caption": "The Whip And The Body (1963)"
+            },
+            {
+                "id": "17#07",
+                "title": "#07",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif3jfpzwdwbezdqhbqh6emexjaiyxrvntb6bmbxdrk34qucart6yq",
+                "size": "96kb",
+                "date": "25/02/26",
+                "caption": "Blood And Black Lace (1964)"
+            },
+            {
+                "id": "17#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiasisbautvtdtkbu4lvzj7ar2nxaljroq5bjeg26gxtdgrrrri7qe",
+                "size": "134kb",
+                "date": "03/03/26",
+                "caption": "The Road To The Alamo (1964)"
+            },
+            {
+                "id": "17#09",
+                "title": "#09",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidtixi3c3nrni75a2mvisuib2vxgntdczagjkk3blc3soy5cjp72m",
+                "size": "149kb",
+                "date": "10/03/26",
+                "caption": "Planet Of The Vampires (1965)"
+            },
+            {
+                "id": "17#10",
+                "title": "#10",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicff6quupxwypxvva5nsm6txupdr5jn7ilr5j63hg7lwuvo5wyrnm",
+                "size": "106kb",
+                "date": "14/03/26",
+                "caption": "Knives Of The Avenger (1966)"
+            },
+            {
+                "id": "17#11",
+                "title": "#11",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif5dxqjmjdf57kkgvlatt3sgd6kvr24gmxajjddezhcpzhibfjbuq",
+                "size": "128kb",
+                "date": "22/03/26",
+                "caption": "Kill, Baby.. Kill! (1966)"
+            },
+            {
+                "id": "17#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreial3x4n5odkpuix2qd7cbmxcvtngsstdq2ejpofqqkgx6p6pnckqq",
+                "size": "138kb",
+                "date": "29/03/26",
+                "caption": "Dr. Goldfoot & The Girl Bombs (1966)"
+            },
+            {
+                "id": "17#13",
+                "title": "#13",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidby4kvdi4xzioiagejlq7x7gg7pcjrxpvqdspj2znqz7kd67bsem",
+                "size": "100kb",
+                "date": "02/04/26",
+                "caption": "Danger: Diabolik (1968)"
+            },
+            {
+                "id": "17#14",
+                "title": "#14",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidghrtxy6ptlojehqbguhffwaneao42qnwi5a5epc5yfbvtrl4vam",
+                "size": "133kb",
+                "date": "10/04/26",
+                "caption": "5 Dolls For An August Moon (1970)"
+            },
+            {
+                "id": "17#15",
+                "title": "#15",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihsemv7ntznlttaat52h2wmrriehtv2jnzedyzfwch4orj2nxkdyq",
+                "size": "135kb",
+                "date": "23/04/26",
+                "caption": "Hatchet For The Honeymoon (1970)"
+            },
+            {
+                "id": "17#16",
+                "title": "#16",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif5pp6hhxfmilj3hjkoq54w7ygedp4wamjyniaiire257yokmr564",
+                "size": "102KB",
+                "date": "05/06/26",
+                "caption": "Roy Colt & Winchester Jack (1970)"
+            },
+            {
+                "id": "17#17",
+                "title": "#17",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiczdhd7dvox45teykkhvaaulho72x2ufsax535etjrohbcg3loqtm",
+                "size": "154KB",
+                "date": "20/06/26",
+                "caption": "Four Times That Night (1971)"
+            },
+            {
+                "id": "17#18",
+                "title": "#18",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifv6xh5kg6mtki3ztq4gtpvod5xuhlsn3m737ijaabov5kxp6njbi",
+                "size": "117KB",
+                "date": "20/07/26",
+                "caption": "A Bay Of Blood (1971)"
+            },
+            {
+                "id": "17#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia4rdlu6oy54rjaxjr4qshyxd2eq7z3a5kcwqeazsw7yfewmipa5y",
+                "size": "112KB",
+                "date": "21/08/26",
+                "caption": "Baron Blood (1972)"
+            },
+            {
+                "id": "17#20",
+                "title": "#20",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiff5l7wc2liaqijq275wfxmamtv7vt5yr4ldclrbbqps5igd6bbdi",
+                "size": "105KB",
+                "date": "21/09/26",
+                "caption": "Lisa And The Devil (1974)"
+            },
+            {
+                "id": "17#21",
+                "title": "#21",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidl2stxkws3cmhnl5hvplcoisxwgf2ebv3oztzhrubjofgeybeoju",
+                "size": "110KB",
+                "date": "23/10/26",
+                "caption": "Shock (1977)"
+            },
+            {
+                "id": "17#22",
+                "title": "#22",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreie5vyh6qetzomgxcp3tc3jrx5rozzdhiebbbe5qkteky36de65uvy",
+                "size": "137KB",
+                "date": "22/11/26",
+                "caption": "Rabid Dogs (1998)"
+            }
+        ],
         "Midnight_Cult_Series_I": [
             {
                 "id": "14#01",
@@ -7413,6 +7591,22 @@ const database = {
                 "size": "96KB",
                 "date": "16/11/26",
                 "caption": "The Black Sleep (1956)"
+            },
+            {
+                "id": "68#24",
+                "title": "#24",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifbg3b244ckk73oodptddaa6upekbxxs64qlme5ny5hbgkfth2oae",
+                "size": "47KB",
+                "date": "17/11/26",
+                "caption": "Obsession (2025)"
+            },
+            {
+                "id": "68#25",
+                "title": "#25",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidolpxal7zowlbcrene3o4tc2bhkgh4k2wjjtpbt3nuv5ghfqtl2a",
+                "size": "70KB",
+                "date": "18/11/26",
+                "caption": "Angel Heart (1987)"
             }
         ],
         "Future_Shocks": [
@@ -7827,6 +8021,14 @@ const database = {
                 "size": "162KB",
                 "date": "15/11/26",
                 "caption": "Godzilla Vs. Gigan (1972)"
+            },
+            {
+                "id": "69#26",
+                "title": "#26",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaxx4aryamukdbjkipjd3e2pw4jgz56l7qlchq2owqrva4mmlsimq",
+                "size": "160KB",
+                "date": "20/11/26",
+                "caption": "The Empire Strikes Back (1980)"
             },
             {
                 "id": "69#A1",
@@ -8573,6 +8775,14 @@ const database = {
                 "caption": "Infra-Man (1975)"
             },
             {
+                "id": "45#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiajxjmsyb6rclb35tfzdoltax6ithhcfdj5sccuq3aqwm2b75ky6a",
+                "size": "229KB",
+                "date": "19/11/26",
+                "caption": "Raw Force (1982)"
+            },
+            {
                 "id": "45#RO",
                 "title": "#RO",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibbekswxfzi4ldi5umb7npboabtl46aaynfu4fs7flqwrt5y4i2vi",
@@ -8693,6 +8903,14 @@ const database = {
                 "size": "114KB",
                 "date": "22/10/26",
                 "caption": "Sigourney Weaver as Ellen Ripley (1986)"
+            },
+            {
+                "id": "31#15",
+                "title": "#15",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifvlvq4ad5s3dkhzq5rmkury5nuzinr77vwa2z2o2eg57kspeytn4",
+                "size": "94KB",
+                "date": "18/11/26",
+                "caption": "Sybil Danning as Stirba Crosscoe (1986)"
             }
         ],
         "Kult_Kaiju": [
@@ -8783,176 +9001,14 @@ const database = {
                 "size": "140KB",
                 "date": "23/10/26",
                 "caption": "Mothra Vs. Godzilla (1964)"
-            }
-        ],
-        "Mario_Bava_Series": [
-            {
-                "id": "17#01",
-                "title": "#01",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifrlkkl6gmltrbzqteo54lrsn4hmwdtlxmf7co6cdhjfgadqisr5q",
-                "size": "122kb",
-                "date": "08/02/26",
-                "caption": "Black Sunday (1960)"
             },
             {
-                "id": "17#02",
-                "title": "#02",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreie5zbbutpwl55boizmtbt4cek7o5nyqetr5qkjieedqz6262674wu",
-                "size": "121kb",
-                "date": "09/02/26",
-                "caption": "Hercules In The Haunted World (1961)"
-            },
-            {
-                "id": "17#03",
-                "title": "#03",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidajduivslzpwabezgghhw5u3pohdqebir5yvvbq6a5xoyhkc6vye",
-                "size": "144kb",
-                "date": "11/02/26",
-                "caption": "Erik The Conqueror (1961)"
-            },
-            {
-                "id": "17#04",
-                "title": "#04",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiahi2jii237ybsa64nshcvmzzcoljyekczpb7y4axmva2jlw33ar4",
-                "size": "143kb",
-                "date": "13/02/26",
-                "caption": "The Girl Who Knew Too Much (1963)"
-            },
-            {
-                "id": "17#05",
-                "title": "#05",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibmujbu4snznjflr72xqqvttdcg63wtcvsvtd6xhikwt2ahox4i3u",
-                "size": "105kb",
-                "date": "15/02/26",
-                "caption": "Black Sabbath (1963)"
-            },
-            {
-                "id": "17#06",
-                "title": "#06",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreibg3m7m3fpk4mhj7af7pe7uenptfoy4orrrkn7radswwsuumk63ra",
-                "size": "90kb",
-                "date": "21/02/26",
-                "caption": "The Whip And The Body (1963)"
-            },
-            {
-                "id": "17#07",
-                "title": "#07",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif3jfpzwdwbezdqhbqh6emexjaiyxrvntb6bmbxdrk34qucart6yq",
-                "size": "96kb",
-                "date": "25/02/26",
-                "caption": "Blood And Black Lace (1964)"
-            },
-            {
-                "id": "17#08",
-                "title": "#08",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiasisbautvtdtkbu4lvzj7ar2nxaljroq5bjeg26gxtdgrrrri7qe",
-                "size": "134kb",
-                "date": "03/03/26",
-                "caption": "The Road To The Alamo (1964)"
-            },
-            {
-                "id": "17#09",
-                "title": "#09",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidtixi3c3nrni75a2mvisuib2vxgntdczagjkk3blc3soy5cjp72m",
-                "size": "149kb",
-                "date": "10/03/26",
-                "caption": "Planet Of The Vampires (1965)"
-            },
-            {
-                "id": "17#10",
-                "title": "#10",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreicff6quupxwypxvva5nsm6txupdr5jn7ilr5j63hg7lwuvo5wyrnm",
-                "size": "106kb",
-                "date": "14/03/26",
-                "caption": "Knives Of The Avenger (1966)"
-            },
-            {
-                "id": "17#11",
-                "title": "#11",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif5dxqjmjdf57kkgvlatt3sgd6kvr24gmxajjddezhcpzhibfjbuq",
-                "size": "128kb",
-                "date": "22/03/26",
-                "caption": "Kill, Baby.. Kill! (1966)"
-            },
-            {
-                "id": "17#12",
+                "id": "32#12",
                 "title": "#12",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreial3x4n5odkpuix2qd7cbmxcvtngsstdq2ejpofqqkgx6p6pnckqq",
-                "size": "138kb",
-                "date": "29/03/26",
-                "caption": "Dr. Goldfoot & The Girl Bombs (1966)"
-            },
-            {
-                "id": "17#13",
-                "title": "#13",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidby4kvdi4xzioiagejlq7x7gg7pcjrxpvqdspj2znqz7kd67bsem",
-                "size": "100kb",
-                "date": "02/04/26",
-                "caption": "Danger: Diabolik (1968)"
-            },
-            {
-                "id": "17#14",
-                "title": "#14",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidghrtxy6ptlojehqbguhffwaneao42qnwi5a5epc5yfbvtrl4vam",
-                "size": "133kb",
-                "date": "10/04/26",
-                "caption": "5 Dolls For An August Moon (1970)"
-            },
-            {
-                "id": "17#15",
-                "title": "#15",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihsemv7ntznlttaat52h2wmrriehtv2jnzedyzfwch4orj2nxkdyq",
-                "size": "135kb",
-                "date": "23/04/26",
-                "caption": "Hatchet For The Honeymoon (1970)"
-            },
-            {
-                "id": "17#16",
-                "title": "#16",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif5pp6hhxfmilj3hjkoq54w7ygedp4wamjyniaiire257yokmr564",
-                "size": "102KB",
-                "date": "05/06/26",
-                "caption": "Roy Colt & Winchester Jack (1970)"
-            },
-            {
-                "id": "17#17",
-                "title": "#17",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiczdhd7dvox45teykkhvaaulho72x2ufsax535etjrohbcg3loqtm",
-                "size": "154KB",
-                "date": "20/06/26",
-                "caption": "Four Times That Night (1971)"
-            },
-            {
-                "id": "17#18",
-                "title": "#18",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifv6xh5kg6mtki3ztq4gtpvod5xuhlsn3m737ijaabov5kxp6njbi",
-                "size": "117KB",
-                "date": "20/07/26",
-                "caption": "A Bay Of Blood (1971)"
-            },
-            {
-                "id": "17#19",
-                "title": "#19",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia4rdlu6oy54rjaxjr4qshyxd2eq7z3a5kcwqeazsw7yfewmipa5y",
-                "size": "112KB",
-                "date": "21/08/26",
-                "caption": "Baron Blood (1972)"
-            },
-            {
-                "id": "17#20",
-                "title": "#20",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiff5l7wc2liaqijq275wfxmamtv7vt5yr4ldclrbbqps5igd6bbdi",
-                "size": "105KB",
-                "date": "21/09/26",
-                "caption": "Lisa And The Devil (1974)"
-            },
-            {
-                "id": "17#21",
-                "title": "#21",
-                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidl2stxkws3cmhnl5hvplcoisxwgf2ebv3oztzhrubjofgeybeoju",
-                "size": "110KB",
-                "date": "23/10/26",
-                "caption": "Shock (1977)"
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreifhwixe3gbb4odqukyoz2273yk3tzra27cjbdbfzx4bukwhalzocy",
+                "size": "132KB",
+                "date": "22/11/26",
+                "caption": "Dogora (1964)"
             }
         ],
         "Midnight_Cult_Series_IV": [
@@ -9785,6 +9841,14 @@ const database = {
                 "size": "146KB",
                 "date": "09/11/26",
                 "caption": "Riff-Raff, The Rocky Horror Picture Show (1975)"
+            },
+            {
+                "id": "58#08",
+                "title": "#08",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiciqqj3h7qrwkq6lqtlif3t4bdsfjca3y6azainbtt7x6a76opql4",
+                "size": "163KB",
+                "date": "21/11/26",
+                "caption": "Willow MacGregor, The Wicker Man (1973)"
             }
         ],
         "Tales_From_The_Crypt": [
@@ -10139,6 +10203,30 @@ const database = {
                 "size": "153KB",
                 "date": "12/11/26",
                 "caption": "Mae Gaston, Secret Sauce"
+            },
+            {
+                "id": "64#45",
+                "title": "#45",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigkgg2gafl2hdccsjt4bmi34zh2hq5g735sgm33z7kn3ziox4skpu",
+                "size": "163KB",
+                "date": "19/11/26",
+                "caption": "Felicity White, Problem Child"
+            },
+            {
+                "id": "64#46",
+                "title": "#46",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaxpqyq6do2cywp4c35lwlb5zhjxrrtwgxhd7pueb62dh753s5dom",
+                "size": "162KB",
+                "date": "19/11/26",
+                "caption": "Billy Quintaine, Ghost Townie"
+            },
+            {
+                "id": "64#47",
+                "title": "#47",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiaks4jx655ysn54wga4tywp2fhbvu3u7je7kmsegfdo6e4m6qykyy",
+                "size": "147KB",
+                "date": "19/11/26",
+                "caption": "Billy Drake, Sleazy Rider"
             }
         ],
         "The_Lost_Boys": [
@@ -10285,9 +10373,57 @@ const database = {
                 "size": "172KB",
                 "date": "17/11/26",
                 "caption": "Holy Shit! Vampire Hotel!"
+            },
+            {
+                "id": "73#17",
+                "title": "#17",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreif6dc7n4ltzx2ls4b4foclmrkc7mndcu5otx5ioefm26dsiyxecya",
+                "size": "142KB",
+                "date": "18/11/26",
+                "caption": "You're Dead Meat!!"
+            },
+            {
+                "id": "73#18",
+                "title": "#18",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigpjktt2jtvswx7vqiuu2zajq4z5x6xgpvshj2s2pq75heqborqz4",
+                "size": "166KB",
+                "date": "18/11/26",
+                "caption": "You Killed Marko!"
+            },
+            {
+                "id": "73#19",
+                "title": "#19",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreid4qmlriidgbcxt7m5635zzzpyqqerkhbza2pk3l34sx4ln3cctfe",
+                "size": "157KB",
+                "date": "19/11/26",
+                "caption": "Death By Stereo!"
+            },
+            {
+                "id": "73#20",
+                "title": "#20",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreie6hnokxekqbql662g6w7px6pkpq77lktf67mlkiby65fzt7aoo6m",
+                "size": "142KB",
+                "date": "22/11/26",
+                "caption": "The Attack Of Eddie Munster!"
+            },
+            {
+                "id": "73#21",
+                "title": "#21",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiacv7oof4dtditysjdfi72n37imcu3w6q2xegqfuarfq5cbuygeia",
+                "size": "136KB",
+                "date": "22/11/26",
+                "caption": "I Tried To Make You Immortal.."
             }
         ],
         "Ultimate_Series": [
+            {
+                "id": "62#091",
+                "title": "#091",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreia4ffajdqc2ccvaox3fk5zjqymvnir4m72kn63trmzskdg352ht3y",
+                "size": "64KB",
+                "date": "19/11/26",
+                "caption": "Weekend At Bernie's (1989)"
+            },
             {
                 "id": "62#092",
                 "title": "#092",
