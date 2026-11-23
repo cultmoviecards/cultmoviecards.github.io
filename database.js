@@ -7607,6 +7607,14 @@ const database = {
                 "size": "70KB",
                 "date": "18/11/26",
                 "caption": "Angel Heart (1987)"
+            },
+            {
+                "id": "68#26",
+                "title": "#26",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreiannz5ykkrafxxkd2y7upvmr2nyesjedpj5kwtrcdsrl2sej2fkuq",
+                "size": "69KB",
+                "date": "22/11/26",
+                "caption": "Iron Sky (2012)"
             }
         ],
         "Future_Shocks": [
@@ -9101,6 +9109,14 @@ const database = {
                 "caption": "Dawn Of The Dead (1978)"
             },
             {
+                "id": "37#12",
+                "title": "#12",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreigqlxlkvhuuqtim2eantkucvht6suklocl2dazrpbdb2epd6cc7yy",
+                "size": "122KB",
+                "date": "22/11/26",
+                "caption": "Zombie Flesh Eaters (1979)"
+            },
+            {
                 "id": "37#RO",
                 "title": "#RO",
                 "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreihmogcq4d3ijsy7guaadwidspe2cb3k6lkqdlk2pqp5xhonqmgz2u",
@@ -10413,6 +10429,14 @@ const database = {
                 "size": "136KB",
                 "date": "22/11/26",
                 "caption": "I Tried To Make You Immortal.."
+            },
+            {
+                "id": "73#22",
+                "title": "#22",
+                "file": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:gy2widezhtgp4iwhdlz6ojyv/bafkreidyw6ekzbrna2yohwpxd54fxwta7lyukyzyl6muwbnsh3uhj6acra",
+                "size": "148KB",
+                "date": "22/11/26",
+                "caption": "Max Is The Head Vampire!"
             }
         ],
         "Ultimate_Series": [

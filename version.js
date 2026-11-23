@@ -1,2 +1,2 @@
 // CMC SITE VERSION: bumped automatically each time index.html, database.js or setinfo.js is updated.
-const siteVersion = "3.05";
+const siteVersion = "3.06";
